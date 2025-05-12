@@ -19,12 +19,13 @@ export default function PhotosComponent() {
     Quick_Information,
     Services,
     customer_reviews,
+    key_insights
   } = data;
 
   return (
     <div className="flex">
       <div className="w-full p-4">
-        {/* Photos Section */}
+        
         <h1 className="text-2xl font-bold mb-4">Photos</h1>
         <div className="flex gap-2 w-full">
           {photos.map((photo, index) => (
@@ -45,7 +46,7 @@ export default function PhotosComponent() {
 
         <hr className="my-6 border-gray-300" />
 
-        {/* Price List */}
+        
         <div>
           <h2 className="text-2xl font-bold mb-5">Price List</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -74,7 +75,7 @@ export default function PhotosComponent() {
 
         <hr className="my-6 border-gray-300" />
 
-        {/* Customer Reviews Section */}
+       
         <div className="mt-10">
           <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
           <div className="flex gap-6">
@@ -94,11 +95,51 @@ export default function PhotosComponent() {
               ))}
           </div>
         </div>
+
+{data.key_insights && (
+
+  <div className="mt-10">
+    <h2 className="text-2xl font-bold mb-4">{data.key_insights.section_title}</h2>
+<div className="bg-blue-200 p-6">
+  <div className="flex flex-col md:flex-row gap-6">
+    {/* What users liked */}
+    <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
+      <h3 className="text-lg font-semibold mb-2">{data.key_insights.what_users_liked.title}</h3>
+      <ul className="list-disc list-inside text-gray-700">
+        {data.key_insights.what_users_liked.points.map((point, index) => (
+          <li key={index}>{point}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* What can be improved */}
+    <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
+      <h3 className="text-lg font-semibold mb-2">{data.key_insights.what_can_be_improved.title}</h3>
+      <ul className="list-disc list-inside text-gray-700">
+        {data.key_insights.what_can_be_improved.points.map((point, index) => (
+          <li key={index}>{point}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {/* Disclaimer at the bottom */}
+  <p className="text-xs text-gray-600 italic mt-4 text-center">
+    {data.key_insights.disclaimer}
+  </p>
+</div>
+
+  </div>
+)}
+
+   <hr className="my-6 border-gray-300" />
+
       </div>
 
-      {/* Right Section: Contact & Actions & Form */}
+      
+
       <div className="w-1/3 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
-        {/* Contact Section */}
+  
         <div className="mb-6 p-4 border rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
           <p className="text-sm text-gray-600">
@@ -111,7 +152,6 @@ export default function PhotosComponent() {
           <p className="text-xs text-gray-500">{business.hours.note}</p>
         </div>
 
-        {/* Actions Section */}
         <div className="p-4 border rounded-lg shadow-md mb-6">
           <h3 className="text-lg font-semibold mb-2">Actions</h3>
           <div className="flex flex-col gap-2">

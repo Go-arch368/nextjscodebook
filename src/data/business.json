@@ -153,6 +153,28 @@
     "feedback": "I had an excellent experience with MyTVS for vehicle repairs and services. The business accepts insurance, provides quick service with short wait ...More",
     "time": "05:37 PM 30 Jul, 2024"
   }
-]
+],
+"key_insights": {
+  "section_title": "Key Insights",
+  "what_users_liked": {
+    "title": "What users liked",
+    "points": [
+      "Friendly and polite staff",
+      "Knowledgeable and skilled technician"
+    ]
+  },
+  "what_can_be_improved": {
+    "title": "What can be improved",
+    "points": [
+      "No negative comments were mentioned in the reviews."
+    ]
+  },
+  "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+  "metadata": {
+    "source": "user_reviews",
+    "version": "beta",
+    "last_updated": "2024-02-20"
+  }
+}
 
 }
