@@ -1,17 +1,16 @@
-// carservice/businessdetails.js
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Share2, Pencil, ThumbsUp, MapPin, Phone, MessageSquare, MessageCircle, Check } from "lucide-react";
 
 export function BusinessCard({ business }) {
-  // Fallback if business prop is missing
+ 
   if (!business) {
     return <div>Error: Business data is missing</div>;
   }
 
-  // Randomize the last digit of the businessId
   const randomizeLastDigit = (id) => {
-    const randomDigit = Math.floor(Math.random() * 10); // Random number 0-9
+    const randomDigit = Math.floor(Math.random() * 10); 
     return id.slice(0, -1) + randomDigit;
   };
 
@@ -19,7 +18,7 @@ export function BusinessCard({ business }) {
 
   return (
     <div className="border rounded-xl p-4 bg-white shadow-sm relative mx-auto">
-      {/* Top-right service tags and checkmark button */}
+     
       <div className="absolute right-4 top-4 flex gap-2">
         {business.services.map((service, index) => (
           <Badge key={index} variant="secondary" className="text-xs bg-gray-100 text-gray-800">
@@ -31,11 +30,10 @@ export function BusinessCard({ business }) {
         </button>
       </div>
 
-      {/* Main Content */}
       <div className="flex flex-col gap-2">
-        {/* Image and Business Info Side by Side */}
+     
         <div className="flex items-start gap-4">
-          {/* Image */}
+        
           {business.image && (
             <img
               src={business.image}
@@ -44,15 +42,14 @@ export function BusinessCard({ business }) {
             />
           )}
 
-          {/* Business Info */}
+     
           <div className="flex-1">
-            {/* Name */}
+            
             <h2 className="text-lg font-semibold flex items-center gap-2">
               <ThumbsUp className="w-5 h-5 text-gray-600" />
               {business.name}
             </h2>
 
-            {/* Rating Line with Badges */}
             <div className="flex items-center gap-2 mt-1">
               <Badge className="bg-green-600 text-white px-2 py-0.5 text-sm">
                 {business.rating}
@@ -71,7 +68,7 @@ export function BusinessCard({ business }) {
               )}
             </div>
 
-            {/* Location, Hours, Business ID, and Booking Info */}
+        
             <div className="text-sm text-gray-700 mt-1 flex items-center gap-1 flex-wrap">
               <span className="flex items-center gap-1">
                 <MapPin className="w-4 h-4 text-gray-600" />
@@ -89,9 +86,9 @@ export function BusinessCard({ business }) {
               <span className="text-black">5 Suggestions</span>
             </div>
 
-            {/* Contact Buttons and Share/Edit Icons */}
+     
             <div className="flex justify-start gap-3 mt-2 flex-wrap">
-              {/* Contact Buttons */}
+            
               <div className="flex items-center space-x-2">
                 {business.contact.actions.map((action, index) => (
                   <Button
@@ -125,7 +122,7 @@ export function BusinessCard({ business }) {
                     </span>
                   </Button>
                 ))}
-                {/* Share and Edit Icons */}
+            
                 <Button
                   variant="outline"
                   className="border border-gray-300 px-6 py-3 text-lg hover:bg-gray-100"
@@ -144,7 +141,7 @@ export function BusinessCard({ business }) {
         </div>
       </div>
 
-      {/* Bottom Rating Stars */}
+      
       <div className="flex justify-end items-center mt-3 gap-2">
         <span className="text-sm font-medium text-gray-700">Click to Rate</span>
         {[...Array(5)].map((_, idx) => (

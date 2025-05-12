@@ -34,7 +34,10 @@
     },
     "image": "https://picsum.photos/800/400?random=1",
     "businessId": "12345670",
-    "services": ["Car Repair & Services", "Car Towing Services"]
+    "services": [
+      "Car Repair & Services",
+      "Car Towing Services"
+    ]
   },
   "photos": [
     {
@@ -54,27 +57,45 @@
   "price_list": [
     {
       "service": "Car Wash Service",
-      "description": "Car Wash Service involves thorough...",
+      "description": "Car Wash Service involves thorough washing of the vehicle inside and out.",
       "price": "₹ 250 onwards /service",
-      "details_link": "View Details"
+      "details_link": "View Details",
+      "button":"Enquire now "
     },
     {
       "service": "Car Denting and Painting Service",
-      "description": "Car denting and painting services...",
+      "description": "Car denting and painting services to restore your vehicle's appearance.",
       "price": "₹ 1,000 onwards /service",
-      "details_link": "View Details"
+      "details_link": "View Details",
+       "button":"Enquire now "
     },
     {
       "service": "Car Battery Repair & Services",
-      "description": "Car Battery Repair & Services...",
+      "description": "Car Battery Repair & Services to ensure your vehicle stays powered.",
       "price": "₹ 300 onwards /service",
-      "details_link": "View Details"
+      "details_link": "View Details",
+      "button":"Enquire now"
+    }
+  ],
+  "Quick_Information":[
+      {
+        "Qname":"Business Summary",
+        "Qdescription":"Car repair centre providing expert repairs for engines, windshields, and batteries, along with 24-hour towing and detailing services.",
+        "Qestablished":"Year of Establishment",
+        "Qestablished_year":"2015"
+      }
+  ],
+  "Services":[
+    {
+      "sname":"Services",
+      "sdata1":"DoorStep Service",
+      "sdata2":"Towing Service"
     }
   ],
   "general_contact": {
     "phone": "09972230173"
   },
-  "address": "304, 3RD FLOOR, ORION BUSNISS PARK, BESIDE CENE WANDER MALL, G B ROAD, Kapurbawdi-Thane-West-400607",
+  "address": "304, 3RD FLOOR, ORION BUSINESS PARK, BESIDE CENE WANDER MALL, G B ROAD, Kapurbawdi-Thane-West-400607",
   "actions": [
     {
       "label": "Get Directions",
@@ -95,6 +116,22 @@
     {
       "label": "Get Info via SMS/Email",
       "icon": "message"
+    },
+    {
+      "label": "Share",
+      "icon": "share"
+    },
+    {
+      "label": "Tap to rate",
+      "icon": "save"
+    },
+    {
+      "label": "Edit this listing",
+      "icon": "calendar"
+    },
+    {
+      "label": "Visit our Website",
+      "icon": "link"
     }
   ]
 }
