@@ -60,36 +60,36 @@
       "description": "Car Wash Service involves thorough washing of the vehicle inside and out.",
       "price": "₹ 250 onwards /service",
       "details_link": "View Details",
-      "button":"Enquire now "
+      "button": "Enquire now"
     },
     {
       "service": "Car Denting and Painting Service",
       "description": "Car denting and painting services to restore your vehicle's appearance.",
       "price": "₹ 1,000 onwards /service",
       "details_link": "View Details",
-       "button":"Enquire now "
+      "button": "Enquire now"
     },
     {
       "service": "Car Battery Repair & Services",
       "description": "Car Battery Repair & Services to ensure your vehicle stays powered.",
       "price": "₹ 300 onwards /service",
       "details_link": "View Details",
-      "button":"Enquire now"
+      "button": "Enquire now"
     }
   ],
-  "Quick_Information":[
-      {
-        "Qname":"Business Summary",
-        "Qdescription":"Car repair centre providing expert repairs for engines, windshields, and batteries, along with 24-hour towing and detailing services.",
-        "Qestablished":"Year of Establishment",
-        "Qestablished_year":"2015"
-      }
-  ],
-  "Services":[
+  "Quick_Information": [
     {
-      "sname":"Services",
-      "sdata1":"DoorStep Service",
-      "sdata2":"Towing Service"
+      "Qname": "Business Summary",
+      "Qdescription": "Car repair centre providing expert repairs for engines, windshields, and batteries, along with 24-hour towing and detailing services.",
+      "Qestablished": "Year of Establishment",
+      "Qestablished_year": "2015"
+    }
+  ],
+  "Services": [
+    {
+      "sname": "Services",
+      "sdata1": "DoorStep Service",
+      "sdata2": "Towing Service"
     }
   ],
   "general_contact": {
@@ -133,5 +133,26 @@
       "label": "Visit our Website",
       "icon": "link"
     }
-  ]
+  ],
+ "customer_reviews": [
+  {
+    "source": "Justdial",
+    "name": "Vankudoth Suresh Nayak",
+    "feedback": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagn ...More",
+    "time": "01:17 PM 29 Sept, 2024"
+  },
+  {
+    "source": "Justdial",
+    "name": "Durbai Minava",
+    "feedback": "My experience with MyTVS was excellent! Booking a service was quick and hassle-free. The staff was friendly and the repair work was done efficien ...More",
+    "time": "01:36 PM 12 Aug, 2024"
+  },
+  {
+    "source": "Justdial",
+    "name": "Gajanan Jaware",
+    "feedback": "I had an excellent experience with MyTVS for vehicle repairs and services. The business accepts insurance, provides quick service with short wait ...More",
+    "time": "05:37 PM 30 Jul, 2024"
+  }
+]
+
 }

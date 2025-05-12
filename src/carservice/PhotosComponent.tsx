@@ -1,5 +1,11 @@
 import React from "react";
-import { Phone, MessageSquare, MessageCircle, Edit, Share2 } from "lucide-react";
+import {
+  Phone,
+  MessageSquare,
+  MessageCircle,
+  Edit,
+  Share2,
+} from "lucide-react";
 import data from "@/data/business.json";
 
 export default function PhotosComponent() {
@@ -12,6 +18,7 @@ export default function PhotosComponent() {
     price_list,
     Quick_Information,
     Services,
+    customer_reviews,
   } = data;
 
   return (
@@ -36,7 +43,6 @@ export default function PhotosComponent() {
           </button>
         </div>
 
-        {/* Divider */}
         <hr className="my-6 border-gray-300" />
 
         {/* Price List */}
@@ -48,7 +54,9 @@ export default function PhotosComponent() {
                 <div key={index} className="border p-4 rounded-lg shadow-md">
                   <h3 className="text-lg font-semibold">{price.service}</h3>
                   <p className="text-base text-gray-600">{price.description}</p>
-                  <p className="text-xl font-bold text-black mt-2">{price.price}</p>
+                  <p className="text-xl font-bold text-black mt-2">
+                    {price.price}
+                  </p>
                   <div className="mt-4">
                     <button className="text-sm text-blue-500 hover:text-blue-600">
                       {price.details_link}
@@ -64,53 +72,47 @@ export default function PhotosComponent() {
           </div>
         </div>
 
-          <hr className="my-6 border-gray-300" />
+        <hr className="my-6 border-gray-300" />
 
-        {/* Quick Information */}
-        <div className="mt-10 p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-5">Quick Information</h2>
-          {Quick_Information &&
-            Quick_Information.map((info, index) => (
-              <div key={index} className="mb-6">
-                <h4 className="text-lg font-semibold">{info.Qname}</h4>
-                <p className="text-base text-gray-700 mb-3">{info.Qdescription}</p>
-                <h4 className="text-lg font-semibold">{info.Qestablished}</h4>
-                <p className="text-base text-gray-700">{info.Qestablished_year}</p>
-              </div>
-            ))}
-
-
-  <hr className="my-6 border-gray-300" />
-          {/* Services Section */}
-          <div className="mt-8">
-          
-            {Services &&
-              Services.map((service, index) => (
-                <div key={index} className="mb-4">
-                  <h2 className="text-2xl font-bold mb-4">{service.sname}</h2>
-                  <ul className="list-disc list-inside text-base text-gray-700 mt-2 space-y-1">
-                    <li>{service.sdata1}</li>
-                    <li>{service.sdata2}</li>
-                  </ul>
+        {/* Customer Reviews Section */}
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
+          <div className="flex gap-6">
+            {customer_reviews &&
+              customer_reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="p-4 border rounded-lg shadow-sm bg-gray-50 w-1/3"
+                >
+                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                    <span>{review.source}</span>
+                    <span>{review.time}</span>
+                  </div>
+                  <h4 className="text-lg font-semibold mb-1">{review.name}</h4>
+                  <p className="text-gray-700">{review.feedback}</p>
                 </div>
               ))}
           </div>
         </div>
       </div>
 
-      {/* Right Section: Contact & Actions */}
+      {/* Right Section: Contact & Actions & Form */}
       <div className="w-1/3 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
         {/* Contact Section */}
         <div className="mb-6 p-4 border rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
-          <p className="text-sm text-gray-600">Phone: {general_contact.phone}</p>
+          <p className="text-sm text-gray-600">
+            Phone: {general_contact.phone}
+          </p>
           <p className="text-sm text-gray-600">Address: {address}</p>
-          <p className="text-sm text-gray-600">Hours: {business.hours_summary}</p>
+          <p className="text-sm text-gray-600">
+            Hours: {business.hours_summary}
+          </p>
           <p className="text-xs text-gray-500">{business.hours.note}</p>
         </div>
 
         {/* Actions Section */}
-        <div className="p-4 border rounded-lg shadow-md">
+        <div className="p-4 border rounded-lg shadow-md mb-6">
           <h3 className="text-lg font-semibold mb-2">Actions</h3>
           <div className="flex flex-col gap-2">
             {actions.map((action, index) => (
@@ -130,10 +132,74 @@ export default function PhotosComponent() {
           </div>
         </div>
 
+        {/* Car Repair Form */}
+        <div className="p-4 border rounded-lg shadow-md bg-white">
+          <h2 className="text-2xl font-bold mb-4">
+            Get the List of <span className="text-blue-600">Car Repair</span>
+          </h2>
+          <p className="text-gray-700 mb-6">
+            We'll send you contact details in seconds{" "}
+            <span className="font-semibold">for free</span>
+          </p>
 
+          <form className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                What kind of Assistance do you need?
+              </label>
+              <div className="flex items-center gap-4">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    name="assistance"
+                    value="Servicing"
+                    className="mr-2"
+                  />
+                  Servicing
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    name="assistance"
+                    value="Repair"
+                    className="mr-2"
+                  />
+                  Repair
+                </label>
+              </div>
+            </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your name"
+              />
+            </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Mobile Number
+              </label>
+              <input
+                type="text"
+                name="mobile"
+                className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter your mobile number"
+              />
+            </div>
 
+            <div className="mt-4">
+              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
