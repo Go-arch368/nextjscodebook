@@ -134,47 +134,53 @@
       "icon": "link"
     }
   ],
- "customer_reviews": [
-  {
-    "source": "Justdial",
-    "name": "Vankudoth Suresh Nayak",
-    "feedback": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagn ...More",
-    "time": "01:17 PM 29 Sept, 2024"
+  "customer_reviews": [
+    {
+      "source": "Justdial",
+      "name": "Vankudoth Suresh Nayak",
+      "feedback": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagn ...More",
+      "time": "01:17 PM 29 Sept, 2024"
+    },
+    {
+      "source": "Justdial",
+      "name": "Durbai Minava",
+      "feedback": "My experience with MyTVS was excellent! Booking a service was quick and hassle-free. The staff was friendly and the repair work was done efficien ...More",
+      "time": "01:36 PM 12 Aug, 2024"
+    },
+    {
+      "source": "Justdial",
+      "name": "Gajanan Jaware",
+      "feedback": "I had an excellent experience with MyTVS for vehicle repairs and services. The business accepts insurance, provides quick service with short wait ...More",
+      "time": "05:37 PM 30 Jul, 2024"
+    }
+  ],
+  "key_insights": {
+    "section_title": "Key Insights",
+    "what_users_liked": {
+      "title": "What users liked",
+      "points": [
+        "Friendly and polite staff",
+        "Knowledgeable and skilled technician"
+      ]
+    },
+    "what_can_be_improved": {
+      "title": "What can be improved",
+      "points": [
+        "No negative comments were mentioned in the reviews."
+      ]
+    },
+    "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+    "metadata": {
+      "source": "user_reviews",
+      "version": "beta",
+      "last_updated": "2024-02-20"
+    }
   },
-  {
-    "source": "Justdial",
-    "name": "Durbai Minava",
-    "feedback": "My experience with MyTVS was excellent! Booking a service was quick and hassle-free. The staff was friendly and the repair work was done efficien ...More",
-    "time": "01:36 PM 12 Aug, 2024"
-  },
-  {
-    "source": "Justdial",
-    "name": "Gajanan Jaware",
-    "feedback": "I had an excellent experience with MyTVS for vehicle repairs and services. The business accepts insurance, provides quick service with short wait ...More",
-    "time": "05:37 PM 30 Jul, 2024"
+  "reviews_ratings": {
+    "title": "Reviews & Ratings",
+    "rating": 4.7,
+    "total_ratings": 593,
+    "description": "Jd rating index based on 593 ratings across the web",
+    "button_text": "Start your Review"
   }
-],
-"key_insights": {
-  "section_title": "Key Insights",
-  "what_users_liked": {
-    "title": "What users liked",
-    "points": [
-      "Friendly and polite staff",
-      "Knowledgeable and skilled technician"
-    ]
-  },
-  "what_can_be_improved": {
-    "title": "What can be improved",
-    "points": [
-      "No negative comments were mentioned in the reviews."
-    ]
-  },
-  "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
-  "metadata": {
-    "source": "user_reviews",
-    "version": "beta",
-    "last_updated": "2024-02-20"
-  }
-}
-
 }

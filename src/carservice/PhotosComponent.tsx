@@ -19,7 +19,8 @@ export default function PhotosComponent() {
     Quick_Information,
     Services,
     customer_reviews,
-    key_insights
+    key_insights,
+    reviews_ratings
   } = data;
 
   return (
@@ -133,6 +134,25 @@ export default function PhotosComponent() {
 )}
 
    <hr className="my-6 border-gray-300" />
+
+   {data.reviews_ratings && (
+  <div className="p-4 border rounded-lg shadow-md bg-yellow-50 mb-6">
+    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+      {data.reviews_ratings.title}
+    </h3>
+    <div className="flex items-center text-yellow-600 mb-2 ">
+      <span className="text-2xl font-semibold mr-2">{data.reviews_ratings.rating}</span>
+      <span className="text-lg text-gray-600">
+        ({data.reviews_ratings.total_ratings} ratings)
+      </span>
+    </div>
+    <p className="text-lg text-gray-700 mb-26">{data.reviews_ratings.description}</p>
+    <h1 className="text-xl px-4 py-2 rounded text-gray-900">
+      {data.reviews_ratings.button_text}
+    </h1>
+  </div>
+)}
+
 
       </div>
 
