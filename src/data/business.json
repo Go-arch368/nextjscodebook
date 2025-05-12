@@ -1,0 +1,100 @@
+{
+  "business": {
+    "name": "MyTVS MultiBrand Car Service",
+    "rating": 4.7,
+    "total_ratings": 593,
+    "badges": ["Trust", "Verified", "Claimed"],
+    "location": "Kapurbawal-thane West, Thane",
+    "hours_summary": "Open 24 Hrs",
+    "hours": {
+      "status": "Open 24 Hrs",
+      "note": "Actual hour may differ"
+    },
+    "years_in_business": "10 Years in Business",
+    "booking_info": "Quick booking",
+    "contact": {
+      "phone": "08972230173",
+      "actions": [
+        {
+          "label": "Call",
+          "type": "primary",
+          "icon": "Phone"
+        },
+        {
+          "label": "Enquire Now",
+          "type": "primary",
+          "icon": "MessageSquare"
+        },
+        {
+          "label": "WhatsApp",
+          "type": "secondary",
+          "icon": "MessageCircle"
+        }
+      ]
+    },
+    "image": "https://picsum.photos/800/400?random=1",
+    "businessId": "12345670",
+    "services": ["Car Repair & Services", "Car Towing Services"]
+  },
+  "photos": [
+    {
+      "source": "myTVS",
+      "description": "India's Largest Multi-Brand Car Service Network",
+      "image": "logo_myTVS.jpg"
+    },
+    {
+      "description": "Car interior - door panel",
+      "image": "car_interior_door.jpg"
+    },
+    {
+      "description": "Car center console",
+      "image": "car_center_console.jpg"
+    }
+  ],
+  "price_list": [
+    {
+      "service": "Car Wash Service",
+      "description": "Car Wash Service involves thorough...",
+      "price": "₹ 250 onwards /service",
+      "details_link": "View Details"
+    },
+    {
+      "service": "Car Denting and Painting Service",
+      "description": "Car denting and painting services...",
+      "price": "₹ 1,000 onwards /service",
+      "details_link": "View Details"
+    },
+    {
+      "service": "Car Battery Repair & Services",
+      "description": "Car Battery Repair & Services...",
+      "price": "₹ 300 onwards /service",
+      "details_link": "View Details"
+    }
+  ],
+  "general_contact": {
+    "phone": "09972230173"
+  },
+  "address": "304, 3RD FLOOR, ORION BUSNISS PARK, BESIDE CENE WANDER MALL, G B ROAD, Kapurbawdi-Thane-West-400607",
+  "actions": [
+    {
+      "label": "Get Directions",
+      "icon": "directions"
+    },
+    {
+      "label": "Copy",
+      "icon": "copy"
+    },
+    {
+      "label": "Suggest New Timings",
+      "icon": "edit"
+    },
+    {
+      "label": "Send Enquiry by Email",
+      "icon": "email"
+    },
+    {
+      "label": "Get Info via SMS/Email",
+      "icon": "message"
+    }
+  ]
+}

@@ -30,9 +30,10 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground overscroll-none antialiased`}>
-                <ThemeProvider attribute='class'>
+                <ThemeProvider attribute=''>
                     
                     {children}
+                   
                     <Toaster />
                 </ThemeProvider>
             </body>

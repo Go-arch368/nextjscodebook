@@ -1,12 +1,20 @@
-import HomePage from '@/app/HomePage';
+// pages/index.js (or wherever your HomePage is)
+import BusinessCard from "@/carservice/businessdetails";
+import data from "@/data/business.json"; // Adjust the path based on your structure
 
-/**
- * The main page component that renders the HomePage component.
- *
- * @returns {JSX.Element} The rendered HomePage component.
- */
-const Page = () => {
-    return <HomePage />;
-};
+export default function HomePage() {
+  // Log the data to debug
+  console.log("Data loaded:", data);
 
-export default Page;
+  // Check if data.business exists
+  if (!data || !data.business) {
+    return <div>Error: Business data is missing or invalid</div>;
+  }
+
+  return (
+    <div className="p-6">
+      <BusinessCard business={data.business} />
+      
+    </div>
+  );
+}
