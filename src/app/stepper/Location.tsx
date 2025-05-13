@@ -4,35 +4,34 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-// import { Button } from "@heroui/button";
-import { Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { LocationData } from "@/types/onboard";
+import { Pencil } from "lucide-react";
 
-
+// Define the schema for the form
 const locationSchema = z.object({
     addressLine1: z.string().min(1, "Address is required").max(200, "Address must be 200 characters or less"),
     addressLine2: z.string().min(1, "Address is required").max(200, "Address must be 200 characters or less"),
-    latitude: z.string(),
-    longitude: z.string()
+    latitude: z.number().min(-90, "Latitude must be between -90 and 90").max(90, "Latitude must be between -90 and 90"),
+    longitude: z.number().min(-180, "Longitude must be between -180 and 180").max(180, "Longitude must be between -180 and 180"),
 });
-
 
 type LocationFormData = z.infer<typeof locationSchema>;
 
-export interface LocationData {
+// Define the props interface
+interface LocationProps {
     updateData: (data: LocationFormData) => void;
+    prevStep: () => void; // Added for navigation
 }
 
-export default function Location({ updateData }: LocationData) {
+export default function Location({ updateData, prevStep }: LocationProps) {
     const [isEditing, setIsEditing] = useState(false);
     const [hasExistingData, setHasExistingData] = useState(false);
-        const [isReadOnly, setIsReadOnly] = useState(false);
+    const [isReadOnly, setIsReadOnly] = useState(false);
     const [initialData, setInitialData] = useState<LocationFormData>({
         addressLine1: "",
         addressLine2: "",
-        latitude: '0',
-        longitude: '0',
+        latitude: 0,
+        longitude: 0,
     });
 
     // Initialize react-hook-form with Zod resolver
@@ -46,14 +45,18 @@ export default function Location({ updateData }: LocationData) {
         defaultValues: {
             addressLine1: "",
             addressLine2: "",
-            latitude: '0',
-            longitude: '0'
+            latitude: 0,
+            longitude: 0,
         },
     });
 
     const onSubmit = (data: LocationFormData) => {
-        setIsReadOnly(true)
+        setIsReadOnly(true);
+        setHasExistingData(true);
+        setInitialData(data);
         updateData(data);
+        localStorage.setItem("locationFormData", JSON.stringify(data));
+        localStorage.setItem("hasChanges", "true");
     };
 
     const toggleEdit = () => {
@@ -68,6 +71,7 @@ export default function Location({ updateData }: LocationData) {
             console.log("Edit mode enabled via Location pencil");
         }
         setIsEditing(!isEditing);
+        setIsReadOnly(false);
     };
 
     return (
@@ -98,109 +102,106 @@ export default function Location({ updateData }: LocationData) {
 
                 <form onSubmit={handleSubmit(onSubmit)} className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-600">
                     <div className="mb-4">
-                        <label htmlFor="address" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
+                        <label htmlFor="addressLine1" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Address Line 1:
                         </label>
                         <input
                             id="addressLine1"
                             {...register("addressLine1")}
                             readOnly={isReadOnly}
-                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${isReadOnly
-                                ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                : errors.addressLine1
+                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${
+                                isReadOnly
+                                    ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+                                    : errors.addressLine1
                                     ? "border border-red-500"
                                     : "border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                }`}
+                            }`}
                             placeholder="Enter Shop no, Street Name, Area"
                         />
                         {errors.addressLine1 && <p className="mt-1 text-sm text-red-500">{errors.addressLine1.message}</p>}
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="city" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
+                        <label htmlFor="addressLine2" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Address Line 2:
                         </label>
                         <input
                             id="addressLine2"
                             {...register("addressLine2")}
                             readOnly={isReadOnly}
-                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${isReadOnly
-                                ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                : errors.addressLine2
+                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${
+                                isReadOnly
+                                    ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+                                    : errors.addressLine2
                                     ? "border border-red-500"
                                     : "border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                }`}
+                            }`}
                             placeholder="Enter your city"
                         />
                         {errors.addressLine2 && <p className="mt-1 text-sm text-red-500">{errors.addressLine2.message}</p>}
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="state" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
+                        <label htmlFor="latitude" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Latitude:
                         </label>
                         <input
                             id="latitude"
-                            {...register("latitude")}
+                            type="number"
+                            step="any"
+                            {...register("latitude", { valueAsNumber: true })}
                             readOnly={isReadOnly}
-                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${isReadOnly
-                                ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                : errors.latitude
+                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${
+                                isReadOnly
+                                    ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+                                    : errors.latitude
                                     ? "border border-red-500"
                                     : "border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                }`}
+                            }`}
                             placeholder="Enter your latitude"
                         />
                         {errors.latitude && <p className="mt-1 text-sm text-red-500">{errors.latitude.message}</p>}
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="postalCode" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
+                        <label htmlFor="longitude" className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Longitude:
                         </label>
                         <input
                             id="longitude"
-                            {...register("longitude")}
+                            type="number"
+                            step="any"
+                            {...register("longitude", { valueAsNumber: true })}
                             readOnly={isReadOnly}
-                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${isReadOnly
-                                ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                : errors.longitude
+                            className={`w-full p-2 rounded-md focus:ring-2 focus:ring-blue-500 ${
+                                isReadOnly
+                                    ? "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
+                                    : errors.longitude
                                     ? "border border-red-500"
                                     : "border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100"
-                                }`}
-                            placeholder="Enter your postal Longitude"
+                            }`}
+                            placeholder="Enter your longitude"
                         />
                         {errors.longitude && <p className="mt-1 text-sm text-red-500">{errors.longitude.message}</p>}
                     </div>
-                    <Button
-                        className="w-full sm:w-auto focus:ring-2 focus:ring-blue-500 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-                        color="primary"
-                        disabled={isReadOnly}
-                        type="submit"
-                    >
-                        Save
-                    </Button>
-                </form>
 
-
-
-                {/* <div className="flex flex-col sm:flex-row justify-between gap-3 mt-4">
-                    <Button
-                        className="w-full sm:w-auto border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
-                        onClick={() => router.push("/welcome")}
-                    >
-                        Back
-                    </Button>
-
-                    {isEditing && hasExistingData && (
+                    <div className="flex flex-col sm:flex-row justify-between gap-3 mt-4">
                         <Button
-                            className="w-full sm:w-auto border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-blue-500"
-                            onClick={toggleEdit}
+                            className="w-full sm:w-auto focus:ring-2 focus:ring-gray-500 bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600"
+                            onClick={prevStep}
+                            disabled={isReadOnly}
                         >
-                            Cancel
+                            Previous
                         </Button>
-                    )}
-                </div> */}
+                        <Button
+                            className="w-full sm:w-auto focus:ring-2 focus:ring-blue-500 bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                            type="submit"
+                            disabled={isReadOnly}
+                        >
+                            Save
+                        </Button>
+                    </div>
+                </form>
             </div>
         </main>
     );

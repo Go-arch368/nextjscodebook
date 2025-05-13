@@ -7,7 +7,6 @@ import { z } from "zod";
 import { Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PinCodeDetails, BusinessDetailsWithPinCode } from "./Stepper";
-import React from "react";
 
 interface CategoryData {
     id: number;
@@ -151,7 +150,6 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
         fetchPincodes();
     }, [setValue, isEditMode]);
 
-   
     useEffect(() => {
         if (isEditMode) {
             const savedData = localStorage.getItem("welcomeFormData");
@@ -159,7 +157,7 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
                 const parsedData = JSON.parse(savedData);
                 reset({
                     ...parsedData,
-                    pincode: String(parsedData.pincode).trim(), 
+                    pincode: String(parsedData.pincode).trim(),
                 });
                 setHasExistingData(true);
             }
@@ -270,8 +268,8 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
             const category = categoryData.find((cat) => cat.categoryName === categoryName);
             const subcategory = category?.subcategories.find((subcat) => subcat.subcategoryName === subcategoryName);
             return {
-                categoryId: category?.id,
-                subcategoryId: subcategory?.id,
+                categoryId: String(category?.id || ''),
+                subcategoryId: String(subcategory?.id || ''),
             };
         };
 
@@ -279,15 +277,25 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
         const normalizedPincode = String(data.pincode).trim();
         const pincodeDetails = pincodeData.find((p) => p.pincode === normalizedPincode);
 
-        const welcomeData = {
-            ...data,
+        const welcomeData: BusinessDetailsWithPinCode = {
+            businessName: data.businessName,
+            categoryId,
+            category: data.category,
+            subcategoryId,
+            subcategory: data.subcategory,
             pincode: normalizedPincode,
-            categoryId: categoryId || 0,
-            subcategoryId: subcategoryId || 0,
             taluk: pincodeDetails?.taluk || "",
             city: pincodeDetails?.city || "",
-            state: pincodeDetails?.stateName || "",
-            district: pincodeDetails?.districtName || "",
+            stateName: pincodeDetails?.stateName || "",
+            districtName: pincodeDetails?.districtName || "",
+            businesses: [
+                {
+                    category: data.category,
+                    subcategory: data.subcategory,
+                    businessName: data.businessName,
+                    description: data.description,
+                },
+            ],
         };
 
         updateData(welcomeData);
@@ -301,16 +309,19 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
     };
 
     if (loading.categories || loading.pincodes) {
+
         return <div className="max-w-4xl mx-auto p-5">Loading data...</div>;
     }
 
     if (error.categories || error.pincodes) {
+
         return (
             <div className="max-w-4xl mx-auto p-5 text-red-500">{error.categories || error.pincodes}</div>
         );
     }
 
     if (!pincodeData.length) {
+
         return (
             <div className="max-w-4xl mx-auto p-5 text-red-500">
                 No pincodes available. Please try again later.
@@ -350,7 +361,6 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
                 >
                     <h3 className="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Business Details</h3>
 
-                 
                     <div className="mb-6">
                         <label className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Pincode:
@@ -377,17 +387,8 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
                         {errors.pincode && (
                             <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.pincode.message}</p>
                         )}
-                        {/* {selectedPincode && (
-                            <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                                <p>Area: {selectedPincode.taluk}</p>
-                                <p>City: {selectedPincode.city}</p>
-                                <p>District: {selectedPincode.districtName}</p>
-                                <p>State: {selectedPincode.stateName}</p>
-                            </div>
-                        )} */}
                     </div>
 
-                 
                     <div className="flex-1 min-w-[250px] mb-8">
                         <label className="block mb-2 font-medium text-gray-700 dark:text-gray-200">
                             Category:
@@ -448,7 +449,6 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
                         )}
                     </div>
 
-                
                     <div className="mb-4">
                         <label
                             htmlFor="businessName"
@@ -474,7 +474,6 @@ export default function Welcome({ updateData, isEditMode = false }: WelcomeProps
                         )}
                     </div>
 
-                  
                     <div>
                         <label
                             htmlFor="description"

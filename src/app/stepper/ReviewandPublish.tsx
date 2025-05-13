@@ -1,6 +1,6 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
-//import StarRating from "@/components/StarRating"; // Update the path to the correct location
 import { Globe, Heart, MapPin, Phone, Share2 } from "lucide-react";
 import Image from "next/image";
 import {
@@ -11,72 +11,93 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 import { useState } from "react";
-// import Link from "next/link";
+
+// Define types to match OnboardingData
+interface ServicesData {
+    subcategories: {
+        businesses: {
+            services: { name: string; price: string }[];
+            imageUrl: string;
+        }[];
+    }[];
+}
+
+interface BusinessDetailsWithPinCode {
+    businessName: string;
+    categoryId: string;
+    category: string;
+    subcategoryId: string;
+    subcategory: string;
+    pincode: string;
+    city: string;
+    stateName: string;
+    districtName?: string;
+    taluk?: string;
+    businesses: {
+        category: string;
+        subcategory: string;
+        businessName: string;
+        description: string;
+    }[];
+}
+
+interface LocationData {
+    addressLine1: string;
+    addressLine2: string;
+    latitude: number;
+    longitude: number;
+}
+
+interface ContactandTimings {
+    contact: {
+        phone: string;
+        email: string;
+        website: string;
+    };
+}
 
 interface OnboardData {
-    welcome: {
-        businessName: string;
-        categoryId: string;
-        category: string;
-        subcategoryId: string;
-        subcategory: string;
-        pincode: string;
-        city: string;
-        state: string;
-        district?: string;
-        taluk?: string;
-    };
-    location: {
-        addressLine1: string;
-        addressLine2: string;
-    };
-    contact: {
-        contact: {
-            phone: string;
-            email: string;
-            website: string;
-        };
-    };
-    services: {
-        imageUrl: string;
-    };
+    welcome: BusinessDetailsWithPinCode;
+    location: LocationData;
+    contact: ContactandTimings;
+    services: ServicesData;
 }
 
 export default function ReviewandPublish({ onboardData }: { onboardData: OnboardData }) {
     console.log(onboardData, 'review and publish');
-    const tags = ['tag1', 'tag2']
+    const tags = ['tag1', 'tag2'];
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const submitBusniess = async () => {
+    const submitBusiness = async () => {
         const payload = {
-            "websiteId": Math.floor(10000 + Math.random() * 90000),
-            "isFeatured": true,
-            "status": "active",
-            "tags": 'tag1, tag2',
-            "websiteName": onboardData?.welcome?.businessName,
-            "categoryId": onboardData?.welcome.categoryId,
-            "categoryName": onboardData?.welcome.category,
-            "categorySlug": onboardData?.welcome.category,
-            "subcategoryId": onboardData?.welcome.subcategoryId,
-            "subcategoryName": onboardData?.welcome.subcategory,
-            "subcategorySlug": onboardData?.welcome.subcategory,
-            "pincode": onboardData?.welcome.pincode,
-            "city": onboardData?.welcome.city,
-            "state": onboardData?.welcome.state,
-            "district": onboardData?.welcome?.district,
-            "taluk": onboardData?.welcome?.taluk,
-            "addressLine1": onboardData?.location?.addressLine1,
-            "addressLine2": onboardData?.location?.addressLine2,
-            "phone": onboardData?.contact?.contact?.phone,
-            "email": onboardData?.contact?.contact?.email,
-            "websiteUrl": onboardData?.contact?.contact?.website,
-            "logoUrl": onboardData?.services.imageUrl,
-            "imagesUrl": onboardData?.services.imageUrl,
-            "services": 'service1, service2',
+            websiteId: Math.floor(10000 + Math.random() * 90000),
+            isFeatured: true,
+            status: "active",
+            tags: 'tag1, tag2',
+            websiteName: onboardData?.welcome?.businessName,
+            categoryId: onboardData?.welcome.categoryId,
+            categoryName: onboardData?.welcome.category,
+            categorySlug: onboardData?.welcome.category,
+            subcategoryId: onboardData?.welcome.subcategoryId,
+            subcategoryName: onboardData?.welcome.subcategory,
+            subcategorySlug: onboardData?.welcome.subcategory,
+            pincode: onboardData?.welcome.pincode,
+            city: onboardData?.welcome.city,
+            state: onboardData?.welcome.stateName,
+            district: onboardData?.welcome?.districtName,
+            taluk: onboardData?.welcome?.taluk,
+            addressLine1: onboardData?.location?.addressLine1,
+            addressLine2: onboardData?.location?.addressLine2,
+            phone: onboardData?.contact?.contact?.phone,
+            email: onboardData?.contact?.contact?.email,
+            websiteUrl: onboardData?.contact?.contact?.website,
+            logoUrl: onboardData?.services.subcategories[0]?.businesses[0]?.imageUrl || '',
+            imagesUrl: onboardData?.services.subcategories[0]?.businesses[0]?.imageUrl || '',
+            services: onboardData?.services.subcategories[0]?.businesses[0]?.services.map(s => s.name).join(', ') || 'service1, service2',
+        };
 
-        }
         try {
             const res = await fetch("https://dbapiservice.onrender.com/dbapis/v1/websites", {
                 method: "POST",
@@ -92,6 +113,7 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
             console.error("Error submitting business:", error);
         }
     };
+
     return (
         <div className="flex flex-col gap-10">
             <div
@@ -116,29 +138,33 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
 
                 {/* Left: Image */}
                 <div className="sm:w-1/3 w-full h-56 sm:h-auto relative">
-                    {onboardData?.services.imageUrl ? <Image
-                        src={onboardData?.services.imageUrl}
-                        alt={onboardData?.welcome?.businessName}
-                        className="object-cover w-full h-full"
-                        fill
-                        sizes="(max-width: 640px) 100vw, 33vw"
-                    /> : null}
+                    {onboardData?.services.subcategories[0]?.businesses[0]?.imageUrl ? (
+                        <Image
+                            src={onboardData.services.subcategories[0].businesses[0].imageUrl}
+                            alt={onboardData?.welcome?.businessName || 'Business Image'}
+                            className="object-cover w-full h-full"
+                            fill
+                            sizes="(max-width: 640px) 100vw, 33vw"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                            <span className="text-gray-500 dark:text-gray-400">No Image</span>
+                        </div>
+                    )}
                 </div>
 
                 {/* Right: Details */}
                 <div className="flex-1 p-6 flex flex-col justify-between">
                     <div>
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                            {onboardData?.welcome?.businessName}
+                            {onboardData?.welcome?.businessName || 'Unnamed Business'}
                         </h2>
                         <div className="flex items-center gap-2">
                             {/* <StarRating rating={4.5} /> */}
-                            <span className="text-gray-800 dark:text-gray-300 text-sm">
-                                ({5})
-                            </span>
+                            <span className="text-gray-800 dark:text-gray-300 text-sm">(5)</span>
                         </div>
                         <p className="mt-3 text-gray-700 dark:text-gray-300">
-                            {onboardData?.welcome?.businessName}
+                            {onboardData?.welcome?.businessName || 'No description available'}
                         </p>
 
                         {/* Highlights */}
@@ -164,7 +190,7 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
                                 className="flex items-center gap-1 hover:text-blue-600 transition-colors"
                             >
                                 <Phone className="w-4 h-4" />
-                                {onboardData?.contact?.contact?.phone}
+                                {onboardData?.contact?.contact?.phone || 'No phone'}
                             </a>
 
                             <a
@@ -175,11 +201,11 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
                                 className="flex items-center gap-1 hover:text-blue-600 transition-colors"
                             >
                                 <Globe className="w-4 h-4" />
-                                {onboardData?.contact?.contact?.website}
+                                {onboardData?.contact?.contact?.website || 'No website'}
                             </a>
 
                             <a
-                                href='#'
+                                href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Directions"
@@ -194,8 +220,8 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
             </div>
             <div className="self-end">
                 <Button
-                    variant='default'
-                    onClick={submitBusniess}
+                    variant="default"
+                    onClick={submitBusiness}
                     className="w-full sm:w-auto focus:ring-2 focus:ring-blue-500 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                 >
                     Review and Publish
@@ -210,11 +236,15 @@ export default function ReviewandPublish({ onboardData }: { onboardData: Onboard
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                        <AlertDialogAction className='bg-blue-700 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600' onClick={() => setIsSuccess(false)}>Close</AlertDialogAction>
+                        <AlertDialogAction
+                            className="bg-blue-700 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                            onClick={() => setIsSuccess(false)}
+                        >
+                            Close
+                        </AlertDialogAction>
                     </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
         </div>
-
-    )
+    );
 }

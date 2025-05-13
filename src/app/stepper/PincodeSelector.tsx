@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-
+import * as React from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
     Command,
     CommandEmpty,
@@ -12,88 +11,60 @@ import {
     CommandInput,
     CommandItem,
     CommandList,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@/components/ui/popover"
-// import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useEffect } from "react"
+} from "@/components/ui/popover";
+import { Label } from "@/components/ui/label";
 
 interface PincodeData {
-    id: number
-    officeName: string
-    pincode: number
-    districtName: string
-    taluk: string
-    stateName: string
-    city: string
+    id: number;
+    officeName: string;
+    pincode: string; // Changed to string for consistency
+    districtName: string;
+    taluk: string;
+    stateName: string;
+    city: string;
 }
 
 export default function PincodeSelector({ onPincodeChange }: { onPincodeChange: (pincode: PincodeData | null) => void }) {
-    const [open, setOpen] = React.useState(false)
-    const [pincodeData, setPincodeData] = React.useState<PincodeData[]>([])
-    const [selected, setSelected] = React.useState<PincodeData | null>(null)
+    const [open, setOpen] = React.useState(false);
+    const [pincodeData, setPincodeData] = React.useState<PincodeData[]>([]);
+    const [selected, setSelected] = React.useState<PincodeData | null>(null);
     const [search, setSearch] = React.useState("");
 
-    useEffect(() => {
-        onPincodeChange(selected)
-    }, [onPincodeChange, selected])
-
     React.useEffect(() => {
         fetch("/api/pincodes")
             .then((res) => res.json())
-            .then(setPincodeData)
+            .then((data) => {
+                // Normalize pincode to string
+                const normalizedData = data.map((item: PincodeData) => ({
+                    ...item,
+                    pincode: String(item.pincode).trim(),
+                }));
+                setPincodeData(normalizedData);
+                return normalizedData; // Satisfy promise/always-return
+            })
             .then(() => {
-                console.log("Pincode data fetched successfully")
+                console.log("Pincode data fetched successfully");
+                return null; // Satisfy promise/always-return
             })
             .catch((error) => {
-                console.error("Error fetching pincode data:", error)
-            })
-    }, [])
+                console.error("Error fetching pincode data:", error);
+            });
+    }, []);
 
     React.useEffect(() => {
-        fetch("/api/pincodes")
-            .then((res) => res.json())
-            .then(setPincodeData)
-            .then(() => {
-                console.log("Pincode data fetched successfully")
-            })
-            .catch((error) => {
-                console.error("Error fetching pincode data:", error)
-            })
-    }, [])
-
+        onPincodeChange(selected);
+    }, [onPincodeChange, selected]);
 
     const handleSelect = (pincode: string) => {
-        const data = pincodeData.find((item) => item.pincode.toString() === pincode)
-        setSelected(data ?? null)
-        setOpen(false)
-    }
-
-    // const submitWebsite = () => {
-    //     fetch('https://dbapiservice.onrender.com/dbapis/v1/websites', {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(postpayload),
-    //     })
-    //         .then((response) => {
-    //             if (!response.ok) {
-    //                 throw new Error(`HTTP error! Status: ${response.status}`);
-    //             }
-    //             return response.json();
-    //         })
-    //         .then((result) => {
-    //             console.log("Success:", result);
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error:", error);
-    //         });
-    // }
+        const data = pincodeData.find((item) => item.pincode === pincode);
+        setSelected(data ?? null);
+        setOpen(false);
+    };
 
     return (
         <div className="w-80 space-y-4 mb-8">
@@ -129,7 +100,7 @@ export default function PincodeSelector({ onPincodeChange }: { onPincodeChange: 
                                     .map((item) => (
                                         <CommandItem
                                             key={item.id}
-                                            value={item.pincode.toString()}
+                                            value={item.pincode}
                                             onSelect={handleSelect}
                                         >
                                             {item.pincode} - {item.city}
@@ -148,21 +119,6 @@ export default function PincodeSelector({ onPincodeChange }: { onPincodeChange: 
                     </Command>
                 </PopoverContent>
             </Popover>
-
-            {/* <div className="grid grid-cols-1 gap-4">
-                <div>
-                    <Label>District</Label>
-                    <Input value={selected?.districtName ?? ""} readOnly />
-                </div>
-                <div>
-                    <Label>State</Label>
-                    <Input value={selected?.stateName ?? ""} readOnly />
-                </div>
-                <div>
-                    <Label>City</Label>
-                    <Input value={selected?.city ?? ""} readOnly />
-                </div>
-            </div> */}
         </div>
-    )
+    );
 }

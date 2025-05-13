@@ -1,4 +1,3 @@
-// src/app/stepper/Services.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -9,10 +8,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-interface ServicesProps {
-    updateData: (data: ServicesData) => void;
-}
-
 interface ServicesData {
     subcategories: {
         businesses: {
@@ -20,6 +15,11 @@ interface ServicesData {
             imageUrl: string;
         }[];
     }[];
+}
+
+interface ServicesProps {
+    updateData: (data: ServicesData) => void;
+    prevStep: () => void;
 }
 
 const servicesSchema = z.object({
@@ -36,9 +36,9 @@ const servicesSchema = z.object({
 
 type ServicesFormData = z.infer<typeof servicesSchema>;
 
-const Services = ({ updateData }: ServicesProps) => {
+const Services = ({ updateData, prevStep }: ServicesProps) => {
     const router = useRouter();
-    const [isEditing, setIsEditing] = useState(true); // Start in create mode
+    const [isEditing, setIsEditing] = useState(true);
     const [hasExistingData, setHasExistingData] = useState(false);
     const [file, setFile] = useState<File | null>(null);
     const [imageUrl, setImageUrl] = useState<string>("");
@@ -66,7 +66,6 @@ const Services = ({ updateData }: ServicesProps) => {
         setValue("services", newServices, { shouldValidate: true });
     };
 
-    // Load saved data from localStorage
     useEffect(() => {
         const servicesFormData = localStorage.getItem("servicesFormData");
         const apiResponse = localStorage.getItem("apiResponse");
@@ -114,7 +113,7 @@ const Services = ({ updateData }: ServicesProps) => {
                 imageUrl: existingData.imageUrl || "",
             });
             setHasExistingData(true);
-            setIsEditing(false); // Start in read-only if data exists
+            setIsEditing(false);
         }
     }, [reset, setValue]);
 
@@ -165,6 +164,7 @@ const Services = ({ updateData }: ServicesProps) => {
         e.preventDefault();
         if (!file) {
             setUploadError("Please select a file to upload.");
+
             return;
         }
 
@@ -220,6 +220,8 @@ const Services = ({ updateData }: ServicesProps) => {
         updateData(servicesData);
         setIsEditing(false);
         setHasExistingData(true);
+
+        return;
     };
 
     const handleNext = () => {
@@ -238,6 +240,8 @@ const Services = ({ updateData }: ServicesProps) => {
         localStorage.setItem("servicesFormData", JSON.stringify(dataToSave));
         localStorage.setItem("hasChanges", "true");
         router.push("/review&publish");
+
+        return;
     };
 
     const handlePrevious = () => {
@@ -255,7 +259,9 @@ const Services = ({ updateData }: ServicesProps) => {
         };
         localStorage.setItem("servicesFormData", JSON.stringify(dataToSave));
         localStorage.setItem("hasChanges", "true");
-        router.push("/stepper/welcome"); // Adjust to your previous step
+        prevStep();
+
+        return;
     };
 
     const toggleEdit = () => {

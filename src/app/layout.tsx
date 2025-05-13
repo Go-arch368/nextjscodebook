@@ -30,12 +30,12 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body
                >
-                <ThemeProvider attribute=''>
+             
                     {/* dskj */}
                     {/* {children} */}
                    <Onboarding/>
                     <Toaster />
-                </ThemeProvider>
+             
             </body>
         </html>
     );
