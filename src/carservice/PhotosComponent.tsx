@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Phone,
@@ -16,20 +18,20 @@ export default function PhotosComponent() {
     address,
     general_contact,
     price_list,
-    Quick_Information,
-    Services,
     customer_reviews,
     key_insights,
-    reviews_ratings
+    reviews_ratings,
+    userReviews
   } = data;
+
+  const [hoverIndex, setHoverIndex] = React.useState(-1);
 
   return (
     <div className="flex">
       <div className="w-full p-4">
-        
         <h1 className="text-2xl font-bold mb-4">Photos</h1>
         <div className="flex gap-2 w-full">
-          {photos.map((photo, index) => (
+          {photos?.map((photo, index) => (
             <div key={index} className="flex-1">
               <img
                 src={photo.image}
@@ -47,119 +49,176 @@ export default function PhotosComponent() {
 
         <hr className="my-6 border-gray-300" />
 
-        
         <div>
           <h2 className="text-2xl font-bold mb-5">Price List</h2>
           <div className="grid grid-cols-3 gap-4">
-            {price_list &&
-              price_list.map((price, index) => (
-                <div key={index} className="border p-4 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold">{price.service}</h3>
-                  <p className="text-base text-gray-600">{price.description}</p>
-                  <p className="text-xl font-bold text-black mt-2">
-                    {price.price}
-                  </p>
-                  <div className="mt-4">
-                    <button className="text-sm text-blue-500 hover:text-blue-600">
-                      {price.details_link}
-                    </button>
-                  </div>
-                  <div className="mt-4">
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-                      {price.button}
-                    </button>
-                  </div>
+            {price_list?.map((price, index) => (
+              <div key={index} className="border p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold">{price.service}</h3>
+                <p className="text-base text-gray-600">{price.description}</p>
+                <p className="text-xl font-bold text-black mt-2">
+                  {price.price}
+                </p>
+                <div className="mt-4">
+                  <button className="text-sm text-blue-500 hover:text-blue-600">
+                    {price.details_link}
+                  </button>
                 </div>
-              ))}
+                <div className="mt-4">
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                    {price.button}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <hr className="my-6 border-gray-300" />
 
-       
         <div className="mt-10">
           <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
           <div className="flex gap-6">
-            {customer_reviews &&
-              customer_reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="p-4 border rounded-lg shadow-sm bg-gray-50 w-1/3"
-                >
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
-                    <span>{review.source}</span>
-                    <span>{review.time}</span>
-                  </div>
-                  <h4 className="text-lg font-semibold mb-1">{review.name}</h4>
-                  <p className="text-gray-700">{review.feedback}</p>
+            {customer_reviews?.map((review, index) => (
+              <div
+                key={index}
+                className="p-4 border rounded-lg shadow-sm bg-gray-50 w-1/3"
+              >
+                <div className="flex justify-between text-sm text-gray-600 mb-2">
+                  <span>{review.source}</span>
+                  <span>{review.time}</span>
                 </div>
-              ))}
+                <h4 className="text-lg font-semibold mb-1">{review.name}</h4>
+                <p className="text-gray-700">{review.feedback}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-{data.key_insights && (
+        {key_insights && (
+          <div className="mt-10">
+            <h2 className="text-2xl font-bold mb-4">{key_insights.section_title}</h2>
+            <div className="bg-blue-200 p-6">
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
+                  <h3 className="text-lg font-semibold mb-2">{key_insights.what_users_liked.title}</h3>
+                  <ul className="list-disc list-inside text-gray-700">
+                    {key_insights.what_users_liked.points.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
 
-  <div className="mt-10">
-    <h2 className="text-2xl font-bold mb-4">{data.key_insights.section_title}</h2>
-<div className="bg-blue-200 p-6">
-  <div className="flex flex-col md:flex-row gap-6">
-    {/* What users liked */}
-    <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
-      <h3 className="text-lg font-semibold mb-2">{data.key_insights.what_users_liked.title}</h3>
-      <ul className="list-disc list-inside text-gray-700">
-        {data.key_insights.what_users_liked.points.map((point, index) => (
-          <li key={index}>{point}</li>
-        ))}
-      </ul>
-    </div>
+                <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
+                  <h3 className="text-lg font-semibold mb-2">{key_insights.what_can_be_improved.title}</h3>
+                  <ul className="list-disc list-inside text-gray-700">
+                    {key_insights.what_can_be_improved.points.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
 
-    {/* What can be improved */}
-    <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
-      <h3 className="text-lg font-semibold mb-2">{data.key_insights.what_can_be_improved.title}</h3>
-      <ul className="list-disc list-inside text-gray-700">
-        {data.key_insights.what_can_be_improved.points.map((point, index) => (
-          <li key={index}>{point}</li>
-        ))}
-      </ul>
-    </div>
-  </div>
+              <p className="text-xs text-gray-600 italic mt-4 text-center">
+                {key_insights.disclaimer}
+              </p>
+            </div>
+          </div>
+        )}
 
-  {/* Disclaimer at the bottom */}
-  <p className="text-xs text-gray-600 italic mt-4 text-center">
-    {data.key_insights.disclaimer}
-  </p>
-</div>
+        <hr className="my-6 border-gray-300" />
 
-  </div>
-)}
+        {reviews_ratings && (
+          <div className="p-4 border rounded-lg shadow-md bg-yellow-50 mb-6">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              {reviews_ratings.title}
+            </h3>
+            <div className="flex items-center text-yellow-600 mb-2">
+              <span className="text-2xl font-semibold mr-2">{reviews_ratings.rating}</span>
+              <span className="text-lg text-gray-600">
+                ({reviews_ratings.total_ratings} ratings)
+              </span>
+            </div>
+            <p className="text-lg text-gray-700 mb-6">{reviews_ratings.description}</p>
 
-   <hr className="my-6 border-gray-300" />
+            <div className="flex justify-start mt-12 gap-1.5">
+              {[0, 1, 2, 3, 4].map((index) => (
+                <div
+                  key={index}
+                  className={`border border-gray-300 rounded-md p-4 w-9 h-9 flex items-center justify-center cursor-pointer transition-all duration-200 ${
+                    index <= hoverIndex ? "bg-yellow-400 text-white border-yellow-400" : "text-gray-400"
+                  }`}
+                  onMouseEnter={() => setHoverIndex(index)}
+                  onMouseLeave={() => setHoverIndex(-1)}
+                >
+                  {index <= hoverIndex ? "★" : "☆"}
+                </div>
+              ))}
+            </div>
 
-   {data.reviews_ratings && (
-  <div className="p-4 border rounded-lg shadow-md bg-yellow-50 mb-6">
-    <h3 className="text-2xl font-bold text-gray-800 mb-4">
-      {data.reviews_ratings.title}
-    </h3>
-    <div className="flex items-center text-yellow-600 mb-2 ">
-      <span className="text-2xl font-semibold mr-2">{data.reviews_ratings.rating}</span>
-      <span className="text-lg text-gray-600">
-        ({data.reviews_ratings.total_ratings} ratings)
-      </span>
-    </div>
-    <p className="text-lg text-gray-700 mb-26">{data.reviews_ratings.description}</p>
-    <h1 className="text-xl px-4 py-2 rounded text-gray-900">
-      {data.reviews_ratings.button_text}
-    </h1>
-  </div>
-)}
+            <h1 className="text-xl px-4 py-2 rounded text-gray-900">
+              {reviews_ratings.button_text}
+            </h1>
 
+             <div className="mt-8">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  {userReviews.title}
+                </h3>
 
+                <div className="flex gap-4 mb-6">
+                  {userReviews.sortOrder.map((option, index) => (
+                    <button
+                      key={index}
+                      className="text-gray-600 px-4 py-2 rounded bg-yellow-100 hover:bg-yellow-200"
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+         
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Review Highlights
+              </h3>
+              
+              <div className="flex flex-wrap gap-4 mb-6">
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Short wait time</span>
+                  <span className="text-yellow-500">(5)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Quick booking</span>
+                  <span className="text-yellow-500">(5)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Quick service</span>
+                  <span className="text-yellow-500">(4)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Inefficient service</span>
+                  <span className="text-yellow-500">(4)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Hassle-free experience</span>
+                  <span className="text-yellow-500">(3)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Long wait time</span>
+                  <span className="text-yellow-500">(3)</span>
+                </div>
+                <div className="bg-white px-4 py-2 rounded-full border border-gray-200 flex items-center">
+                  <span className="mr-2">Reasonably priced</span>
+                  <span className="text-yellow-500">(3)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
-      
-
       <div className="w-1/3 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
-  
         <div className="mb-6 p-4 border rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
           <p className="text-sm text-gray-600">
@@ -192,7 +251,6 @@ export default function PhotosComponent() {
           </div>
         </div>
 
-        {/* Car Repair Form */}
         <div className="p-4 border rounded-lg shadow-md bg-white">
           <h2 className="text-2xl font-bold mb-4">
             Get the List of <span className="text-blue-600">Car Repair</span>

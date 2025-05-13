@@ -182,5 +182,49 @@
     "total_ratings": 593,
     "description": "Jd rating index based on 593 ratings across the web",
     "button_text": "Start your Review"
+  },
+  "review":{ 
+  "title": "Recent rating trend",
+  "ratings": [5.0, 5.0, 1.0, 1.0, 1.0, 4.0, 5.0, 5.0, 5.0]
+  },
+  
+  "userReviews": {
+    "title": "User Reviews",
+    "sortOrder": ["Relevant","Latest","High to Low"],
+    "reviewHighlightstitle":"Review Highlights",
+    "reviewHighlights": [
+      
+      {
+        "highlight": "Short wait time",
+        "rating": 5
+      },
+      {
+        "highlight": "Quick booking",
+        "rating": 5
+      },
+      {
+        "highlight": "Quick service",
+        "rating": 4
+      },
+      {
+        "highlight": "Inefficient service",
+        "rating": 4
+      },
+      {
+        "highlight": "Hassle-free experience",
+        "rating": 3
+      },
+      {
+        "highlight": "Long wait time",
+        "rating": 3
+      },
+      {
+        "highlight": "Reasonably priced",
+        "rating": 3
+      }
+    ]
   }
+
+
+
 }
