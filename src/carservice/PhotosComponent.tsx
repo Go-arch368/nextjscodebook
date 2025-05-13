@@ -26,6 +26,30 @@ export default function PhotosComponent() {
 
   const [hoverIndex, setHoverIndex] = React.useState(-1);
 
+  // Sample review data
+  const reviewPeople = {
+    user: {
+      name: "Akshay Doshi",
+      review_count: 15,
+      follower_count: 785
+    },
+    date: "06 Apr",
+    location: "Kasavanahalli Sarjapur Bangalore",
+    title: "Inefficient service",
+    tags: [
+      "Inefficient service",
+      "Unsupportive assistance"
+    ],
+    content: "This is at the Kasavanahalli Sarjapur Bangalore location. The car after delivery has started giving jerking sound when we press the accelerator. I connected with the customer service and the shop manager. There has been complete radio silence from them. Also the shop manager shared a 50k estimate of probable replacement and service charges which I refused completely...pls avoid them",
+    actions: [
+      "Helpful",
+      "Comment",
+      "Share"
+    ],
+    sentiment: "negative",
+    rating: 1
+  };
+
   return (
     <div className="flex">
       <div className="w-full p-4">
@@ -160,24 +184,23 @@ export default function PhotosComponent() {
               {reviews_ratings.button_text}
             </h1>
 
-             <div className="mt-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  {userReviews.title}
-                </h3>
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                {userReviews.title}
+              </h3>
 
-                <div className="flex gap-4 mb-6">
-                  {userReviews.sortOrder.map((option, index) => (
-                    <button
-                      key={index}
-                      className="text-gray-600 px-4 py-2 rounded bg-yellow-100 hover:bg-yellow-200"
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
+              <div className="flex gap-4 mb-6">
+                {userReviews.sortOrder.map((option, index) => (
+                  <button
+                    key={index}
+                    className="text-gray-600 px-4 py-2 rounded bg-yellow-100 hover:bg-yellow-200"
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
+            </div>
 
-         
             <div className="mt-8">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 Review Highlights
@@ -214,6 +237,38 @@ export default function PhotosComponent() {
                 </div>
               </div>
             </div>
+
+            {/* Detailed User Review Section */}
+       {data.reviewPeople && data.reviewPeople.map((review, index) => (
+  <div key={index} className="p-4 mb-6 border rounded shadow bg-white">
+    <div className="flex items-center justify-between mb-2">
+      <h4 className="text-lg font-semibold text-gray-800">{review.user.name}</h4>
+      <span className="text-sm text-gray-500">{review.date}</span>
+    </div>
+    <p className="text-sm text-gray-600 mb-1">{review.location}</p>
+    <h5 className="text-md font-bold text-red-600">{review.title}</h5>
+    <div className="flex flex-wrap gap-2 my-2">
+      {review.tags.map((tag, idx) => (
+        <span key={idx} className="px-2 py-1 bg-gray-100 rounded text-sm text-gray-700">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <p className="text-gray-700 mb-3">{review.content}</p>
+    <div className="flex items-center gap-3 text-sm text-gray-600">
+      <span className={`font-semibold ${review.sentiment === 'positive' ? 'text-green-600' : 'text-red-600'}`}>
+        {review.sentiment.charAt(0).toUpperCase() + review.sentiment.slice(1)}
+      </span>
+      <span className="text-yellow-500 font-bold">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span>
+    </div>
+    <div className="flex gap-4 mt-2 text-sm text-blue-600">
+      {review.actions.map((action, idx) => (
+        <button key={idx} className="hover:underline">{action}</button>
+      ))}
+    </div>
+  </div>
+))}
+
           </div>
         )}
       </div>

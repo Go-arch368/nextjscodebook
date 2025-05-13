@@ -223,8 +223,52 @@
         "rating": 3
       }
     ]
+  },
+ "reviewPeople": [
+  {
+    "user": {
+      "name": "Akshay Doshi",
+      "review_count": 15,
+      "follower_count": 785
+    },
+    "date": "06 Apr",
+    "location": "Kasavanahalli Sarjapur Bangalore",
+    "title": "Inefficient service",
+    "tags": [
+      "Inefficient service",
+      "Unsupportive assistance"
+    ],
+    "content": "This is at the Kasavanahalli Sarjapur Bangalore location. The car after delivery has started giving jerking sound when we press the accelerator. I connected with the customer service and the shop manager. There has been complete radio silence from them. Also the shop manager shared a 50k estimate of probable replacement and service charges which I refused completely...pls avoid them",
+    "actions": [
+      "Helpful",
+      "Comment",
+      "Share"
+    ],
+    "sentiment": "negative",
+    "rating": 1
+  },
+  {
+    "user": {
+      "name": "Vankudoth Suresh Nayak",
+      "review_count": 15,
+      "follower_count": 785
+    },
+    "date": "06 Apr",
+    "location": "Kasavanahalli Sarjapur Bangalore",
+    "title": "Inefficient service",
+    "tags": [
+      "Inefficient service",
+      "Unsupportive assistance"
+    ],
+    "content": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagnostics, and more. The staff was knowledgeable and provided great customer service. I highly recommend their bb",
+    "actions": [
+      "Helpful",
+      "Comment",
+      "Share"
+    ],
+    "sentiment": "positive",
+    "rating": 5
   }
-
-
+]
 
 }
