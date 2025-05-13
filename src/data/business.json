@@ -12,6 +12,7 @@
     },
     "years_in_business": "10 Years in Business",
     "booking_info": "Quick booking",
+    "information":["Overview","Photos","Price List","Quick Information","Services","Reviews"],
     "contact": {
       "phone": "08972230173",
       "actions": [

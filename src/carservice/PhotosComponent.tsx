@@ -7,6 +7,7 @@ import {
   MessageCircle,
   Edit,
   Share2,
+  CloudUpload
 } from "lucide-react";
 import data from "@/data/business.json";
 
@@ -22,12 +23,13 @@ export default function PhotosComponent() {
     key_insights,
     reviews_ratings,
     userReviews,
-    listingCategories
+    listingCategories,
+    
   } = data;
 
   const [hoverIndex, setHoverIndex] = React.useState(-1);
 
-  // Sample review data
+  
   const reviewPeople = {
     user: {
       name: "Akshay Doshi",
@@ -52,8 +54,24 @@ export default function PhotosComponent() {
   };
 
   return (
+    <div>
+          <div className="mt-4">
+  <ul className="flex flex-wrap gap-4">
+    {business.information && Array.isArray(business.information) ? (
+      business.information.map((info, index) => (
+        <li key={index} className={`font-medium text-lg p-2 ${info === "Overview" ? 'text-blue-500' : ''}`}>
+          {info}
+        </li>
+      ))
+    ) : (
+      <li className="font-bold text-lg">No information available</li>
+    )}
+  </ul>
+     </div>
     <div className="flex">
-      <div className="w-full p-4">
+    <div className="w-full p-4 border-2 mt-3 rounded-sm bg-gray-10 shadow-md">
+
+
         <h1 className="text-2xl font-bold mb-4">Photos</h1>
         <div className="flex gap-2 w-full">
           {photos?.map((photo, index) => (
@@ -61,15 +79,17 @@ export default function PhotosComponent() {
               <img
                 src={photo.image}
                 alt={photo.description}
-                className="w-full h-32 object-cover rounded-lg shadow hover:shadow-lg transition-shadow"
+                className="w-66 h-34 object-cover rounded-lg shadow hover:shadow-lg transition-shadow"
               />
             </div>
           ))}
         </div>
         <div className="mt-4 flex justify-start">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            Upload Photos
-          </button>
+         <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2">
+  <CloudUpload className="w-5 h-5" />
+  Upload Photos
+</button>
+
         </div>
 
         <hr className="my-6 border-gray-300" />
@@ -239,7 +259,7 @@ export default function PhotosComponent() {
               </div>
             </div>
 
-            {/* Detailed User Review Section */}
+         
             {data.reviewPeople && data.reviewPeople.map((review, index) => (
               <div key={index} className="p-4 mb-6 border rounded shadow bg-white">
                 <div className="flex items-center justify-between mb-2">
@@ -273,7 +293,7 @@ export default function PhotosComponent() {
         )}
       </div>
 
-      <div className="w-2/5 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
+      <div className="w-2/5 p-4 bg-white  border-gray-200 rounded-lg mt-1">
         <div className="mb-6 p-4 border rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
           <p className="text-sm text-gray-600">
@@ -386,6 +406,7 @@ export default function PhotosComponent() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
