@@ -94,30 +94,33 @@ export default function PhotosComponent() {
 
         <hr className="my-6 border-gray-300" />
 
-        <div>
-          <h2 className="text-2xl font-bold mb-5">Price List</h2>
-          <div className="grid grid-cols-3 gap-4">
-            {price_list?.map((price, index) => (
-              <div key={index} className="border p-4 rounded-lg shadow-md">
-                <h3 className="text-lg font-semibold">{price.service}</h3>
-                <p className="text-base text-gray-600">{price.description}</p>
-                <p className="text-xl font-bold text-black mt-2">
-                  {price.price}
-                </p>
-                <div className="mt-4">
-                  <button className="text-sm text-blue-500 hover:text-blue-600">
-                    {price.details_link}
-                  </button>
-                </div>
-                <div className="mt-4">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-                    {price.button}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+<div>
+  <h2 className="text-2xl font-bold mb-5">Price List</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+    {price_list?.map((price, index) => (
+      <div
+        key={index}
+        className="border p-6 rounded-xl shadow-md bg-white max-w-[500px] h-70 w-full mx-auto"
+      >
+        <h3 className="text-lg font-semibold mb-1">{price.service}</h3>
+        <p className="text-gray-600 text-sm mb-2">{price.description}</p>
+        <p className="text-xl font-bold text-black mb-4">{price.price}</p>
+
+        {price.details_link && (
+          <button className="text-sm text-blue-500 hover:text-blue-600 mb-4 underline">
+            {price.details_link}
+          </button>
+        )}
+
+        <button className="w-full bg-white  text-blue-600 px-4 py-1 rounded border-2 border-blue-200 hover:bg-blue-600 hover:text-white transition duration-200">
+          {price.button}  
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
+
+
 
         <hr className="my-6 border-gray-300" />
 
