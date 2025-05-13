@@ -21,7 +21,8 @@ export default function PhotosComponent() {
     customer_reviews,
     key_insights,
     reviews_ratings,
-    userReviews
+    userReviews,
+    listingCategories
   } = data;
 
   const [hoverIndex, setHoverIndex] = React.useState(-1);
@@ -239,41 +240,40 @@ export default function PhotosComponent() {
             </div>
 
             {/* Detailed User Review Section */}
-       {data.reviewPeople && data.reviewPeople.map((review, index) => (
-  <div key={index} className="p-4 mb-6 border rounded shadow bg-white">
-    <div className="flex items-center justify-between mb-2">
-      <h4 className="text-lg font-semibold text-gray-800">{review.user.name}</h4>
-      <span className="text-sm text-gray-500">{review.date}</span>
-    </div>
-    <p className="text-sm text-gray-600 mb-1">{review.location}</p>
-    <h5 className="text-md font-bold text-red-600">{review.title}</h5>
-    <div className="flex flex-wrap gap-2 my-2">
-      {review.tags.map((tag, idx) => (
-        <span key={idx} className="px-2 py-1 bg-gray-100 rounded text-sm text-gray-700">
-          {tag}
-        </span>
-      ))}
-    </div>
-    <p className="text-gray-700 mb-3">{review.content}</p>
-    <div className="flex items-center gap-3 text-sm text-gray-600">
-      <span className={`font-semibold ${review.sentiment === 'positive' ? 'text-green-600' : 'text-red-600'}`}>
-        {review.sentiment.charAt(0).toUpperCase() + review.sentiment.slice(1)}
-      </span>
-      <span className="text-yellow-500 font-bold">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span>
-    </div>
-    <div className="flex gap-4 mt-2 text-sm text-blue-600">
-      {review.actions.map((action, idx) => (
-        <button key={idx} className="hover:underline">{action}</button>
-      ))}
-    </div>
-  </div>
-))}
-
+            {data.reviewPeople && data.reviewPeople.map((review, index) => (
+              <div key={index} className="p-4 mb-6 border rounded shadow bg-white">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-lg font-semibold text-gray-800">{review.user.name}</h4>
+                  <span className="text-sm text-gray-500">{review.date}</span>
+                </div>
+                <p className="text-sm text-gray-600 mb-1">{review.location}</p>
+                <h5 className="text-md font-bold text-red-600">{review.title}</h5>
+                <div className="flex flex-wrap gap-2 my-2">
+                  {review.tags.map((tag, idx) => (
+                    <span key={idx} className="px-2 py-1 bg-gray-100 rounded text-sm text-gray-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-3">{review.content}</p>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <span className={`font-semibold ${review.sentiment === 'positive' ? 'text-green-600' : 'text-red-600'}`}>
+                    {review.sentiment.charAt(0).toUpperCase() + review.sentiment.slice(1)}
+                  </span>
+                  <span className="text-yellow-500 font-bold">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span>
+                </div>
+                <div className="flex gap-4 mt-2 text-sm text-blue-600">
+                  {review.actions.map((action, idx) => (
+                    <button key={idx} className="hover:underline">{action}</button>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
 
-      <div className="w-1/3 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
+      <div className="w-2/5 p-4 bg-white border-l-2 border-gray-200 rounded-lg">
         <div className="mb-6 p-4 border rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Contact</h3>
           <p className="text-sm text-gray-600">
@@ -283,11 +283,9 @@ export default function PhotosComponent() {
           <p className="text-sm text-gray-600">
             Hours: {business.hours_summary}
           </p>
-          <p className="text-xs text-gray-500">{business.hours.note}</p>
-        </div>
-
-        <div className="p-4 border rounded-lg shadow-md mb-6">
-          <h3 className="text-lg font-semibold mb-2">Actions</h3>
+          <p className="text-xs text-gray-500 mb-4">{business.hours.note}</p>
+       
+          <h3 className="text-lg font-semibold mb-6">Actions</h3>
           <div className="flex flex-col gap-2">
             {actions.map((action, index) => (
               <button
@@ -372,6 +370,20 @@ export default function PhotosComponent() {
               </button>
             </div>
           </form>
+        </div>
+
+        <div className="mt-6 bg-white p-4 border rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold mb-4">Also Listed In</h3>
+          <div className="flex flex-col gap-2">
+            {listingCategories.map((category, index) => (
+              <div
+                key={index}
+                className="inline-block border border-gray-300 rounded-full px-2 py-1"
+              >
+                <p className="text-sm text-gray-700">{category}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

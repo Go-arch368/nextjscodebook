@@ -1,10 +1,8 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Share2, Pencil, ThumbsUp, MapPin, Phone, MessageSquare, MessageCircle, Check } from "lucide-react";
 
 export function BusinessCard({ business }) {
- 
   if (!business) {
     return <div>Error: Business data is missing</div>;
   }
@@ -18,7 +16,7 @@ export function BusinessCard({ business }) {
 
   return (
     <div className="border rounded-xl p-4 bg-white shadow-sm relative mx-auto">
-     
+
       <div className="absolute right-4 top-4 flex gap-2">
         {business.services.map((service, index) => (
           <Badge key={index} variant="secondary" className="text-xs bg-gray-100 text-gray-800">
@@ -31,29 +29,29 @@ export function BusinessCard({ business }) {
       </div>
 
       <div className="flex flex-col gap-2">
-     
         <div className="flex items-start gap-4">
         
           {business.image && (
             <img
               src={business.image}
               alt={`${business.name} logo`}
-              className="w-20 h-20 rounded-md object-cover"
+              className="w-20 h-20 rounded-md object-cover "
             />
           )}
 
-     
           <div className="flex-1">
-            
-            <h2 className="text-lg font-semibold flex items-center gap-2">
+            <h2 className="text-2xl font-semibold flex items-center gap-2">
               <ThumbsUp className="w-5 h-5 text-gray-600" />
               {business.name}
             </h2>
 
             <div className="flex items-center gap-2 mt-1">
-              <Badge className="bg-green-600 text-white px-2 py-0.5 text-sm">
+             <Badge className="bg-green-600 text-white px-2 py-0.5 text-sm flex items-center gap-1">
                 {business.rating}
-              </Badge>
+  <Star className="w-3 h-3 text-yellow-300 bg-yellow-600" />
+
+</Badge>
+
               <span className="text-sm text-gray-700">
                 {business.total_ratings} Ratings
               </span>
@@ -68,7 +66,6 @@ export function BusinessCard({ business }) {
               )}
             </div>
 
-        
             <div className="text-sm text-gray-700 mt-1 flex items-center gap-1 flex-wrap">
               <span className="flex items-center gap-1">
                 <MapPin className="w-4 h-4 text-gray-600" />
@@ -86,71 +83,72 @@ export function BusinessCard({ business }) {
               <span className="text-black">5 Suggestions</span>
             </div>
 
-     
             <div className="flex justify-start gap-3 mt-2 flex-wrap">
-            
-              <div className="flex items-center space-x-2">
-                {business.contact.actions.map((action, index) => (
-                  <Button
-                    key={index}
-                    variant={action.type === "primary" ? "default" : "outline"}
-                    className={
-                      action.type === "primary"
-                        ? action.label === "Call"
-                          ? "bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-lg"
-                          : "bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg"
-                        : action.label === "WhatsApp"
-                        ? "border border-green-600 text-green-600 hover:bg-green-50 px-6 py-3 text-lg"
-                        : ""
-                    }
-                  >
-                    {action.icon && (
-                      <span className="w-6 h-6 mr-2">
-                        {action.icon === "Phone" ? (
-                          <Phone className="w-6 h-6" />
-                        ) : action.icon === "MessageSquare" ? (
-                          <MessageSquare className="w-6 h-6" />
-                        ) : action.icon === "MessageCircle" ? (
-                          <MessageCircle className="w-6 h-6" />
-                        ) : (
-                          action.icon
-                        )}
-                      </span>
-                    )}
-                    <span className="truncate">
-                      {action.label === "Call" ? business.contact.phone : action.label}
-                    </span>
-                  </Button>
-                ))}
-            
-                <Button
-                  variant="outline"
-                  className="border border-gray-300 px-6 py-3 text-lg hover:bg-gray-100"
+              <div className="flex items-center space-x-4">
+             
+                <Button 
+                  variant="default" 
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 flex items-center gap-2 text-lg"
                 >
-                  <Share2 className="w-6 h-6" />
+                  <Phone className="w-5 h-5" />
+                  <span>9344667522</span>
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border border-gray-300 px-6 py-3 text-lg hover:bg-gray-100"
+
+                <Button 
+                  variant="outline" 
+                  className="border border-blue-600 bg-blue-600 hover:bg-blue-400 hover:text-white text-white px-4 py-3 flex items-center gap-2 text-lg"
                 >
-                  <Pencil className="w-6 h-6" />
+                  <MessageSquare className="w-5 h-5" />
+                  <span>Enquire Now</span>
                 </Button>
+
+               
+                <Button 
+                  variant="outline" 
+                  className="border border-green-600 text-green-600 hover:bg-green-50 px-4 py-3 flex items-center gap-2 text-lg"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
+                </Button>
+
+            
+                <Button 
+                  variant="outline" 
+                  className="border border-gray-600 text-gray-600 hover:bg-gray-50 px-4 py-3 flex items-center gap-2 text-lg"
+                >
+                  <Share2 className="w-5 h-5" />
+             
+                </Button>
+
+                <Button 
+                  variant="outline" 
+                  className="border border-yellow-600 text-yellow-600 hover:bg-yellow-50 px-4 py-3 flex items-center gap-2 text-lg"
+                >
+                  <Pencil className="w-5 h-5" />
+                 
+                </Button>
+                <div className="flex flex-end pl-90">
+                   <h1 className="text-sm font-medium text-gray-700">click to rate</h1>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      
-      <div className="flex justify-end items-center mt-3 gap-2">
-        <span className="text-sm font-medium text-gray-700">Click to Rate</span>
-        {[...Array(5)].map((_, idx) => (
-          <Star
-            key={idx}
-            className="w-5 h-5 text-gray-400 hover:text-yellow-400 cursor-pointer"
-          />
-        ))}
-      </div>
+     <div className="flex justify-end items-center mt-4 gap-3">
+  {[...Array(5)].map((_, idx) => (
+    <div
+      key={idx}
+      className="p-1 rounded-md border border-gray-400 hover:border-yellow-400 transition-all duration-300"
+    >
+      <Star
+        className="w-6 h-6 text-gray-400 hover:text-yellow-400 cursor-pointer transition-colors duration-300"
+      />
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }
