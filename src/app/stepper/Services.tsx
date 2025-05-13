@@ -147,7 +147,7 @@ const Services = ({ updateData, prevStep }: ServicesProps) => {
         if (!["image/jpeg", "image/png", "image/gif"].includes(selectedFile.type)) {
             setUploadError("Only JPEG, PNG, or GIF files are supported.");
             setFile(null);
-            return;
+           return;
         }
 
         if (selectedFile.size > 5 * 1024 * 1024) {
@@ -299,7 +299,7 @@ const Services = ({ updateData, prevStep }: ServicesProps) => {
                     <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Services & Gallery</h2>
                     {isReadOnly && (
                         <button
-                            onClick={toggleEdit}
+onClick={toggleEdit}
                             className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
                             aria-label="Edit Services and Gallery"
                         >

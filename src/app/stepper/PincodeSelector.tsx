@@ -22,7 +22,7 @@ import { Label } from "@/components/ui/label";
 interface PincodeData {
     id: number;
     officeName: string;
-    pincode: string; // Changed to string for consistency
+    pincode: string;
     districtName: string;
     taluk: string;
     stateName: string;
@@ -45,10 +45,12 @@ export default function PincodeSelector({ onPincodeChange }: { onPincodeChange: 
                     pincode: String(item.pincode).trim(),
                 }));
                 setPincodeData(normalizedData);
+
                 return normalizedData; // Satisfy promise/always-return
             })
             .then(() => {
                 console.log("Pincode data fetched successfully");
+
                 return null; // Satisfy promise/always-return
             })
             .catch((error) => {
