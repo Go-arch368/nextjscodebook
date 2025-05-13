@@ -7,7 +7,10 @@ import {
   MessageCircle,
   Edit,
   Share2,
-  CloudUpload
+  CloudUpload,
+  Check,
+   ThumbsUp,
+   ChartSpline 
 } from "lucide-react";
 import data from "@/data/business.json";
 
@@ -24,7 +27,8 @@ export default function PhotosComponent() {
     reviews_ratings,
     userReviews,
     listingCategories,
-    
+    Quick_Information,
+    Services
   } = data;
 
   const [hoverIndex, setHoverIndex] = React.useState(-1);
@@ -122,25 +126,75 @@ export default function PhotosComponent() {
 
 
 
+
         <hr className="my-6 border-gray-300" />
 
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
-          <div className="flex gap-6">
-            {customer_reviews?.map((review, index) => (
-              <div
-                key={index}
-                className="p-4 border rounded-lg shadow-sm bg-gray-50 w-1/3"
-              >
-                <div className="flex justify-between text-sm text-gray-600 mb-2">
-                  <span>{review.source}</span>
-                  <span>{review.time}</span>
-                </div>
-                <h4 className="text-lg font-semibold mb-1">{review.name}</h4>
-                <p className="text-gray-700">{review.feedback}</p>
+         <div className="p-6 rounded-lg">
+          <h2 className="text-2xl font-bold mb-5">Quick Information</h2>
+          {Quick_Information &&
+            Quick_Information.map((info, index) => (
+              <div key={index} className="mb-6">
+                <h4 className="text-lg ">{info.Qname}</h4>
+                <p className="text-base text-gray-700 mb-3 font-semibold">{info.Qdescription}</p>
+                <h4 className="text-lg ">{info.Qestablished}</h4>
+                <p className="text-base text-gray-700 font-semibold">{info.Qestablished_year}</p>
               </div>
             ))}
+            </div>
+
+             <hr className=" border-gray-300" />
+
+              <div className="mt-8 px-5">
+          
+            {Services &&
+              Services.map((service, index) => (
+                <div key={index} className="mb-4">
+                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Check />
+                    {service.sname}
+                  </h2>
+
+                  <ul className="list-disc list-inside text-base text-gray-700 mt-2 px-6 space-y-1">
+                    <p className="underline">{service.sdata1}</p>
+                    <p className="underline">{service.sdata2}</p>
+                  </ul>
+                </div>
+              ))}
           </div>
+        
+        
+             <hr className=" border-gray-300" />
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-4">Our Happy Customers </h2>
+  <div className="flex gap-6">
+  {customer_reviews?.slice(0, 3).map((review, index) => (
+    <div
+      key={index}
+      className="p-4 border rounded-lg shadow-sm bg-gray-50 w-1/3"
+    >
+      {/* Avatar and Name */}
+      <div className="flex items-center gap-3 mb-2">
+        <img
+          src={'/default-avatar.png'}
+          alt={review.name}
+          className="w-10 h-10 rounded-full object-cover"
+        />
+        <h4 className="text-lg font-semibold">{review.name}</h4>
+      </div>
+
+      {/* Feedback */}
+      <p className="text-gray-700 mb-2">{review.feedback}</p>
+
+      {/* Source and Time */}
+      <div className="text-sm text-gray-600">
+        <span>{review.source}</span> • <span>{review.time}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
+
         </div>
 
         {key_insights && (
@@ -149,7 +203,7 @@ export default function PhotosComponent() {
             <div className="bg-blue-200 p-6">
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
-                  <h3 className="text-lg font-semibold mb-2">{key_insights.what_users_liked.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2"><ThumbsUp/>{key_insights.what_users_liked.title}</h3>
                   <ul className="list-disc list-inside text-gray-700">
                     {key_insights.what_users_liked.points.map((point, index) => (
                       <li key={index}>{point}</li>
@@ -158,7 +212,7 @@ export default function PhotosComponent() {
                 </div>
 
                 <div className="bg-white p-4 rounded-xl shadow-md w-full md:w-1/2">
-                  <h3 className="text-lg font-semibold mb-2">{key_insights.what_can_be_improved.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2"><ChartSpline/>{key_insights.what_can_be_improved.title}</h3>
                   <ul className="list-disc list-inside text-gray-700">
                     {key_insights.what_can_be_improved.points.map((point, index) => (
                       <li key={index}>{point}</li>

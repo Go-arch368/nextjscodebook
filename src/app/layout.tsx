@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-
+import Onboarding from './stepper/Stepper';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
@@ -29,11 +29,11 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
         <html suppressHydrationWarning lang='en'>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground overscroll-none antialiased`}>
+               >
                 <ThemeProvider attribute=''>
                     
-                    {children}
-                   
+                    {/* {children} */}
+                   <Onboarding/>
                     <Toaster />
                 </ThemeProvider>
             </body>
