@@ -159,12 +159,12 @@ export default function Onboarding() {
 
     return (
         <>
-            {/* Stepper Header */}
+           
             <div className="w-full py-4 px-4 sm:px-8 md:px-16 lg:px-24 fixed bg-gray-50 shadow-md z-20">
                 <div className="max-w-4xl mx-auto flex flex-row gap-4 sm:gap-8">
-                    {/* Stepper Navigation */}
+                    
                     <div className="relative mb-4 grow">
-                        {/* Connecting Lines */}
+                        
                         <div className="absolute top-4 left-0 right-0 h-0.5 z-0 px-4 sm:px-8">
                             <div className="relative w-full h-full">
                                 {steps.map((step, index) => {
@@ -189,7 +189,7 @@ export default function Onboarding() {
                             </div>
                         </div>
 
-                        {/* Step Circles and Titles */}
+                 
                         <div className="flex justify-between items-center relative z-10">
                             {steps.map((step) => {
                                 const StepIcon = step.icon;
@@ -226,7 +226,7 @@ export default function Onboarding() {
                                             )}
                                         </div>
 
-                                        {/* Step Title with Checkmark */}
+                                       
                                         <div className="flex items-center mt-3">
                                             <p
                                                 className={`text-xs text-center ${
@@ -239,7 +239,7 @@ export default function Onboarding() {
                                             >
                                                 {step.title}
                                             </p>
-                                            {/* Checkmark Next to Title for Completed Steps */}
+                                          
                                             {isCompleted && (
                                                 <CircleCheck className="h-3 w-3 text-green-500 ml-1" />
                                             )}
@@ -250,7 +250,6 @@ export default function Onboarding() {
                         </div>
                     </div>
 
-                    {/* Step Counter */}
                     <div className="text-center px-4 py-3 rounded-full flex-none self-center text-white font-medium bg-blue-600">
                         <p className="text-sm">
                             Step {currentStep} / {steps.length}
@@ -259,14 +258,14 @@ export default function Onboarding() {
                 </div>
             </div>
 
-            {/* Content Area */}
+          
             <div className="w-full max-w-4xl mx-auto pb-8 px-4 sm:px-6 lg:px-8">
                 <div className="pt-40 max-w-4xl mx-auto">
                     <div className="bg-white rounded-lg p-6 shadow-md mb-6 min-h-64">
                         {renderStepContent()}
                     </div>
 
-                    {/* Navigation Buttons */}
+        
                     <div className="flex justify-between mt-6 pb-8">
                         <button
                             onClick={prevStep}
