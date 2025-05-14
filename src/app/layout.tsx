@@ -30,10 +30,8 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body
                >
-             
-                    {/* dskj */}
-                    {/* {children} */}
-                   <Onboarding/>
+             {children}
+                   {/* <Onboarding/> */}
                     <Toaster />
              
             </body>

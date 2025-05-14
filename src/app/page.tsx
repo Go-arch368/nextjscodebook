@@ -1,7 +1,8 @@
 // pages/index.js (or wherever your HomePage is)
-//import BusinessCard from "@/carservice/businessdetails";
+import BusinessCard from "@/carservice/businessdetails";
 import data from "@/data/business.json"; // Adjust the path based on your structure
 import PhotosComponent from "@/carservice/PhotosComponent";
+import Onboarding from "./stepper/Stepper";
 export default function HomePage() {
   // Log the data to debug
   console.log("Data loaded:", data);
@@ -12,9 +13,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className="p-6">
-      {/* <BusinessCard business={data.business} /> */}
-      <PhotosComponent/>
+    <div >
+      <Onboarding/>
+      {/* <BusinessCard business={data.business} />
+      <PhotosComponent/> */}
     </div>
   );
 }
