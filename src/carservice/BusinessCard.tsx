@@ -26,6 +26,9 @@ interface Business {
   hours: { status: string };
   years_in_business: string;
   booking_info: string;
+  contact: {
+    phone: string;
+  };
 }
 
 export function BusinessCard({ business }: { business: Business }) {
@@ -132,7 +135,7 @@ export function BusinessCard({ business }: { business: Business }) {
                       }
                     `}
                   </style>
-                  <span>9344667522</span>
+                  <span>{business.contact.phone}</span>
                 </Button>
 
                 <Button

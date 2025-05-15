@@ -1,0 +1,429 @@
+{
+  "listings": {
+    "Automobile-CarRepair-560062": {
+      "WebsiteIdentifier": "Automobile-CarRepair-560062",
+      "Category": "Automobile",
+      "Subcategory": "CarRepair",
+      "business": {
+        "name": "MyTVS MultiBrand Car Service",
+        "rating": 4.7,
+        "total_ratings": 593,
+        "badges": ["Trust", "Verified", "Claimed"],
+        "location": "Kapurbawal-thane West, Thane",
+        "hours": { "status": "Open 24 Hrs" },
+        "years_in_business": "10 Years in Business",
+        "booking_info": "Quick booking",
+        "information": ["Overview", "Photos", "Price List", "Quick Information", "Services", "Reviews"],
+        "contact": { "phone": "08972230173" },
+        "image": "https://picsum.photos/800/400?random=1",
+        "businessId": "12345670",
+        "services": ["Car Repair & Services", "Car Towing Services"]
+      },
+      "photos": [
+        { "source": "myTVS", "description": "India's Largest Multi-Brand Car Service Network", "image": "logo_myTVS.jpg" },
+        { "description": "Car interior - door panel", "image": "car_interior_door.jpg" },
+        { "description": "Car center console", "image": "car_center_console.jpg" }
+      ],
+      "price_list": [
+        { "service": "Car Wash Service", "description": "Car Wash Service involves thorough washing of the vehicle inside and out.", "price": "₹ 250 onwards /service", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Car Denting and Painting Service", "description": "Car denting and painting services to restore your vehicle's appearance.", "price": "₹ 100 onwards /service", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Car Battery Repair & Services", "description": "Car Battery Repair & Services to ensure your vehicle stays powered.", "price": "₹ 300 onwards /service", "details_link": "View Details", "button": "Enquire now" }
+      ],
+      "Quick_Information": [
+        { "Qname": "Business Summary", "Qdescription": "Car repair centre providing expert repairs for engines, windshields, and batteries, along with 24-hour towing and detailing services.", "Qestablished": "Year of Establishment", "Qestablished_year": "2015" }
+      ],
+      "Services": [
+        { "sname": "Services", "sdata1": "DoorStep Service", "sdata2": "Towing Service" }
+      ],
+      "general_contact": { "phone": "09972230173" },
+      "address": "304, 3RD FLOOR, ORION BUSINESS PARK, BESIDE CENE WANDER MALL, G B ROAD, Kapurbawdi-Thane-West-400607",
+      "actions": [
+        { "label": "Get Directions", "icon": "directions" },
+        { "label": "Copy", "icon": "copy" },
+        { "label": "Suggest New Timings", "icon": "edit" },
+        { "label": "Send Enquiry by Email", "icon": "email" },
+        { "label": "Get Info via SMS/Email", "icon": "message" },
+        { "label": "Share", "icon": "share" },
+        { "label": "Tap to rate", "icon": "save" },
+        { "label": "Edit this listing", "icon": "calendar" },
+        { "label": "Visit our Website", "icon": "link" }
+      ],
+      "customer_reviews": [
+        { "source": "Justdial", "name": "Vankudoth Suresh Nayak", "feedback": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagn ...More", "time": "01:17 PM 29 Sept, 2024" },
+        { "source": "Justdial", "name": "Durbai Minava", "feedback": "My experience with MyTVS was excellent! Booking a service was quick and hassle-free. The staff was friendly and the repair work was done efficien ...More", "time": "01:36 PM 12 Aug, 2024" },
+        { "source": "Justdial", "name": "Gajanan Jaware", "feedback": "I had an excellent experience with MyTVS for vehicle repairs and services. The business accepts insurance, provides quick service with short wait ...More", "time": "05:37 PM 30 Jul, 2024" }
+      ],
+      "key_insights": {
+        "section_title": "Key Insights",
+        "what_users_liked": { "title": "What users liked", "points": ["Friendly and polite staff", "Knowledgeable and skilled technician"] },
+        "what_can_be_improved": { "title": "What can be improved", "points": ["No negative comments were mentioned in the reviews."] },
+        "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+        "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-02-20" }
+      },
+      "reviews_ratings": {
+        "title": "Reviews & Ratings",
+        "rating": 4.7,
+        "total_ratings": 593,
+        "description": "Jd rating index based on 593 ratings across the web",
+        "button_text": "Start your Review"
+      },
+      "review": {
+        "title": "Recent rating trend",
+        "ratings": [5.0, 5.0, 1.0, 1.0, 1.0, 4.0, 5.0, 5.0, 5.0]
+      },
+      "userReviews": {
+        "title": "User Reviews",
+        "sortOrder": ["Relevant", "Latest", "High to Low"],
+        "reviewHighlightstitle": "Review Highlights",
+        "reviewHighlights": [
+          { "highlight": "Short wait time", "rating": 5 },
+          { "highlight": "Quick booking", "rating": 5 },
+          { "highlight": "Quick service", "rating": 4 },
+          { "highlight": "Inefficient service", "rating": 4 },
+          { "highlight": "Hassle-free experience", "rating": 3 },
+          { "highlight": "Long wait time", "rating": 3 },
+          { "highlight": "Reasonably priced", "rating": 3 }
+        ]
+      },
+      "reviewPeople": [
+        {
+          "user": { "name": "Akshay Doshi", "review_count": 15, "follower_count": 785 },
+          "date": "06 Apr",
+          "location": "Kasavanahalli Sarjapur Bangalore",
+          "title": "Inefficient service",
+          "tags": ["Inefficient service", "Unsupportive assistance"],
+          "content": "This is at the Kasavanahalli Sarjapur Bangalore location. The car after delivery has started giving jerking sound when we press the accelerator. I connected with the customer service and the shop manager. There has been complete radio silence from them. Also the shop manager shared a 50k estimate of probable replacement and service charges which I refused completely...pls avoid them",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "negative",
+          "rating": 1
+        },
+        {
+          "user": { "name": "Vankudoth Suresh Nayak", "review_count": 15, "follower_count": 785 },
+          "date": "06 Apr",
+          "location": "Kasavanahalli Sarjapur Bangalore",
+          "title": "Excellent service",
+          "tags": ["Great service", "Knowledgeable staff"],
+          "content": "My experience at MyTVS was excellent. They offer a wide range of facilities including vehicle repairs and services, wheel alignment, engine diagnostics, and more. The staff was knowledgeable and provided great customer service. I highly recommend their bb",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "positive",
+          "rating": 5
+        }
+      ],
+      "listingCategories": [
+        "Car Towing Services",
+        "Garages",
+        "Car Repair & Services",
+        "Maruti Suzuki - Car Repair & Services",
+        "Car Battery Jump Start Services",
+        "Towing Services",
+        "Hyundai - Car Repair & Services",
+        "Mahindra - Car Repair & Services",
+        "Car Washing Services",
+        "24 Hours Car Repair & Services"
+      ]
+    },
+    "Automobile-CarSales-560062": {
+      "WebsiteIdentifier": "Automobile-CarSales-560062",
+      "Category": "Automobile",
+      "Subcategory": "CarSales",
+      "business": {
+        "name": "Kataria Automobiles Pvt Ltd",
+        "rating": 4.4,
+        "total_ratings": "1992 Rating",
+        "badges": ["SUV Car Dealers", "Car Dealers"],
+        "location": "Jarganahalli, Bangalore",
+        "hours": { "status": "Open 9 AM - 7 PM" },
+        "years_in_business": "22 Years in Business",
+        "booking_info": "Schedule a Test Drive",
+        "information": ["Overview", "Cars", "Photos", "Quick Information", "Services", "Reviews"],
+        "contact": { "phone": "08012345678" },
+        "image": "https://picsum.photos/800/400?random=2",
+        "businessId": "12345671",
+        "services": ["New Car Sales", "Used Car Sales", "Car Financing", "Test Drives"]
+      },
+      "photos": [
+        { "source": "TrueValue", "description": "Showroom Display", "image": "showroom.jpg" },
+        { "description": "New Car Model", "image": "new_car.jpg" },
+        { "description": "Used Car Inventory", "image": "used_car.jpg" }
+      ],
+      "price_list": [
+        { "service": "Maruti Suzuki Swift", "description": "New Maruti Suzuki Swift, petrol variant with advanced features.", "price": "₹ 6.5 Lakh onwards", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Hyundai Creta (Used)", "description": "Certified pre-owned Hyundai Creta, 2020 model.", "price": "₹ 12 Lakh onwards", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Car Financing", "description": "Flexible financing options with low interest rates.", "price": "Varies", "details_link": "View Details", "button": "Enquire now" }
+      ],
+      "Quick_Information": [
+        { "Qname": "Business Summary", "Qdescription": "Car Dealer showcasing a range of Maruti Suzuki models, including hatchbacks, sedans, and SUVs, while providing exceptional customer service.", "Qestablished": "Year of Establishment", "Qestablished_year": "2017" }
+      ],
+      "Services": [
+        { "sname": "Services", "sdata1": "Test Drive at Home", "sdata2": "Online Financing Approval" }
+      ],
+      "general_contact": { "phone": "08012345678" },
+      "address": "No. 123, Whitefield Main Road, Bangalore-560066",
+      "actions": [
+        { "label": "Get Directions", "icon": "directions" },
+        { "label": "Book Test Drive", "icon": "calendar" },
+        { "label": "Share", "icon": "share" },
+        { "label": "Visit our Website", "icon": "link" }
+      ],
+      "customer_reviews": [
+        { "source": "Justdial", "name": "Rahul Sharma", "feedback": "Great experience buying my first car. The staff was helpful, and the test drive process was smooth.", "time": "02:45 PM 10 Oct, 2024" },
+        { "source": "Justdial", "name": "Priya Menon", "feedback": "Good collection of used cars, but the financing process took longer than expected.", "time": "11:20 AM 15 Sep, 2024" }
+      ],
+      "key_insights": {
+        "section_title": "Key Insights",
+        "what_users_liked": { "title": "What users liked", "points": ["Some sales executives were knowledgeable and professional.", "The booking process was smooth, and the staff were courteous and professional.","Good service quality and technical knowledge in the workshop."] },
+        "what_can_be_improved": { "title": "What can be improved", "points": ["Some customers complained about fraudulent activities, miscommunications, and cheating with quotes for new cars.","Many negative reviews mentioned poor customer service, irresponsible staff, unresponsiveness to calls/messages, long waiting times, no proper communication about discounts or final prices before sales.","A few customers complained about overcharging for minor work or unnecessary replacements of car parts to increase bills."] },
+        "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+        "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-03-10" }
+      },
+      "reviews_ratings": {
+        "title": "Reviews & Ratings",
+        "rating": 4.5,
+        "total_ratings": 420,
+        "description": "Jd rating index based on 420 ratings across the web",
+        "button_text": "Start your Review"
+      },
+      "review": {
+        "title": "Recent rating trend",
+        "ratings": [4.0, 5.0, 4.0, 3.0, 5.0, 4.0, 5.0]
+      },
+      "userReviews": {
+        "title": "User Reviews",
+        "sortOrder": ["Relevant", "Latest", "High to Low"],
+        "reviewHighlightstitle": "Review Highlights",
+        "reviewHighlights": [
+          { "highlight": "Helpful staff", "rating": 5 },
+          { "highlight": "Smooth test drive", "rating": 4 },
+          { "highlight": "Slow financing", "rating": 3 }
+        ]
+      },
+      "reviewPeople": [
+        {
+          "user": { "name": "Rahul Sharma", "review_count": 10, "follower_count": 500 },
+          "date": "10 Oct, 2024",
+          "location": "Whitefield, Bangalore",
+          "title": "Great Experience",
+          "tags": ["Helpful staff", "Smooth process"],
+          "content": "Kataria Automobiles provided an excellent hassle-free experience. The staff was helpful and the process was smooth. I highly recommend their vehicle products",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "positive",
+          "rating": 5
+        },
+        {
+          "user": { "name": "Priya Menon", "review_count": 8, "follower_count": 300 },
+          "date": "15 Sep, 2024",
+          "location": "Whitefield, Bangalore",
+          "title": "Slow Financing",
+          "tags": ["Good selection", "Slow process"],
+          "content": "I purchased topend wagon-R(A) from this dealer. After 4 days of usage there was squeeking noise from back left of the car. When I spoke to the dealer he said during 1st service team would attend. I gave to the service with this complient. They delivered the car after service wo fixing the problem. I retured the car for service to fix the problem. It is 15days they are not able to identify the issue. They are saying Maruthi support team is involved as Kataria team isnot able to identify. Till now (after 15...",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "neutral",
+          "rating": 3
+        }
+      ],
+      "listingCategories": ["New Car Sales", "Used Car Sales", "Car Financing", "Test Drive Services"]
+    },
+    "Automobile-Tires-560062": {
+      "WebsiteIdentifier": "Automobile-Tires-560062",
+      "Category": "Automobile",
+      "Subcategory": "Tires",
+      "business": {
+        "name": "TyreZone",
+        "rating": 4.8,
+        "total_ratings": 320,
+        "badges": ["Trusted", "Verified"],
+        "location": "Koramangala, Bangalore",
+        "hours": { "status": "Open 8 AM - 8 PM" },
+        "years_in_business": "12 Years in Business",
+        "booking_info": "Quick appointment",
+        "information": ["Overview", "Products", "Price List", "Quick Information", "Services", "Reviews"],
+        "contact": { "phone": "08098765432" },
+        "image": "https://picsum.photos/800/400?random=3",
+        "businessId": "12345672",
+        "services": ["Tire Sales", "Tire Installation", "Wheel Alignment", "Tire Balancing"]
+      },
+      "photos": [
+        { "source": "TyreZone", "description": "Tire Store Front", "image": "tire_store.jpg" },
+        { "description": "Tire Installation", "image": "tire_installation.jpg" },
+        { "description": "Wheel Alignment Equipment", "image": "wheel_alignment.jpg" }
+      ],
+      "price_list": [
+        { "service": "MRF ZVTV Tire", "description": "Tubeless tire for sedans, size 185/65 R15.", "price": "₹ 4,500 per tire", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Wheel Alignment", "description": "Precision wheel alignment for improved handling.", "price": "₹ 800 onwards", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Tire Balancing", "description": "Tire balancing to ensure smooth driving.", "price": "₹ 300 per tire", "details_link": "View Details", "button": "Enquire now" }
+      ],
+      "Quick_Information": [
+        { "Qname": "Business Summary", "Qdescription": "Specialized tire shop offering a wide range of tires, installation, alignment, and balancing services.", "Qestablished": "Year of Establishment", "Qestablished_year": "2013" }
+      ],
+      "Services": [
+        { "sname": "Services", "sdata1": "Free Tire Inspection", "sdata2": "Home Delivery" }
+      ],
+      "general_contact": { "phone": "08098765432" },
+      "address": "No. 456, 5th Block, Koramangala, Bangalore-560095",
+      "actions": [
+        { "label": "Get Directions", "icon": "directions" },
+        { "label": "Book Appointment", "icon": "calendar" },
+        { "label": "Share", "icon": "share" },
+        { "label": "Visit our Website", "icon": "link" }
+      ],
+      "customer_reviews": [
+        { "source": "Justdial", "name": "Anita Rao", "feedback": "Quick service and great tire selection. The staff explained everything clearly.", "time": "03:10 PM 05 Nov, 2024" },
+        { "source": "Justdial", "name": "Karthik V", "feedback": "Good experience, but the wait time for alignment was a bit long.", "time": "09:15 AM 20 Oct, 2024" }
+      ],
+      "key_insights": {
+        "section_title": "Key Insights",
+        "what_users_liked": { "title": "What users liked", "points": ["Wide tire variety", "Knowledgeable staff"] },
+        "what_can_be_improved": { "title": "What can be improved", "points": ["Reduce wait times"] },
+        "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+        "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-04-15" }
+      },
+      "reviews_ratings": {
+        "title": "Reviews & Ratings",
+        "rating": 4.8,
+        "total_ratings": 320,
+        "description": "Jd rating index based on 320 ratings across the web",
+        "button_text": "Start your Review"
+      },
+      "review": {
+        "title": "Recent rating trend",
+        "ratings": [5.0, 4.0, 5.0, 4.0, 5.0, 3.0, 5.0]
+      },
+      "userReviews": {
+        "title": "User Reviews",
+        "sortOrder": ["Relevant", "Latest", "High to Low"],
+        "reviewHighlightstitle": "Review Highlights",
+        "reviewHighlights": [
+          { "highlight": "Quick service", "rating": 5 },
+          { "highlight": "Good tire selection", "rating": 4 },
+          { "highlight": "Long wait time", "rating": 3 }
+        ]
+      },
+      "reviewPeople": [
+        {
+          "user": { "name": "Anita Rao", "review_count": 12, "follower_count": 400 },
+          "date": "05 Nov, 2024",
+          "location": "Koramangala, Bangalore",
+          "title": "Quick and Professional",
+          "tags": ["Quick service", "Great selection"],
+          "content": "Got new tires installed quickly. The staff was professional and explained tire options clearly.",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "positive",
+          "rating": 5
+        },
+        {
+          "user": { "name": "Karthik V", "review_count": 7, "follower_count": 250 },
+          "date": "20 Oct, 2024",
+          "location": "Koramangala, Bangalore",
+          "title": "Good but Slow",
+          "tags": ["Good quality", "Long wait"],
+          "content": "Tires are high quality, but the wait time for wheel alignment was longer than expected.",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "neutral",
+          "rating": 3
+        }
+      ],
+      "listingCategories": ["Tire Sales", "Tire Installation", "Wheel Alignment", "Tire Balancing", "Tubeless Tire Repair"]
+    },
+    "Automobile-AutoParts-560062": {
+      "WebsiteIdentifier": "Automobile-AutoParts-560062",
+      "Category": "Automobile",
+      "Subcategory": "AutoParts",
+      "business": {
+        "name": "AutoSpares Hub",
+        "rating": 4.6,
+        "total_ratings": 280,
+        "badges": ["Trusted", "Verified", "Claimed"],
+        "location": "Jayanagar, Bangalore",
+        "hours": { "status": "Open 10 AM - 6 PM" },
+        "years_in_business": "15 Years in Business",
+        "booking_info": "Order online",
+        "information": ["Overview", "Products", "Price List", "Quick Information", "Services", "Reviews"],
+        "contact": { "phone": "08056789012" },
+        "image": "https://picsum.photos/800/400?random=4",
+        "businessId": "12345673",
+        "services": ["Auto Parts Sales", "OEM Parts", "Aftermarket Parts", "Online Ordering"]
+      },
+      "photos": [
+        { "source": "AutoSpares", "description": "Auto Parts Store", "image": "parts_store.jpg" },
+        { "description": "Car Battery Display", "image": "car_battery.jpg" },
+        { "description": "Brake Pads Section", "image": "brake_pads.jpg" }
+      ],
+      "price_list": [
+        { "service": "Bosch Car Battery", "description": "55Ah battery suitable for compact cars.", "price": "₹ 5,000 onwards", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Brake Pads (OEM)", "description": "Original brake pads for Maruti Suzuki vehicles.", "price": "₹ 1,200 per set", "details_link": "View Details", "button": "Enquire now" },
+        { "service": "Oil Filter", "description": "High-quality oil filter for diesel engines.", "price": "₹ 300 onwards", "details_link": "View Details", "button": "Enquire now" }
+      ],
+      "Quick_Information": [
+        { "Qname": "Business Summary", "Qdescription": "Leading supplier of OEM and aftermarket auto parts with online ordering and fast delivery.", "Qestablished": "Year of Establishment", "Qestablished_year": "2010" }
+      ],
+      "Services": [
+        { "sname": "Services", "sdata1": "Online Ordering", "sdata2": "Free Delivery" }
+      ],
+      "general_contact": { "phone": "08056789012" },
+      "address": "No. 789, 9th Main, Jayanagar, Bangalore-560011",
+      "actions": [
+        { "label": "Get Directions", "icon": "directions" },
+        { "label": "Order Online", "icon": "cart" },
+        { "label": "Share", "icon": "share" },
+        { "label": "Visit our Website", "icon": "link" }
+      ],
+      "customer_reviews": [
+        { "source": "Justdial", "name": "Sanjay Patel", "feedback": "Found genuine parts at reasonable prices. Delivery was prompt.", "time": "04:30 PM 12 Nov, 2024" },
+        { "source": "Justdial", "name": "Meena K", "feedback": "Good selection, but some parts were out of stock.", "time": "10:45 AM 25 Oct, 2024" }
+      ],
+      "key_insights": {
+        "section_title": "Key Insights",
+        "what_users_liked": { "title": "What users liked", "points": ["Genuine parts", "Fast delivery"] },
+        "what_can_be_improved": { "title": "What can be improved", "points": ["Better stock availability"] },
+        "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+        "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-05-01" }
+      },
+      "reviews_ratings": {
+        "title": "Reviews & Ratings",
+        "rating": 4.6,
+        "total_ratings": 280,
+        "description": "Jd rating index based on 280 ratings across the web",
+        "button_text": "Start your Review"
+      },
+      "review": {
+        "title": "Recent rating trend",
+        "ratings": [4.0, 5.0, 4.0, 5.0, 3.0, 4.0, 5.0]
+      },
+      "userReviews": {
+        "title": "User Reviews",
+        "sortOrder": ["Relevant", "Latest", "High to Low"],
+        "reviewHighlightstitle": "Review Highlights",
+        "reviewHighlights": [
+          { "highlight": "Reasonable prices", "rating": 5 },
+          { "highlight": "Prompt delivery", "rating": 4 },
+          { "highlight": "Stock issues", "rating": 3 }
+        ]
+      },
+      "reviewPeople": [
+        {
+          "user": { "name": "Sanjay Patel", "review_count": 9, "follower_count": 350 },
+          "date": "12 Nov, 2024",
+          "location": "Jayanagar, Bangalore",
+          "title": "Reliable Parts",
+          "tags": ["Genuine parts", "Fast delivery"],
+          "content": "Ordered a Bosch battery and it was delivered the next day. Very reliable service.",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "positive",
+          "rating": 5
+        },
+        {
+          "user": { "name": "Meena K", "review_count": 6, "follower_count": 200 },
+          "date": "25 Oct, 2024",
+          "location": "Jayanagar, Bangalore",
+          "title": "Stock Issues",
+          "tags": ["Good selection", "Out of stock"],
+          "content": "They have a good range of parts, but the specific brake pads I needed were out of stock.",
+          "actions": ["Helpful", "Comment", "Share"],
+          "sentiment": "neutral",
+          "rating": 3
+        }
+      ],
+      "listingCategories": ["Auto Parts Sales", "OEM Parts", "Aftermarket Parts", "Car Batteries", "Brake Systems"]
+    }
+  }
+}
