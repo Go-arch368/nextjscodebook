@@ -46,7 +46,6 @@ export default function PhotosComponent() {
   const reportErrorRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
-  // Debounce function to prevent rapid scroll event triggers
   const debounce = (func: (...args: any[]) => void, wait: number) => {
     let timeout: NodeJS.Timeout;
     return (...args: any[]) => {
@@ -55,7 +54,7 @@ export default function PhotosComponent() {
     };
   };
 
-  // Handle scroll to fix the last form at the top of the viewport
+
   useEffect(() => {
     const handleScroll = () => {
       if (reportErrorRef.current && formRef.current) {
@@ -373,7 +372,7 @@ export default function PhotosComponent() {
                     <div className="flex justify-between items-start mb-1">
                       <div className="flex items-center gap-3">
                         <img
-                          src=""
+                          src={"/default-avatar.png"}
                           alt="user"
                           width={55}
                           height={50}
