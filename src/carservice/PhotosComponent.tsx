@@ -1,6 +1,4 @@
-// components/PhotosComponent.tsx
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import {
   Phone,

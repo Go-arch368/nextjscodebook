@@ -74,7 +74,15 @@ const TemplatePage: React.FC = () => {
         throw new Error("Invalid data structure: listings not found");
       }
 
-      const listings = data.listings as Record<string, ListingData>;
+      
+      const rawListings = data.listings as Record<string, any>;
+      const listings: Record<string, ListingData> = {};
+      Object.entries(rawListings).forEach(([key, value]) => {
+        if (value.business && typeof value.business.total_ratings === "string") {
+          value.business.total_ratings = Number(value.business.total_ratings);
+        }
+        listings[key] = value as ListingData;
+      });
       const listing = listings[websiteIdentifier];
       if (listing) {
         setListingData(listing);
