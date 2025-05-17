@@ -61,3 +61,6 @@ async function seedDatabase() {
 }
 
 seedDatabase();
+
+
+// to run this file  "node scripts/seed.js"

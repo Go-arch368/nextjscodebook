@@ -34,7 +34,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts"
-, "src/lib/mongodb.ts"    ],
+, "src/lib/mongodb.ts", "pages/api/scrape.js", "models/BusinessListing.js"    ],
     "exclude": [
         "node_modules"
     ]
