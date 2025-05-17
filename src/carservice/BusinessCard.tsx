@@ -105,7 +105,8 @@ export function BusinessCard({ business }: { business: Business }) {
                 {business.location}
               </span>
               <span className="text-gray-400">•</span>
-              <span className="text-green-600 font-semibold">{business.hours.status}</span>
+              <p>Status: {business?.hours?.status || "Status not available"}</p>
+
               <span className="text-gray-400">•</span>
               <span>{business.years_in_business}</span>
               <span className="text-gray-400">•</span>

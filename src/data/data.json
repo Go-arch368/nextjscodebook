@@ -424,6 +424,1272 @@
         }
       ],
       "listingCategories": ["Auto Parts Sales", "OEM Parts", "Aftermarket Parts", "Car Batteries", "Brake Systems"]
+    },
+    
+  
+"Health&Medical-Hospital-560038":{
+  "WebsiteIdentifier": "Health&Medical-Hospital-560038",
+  "Category": "Health&Medical",
+  "Subcategory": "Hospital",
+  "business": {
+    "name": "Homeocare International Pvt Ltd",
+    "rating": 3.8,
+    "total_ratings": 423,
+    "badges": ["Verified", "Claimed"],
+    "location": "Indiranagar, Bangalore",
+    "hours": { "status": "Open 9 AM - 8 PM" },
+    "years_in_business": "19 Years in Healthcare",
+    "booking_info": "Offline",
+    "information": ["Overview", "Photos", "Services", "Doctors", "Reviews"],
+    "contact": { "phone": "09980022962" },
+    "image": "https://content.jdmagicbox.com/v2/comp/bangalore/b5/080pxx80.xx80.110509174450.s3b5/catalogue/homeocare-international-pvt-ltd-indiranagar-bangalore-homeopathic-hospitals-uqkjs-250.jpg?w=3840&q=75",
+    "businessId": "12345670",
+    "services": [
+      "Pigmentary Diseases",
+      "Herpes Zoster"
+    ]
+  },
+  "Quick_Information": [
+    {
+      "Qname": "Business Summary",
+      "Qdescription": "Homeopathic clinic providing treatments for various conditions including skin diseases, allergies, diabetes, and geriatric care.",
+      "Qestablished": "Year of Establishment",
+      "Qestablished_year": "2006"
     }
+  ],
+   "general_contact": { "phone": "8056789012" },
+      "address": "House No 1, House No 1, Behind Adigas Restaurant, 1st Temple Street 15th Cross, Indiranagar-560038",
+      "actions": [
+        { "label": "Get Directions", "icon": "directions" },
+        { "label": "Order Online", "icon": "cart" },
+        { "label": "Share", "icon": "share" },
+        { "label": "Visit our Website", "icon": "link" }
+      ],
+  "userReviews": {
+    "title": "User Reviews",
+    "sortOrder": ["Relevant", "Latest", "High to Low"],
+    "reviewHighlightstitle": "Review Highlights",
+    "reviewHighlights": [
+      { "highlight": "Effective treatments", "rating": 4 },
+      { "highlight": "Knowledgeable doctors", "rating": 4 },
+      { "highlight": "Long wait times", "rating": 2 }
+    ]
+  },
+
+  "photos": [
+        { "source": "11 photos", "description": "All ", "image": "parts_store.jpg" },
+         { "source": "11 photos", "description": "All ", "image": "parts_store.jpg" },
+        { "source": "11 photos", "description": "All ", "image": "parts_store.jpg" }
+      ],
+   "Services": [
+    { "sname": "Services", "sdata1": "Common Cold", "sdata2": "Homeopatic Geriatic Care","sdata3":"Management" },
+        { "sname": "Treatment", "sdata1": "Treatment", "sdata2": "Pigmentary Diseases" },
+          { "sname": "Management", "sdata1": "Allergy", "sdata2": "Diabetes","sdata3":"Management" }
+        
+      ],
+   "key_insights": {
+        "section_title": "Key Insights",
+        "what_users_liked": { "title": "What users liked", "points": ["Best doctors and equipment",
+"Good service and hospitality",
+"Effective treatments and medicines"] },
+        "what_can_be_improved": { "title": "What can be improved", "points": ["Indiscipline of some staff members during the pandemic",
+"Parking charges for bikes and cars",
+"Not super speciality with all facilities within the hospital"] },
+        "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+        "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-05-01" }
+      },
+      "customer_reviews": [
+        { "source": "Justdial", "name": "Sanjay Patel", "feedback": "Homeocare International Pvt Ltd provides well-priced treatments with decent coverage. Excellent service!", "time": "11:14 PM 03 FEb, 2025" },
+        { "source": "Justdial", "name": "Meena K", "feedback": "I had a positive interaction with Homeocare International Pvt Ltd, a clinic with doctors and physiotherapists. The business was", "time": "01:37 PM 28 Nov, 2024" }
+      ],
+      "reviews_ratings": {
+        "title": "Reviews & Ratings",
+        "rating": 4.6,
+        "total_ratings": 280,
+        "description": "Jd rating index based on 280 ratings across the web",
+        "button_text": "Start your Review"
+      },
+      "review": {
+        "title": "Recent rating trend",
+        "ratings": [4.0, 5.0, 4.0, 5.0, 3.0, 4.0, 5.0]
+      },
+  "reviewPeople": [
+    {
+      "user": { "name": "Priya Sharma", "review_count": 5, "follower_count": 150 },
+      "date": "10 Nov, 2024",
+      "location": "Indiranagar, Bangalore",
+      "title": "Effective Treatment",
+      "tags": ["Homeopathy", "Good doctors"],
+      "content": "Received excellent treatment for allergies. Doctors were knowledgeable.",
+      "actions": ["Helpful", "Comment", "Share"],
+      "sentiment": "positive",
+      "rating": 4
+    },
+    {
+      "user": { "name": "Ravi Kumar", "review_count": 3, "follower_count": 100 },
+      "date": "20 Oct, 2024",
+      "location": "Indiranagar, Bangalore",
+      "title": "Average Experience",
+      "tags": ["Long wait", "Good staff"],
+      "content": "Treatment was okay, but the wait time was too long.",
+      "actions": ["Helpful", "Comment", "Share"],
+      "sentiment": "neutral",
+      "rating": 3
+    }
+  ],
+   "listingCategories": [
+  "Hospitals",
+  "Clinics",
+  "Homeopathic Doctors",
+  "Homeopathic Clinics",
+  "Homeopathic Hospitals",
+  "Skin Treatment Homeopathic Doctors",
+  "Homeopathic Doctors For Piles",
+  "Homeopathic Sexologist Doctors",
+  "Homeopathic Paediatrician Doctors",
+  "Homeopathic Doctors For Cancer"
+]
+
+},
+
+
+  "Health&Medical-Clinics-560038": {
+    "WebsiteIdentifier": "Health&Medical-Clinics-560038",
+    "Category": "Health&Medical",
+    "Subcategory": "Clinics",
+    "business": {
+      "name": "Homeocare International Pvt Ltd",
+      "rating": 3.8,
+      "total_ratings": 423,
+      "badges": ["Verified", "Claimed"],
+      "location": "Indiranagar, Bangalore",
+      "hours": { "status": "Open 9 AM - 8 PM" },
+      "years_in_business": "19 Years in Healthcare",
+      "booking_info": "Offline",
+      "information": ["Overview", "Photos", "Services", "Doctors", "Reviews"],
+      "contact": { "phone": "09980022962" },
+      "image": "https://content.jdmagicbox.com/v2/comp/bangalore/b5/080pxx80.xx80.110509174450.s3b5/catalogue/homeocare-international-pvt-ltd-indiranagar-bangalore-homeopathic-hospitals-uqkjs-250.jpg?w=3840&q=75",
+      "businessId": "12345670",
+      "services": [
+        "Pigmentary Diseases",
+        "Herpes Zoster",
+        "Allergy Treatment",
+        "Diabetes Management"
+      ]
+    },
+    "Quick_Information": [
+      {
+        "Qname": "Business Summary",
+        "Qdescription": "Homeopathic clinic providing treatments for various conditions including skin diseases, allergies, diabetes, and geriatric care.",
+        "Qestablished": "Year of Establishment",
+        "Qestablished_year": "2006"
+      }
+    ],
+    "general_contact": { "phone": "8056789012" },
+    "address": "House No 1, House No 1, Behind Adigas Restaurant, 1st Temple Street 15th Cross, Indiranagar-560038",
+    "actions": [
+      { "label": "Get Directions", "icon": "directions" },
+      { "label": "Order Online", "icon": "cart" },
+      { "label": "Share", "icon": "share" },
+      { "label": "Visit our Website", "icon": "link" },
+      { "label": "Send Enquiry by Email", "icon": "email" },
+      { "label": "Edit this Listing", "icon": "edit" }
+    ],
+    "photos": [
+      { "source": "Justdial", "description": "Interior", "image": "https://example.com/clinic_interior.jpg" },
+      { "source": "Justdial", "description": "Consultation Room", "image": "https://example.com/consultation_room.jpg" },
+      { "source": "Justdial", "description": "Clinic Exterior", "image": "https://example.com/clinic_exterior.jpg" },
+      { "source": "Justdial", "description": "Waiting Area", "image": "https://example.com/waiting_area.jpg" }
+    ],
+    "Services": [
+      {
+        "sname": "Services",
+        "sdata1": "Common Cold",
+        "sdata2": "Homeopathic Geriatric Care",
+        "sdata3": "Management"
+      },
+      {
+        "sname": "Treatment",
+        "sdata1": "Pigmentary Diseases",
+        "sdata2": "Herpes Zoster"
+      },
+      {
+        "sname": "Management",
+        "sdata1": "Allergy",
+        "sdata2": "Diabetes",
+        "sdata3": "Management"
+      },
+      {
+        "sname": "Procedures",
+        "sdata1": "Homeopathic Pain-Free Pregnancy",
+        "sdata2": "Holistic Care"
+      }
+    ],
+    "key_insights": {
+      "section_title": "Key Insights",
+      "what_users_liked": {
+        "title": "What users liked",
+        "points": [
+          "Best doctors and equipment",
+          "Good service and hospitality",
+          "Effective treatments and medicines"
+        ]
+      },
+      "what_can_be_improved": {
+        "title": "What can be improved",
+        "points": [
+          "Indiscipline of some staff members during the pandemic",
+          "Parking charges for bikes and cars",
+          "Long wait times for appointments"
+        ]
+      },
+      "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+      "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2024-05-01" }
+    },
+    "customer_reviews": [
+      {
+        "source": "Justdial",
+        "name": "Rakhi Vishwakarma",
+        "feedback": "Homeocare International Pvt Ltd provides well-priced treatments with decent coverage. Excellent service!",
+        "time": "11:14 AM 03 Feb, 2025"
+      },
+      {
+        "source": "Justdial",
+        "name": "Mahesh",
+        "feedback": "I had a positive interaction with Homeocare International Pvt Ltd, a clinic with doctors and physiotherapists. The business was well-supervised and I received good care.",
+        "time": "01:37 PM 28 Nov, 2024"
+      }
+    ],
+    "reviews_ratings": {
+      "title": "Reviews & Ratings",
+      "rating": 3.8,
+      "total_ratings": 423,
+      "description": "Jd rating index based on 423 ratings across the web",
+      "button_text": "Start your Review"
+    },
+    "review": {
+      "title": "Recent rating trend",
+      "ratings": [1.0, 5.0, 1.0, 5.0, 5.0, 4.0, 4.0, 5.0, 5.0]
+    },
+    "userReviews": {
+      "title": "User Reviews",
+      "sortOrder": ["Relevant", "Latest", "High to Low"],
+      "reviewHighlightstitle": "Review Highlights",
+      "reviewHighlights": [
+        { "highlight": "Well connected", "rating": 10 },
+        { "highlight": "Clean & hygienic", "rating": 9 },
+        { "highlight": "Good supervision", "rating": 9 },
+        { "highlight": "Easily accessible", "rating": 8 },
+        { "highlight": "Gentle care", "rating": 7 },
+        { "highlight": "Accurate diagnosis", "rating": 7 },
+        { "highlight": "High standard care", "rating": 6 },
+        { "highlight": "Easy booking", "rating": 5 },
+        { "highlight": "Reasonably priced", "rating": 5 },
+        { "highlight": "Quick service", "rating": 5 }
+      ]
+    },
+    "reviewPeople": [
+      {
+        "user": { "name": "Rakhi Vishwakarma", "review_count": 214, "follower_count": 500 },
+        "date": "03 Feb 2025",
+        "location": "Indiranagar, Bangalore",
+        "title": "Well priced",
+        "tags": ["Well priced", "Decent coverage"],
+        "content": "Homeocare International Pvt Ltd provides well-priced treatments with decent coverage. Excellent service!",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Mahesh", "review_count": 2, "follower_count": 50 },
+        "date": "28 Nov 2024",
+        "location": "Indiranagar, Bangalore",
+        "title": "Good supervision",
+        "tags": ["Good supervision", "Positive interaction"],
+        "content": "I had a positive interaction with Homeocare International Pvt Ltd, a clinic with doctors and physiotherapists. The business was well-supervised and I received good care.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 4
+      },
+      {
+        "user": { "name": "Jyoti Sankar Das", "review_count": 1, "follower_count": 10 },
+        "date": "17 Jan 2024",
+        "location": "Indiranagar, Bangalore",
+        "title": "Overpriced",
+        "tags": ["Overpriced", "Slow recovery"],
+        "content": "The recovery process was very slow and the treatments were overpriced. Monthly wise payment option is not there. They are taken full amount from me within first 2 or 3 months before complet the course. I had taken 10month medicine from there by 4 instalment. Asper doctor I have to take another 10month medicine, but there accountant said now you have to pay 16,000/- at a time. I request him give me monthly wise payment option. So I can easily take medicine but he disagree with me.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 1
+      },
+      {
+        "user": { "name": "jeet", "review_count": 2, "follower_count": 20 },
+        "date": "11 Jan 2024",
+        "location": "Indiranagar, Bangalore",
+        "title": "Poor Service",
+        "tags": ["Unsanitised", "Unsupportive assistance", "Overpriced", "No follow-up care", "Difficult to access"],
+        "content": "Very poor service, Medicine Didn`t Work",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 1
+      },
+      {
+        "user": { "name": "DEEPAK", "review_count": 496, "follower_count": 1000 },
+        "date": "25 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Excellent Experience",
+        "tags": ["Accurate diagnosis", "High standard care", "Good supervision"],
+        "content": "I recently had the opportunity to visit Homeocare International Pvt Ltd and I must say that my experience was nothing short of excellent. From the moment I walked in, the staff was warm and welcoming, and made me feel right at home. The hospital itself was clean and well-maintained, with a peaceful and calming ambiance that helped put me at ease. The waiting area was comfortable and well-equipped with amenities to ensure the comfort of patients and their families. The doctors and staff at Homeocare International Pvt Ltd were highly professional and knowledgeable, and provided me with exceptional care and attention throughout my visit.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "muzu", "review_count": 60, "follower_count": 200 },
+        "date": "24 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Good Service",
+        "tags": ["Subsidies available", "Easily accessible", "Ineffective treatment", "Remotely located"],
+        "content": "The best doctor`s, best equipment, good service, good in hospitality. After spine surgery from Dr ..., my dad is able to walk properly and without pain. A big thanks to the doctor and his entire team supporting the patients to their best. thanks u so much sir 💖😘",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 4
+      },
+      {
+        "user": { "name": "naga", "review_count": 118, "follower_count": 300 },
+        "date": "19 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Wonderful Doctor",
+        "tags": ["Accurate diagnosis", "Good communication", "Easy booking", "Reasonably priced", "Gentle care", "Good supervision", "Well connected", "Easily accessible"],
+        "content": "My daughter is taking treatment from life force since 2yrs . Dr. Vinay is such a wonderful Dr and you always make me my daughter feel so safe. Thank you for being the best doctor for my daughter. And you are a perfect combination of responsibility and care, all of them was very helpful and supportive, My daughter getting very good relief. Now she stopped steroids also & taking only life force medicines. Thank you life force Malleswaram team & Dr. Rajesh shah.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Apoorva TN", "review_count": 82, "follower_count": 150 },
+        "date": "28 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Quick Service",
+        "tags": ["Clean & hygienic", "Quick service", "Short wait", "Good supervision"],
+        "content": "In this hospital provides very good services to the patience, there is no waiting time it will provide quick services and then they used sterilised equipment and also hospital charges also reasonable priced, and also treating wise very good in this hospital",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Arvind", "review_count": 78, "follower_count": 120 },
+        "date": "28 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Excellent Experience",
+        "tags": ["High standard care", "Clean & hygienic", "Good supervision"],
+        "content": "I recently had the opportunity to visit home care International Private Limited and I must say that my experience was nothing short of excellent from the movement I went up in the staff was warm and will coming and made me feel right at home the Hospital itself was clean and well maintain with a peaceful",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "MJ Toxic", "review_count": 121, "follower_count": 250 },
+        "date": "28 Feb 2023",
+        "location": "Indiranagar, Bangalore",
+        "title": "Well Maintained",
+        "tags": ["Excellent treatment", "Good communication", "Clean & hygienic", "Easy booking", "Great customer service", "Subsidies available", "Gentle care", "Good supervision", "Well connected", "Easily accessible"],
+        "content": "The infrastructure of the Hospital is very good and the staffs and Doctors are good. The only drawback is with the parking charges for Bikes and Cars. Suggest to waive off parking charges for patients who take admission. Overall it`s a well maintained Hospital with all the sophisticated facilities. Cafeteria Facility is available in 4th Floor",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 4
+      }
+    ],
+    "listingCategories": [
+      "Hospitals",
+      "Clinics",
+      "Homeopathic Doctors",
+      "Homeopathic Clinics",
+      "Homeopathic Hospitals",
+      "Skin Treatment Homeopathic Doctors",
+      "Homeopathic Doctors For Piles",
+      "Homeopathic Sexologist Doctors",
+      "Homeopathic Paediatrician Doctors",
+      "Homeopathic Doctors For Cancer",
+      "Homeopathic Clinics For Piles",
+      "Holistic Homeopathic Clinics",
+      "Homeopathic Clinics For Hair Treatment"
+    ]
+  },
+
+  
+  "Health&Medical-Dentists-560062": {
+    "WebsiteIdentifier": "Health&Medical-Dentists-560062",
+    "Category": "Health&Medical",
+    "Subcategory": "Dentists",
+    "business": {
+      "name": "Dental Speciality Centre",
+      "rating": 4.9,
+      "total_ratings": 126,
+      "badges": ["Claimed"],
+      "location": "Doddakallasandra, Bangalore",
+      "hours": { "status": "Open 9 AM - 8 PM" },
+      "years_in_business": "3 Years in Healthcare",
+      "booking_info": "Online and Offline",
+      "information": ["Overview", "Photos", "Services", "Reviews"],
+      "contact": { "phone": "07411793475" },
+      "image": "https://example.com/dental_speciality_centre.jpg",
+      "businessId": "98765432",
+      "services": [
+        "Root Canal Treatment",
+        "Fixed Prosthodontics",
+        "Dental Implants",
+        "Cosmetic Dentistry"
+      ]
+    },
+    "Quick_Information": [
+      {
+        "Qname": "Business Summary",
+        "Qdescription": "Dental Speciality Centre provides advanced dental care including root canal treatments, prosthodontics, implants, and cosmetic dentistry with state-of-the-art equipment.",
+        "Qestablished": "Year of Establishment",
+        "Qestablished_year": "2022"
+      }
+    ],
+    "general_contact": { "phone": "07411793475" },
+    "address": "No, 27, 7th Cross Road, RK Layout, Next to Comfort Height Apartment, Kuvempu Nagar Main Road 7th Cross Road, Doddakallasandra-560062",
+    "actions": [
+      { "label": "Get Directions", "icon": "directions" },
+      { "label": "Copy", "icon": "copy" },
+      { "label": "Send Enquiry by Email", "icon": "email" },
+      { "label": "Share", "icon": "share" },
+      { "label": "Edit this Listing", "icon": "edit" },
+      { "label": "Visit our Website", "icon": "link" }
+    ],
+    "photos": [
+      { "source": "Justdial", "description": "Interior", "image": "https://example.com/dental_interior.jpg" },
+      { "source": "Justdial", "description": "Treatment Room", "image": "https://example.com/treatment_room.jpg" },
+      { "source": "Justdial", "description": "Clinic Exterior", "image": "https://example.com/clinic_exterior.jpg" },
+      { "source": "Justdial", "description": "Dental Equipment", "image": "https://example.com/dental_equipment.jpg" }
+    ],
+    "Services": [
+      {
+        "sname": "Procedures",
+        "sdata1": "Fixed Prosthodontics",
+        "sdata2": "Root Canal Treatment"
+      },
+      {
+        "sname": "Specialties",
+        "sdata1": "Dental Implants",
+        "sdata2": "Cosmetic Dentistry"
+      },
+      {
+        "sname": "General Dentistry",
+        "sdata1": "Teeth Cleaning",
+        "sdata2": "Dental Check-up"
+      }
+    ],
+    "key_insights": {
+      "section_title": "Key Insights",
+      "what_users_liked": {
+        "title": "What users liked",
+        "points": [
+          "Highly recommended by many customers for providing painless and professional treatment",
+          "The clinic is hygienic, clean, and elegant with the latest dental equipment",
+          "The staff members are courteous and welcoming to the patients"
+        ]
+      },
+      "what_can_be_improved": {
+        "title": "What can be improved",
+        "points": [
+          "No negative comments were mentioned in the reviews"
+        ]
+      },
+      "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+      "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2025-05-01" }
+    },
+    "customer_reviews": [
+      {
+        "source": "Justdial",
+        "name": "suresh",
+        "feedback": "These doctors are well specialized in their respective stream, treatment was good, guys please visit once hope you will get good treatment.",
+        "time": "15 Sept 2022"
+      },
+      {
+        "source": "Justdial",
+        "name": "Aravinda M",
+        "feedback": "The doctor is well practiced, the treatment was too good. Must visit incase of root canal.",
+        "time": "14 Sept 2022"
+      }
+    ],
+    "reviews_ratings": {
+      "title": "Reviews & Ratings",
+      "rating": 4.9,
+      "total_ratings": 126,
+      "description": "Jd rating index based on 126 ratings across the web",
+      "button_text": "Start your Review"
+    },
+    "review": {
+      "title": "Recent rating trend",
+      "ratings": [5.0, 5.0, 5.0, 5.0]
+    },
+    "userReviews": {
+      "title": "User Reviews",
+      "sortOrder": ["Relevant", "Latest", "High to Low"],
+      "reviewHighlightstitle": "Review Highlights",
+      "reviewHighlights": [
+        { "highlight": "Painless treatment", "rating": 5 },
+        { "highlight": "Hygienic clinic", "rating": 5 },
+        { "highlight": "Professional staff", "rating": 5 },
+        { "highlight": "Advanced equipment", "rating": 5 }
+      ]
+    },
+    "reviewPeople": [
+      {
+        "user": { "name": "suresh", "review_count": 1, "follower_count": 10 },
+        "date": "15 Sept 2022",
+        "location": "Doddakallasandra, Bangalore",
+        "title": "Good Treatment",
+        "tags": ["Specialized doctors", "Good treatment"],
+        "content": "These doctors are well specialized in their respective stream, treatment was good, guys please visit once hope you will get good treatment.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Aravinda M", "review_count": 1, "follower_count": 15 },
+        "date": "14 Sept 2022",
+        "location": "Doddakallasandra, Bangalore",
+        "title": "Excellent Root Canal",
+        "tags": ["Well practiced", "Root canal"],
+        "content": "The doctor is well practiced, the treatment was too good. Must visit incase of root canal.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "kiran", "review_count": 2, "follower_count": 20 },
+        "date": "14 Sept 2022",
+        "location": "Doddakallasandra, Bangalore",
+        "title": "Great Experience",
+        "tags": ["Hygienic", "Professional"],
+        "content": "The clinic is very hygienic and the staff is professional. Highly recommend for dental care.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "karthik C", "review_count": 1, "follower_count": 12 },
+        "date": "20 Jun 2022",
+        "location": "Doddakallasandra, Bangalore",
+        "title": "Highly Recommended",
+        "tags": ["Painless treatment", "Courteous staff"],
+        "content": "Painless treatment and courteous staff. The clinic has the latest equipment, making it a great choice for dental procedures.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      }
+    ],
+    "listingCategories": [
+      "Dentists",
+      "Dental Clinics",
+      "Dental Surgeons",
+      "Implantologist Doctors",
+      "Root Canal Doctors",
+      "Endodontist Doctors",
+      "Cosmetic Dentistry Doctors",
+      "Prosthodontist Doctors",
+      "Invisalign Orthodontist Doctors",
+      "Denture Fixing Services"
+    ]
+  },
+
+  
+  "Health&Medical-Pharmacies-560098": {
+    "WebsiteIdentifier": "Health&Medical-Pharmacies-560098",
+    "Category": "Health&Medical",
+    "Subcategory": "Pharmacies",
+    "business": {
+      "name": "Gajraj Medicals",
+      "rating": 4.9,
+      "total_ratings": 79,
+      "badges": ["Claimed"],
+      "location": "Rajarajeshwari Nagar, Bangalore",
+      "hours": { "status": "Open until 11:30 PM" },
+      "years_in_business": "3 Years in Business",
+      "booking_info": "In-Store and Online",
+      "information": ["Overview", "Photos", "Quick Info", "Reviews"],
+      "contact": { "phone": "08123858717" },
+      "image": "https://example.com/gajraj_medicals.jpg",
+      "businessId": "45678912",
+      "services": [
+        "Prescription Medicines",
+        "Surgical Equipment",
+        "Over-the-Counter Drugs",
+        "Home Delivery"
+      ]
+    },
+    "Quick_Information": [
+      {
+        "Qname": "Business Summary",
+        "Qdescription": "Gajraj Medicals is a trusted pharmacy and surgical equipment dealer offering prescription medicines, over-the-counter drugs, and medical supplies with home delivery options.",
+        "Qestablished": "Year of Establishment",
+        "Qestablished_year": "2022"
+      }
+    ],
+    "general_contact": { "phone": "08123858717" },
+    "address": "Gajraj Medical, 201/942, Messine Shop 1, Vishnuvardhan Road, Dwarakanagar, Chanasandra Main Road, Rajarajeshwari Nagar-560098",
+    "actions": [
+      { "label": "Get Directions", "icon": "directions" },
+      { "label": "Copy", "icon": "copy" },
+      { "label": "Get info via SMS/Email", "icon": "email" },
+      { "label": "Share", "icon": "share" },
+      { "label": "Edit this Listing", "icon": "edit" },
+      { "label": "Add Website", "icon": "link" }
+    ],
+    "photos": [
+      { "source": "Justdial", "description": "Exterior", "image": "https://example.com/pharmacy_exterior.jpg" },
+      { "source": "Justdial", "description": "Interior", "image": "https://example.com/pharmacy_interior.jpg" },
+      { "source": "Justdial", "description": "Surgical Equipment Display", "image": "https://example.com/surgical_equipment.jpg" },
+      { "source": "Justdial", "description": "Medicine Counter", "image": "https://example.com/medicine_counter.jpg" }
+    ],
+    "Services": [
+      {
+        "sname": "Pharmacy Services",
+        "sdata1": "Prescription Medicines",
+        "sdata2": "Over-the-Counter Drugs"
+      },
+      {
+        "sname": "Specialty",
+        "sdata1": "Surgical Equipment",
+        "sdata2": "Medical Supplies"
+      },
+      {
+        "sname": "Additional Services",
+        "sdata1": "Home Delivery",
+        "sdata2": "Online Ordering"
+      }
+    ],
+    "key_insights": {
+      "section_title": "Key Insights",
+      "what_users_liked": {
+        "title": "What users liked",
+        "points": [
+          "Exceptional service and knowledgeable staff",
+          "Reasonably priced medicines and equipment",
+          "Excellent customer service with home delivery options"
+        ]
+      },
+      "what_can_be_improved": {
+        "title": "What can be improved",
+        "points": [
+          "No significant negative feedback reported"
+        ]
+      },
+      "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+      "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2025-05-01" }
+    },
+    "customer_reviews": [
+      {
+        "source": "Justdial",
+        "name": "Kishan Mali",
+        "feedback": "Exceptional service, knowledgeable staff, excellent customer service.",
+        "time": "26 Mar 2025"
+      },
+      {
+        "source": "Justdial",
+        "name": "arvind",
+        "feedback": "Good services.",
+        "time": "30 Jan 2024"
+      }
+    ],
+    "reviews_ratings": {
+      "title": "Reviews & Ratings",
+      "rating": 4.9,
+      "total_ratings": 79,
+      "description": "Jd rating index based on 79 ratings across the web",
+      "button_text": "Start your Review"
+    },
+    "review": {
+      "title": "Recent rating trend",
+      "ratings": [5.0, 5.0, 5.0]
+    },
+    "userReviews": {
+      "title": "User Reviews",
+      "sortOrder": ["Relevant", "Latest", "High to Low"],
+      "reviewHighlightstitle": "Review Highlights",
+      "reviewHighlights": [
+        { "highlight": "Knowledgeable staff", "rating": 5 },
+        { "highlight": "Reasonably priced", "rating": 5 },
+        { "highlight": "Excellent service", "rating": 5 }
+      ]
+    },
+    "reviewPeople": [
+      {
+        "user": { "name": "Kishan Mali", "review_count": 1, "follower_count": 10 },
+        "date": "26 Mar 2025",
+        "location": "Rajarajeshwari Nagar, Bangalore",
+        "title": "Exceptional Service",
+        "tags": ["Exceptional service", "Knowledgeable staff", "Excellent customer service"],
+        "content": "Exceptional service, knowledgeable staff, excellent customer service.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "arvind", "review_count": 5764, "follower_count": 10000 },
+        "date": "30 Jan 2024",
+        "location": "Rajarajeshwari Nagar, Bangalore",
+        "title": "Good Services",
+        "tags": ["Good services"],
+        "content": "Good services.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Sohel", "review_count": 1, "follower_count": 15 },
+        "date": "07 Nov 2023",
+        "location": "Rajarajeshwari Nagar, Bangalore",
+        "title": "Reasonably Priced",
+        "tags": ["Reasonably priced"],
+        "content": "Reasonably priced medicines and equipment. Great experience.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      }
+    ],
+    "listingCategories": [
+      "Chemists",
+      "Surgical Equipment Dealers",
+      "Medical Equipment Dealers",
+      "Pharmaceutical Distributors",
+      "Home Delivery Pharmacies"
+    ]
+  },
+  
+  "Health&Medical-Physiotherapy-560025": {
+    "WebsiteIdentifier": "Health&Medical-Physiotherapy-560025",
+    "Category": "Health&Medical",
+    "Subcategory": "Physiotherapy",
+    "business": {
+      "name": "Solis Health",
+      "rating": 4.8,
+      "total_ratings": 31,
+      "badges": ["Claimed"],
+      "location": "Magrath Road, Bangalore",
+      "hours": { "status": "Open 9 AM - 8 PM" },
+      "years_in_business": "6 Years of Experience",
+      "booking_info": "Online and Offline",
+      "information": ["Overview", "Photos", "Services", "Explore", "Reviews"],
+      "contact": { "phone": "08105143193" },
+      "image": "https://example.com/solis_health.jpg",
+      "businessId": "78912345",
+      "services": [
+        "Physiotherapy",
+        "Yoga Therapy",
+        "Counselling Services",
+        "Meditation Counselling"
+      ]
+    },
+    "Quick_Information": [
+      {
+        "Qname": "Business Summary",
+        "Qdescription": "Solis Health offers specialized physiotherapy, yoga therapy, and counselling services, focusing on holistic care with modern facilities and experienced professionals.",
+        "Qestablished": "Year of Establishment",
+        "Qestablished_year": "2019"
+      }
+    ],
+    "general_contact": { "phone": "08105143193" },
+    "address": "No. 5/8, Solis Health Center, Garuda Shopping Mall, Brunton Cross Rd, Off Magrath Road, Craig Park Layout, Magrath Road-560025",
+    "actions": [
+      { "label": "Get Directions", "icon": "directions" },
+      { "label": "Copy", "icon": "copy" },
+      { "label": "Send Enquiry by Email", "icon": "email" },
+      { "label": "Share", "icon": "share" },
+      { "label": "Edit this Listing", "icon": "edit" },
+      { "label": "Visit our Website", "icon": "link" }
+    ],
+    "photos": [
+      { "source": "Justdial", "description": "Exterior", "image": "https://example.com/solis_exterior.jpg" },
+      { "source": "Justdial", "description": "Interior", "image": "https://example.com/solis_interior.jpg" },
+      { "source": "Justdial", "description": "Therapy Room", "image": "https://example.com/therapy_room.jpg" },
+      { "source": "Justdial", "description": "Yoga Studio", "image": "https://example.com/yoga_studio.jpg" }
+    ],
+    "Services": [
+      {
+        "sname": "Therapy",
+        "sdata1": "Yoga Therapy",
+        "sdata2": "PIVD (Prolapsed Intervertebral Disc)",
+        "sdata3": "Physiotherapy"
+      },
+      {
+        "sname": "Counselling",
+        "sdata1": "Counselling Service",
+        "sdata2": "Psychology Consultation",
+        "sdata3": "Meditation Counselling"
+      },
+      {
+        "sname": "Specialized Services",
+        "sdata1": "Pain Management",
+        "sdata2": "Rehabilitation"
+      }
+    ],
+    "key_insights": {
+      "section_title": "Key Insights",
+      "what_users_liked": {
+        "title": "What users liked",
+        "points": [
+          "Excellent service with friendly and knowledgeable staff",
+          "Clean, modern, and efficient facilities with sterilized equipment",
+          "Top-notch care with short wait times and easy booking"
+        ]
+      },
+      "what_can_be_improved": {
+        "title": "What can be improved",
+        "points": [
+          "No significant negative feedback reported"
+        ]
+      },
+      "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+      "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2025-05-01" }
+    },
+    "customer_reviews": [
+      {
+        "source": "Justdial",
+        "name": "Nikita Shrivastava",
+        "feedback": "Solis Health provides excellent service with a friendly and knowledgeable staff. The facility is clean, modern, and efficient. The services are top-notch, providing comprehensive care with a personal touch.",
+        "time": "03:49 PM 22 Jul, 2024"
+      },
+      {
+        "source": "Justdial",
+        "name": "Paramita Datta",
+        "feedback": "I had an excellent experience with Solis Health. The facilities were good and the staff was very friendly and accommodating. I received top-notch service and felt well taken care of during my visit.",
+        "time": "11:10 AM 20 Jul, 2024"
+      },
+      {
+        "source": "Justdial",
+        "name": "Peaveen",
+        "feedback": "I am extremely pleased with the services provided by Solis Health. The quality of care and support has been outstanding. They have made managing healthcare costs for my family much more manageable, and their customer service is top-notch.",
+        "time": "09:46 AM 20 Jul, 2024"
+      },
+      {
+        "source": "Justdial",
+        "name": "MADHU",
+        "feedback": "I had an excellent experience with Solis Health. The facilities were good, the equipment was sterilized, and they followed safe practices. The coverage was decent and reasonably priced.",
+        "time": "04:22 PM 19 Jul, 2024"
+      },
+      {
+        "source": "Justdial",
+        "name": "praveen rm",
+        "feedback": "Absolutely impressed with the services provided. From start to finish exceeded all my expectations. Thank you Solis Health. Highly recommend.",
+        "time": "10:09 PM 21 Jul, 2024"
+      }
+    ],
+    "reviews_ratings": {
+      "title": "Reviews & Ratings",
+      "rating": 4.8,
+      "total_ratings": 31,
+      "description": "Jd rating index based on 31 ratings across the web",
+      "button_text": "Start your Review"
+    },
+    "review": {
+      "title": "Recent rating trend",
+      "ratings": [5.0, 2.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+    },
+    "userReviews": {
+      "title": "User Reviews",
+      "sortOrder": ["Relevant", "Latest", "High to Low"],
+      "reviewHighlightstitle": "Review Highlights",
+      "reviewHighlights": [
+        { "highlight": "Great service", "rating": 5 },
+        { "highlight": "Safe practices", "rating": 5 },
+        { "highlight": "Well-sanitised", "rating": 5 },
+        { "highlight": "Easy booking", "rating": 5 },
+        { "highlight": "Great customer service", "rating": 5 },
+        { "highlight": "Good facilities", "rating": 5 },
+        { "highlight": "Attentive staff", "rating": 5 },
+        { "highlight": "Sterilised equipment", "rating": 5 },
+        { "highlight": "Short wait", "rating": 5 },
+        { "highlight": "Reasonably priced", "rating": 5 }
+      ]
+    },
+    "reviewPeople": [
+      {
+        "user": { "name": "Nikita Shrivastava", "review_count": 1, "follower_count": 20 },
+        "date": "22 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Great Service",
+        "tags": ["Great service", "Safe practices", "Well-sanitised", "Easy booking", "Great customer service"],
+        "content": "Solis Health provides excellent service with a friendly and knowledgeable staff. The facility is clean, modern, and efficient. The services are top-notch, providing comprehensive care with a personal touch.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Paramita Datta", "review_count": 1, "follower_count": 15 },
+        "date": "20 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Good Facilities",
+        "tags": ["Good facilities", "Friendly staff", "Top-notch service"],
+        "content": "I had an excellent experience with Solis Health. The facilities were good and the staff was very friendly and accommodating. I received top-notch service and felt well taken care of during my visit. Overall, it was a great experience and I would highly recommend Solis Health to others in need of their services.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Peaveen", "review_count": 3, "follower_count": 173 },
+        "date": "20 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Outstanding Care",
+        "tags": ["Easy booking", "Great customer service", "Short wait"],
+        "content": "I am extremely pleased with the services provided by Solis Health. The quality of care and support has been outstanding. They have made managing healthcare costs for my family much more manageable, and their customer service is top-notch. Highly recommend!",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "MADHU", "review_count": 1, "follower_count": 10 },
+        "date": "19 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Excellent Experience",
+        "tags": ["Attentive staff", "Safe practices", "Good facilities", "Sterilised equipment", "Great customer service", "Short wait", "Reasonably priced", "Decent coverage"],
+        "content": "I had an excellent experience with Solis Health. The facilities were good, the equipment was sterilized, and they followed safe practices. The coverage was decent and reasonably priced. The customer service was great, the staff were attentive, and the wait time was short.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "praveen rm", "review_count": 1, "follower_count": 12 },
+        "date": "21 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Exceeded Expectations",
+        "tags": ["Great service", "Highly recommend"],
+        "content": "Absolutely impressed with the services provided. From start to finish exceeded all my expectations. Thank you Solis Health. Highly recommend.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Sandhya", "review_count": 1, "follower_count": 15 },
+        "date": "19 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Great Yoga Services",
+        "tags": ["Great service", "Attentive staff", "Safe practices"],
+        "content": "Availed yoga services to my cousin. Great experience.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Irshad", "review_count": 1, "follower_count": 10 },
+        "date": "19 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Reasonably Priced",
+        "tags": ["Safe practices", "Great customer service", "Reasonably priced", "Decent coverage"],
+        "content": "Great customer service and reasonably priced services. The staff follows safe practices, making it a reliable choice for physiotherapy.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Navya", "review_count": 1, "follower_count": 8 },
+        "date": "19 Jul 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Satisfactory Service",
+        "tags": ["Good service"],
+        "content": "Satisfactory physiotherapy services with a professional approach.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "User", "review_count": 1, "follower_count": 5 },
+        "date": "14 Apr 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Good Experience",
+        "tags": ["Good service"],
+        "content": "Had a good experience with the physiotherapy services at Solis Health.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Sunil", "review_count": 105, "follower_count": 500 },
+        "date": "03 Mar 2024",
+        "location": "Magrath Road, Bangalore",
+        "title": "Professional Staff",
+        "tags": ["Professional staff", "Clean facilities"],
+        "content": "The staff at Solis Health is highly professional, and the facilities are clean and well-maintained. A great place for physiotherapy and yoga therapy.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      }
+    ],
+    "listingCategories": [
+      "Clinics",
+      "Physiotherapy Centres",
+      "Meditation Centres",
+      "Speech Therapy Centres",
+      "Nutritionists",
+      "Cancer Centres",
+      "Nutrition Centres",
+      "Sound Healing Therapy Services",
+      "Nutrition Consultants",
+      "Healing Therapy"
+    ]
+  },
+
+  
+  "Health&Medical-Veterinary-560076": {
+    "WebsiteIdentifier": "Health&Medical-Veterinary-560076",
+    "Category": "Health&Medical",
+    "Subcategory": "Veterinary",
+    "business": {
+      "name": "Renee Vet Hospital",
+      "rating": 4.2,
+      "total_ratings": 468,
+      "badges": ["Claimed"],
+      "location": "Jp Nagar 8th Phase, Bangalore",
+      "hours": { "status": "Open 9 AM - 10 PM" },
+      "years_in_business": "6 Years in Healthcare",
+      "booking_info": "Online and Offline",
+      "information": ["Overview", "Photos", "Services", "Reviews"],
+      "contact": { "phone": "09980551692" },
+      "image": "https://example.com/renee_vet_hospital.jpg",
+      "businessId": "65432198",
+      "services": [
+        "Veterinary Surgeries",
+        "Major and Minor Surgery",
+        "Pet Vaccinations",
+        "Diagnostic Services"
+      ]
+    },
+    "Quick_Information": [
+      {
+        "Qname": "Business Summary",
+        "Qdescription": "Renee Vet Hospital provides comprehensive veterinary care including surgeries, vaccinations, and diagnostics with state-of-the-art facilities for pets and other animals.",
+        "Qestablished": "Year of Establishment",
+        "Qestablished_year": "2019"
+      }
+    ],
+    "general_contact": { "phone": "09980551692" },
+    "address": "No.30/31, 1st Floor, Opp to HDFC Bank, Kothanur Main Road, BK Circle, Jp Nagar 8th Phase-560076",
+    "actions": [
+      { "label": "Get Directions", "icon": "directions" },
+      { "label": "Copy", "icon": "copy" },
+      { "label": "Send Enquiry by Email", "icon": "email" },
+      { "label": "Share", "icon": "share" },
+      { "label": "Edit this Listing", "icon": "edit" },
+      { "label": "Visit our Website", "icon": "link" }
+    ],
+    "photos": [
+      { "source": "Justdial", "description": "Interior", "image": "https://example.com/vet_interior.jpg" },
+      { "source": "Justdial", "description": "Surgical Suite", "image": "https://example.com/surgical_suite.jpg" },
+      { "source": "Justdial", "description": "Exterior", "image": "https://example.com/vet_exterior.jpg" },
+      { "source": "Justdial", "description": "Diagnostic Lab", "image": "https://example.com/diagnostic_lab.jpg" }
+    ],
+    "Services": [
+      {
+        "sname": "Surgery",
+        "sdata1": "Veterinary Soft Tissue",
+        "sdata2": "Corrective Surgery",
+        "sdata3": "Major and Minor Surgery"
+      },
+      {
+        "sname": "General Care",
+        "sdata1": "Pet Vaccinations",
+        "sdata2": "Pet Grooming"
+      },
+      {
+        "sname": "Diagnostics",
+        "sdata1": "Blood Tests",
+        "sdata2": "Ultrasound"
+      }
+    ],
+    "key_insights": {
+      "section_title": "Key Insights",
+      "what_users_liked": {
+        "title": "What users liked",
+        "points": [
+          "Caring and friendly attitude of doctors and staff towards pets",
+          "State-of-the-art facilities with lower prices compared to other hospitals",
+          "Good treatment provided, especially in emergencies"
+        ]
+      },
+      "what_can_be_improved": {
+        "title": "What can be improved",
+        "points": [
+          "Unprofessional behavior of some doctors and long waiting times",
+          "Concerns about unnecessary treatments and lack of expertise in some cases"
+        ]
+      },
+      "disclaimer": "*BETA VERSION - Likes and suggested improvements are based on the reviews across the web",
+      "metadata": { "source": "user_reviews", "version": "beta", "last_updated": "2025-05-01" }
+    },
+    "customer_reviews": [
+      {
+        "source": "Justdial",
+        "name": "Karthik L",
+        "feedback": "I had an excellent experience with Renee Vet Hospital. They were very well explained about the treatment options and procedures for my pet. The pricing was also very reasonable. Overall, I am very satisfied with their services.",
+        "time": "01:19 PM 23 Dec, 2024"
+      },
+      {
+        "source": "Justdial",
+        "name": "chendan",
+        "feedback": "Once my dog was not feeling well it was not eating it was not drinking water and i took my dog to him he checked it and he gave a injection he treated my dog so well that i was very happy he feels all dogs as his dog and give treatment he wrote a medicine it worked so well.",
+        "time": "26 Feb 2023"
+      }
+    ],
+    "reviews_ratings": {
+      "title": "Reviews & Ratings",
+      "rating": 4.2,
+      "total_ratings": 468,
+      "description": "Jd rating index based on 468 ratings across the web",
+      "button_text": "Start your Review"
+    },
+    "review": {
+      "title": "Recent rating trend",
+      "ratings": [5.0, 5.0, 3.0, 4.0, 1.0, 5.0, 1.0, 5.0, 5.0]
+    },
+    "userReviews": {
+      "title": "User Reviews",
+      "sortOrder": ["Relevant", "Latest", "High to Low"],
+      "reviewHighlightstitle": "Review Highlights",
+      "reviewHighlights": [
+        { "highlight": "Well explained", "rating": 5 },
+        { "highlight": "Reasonably priced", "rating": 5 },
+        { "highlight": "Easy booking", "rating": 5 },
+        { "highlight": "Poor management", "rating": 3 },
+        { "highlight": "Highly priced", "rating": 3 },
+        { "highlight": "Unhelpful", "rating": 1 },
+        { "highlight": "Poor treatment", "rating": 1 }
+      ]
+    },
+    "reviewPeople": [
+      {
+        "user": { "name": "Sameeksha Gulati", "review_count": 3, "follower_count": 50 },
+        "date": "21 May 2023",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Unprofessional Treatment",
+        "tags": ["Unhelpful", "Unprofessional"],
+        "content": "Worst treatment they offered, never give your pets in hands of Dr. Abhiram. He is unprofessional he is all about making money and bringing money to hospital.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 1
+      },
+      {
+        "user": { "name": "Karthik L", "review_count": 1, "follower_count": 10 },
+        "date": "23 Dec 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Excellent Experience",
+        "tags": ["Well explained", "Reasonably priced"],
+        "content": "I had an excellent experience with Renee Vet Hospital. They were very well explained about the treatment options and procedures for my pet. The pricing was also very reasonable. Overall, I am very satisfied with their services.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Seshacharan S", "review_count": 1, "follower_count": 15 },
+        "date": "04 Nov 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Poor Management",
+        "tags": ["Poor management", "Highly priced"],
+        "content": "I had taken my pet cat for a blood test, the doctor was on the call throughout the procedure and while transferring the blood to the test tube he spilt it on the floor and had to redo it which was clumsy and not professional.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 3
+      },
+      {
+        "user": { "name": "devrajhp", "review_count": 16, "follower_count": 100 },
+        "date": "08 Dec 2023",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Wrong Diagnosis",
+        "tags": ["Poor treatment", "Wrong diagnosis"],
+        "content": "My 3 year gsd dog had lost front leg amputated in some other hospital because of the wrong diagnosis and treatment by doctor gowtam and staff Harsha. At Reenee when we took the dog for leg sprain, they took xray of my dog leg and put a tight bandage that literally stopped blood supply to the leg and within 1.5 days the leg started decaying...We have to get its leg amputated as we got the reply that leg amputation was the only option from the best 3-4 pet surgeons.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 1
+      },
+      {
+        "user": { "name": "Murthy", "review_count": 6, "follower_count": 30 },
+        "date": "06 Jun 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Unnecessary Treatments",
+        "tags": ["Poor treatment", "Money minded"],
+        "content": "Poor treatment They will give unwanted treatment & blood test. And the Doctor is money minded...",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "negative",
+        "rating": 1
+      },
+      {
+        "user": { "name": "chendan", "review_count": 140, "follower_count": 500 },
+        "date": "26 Feb 2023",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Great Treatment",
+        "tags": ["Great treatment", "Friendly staff"],
+        "content": "Once my dog was not feeling well it was not eating it was not drinking water and i took my dog to him he checked it and he gave a injection he treated my dog so well that i was very happy he feels all dogs as his dog and give treatment he wrote a medicine it worked so well.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Mahesh Kumar", "review_count": 1, "follower_count": 10 },
+        "date": "26 Dec 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Easy Booking",
+        "tags": ["Easy booking"],
+        "content": "Booking an appointment was straightforward, and the staff was helpful in accommodating my schedule.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "Anees fathima", "review_count": 4, "follower_count": 20 },
+        "date": "24 Nov 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Satisfactory Service",
+        "tags": ["Good service"],
+        "content": "The service was satisfactory, and my pet received adequate care during the visit.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 4
+      },
+      {
+        "user": { "name": "Farook", "review_count": 11, "follower_count": 44 },
+        "date": "18 Nov 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Friendly Staff",
+        "tags": ["Friendly staff"],
+        "content": "The staff was friendly and made my pet feel comfortable during the treatment.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      },
+      {
+        "user": { "name": "no-name", "review_count": 4, "follower_count": 15 },
+        "date": "27 Sept 2024",
+        "location": "Jp Nagar 8th Phase, Bangalore",
+        "title": "Good Emergency Care",
+        "tags": ["Emergency care"],
+        "content": "They handled my pet’s emergency well, and I appreciated their quick response.",
+        "actions": ["Helpful", "Comment", "Share"],
+        "sentiment": "positive",
+        "rating": 5
+      }
+    ],
+    "listingCategories": [
+      "Veterinary Hospitals",
+      "Diagnostic Centres",
+      "Veterinarians",
+      "Pet Clinics",
+      "Veterinary Clinics",
+      "24 Hours Veterinary Hospitals",
+      "Dog Grooming Services",
+      "Veterinary Doctors For Dog",
+      "24 Hours Veterinary Doctors",
+      "Veterinary Doctors For Bird"
+    ]
   }
+
+
+
 }
+
+
+  }
+  

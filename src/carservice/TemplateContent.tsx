@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -27,13 +26,29 @@ interface ListingData {
     contact: { phone: string };
   };
   photos: { source: string; description: string; image: string }[];
-  price_list: { service: string; description: string; price: string; details_link: string; button: string }[];
-  Quick_Information: { Qname: string; Qdescription: string; Qestablished: string; Qestablished_year: string }[];
+  price_list: {
+    service: string;
+    description: string;
+    price: string;
+    details_link: string;
+    button: string;
+  }[];
+  Quick_Information: {
+    Qname: string;
+    Qdescription: string;
+    Qestablished: string;
+    Qestablished_year: string;
+  }[];
   Services: { sname: string; sdata1: string; sdata2: string }[];
   general_contact: { phone: string };
   address: string;
   actions: { label: string; icon: string }[];
-  customer_reviews: { source: string; name: string; feedback: string; time: string }[];
+  customer_reviews: {
+    source: string;
+    name: string;
+    feedback: string;
+    time: string;
+  }[];
   key_insights: {
     section_title: string;
     what_users_liked: { title: string; points: string[] };
@@ -41,7 +56,13 @@ interface ListingData {
     disclaimer: string;
     metadata: { source: string; version: string; last_updated: string };
   };
-  reviews_ratings: { title: string; rating: number; total_ratings: number; description: string; button_text: string };
+  reviews_ratings: {
+    title: string;
+    rating: number;
+    total_ratings: number;
+    description: string;
+    button_text: string;
+  };
   review: { title: string; ratings: number[] };
   userReviews: {
     title: string;
@@ -50,7 +71,11 @@ interface ListingData {
     reviewHighlights: { highlight: string; rating: number }[];
   };
   reviewPeople: {
-    user: { name: string; review_count: number; follower_count: number };
+    user: {
+      name: string;
+      review_count: number;
+      follower_count: number;
+    };
     date: string;
     location: string;
     title: string;
@@ -65,7 +90,8 @@ interface ListingData {
 
 const TemplateContent: React.FC = () => {
   const searchParams = useSearchParams();
-  const websiteIdentifier = searchParams?.get("websiteIdentifier") || "Automobile-CarRepair-560062";
+  const websiteIdentifier =
+    searchParams?.get("websiteIdentifier") || "Automobile-CarRepair-560062";
   const [listingData, setListingData] = useState<ListingData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -77,13 +103,17 @@ const TemplateContent: React.FC = () => {
 
       const rawListings = data.listings as Record<string, any>;
       const listings: Record<string, ListingData> = {};
+
       Object.entries(rawListings).forEach(([key, value]) => {
         if (value.business && typeof value.business.total_ratings === "string") {
           value.business.total_ratings = Number(value.business.total_ratings);
         }
         listings[key] = value as ListingData;
       });
-      const listing = listings[websiteIdentifier];
+
+      const decodedIdentifier = decodeURIComponent(websiteIdentifier);
+      const listing = listings[decodedIdentifier];
+
       if (listing) {
         setListingData(listing);
         setError(null);
@@ -99,7 +129,11 @@ const TemplateContent: React.FC = () => {
   }, [websiteIdentifier]);
 
   if (error || !listingData) {
-    return <div className="container mx-auto p-4">{error || "No data available"}</div>;
+    return (
+      <div className="container mx-auto p-4">
+        {error || "No data available"}
+      </div>
+    );
   }
 
   return (
