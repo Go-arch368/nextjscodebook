@@ -1,29 +1,23 @@
 import { Schema, model, models, Document, Model } from 'mongoose';
 
-
 export interface IBusiness extends Document {
-  Primary: string;
+  WebsiteIdentifier: string;
+  Category: string;
+  Subcategory: string;
   business: {
     name: string;
     rating: number;
     total_ratings: number;
     badges: string[];
     location: string;
-    hours_summary: string;
     hours: {
       status: string;
-      note: string;
     };
     years_in_business: string;
     booking_info: string;
     information: string[];
     contact: {
       phone: string;
-      actions: {
-        label: string;
-        type: string;
-        icon: string;
-      }[];
     };
     image: string;
     businessId: string;
@@ -34,7 +28,7 @@ export interface IBusiness extends Document {
     description: string;
     image: string;
   }[];
-  price_list: {
+  price_list?: {
     service: string;
     description: string;
     price: string;
@@ -51,6 +45,7 @@ export interface IBusiness extends Document {
     sname: string;
     sdata1: string;
     sdata2: string;
+    sdata3?: string;
   }[];
   general_contact: {
     phone: string;
@@ -123,12 +118,22 @@ export interface IBusiness extends Document {
   updatedAt: Date;
 }
 
-
 const BusinessSchema = new Schema<IBusiness>(
   {
-    Primary: {
+    WebsiteIdentifier: {
       type: String,
-      required: [true, 'Primary websiteId is required'],
+      required: [true, 'WebsiteIdentifier is required'],
+      trim: true,
+      unique: true,
+    },
+    Category: {
+      type: String,
+      required: [true, 'Category is required'],
+      trim: true,
+    },
+    Subcategory: {
+      type: String,
+      required: [true, 'Subcategory is required'],
       trim: true,
     },
     business: {
@@ -151,27 +156,17 @@ const BusinessSchema = new Schema<IBusiness>(
       },
       badges: {
         type: [String],
-        required: [true, 'Badges are required'],
+        default: [],
       },
       location: {
         type: String,
         required: [true, 'Location is required'],
         trim: true,
       },
-      hours_summary: {
-        type: String,
-        required: [true, 'Hours summary is required'],
-        trim: true,
-      },
       hours: {
         status: {
           type: String,
           required: [true, 'Hours status is required'],
-          trim: true,
-        },
-        note: {
-          type: String,
-          required: [true, 'Hours note is required'],
           trim: true,
         },
       },
@@ -187,35 +182,15 @@ const BusinessSchema = new Schema<IBusiness>(
       },
       information: {
         type: [String],
-        required: [true, 'Information array is required'],
+        default: [],
       },
       contact: {
         phone: {
           type: String,
           required: [true, 'Contact phone is required'],
           trim: true,
-          match: [/^\d{10}$/, 'Please use a valid 10-digit phone number'],
+          match: [/^\d{10,12}$/, 'Please use a valid 10-12 digit phone number'],
         },
-        actions: [
-          {
-            label: {
-              type: String,
-              required: [true, 'Action label is required'],
-              trim: true,
-            },
-            type: {
-              type: String,
-              required: [true, 'Action type is required'],
-              trim: true,
-              enum: ['primary', 'secondary'],
-            },
-            icon: {
-              type: String,
-              required: [true, 'Action icon is required'],
-              trim: true,
-            },
-          },
-        ],
       },
       image: {
         type: String,
@@ -230,7 +205,7 @@ const BusinessSchema = new Schema<IBusiness>(
       },
       services: {
         type: [String],
-        required: [true, 'Services array is required'],
+        default: [],
       },
     },
     photos: [
@@ -320,6 +295,10 @@ const BusinessSchema = new Schema<IBusiness>(
           required: [true, 'Service data 2 is required'],
           trim: true,
         },
+        sdata3: {
+          type: String,
+          trim: true,
+        },
       },
     ],
     general_contact: {
@@ -327,7 +306,7 @@ const BusinessSchema = new Schema<IBusiness>(
         type: String,
         required: [true, 'General contact phone is required'],
         trim: true,
-        match: [/^\d{10}$/, 'Please use a valid 10-digit phone number'],
+        match: [/^\d{10,12}$/, 'Please use a valid 10-12 digit phone number'],
       },
     },
     address: {
@@ -461,6 +440,10 @@ const BusinessSchema = new Schema<IBusiness>(
       ratings: {
         type: [Number],
         required: [true, 'Review ratings are required'],
+        validate: {
+          validator: (ratings: number[]) => ratings.every((r) => r >= 0 && r <= 5),
+          message: 'Ratings must be between 0 and 5',
+        },
       },
     },
     userReviews: {
@@ -531,7 +514,7 @@ const BusinessSchema = new Schema<IBusiness>(
         },
         tags: {
           type: [String],
-          required: [true, 'Review tags are required'],
+          default: [],
         },
         content: {
           type: String,
@@ -540,7 +523,7 @@ const BusinessSchema = new Schema<IBusiness>(
         },
         actions: {
           type: [String],
-          required: [true, 'Review actions are required'],
+          default: [],
         },
         sentiment: {
           type: String,
@@ -558,14 +541,13 @@ const BusinessSchema = new Schema<IBusiness>(
     ],
     listingCategories: {
       type: [String],
-      required: [true, 'Listing categories are required'],
+      default: [],
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
-
 
 const Business = (models.Business as Model<IBusiness>) || model<IBusiness>('Business', BusinessSchema);
 
