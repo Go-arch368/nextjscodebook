@@ -38,10 +38,9 @@ export default async function handler(req, res) {
     await page.setJavaScriptEnabled(true);
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    await delay(1000 + Math.random() * 2000);
 
     const url =
-      'https://www.justdial.com/Bangalore/AC-Repair-Services-in-Konanakunte/nct-10890481?trkid=16855-bangalore-fcat&term=AC%20Repair%20&%20Services%20Near%20Konanakunte';
+      'https://www.justdial.com/Bangalore/Veterinary-Clinics-in-Konanakunte/nct-10519261?trkid=46494-bangalore&term=';
 
     await page.goto(url, {
       waitUntil: 'domcontentloaded',
@@ -49,10 +48,25 @@ export default async function handler(req, res) {
     });
 
     await page.waitForSelector('.resultbox', { timeout: 15000 });
-    await delay(2000 + Math.random() * 3000);
+
+   
+    let previousHeight = 0;
+    let maxScrollAttempts = 20;
+    let scrollAttempts = 0;
+
+    while (scrollAttempts < maxScrollAttempts) {
+      const currentHeight = await page.evaluate('document.body.scrollHeight');
+      if (currentHeight === previousHeight) {
+        break;
+      }
+      previousHeight = currentHeight;
+
+      await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
+      await delay(2000); 
+      scrollAttempts++;
+    }
 
     const data = await page.evaluate((scrapedUrl) => {
-      // Helper to extract first URL from srcset
       function extractFirstSrcsetUrl(srcset) {
         if (!srcset) return '';
         const beforeComma = srcset.split(',')[0].trim();
@@ -60,7 +74,6 @@ export default async function handler(req, res) {
         return firstUrl;
       }
 
-      // Extract category and city from heading
       let category = '';
       let city = '';
       const heading = document.querySelector('h1')?.textContent || '';
@@ -70,19 +83,17 @@ export default async function handler(req, res) {
         city = headingMatch[2]?.trim() || '';
       }
 
-      // Fallback: Extract from URL if heading doesn't match
       if (!category || !city) {
         const urlParts = scrapedUrl.split('/').filter(Boolean);
         if (urlParts.length >= 4) {
-          // URL format: https://www.justdial.com/City/Category-in-SubLocation/...
-          const cityPart = urlParts[3]; // e.g., "Bangalore"
-          const categoryPart = urlParts[4]; // e.g., "AC-Repair-Services-in-Konanakunte"
-          city = cityPart.replace(/-/g, ' '); // "Bangalore"
+          const cityPart = urlParts[3];
+          const categoryPart = urlParts[4];
+          city = cityPart.replace(/-/g, ' ');
           const categoryMatch = categoryPart.match(/(.+?)-in-(.+)/i);
           if (categoryMatch) {
-            category = categoryMatch[1].replace(/-/g, ' ').trim(); // "AC Repair Services"
-            const subLocation = categoryMatch[2].replace(/-/g, ' ').trim(); // "Konanakunte"
-            city = `${subLocation}, ${city}`; // "Konanakunte, Bangalore"
+            category = categoryMatch[1].replace(/-/g, ' ').trim();
+            const subLocation = categoryMatch[2].replace(/-/g, ' ').trim();
+            city = `${subLocation}, ${city}`;
           }
         }
       }
@@ -179,7 +190,7 @@ export default async function handler(req, res) {
       });
 
       return results;
-    }, url); // Pass the URL to page.evaluate
+    }, url);
 
     await browser.close();
 

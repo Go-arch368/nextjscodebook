@@ -40,7 +40,7 @@ export default function CategoryPage() {
     fetchListings();
   }, []);
 
-  // Form submission handler
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -189,7 +189,7 @@ export default function CategoryPage() {
           )}
         </div>
 
-        {/* Form Section (Right, Fixed) */}
+       
         <div className="lg:w-1/3 w-full fixed top-6 right-0 pr-4 mt-20">
           <div className="p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 max-w-sm mx-auto lg:mx-0">
             <h2 className="text-2xl font-bold mb-4">
