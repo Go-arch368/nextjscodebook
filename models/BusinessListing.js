@@ -1,6 +1,7 @@
+// models/BusinessListing.js
+import mongoose from 'mongoose';
 
-const mongoose = require('mongoose');
-
+// Define the schema
 const businessListingSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -8,6 +9,11 @@ const businessListingSchema = new mongoose.Schema({
     trim: true,
   },
   initial: {
+    type: String,
+    default: '',
+    trim: true,
+  },
+  imageUrl: {
     type: String,
     default: '',
     trim: true,
@@ -75,7 +81,12 @@ const businessListingSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+}, {
+  timestamps: true,
+  collection: 'businesslisting',
 });
 
+businessListingSchema.index({ name: 1, city: 1 });
 
-module.exports = mongoose.model('BusinessListing', businessListingSchema, 'businesslisting');
+
+export default mongoose.models.BusinessListing || mongoose.model('BusinessListing', businessListingSchema);

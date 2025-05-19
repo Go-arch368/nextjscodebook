@@ -51,15 +51,43 @@ export default async function handler(req, res) {
     await page.waitForSelector('.resultbox', { timeout: 15000 });
     await delay(2000 + Math.random() * 3000);
 
-    const data = await page.evaluate(() => {
-      const results = [];
+    const data = await page.evaluate((scrapedUrl) => {
+      // Helper to extract first URL from srcset
+      function extractFirstSrcsetUrl(srcset) {
+        if (!srcset) return '';
+        const beforeComma = srcset.split(',')[0].trim();
+        const firstUrl = beforeComma.split(' ')[0];
+        return firstUrl;
+      }
 
-   
+      // Extract category and city from heading
+      let category = '';
+      let city = '';
       const heading = document.querySelector('h1')?.textContent || '';
-      const headingMatch = heading.match(/Popular\s+(.+?)\s+in\s+(.+)/i);
-      const category = headingMatch?.[1]?.trim() || '';
-      const city = headingMatch?.[2]?.trim() || '';
+      const headingMatch = heading.match(/(.+?)\s+in\s+(.+)/i);
+      if (headingMatch) {
+        category = headingMatch[1]?.trim() || '';
+        city = headingMatch[2]?.trim() || '';
+      }
 
+      // Fallback: Extract from URL if heading doesn't match
+      if (!category || !city) {
+        const urlParts = scrapedUrl.split('/').filter(Boolean);
+        if (urlParts.length >= 4) {
+          // URL format: https://www.justdial.com/City/Category-in-SubLocation/...
+          const cityPart = urlParts[3]; // e.g., "Bangalore"
+          const categoryPart = urlParts[4]; // e.g., "AC-Repair-Services-in-Konanakunte"
+          city = cityPart.replace(/-/g, ' '); // "Bangalore"
+          const categoryMatch = categoryPart.match(/(.+?)-in-(.+)/i);
+          if (categoryMatch) {
+            category = categoryMatch[1].replace(/-/g, ' ').trim(); // "AC Repair Services"
+            const subLocation = categoryMatch[2].replace(/-/g, ' ').trim(); // "Konanakunte"
+            city = `${subLocation}, ${city}`; // "Konanakunte, Bangalore"
+          }
+        }
+      }
+
+      const results = [];
       const containers = document.querySelectorAll('.resultbox');
 
       containers.forEach((container) => {
@@ -70,14 +98,19 @@ export default async function handler(req, res) {
           getText('.resultbox_title_anchor') || getText('.resultbox_title');
 
         let initial = '';
-        const img = container.querySelector('.resultbox_imagebox img');
-        if (img?.alt) {
-          initial = img.alt.trim()[0];
+        let imageUrl = '';
+        const img = container.querySelector('.srcset');
+        if (img) {
+          const srcset = img.getAttribute('srcset');
+          if (srcset) {
+            imageUrl = extractFirstSrcsetUrl(srcset);
+          } else {
+            imageUrl = img.src || '';
+          }
+          initial = img.alt?.trim()?.[0] || '';
         } else {
-          initial =
-            container
-              .querySelector('.resultbox_imagebox')
-              ?.textContent?.trim()?.[0] || '';
+          const text = container.querySelector('.resultbox_imagebox')?.textContent?.trim() || '';
+          initial = text[0] || '';
         }
 
         const rating =
@@ -126,6 +159,7 @@ export default async function handler(req, res) {
           results.push({
             name,
             initial,
+            imageUrl,
             rating,
             totalRatings,
             address,
@@ -145,7 +179,7 @@ export default async function handler(req, res) {
       });
 
       return results;
-    });
+    }, url); // Pass the URL to page.evaluate
 
     await browser.close();
 
