@@ -1,10 +1,10 @@
+
 "use client";
 
 import { useEffect, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
-  Bookmark,
   ThumbsUp,
   Star,
   Phone,
@@ -14,32 +14,40 @@ import {
 
 export default function CategoryPage() {
   const [listings, setListings] = useState([]);
+  const [category, setCategory] = useState('Services');
+  const [city, setCity] = useState('Your City');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    async function fetchListings() {
-      try {
-        setLoading(true);
-        const response = await fetch('/api/scrape');
-        if (!response.ok) throw new Error('Failed to fetch listings');
-        const result = await response.json();
-        console.log('API Response:', result); // Debug log
-        if (result.success) {
-          setListings(result.data);
-        } else {
-          throw new Error(result.message || 'Failed to fetch listings');
-        }
-      } catch (err) {
-        console.error('Error:', err.message);
-        setError(err.message);
-      } finally {
-        setLoading(false);
+  const fetchListings = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await fetch('/api/getListings'); // Changed from /api/scrape
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+      const result = await response.json();
+      console.log('API Response:', result);
+      if (result.success && result.data.length > 0) {
+        setListings(result.data);
+        setCategory(result.data[0]?.category || 'Services');
+        setCity(result.data[0]?.city || 'Your City');
+      } else {
+        throw new Error(result.message || 'No listings found');
       }
+    } catch (err) {
+      console.error('Fetch error:', err.message);
+      setError(err.message);
+      setListings([]);
+      setCategory('Services');
+      setCity('Your City');
+    } finally {
+      setLoading(false);
     }
+  };
+
+  useEffect(() => {
     fetchListings();
   }, []);
-
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -54,29 +62,41 @@ export default function CategoryPage() {
     e.target.reset();
   };
 
-  const Subcategory = listings[0]?.category || 'Services';
-
   if (loading) return <div className="text-center text-gray-600 dark:text-gray-300">Loading...</div>;
-  if (error) return <div className="text-center text-red-500 dark:text-red-400">Error: {error}</div>;
+  if (error) return (
+    <div className="text-center text-red-500 dark:text-red-400">
+      Error: {error}
+      <Button
+        onClick={fetchListings}
+        className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+      >
+        Retry
+      </Button>
+    </div>
+  );
 
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mt-3 pl-4">
-          {listings[0]?.category || 'Services'} in {listings[0]?.city || 'Your City'}
+          {category} in {city}
         </h1>
+        <Button
+          onClick={fetchListings}
+          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+        >
+          Refresh Listings
+        </Button>
       </div>
 
- 
       <div className="flex flex-col lg:flex-row gap-6">
-        
         <div className="lg:w-2/3 w-full pr-5">
           {listings.length === 0 ? (
             <p className="text-gray-600 dark:text-gray-300">No listings found.</p>
           ) : (
             listings.map((listing, index) => {
               const business = {
-                services: Array.isArray(listing.tags) ? listing.tags : [], 
+                services: Array.isArray(listing.tags) ? listing.tags : [],
                 image: listing.imageUrl || 'https://via.placeholder.com/80x80.png?text=Business+Logo',
                 name: listing.name || 'Unknown Business',
                 rating: listing.rating || 'N/A',
@@ -189,11 +209,10 @@ export default function CategoryPage() {
           )}
         </div>
 
-       
         <div className="lg:w-1/3 w-full fixed top-6 right-0 pr-4 mt-20">
           <div className="p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 max-w-sm mx-auto lg:mx-0">
             <h2 className="text-2xl font-bold mb-4">
-              Get the List of <span className="text-blue-600">{Subcategory}</span>
+              Get the List of <span className="text-blue-600">{category}</span>
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               We'll send you contact details in seconds <span className="font-semibold">for free</span>
@@ -203,7 +222,13 @@ export default function CategoryPage() {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   What kind of Assistance do you need?
                 </label>
-               
+                <input
+                  type="text"
+                  name="assistance"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+                  placeholder="Enter assistance needed"
+                  required
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">

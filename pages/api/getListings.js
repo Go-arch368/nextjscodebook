@@ -11,14 +11,22 @@ export default async function handler(req, res) {
     // Connect to MongoDB
     await dbConnect();
 
-    // Fetch all listings from the businesslisting collection
-    const listings = await BusinessListing.find({}).lean();
-    console.log(`Fetched ${listings.length} listings from businesslisting collection`);
+    // Get query parameters
+    const { category, city } = req.query;
+    const query = {};
+    if (category) query.category = category;
+    if (city) query.city = city;
+
+    // Fetch listings from the businesslisting collection
+    const listings = await BusinessListing.find(query).lean();
+    console.log(`Fetched ${listings.length} listings from businesslisting collection for category: ${category || 'all'}, city: ${city || 'all'}`);
 
     return res.status(200).json({
       success: true,
       count: listings.length,
       data: listings,
+      category: category || 'Services',
+      city: city || 'Your City',
     });
   } catch (error) {
     console.error('Error fetching listings:', error.message);

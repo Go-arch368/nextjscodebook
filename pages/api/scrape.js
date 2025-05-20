@@ -1,4 +1,6 @@
 import puppeteer from 'puppeteer';
+import dbConnect from '@/lib/dbConnect';
+import BusinessListing from '../../models/BusinessListing';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -7,8 +9,12 @@ export default async function handler(req, res) {
 
   let browser;
   try {
+   
+    await dbConnect();
+    console.log('Connected to MongoDB');
+
     browser = await puppeteer.launch({
-      headless: false, // Keep false for debugging
+      headless: process.env.NODE_ENV === 'production' ? true : false,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
       executablePath:
         process.env.NODE_ENV === 'production'
@@ -31,8 +37,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url =
-      'https://www.justdial.com/Bangalore/Dentists-in-Konanakunte/nct-10156331?trkid=24067-bangalore-fcat&term=';
+    const url = req.query.url || 'https://www.justdial.com/Bangalore/Dentists-in-Konanakunte/nct-10156331?trkid=24067-bangalore-fcat&term=';
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
@@ -57,7 +62,7 @@ export default async function handler(req, res) {
         await new Promise((resolve) => {
           let totalHeight = 0;
           const distance = 200;
-          const maxScrolls = 200; // Increased for more scrolling
+          const maxScrolls = 200;
           let scrollCount = 0;
           let lastScrollHeight = 0;
 
@@ -67,10 +72,9 @@ export default async function handler(req, res) {
             totalHeight += distance;
             scrollCount++;
 
-            // Check if scrollHeight changed (new content loaded)
             if (scrollHeight > lastScrollHeight) {
               lastScrollHeight = scrollHeight;
-              scrollCount = 0; // Reset to allow more scrolling
+              scrollCount = 0;
             }
 
             if (scrollCount >= maxScrolls || totalHeight >= scrollHeight) {
@@ -84,11 +88,11 @@ export default async function handler(req, res) {
 
     let previousCount = 0;
     let attempts = 0;
-    const maxAttempts = 50; // Increased to allow more clicks
+    const maxAttempts = 50;
 
     while (attempts < maxAttempts) {
       await autoScroll(page);
-      await delay(2000); // Increased delay for content loading
+      await delay(2000);
 
       const currentCount = await page.evaluate(
         () => document.querySelectorAll('.resultbox').length
@@ -120,7 +124,7 @@ export default async function handler(req, res) {
           await page.waitForResponse(
             (response) =>
               response.url().includes('/search') && response.status() === 200,
-            { timeout: 15000 } // Increased timeout
+            { timeout: 15000 }
           );
           console.log('Received /search response');
         } catch (e) {
@@ -130,7 +134,7 @@ export default async function handler(req, res) {
       }
 
       previousCount = currentCount;
-      await delay(4000 + Math.random() * 2000); // Increased and randomized delay
+      await delay(4000 + Math.random() * 2000);
       attempts++;
     }
 
@@ -148,14 +152,18 @@ export default async function handler(req, res) {
       let category = '';
       let city = '';
       const heading = document.querySelector('h1')?.textContent || '';
+      console.log('Heading for category extraction:', heading);
       const headingMatch = heading.match(/(.+?)\s+in\s+(.+)/i);
       if (headingMatch) {
         category = headingMatch[1]?.trim() || '';
         city = headingMatch[2]?.trim() || '';
+      } else {
+        console.log('Heading match failed, trying URL parsing');
       }
 
       if (!category || !city) {
         const urlParts = scrapedUrl.split('/').filter(Boolean);
+        console.log('URL Parts for category:', urlParts);
         if (urlParts.length >= 4) {
           const cityPart = urlParts[3];
           const categoryPart = urlParts[4];
@@ -165,9 +173,15 @@ export default async function handler(req, res) {
             category = categoryMatch[1].replace(/-/g, ' ').trim();
             const subLocation = categoryMatch[2].replace(/-/g, ' ').trim();
             city = `${subLocation}, ${city}`;
+          } else {
+            console.log('Category match failed for URL part:', categoryPart);
           }
+        } else {
+          console.log('URL parts insufficient:', urlParts);
         }
       }
+
+      console.log('Extracted category:', category, 'city:', city);
 
       const results = [];
       const containers = document.querySelectorAll('.resultbox');
@@ -262,12 +276,47 @@ export default async function handler(req, res) {
         }
       });
 
-      return results;
+      return { results, category, city };
     }, url);
+
+    // Delete existing data for the same category and city
+    if (data.results.length > 0) {
+      try {
+        await BusinessListing.deleteMany({
+          category: data.category,
+          city: data.city,
+        });
+        console.log(`Deleted existing listings for category: ${data.category}, city: ${data.city}`);
+
+        // Save new data to MongoDB
+        const savePromises = data.results.map(async (item) => {
+          const business = new BusinessListing({
+            ...item,
+            timestamp: new Date(item.timestamp),
+          });
+          return business.save();
+        });
+
+        const savedResults = await Promise.all(savePromises);
+        console.log(`Saved ${savedResults.length} new business listings to MongoDB`);
+      } catch (dbError) {
+        console.error('Error saving to MongoDB:', dbError);
+        await browser.close();
+        return res.status(500).json({
+          success: false,
+          url,
+          count: data.results.length,
+          data: data.results,
+          message: 'Scraping succeeded but failed to save to database',
+          error: dbError.message,
+          scrapedAt: new Date().toISOString(),
+        });
+      }
+    }
 
     await browser.close();
 
-    if (data.length === 0) {
+    if (data.results.length === 0) {
       return res.status(200).json({
         success: false,
         url,
@@ -281,8 +330,11 @@ export default async function handler(req, res) {
     return res.status(200).json({
       success: true,
       url,
-      count: data.length,
-      data,
+      count: data.results.length,
+      data: data.results,
+      category: data.category,
+      city: data.city,
+      message: `Successfully scraped and saved ${data.results.length} business listings`,
       scrapedAt: new Date().toISOString(),
     });
   } catch (error) {
