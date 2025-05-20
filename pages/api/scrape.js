@@ -8,16 +8,8 @@ export default async function handler(req, res) {
   let browser;
   try {
     browser = await puppeteer.launch({
-      headless: 'new',
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--single-process',
-      ],
+      headless: false, // Keep false for debugging
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
       executablePath:
         process.env.NODE_ENV === 'production'
           ? process.env.PUPPETEER_EXECUTABLE_PATH
@@ -26,47 +18,126 @@ export default async function handler(req, res) {
 
     const page = await browser.newPage();
 
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => false });
+    });
+
     await page.setUserAgent(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     );
-
-    await page.setExtraHTTPHeaders({
-      'Accept-Language': 'en-US,en;q=0.9',
-    });
-
+    await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' });
     await page.setViewport({ width: 1366, height: 768 });
     await page.setJavaScriptEnabled(true);
 
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
     const url =
-      'https://www.justdial.com/Bangalore/Veterinary-Clinics-in-Konanakunte/nct-10519261?trkid=46494-bangalore&term=';
+      'https://www.justdial.com/Bangalore/Dentists-in-Konanakunte/nct-10156331?trkid=24067-bangalore-fcat&term=';
 
-    await page.goto(url, {
-      waitUntil: 'domcontentloaded',
-      timeout: 30000,
-    });
+    await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
-    await page.waitForSelector('.resultbox', { timeout: 15000 });
-
-   
-    let previousHeight = 0;
-    let maxScrollAttempts = 20;
-    let scrollAttempts = 0;
-
-    while (scrollAttempts < maxScrollAttempts) {
-      const currentHeight = await page.evaluate('document.body.scrollHeight');
-      if (currentHeight === previousHeight) {
-        break;
-      }
-      previousHeight = currentHeight;
-
-      await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
-      await delay(2000); 
-      scrollAttempts++;
+    try {
+      await page.waitForSelector('.resultbox', { timeout: 60000 });
+      console.log('Initial .resultbox elements found');
+    } catch (e) {
+      console.error('Selector .resultbox not found:', e);
+      await browser.close();
+      return res.status(200).json({
+        success: false,
+        url,
+        count: 0,
+        data: [],
+        message: 'No results found. Selector .resultbox not found.',
+        scrapedAt: new Date().toISOString(),
+      });
     }
 
+    async function autoScroll(page) {
+      await page.evaluate(async () => {
+        await new Promise((resolve) => {
+          let totalHeight = 0;
+          const distance = 200;
+          const maxScrolls = 200; // Increased for more scrolling
+          let scrollCount = 0;
+          let lastScrollHeight = 0;
+
+          const timer = setInterval(() => {
+            const scrollHeight = document.body.scrollHeight;
+            window.scrollBy(0, distance);
+            totalHeight += distance;
+            scrollCount++;
+
+            // Check if scrollHeight changed (new content loaded)
+            if (scrollHeight > lastScrollHeight) {
+              lastScrollHeight = scrollHeight;
+              scrollCount = 0; // Reset to allow more scrolling
+            }
+
+            if (scrollCount >= maxScrolls || totalHeight >= scrollHeight) {
+              clearInterval(timer);
+              resolve();
+            }
+          }, 300);
+        });
+      });
+    }
+
+    let previousCount = 0;
+    let attempts = 0;
+    const maxAttempts = 50; // Increased to allow more clicks
+
+    while (attempts < maxAttempts) {
+      await autoScroll(page);
+      await delay(2000); // Increased delay for content loading
+
+      const currentCount = await page.evaluate(
+        () => document.querySelectorAll('.resultbox').length
+      );
+      console.log(`Attempt ${attempts + 1}: Found ${currentCount} .resultbox elements`);
+
+      if (currentCount === previousCount && attempts > 0) {
+        console.log('No new results loaded, checking for button...');
+        const loadMoreBtn = await page.$('.btn-load-more, .load-more-btn');
+        console.log('Load More Button:', loadMoreBtn ? 'Found' : 'Not Found');
+
+        if (!loadMoreBtn) {
+          console.log('No load more button found, stopping.');
+          break;
+        }
+
+        const isVisible = await page.evaluate(
+          (btn) => btn.offsetParent !== null && !btn.disabled,
+          loadMoreBtn
+        );
+        if (!isVisible) {
+          console.log('Load more button not visible or disabled, stopping.');
+          break;
+        }
+
+        try {
+          await loadMoreBtn.click();
+          console.log('Clicked load more button');
+          await page.waitForResponse(
+            (response) =>
+              response.url().includes('/search') && response.status() === 200,
+            { timeout: 15000 } // Increased timeout
+          );
+          console.log('Received /search response');
+        } catch (e) {
+          console.log('Load more click or response wait failed:', e.message);
+          break;
+        }
+      }
+
+      previousCount = currentCount;
+      await delay(4000 + Math.random() * 2000); // Increased and randomized delay
+      attempts++;
+    }
+
+    console.log('Finished loading attempts, scraping data...');
     const data = await page.evaluate((scrapedUrl) => {
+      console.log('Resultbox count:', document.querySelectorAll('.resultbox').length);
+
       function extractFirstSrcsetUrl(srcset) {
         if (!srcset) return '';
         const beforeComma = srcset.split(',')[0].trim();
@@ -120,7 +191,9 @@ export default async function handler(req, res) {
           }
           initial = img.alt?.trim()?.[0] || '';
         } else {
-          const text = container.querySelector('.resultbox_imagebox')?.textContent?.trim() || '';
+          const text =
+            container.querySelector('.resultbox_imagebox')?.textContent?.trim() ||
+            '';
           initial = text[0] || '';
         }
 
@@ -194,6 +267,17 @@ export default async function handler(req, res) {
 
     await browser.close();
 
+    if (data.length === 0) {
+      return res.status(200).json({
+        success: false,
+        url,
+        count: 0,
+        data: [],
+        message: 'No results found. Possible issue with selectors or content loading.',
+        scrapedAt: new Date().toISOString(),
+      });
+    }
+
     return res.status(200).json({
       success: true,
       url,
@@ -215,10 +299,6 @@ export default async function handler(req, res) {
     return res.status(500).json({
       error: 'Scraping failed',
       message: error.message,
-      suggestion:
-        process.env.NODE_ENV === 'development'
-          ? 'Run "npm install puppeteer" and ensure Chrome is installed'
-          : 'Check server logs and PUPPETEER_EXECUTABLE_PATH environment variable',
       stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
     });
   }
