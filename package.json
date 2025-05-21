@@ -10,8 +10,7 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-        "postinstall": "npx puppeteer browsers install chrome"
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
     },
     "dependencies": {
         "@hookform/resolvers": "^5.0.1",
