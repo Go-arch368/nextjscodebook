@@ -9,7 +9,6 @@ export default async function handler(req, res) {
 
   let browser;
   try {
-   
     await dbConnect();
     console.log('Connected to MongoDB');
 
@@ -37,7 +36,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Bangalore/Dentists-in-Konanakunte/nct-10156331?trkid=24067-bangalore-fcat&term=';
+    const url = req.query.url || 'https://www.justdial.com/Bangalore/Car-Sale-Center-in-Konanakunte/nct-10075853?trkid=534366-bangalore&term=car%20sales';
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
@@ -181,7 +180,12 @@ export default async function handler(req, res) {
         }
       }
 
-      console.log('Extracted category:', category, 'city:', city);
+      // Remove "Popular" from the start of the category name
+      if (category.toLowerCase().startsWith('popular')) {
+        category = category.replace(/^popular\s+/i, '').trim();
+      }
+
+      console.log('Extracted category (after removing Popular):', category, 'city:', city);
 
       const results = [];
       const containers = document.querySelectorAll('.resultbox');
