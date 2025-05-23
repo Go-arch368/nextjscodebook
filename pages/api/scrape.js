@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Bangalore/Car-Sale-Center-in-Konanakunte/nct-10075853?trkid=534366-bangalore&term=car%20sales';
+    const url = req.query.url || 'https://www.justdial.com/Khargone/search?q=autospares-hub&stype=company_list&trkid=9970468686-fcomp&term=AutoSpares%20Hub'
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 

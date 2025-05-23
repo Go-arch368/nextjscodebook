@@ -2,13 +2,7 @@ import { v2 as cloudinary } from 'cloudinary';
 
 const imageCache = new Map();
 
-// Validate environment variables
-const requiredEnvVars = ['CLOUDINARY_CLOUD_NAME', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET'];
-const missingEnvVars = requiredEnvVars.filter(varName => !process.env[varName]);
-if (missingEnvVars.length > 0) {
-  throw new Error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
-}
-
+// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -16,151 +10,106 @@ cloudinary.config({
 });
 
 /**
- * Clean category name by removing problematic terms
- */
-function cleanCategory(category) {
-  return category
-    .replace(/near me/gi, '') // Remove "near me"
-    .replace(/:\s*/g, ' ') // Replace colon with space
-    .trim();
-}
-
-/**
- * Normalize category name for Cloudinary tags
+ * Normalizes category names for Cloudinary
  */
 function normalizeCategory(category) {
-  return category
-    .replace(/\//g, '_') // Replace slashes with underscores
-    .replace(/&/g, 'and') // Replace ampersand with 'and'
-    .replace(/:/g, '_') // Replace colon with underscore
-    .replace(/\s+/g, '_') // Replace spaces with underscores
+  return decodeURIComponent(category)
+    .replace(/near me/gi, '')
+    .replace(/[^\w\s-]/g, '')
     .trim();
 }
 
 /**
- * Helper function to search for images with a given expression
+ * Search strategies for Cloudinary
  */
-async function searchImages(expression, cursor = null) {
-  try {
-    const search = cloudinary.search
-      .expression(expression)
-      .sort_by('public_id', 'desc')
-      .max_results(30);
+async function searchImages(category) {
+  const normalized = normalizeCategory(category);
+  console.log(`Searching for: "${normalized}"`);
 
-    if (cursor) {
-      search.next_cursor(cursor);
-    }
-
-    const result = await search.execute();
-    return result;
-  } catch (error) {
-    console.error(`Search error for expression "${expression}":`, error.message);
-    throw new Error(`Failed to search images: ${error.message}`);
-  }
-}
-
-/**
- * Fetches all images for an exact folder or tag match with pagination
- */
-async function fetchImagesByExactMatch(expression, allImages = new Set(), cursor = null) {
-  const result = await searchImages(expression, cursor);
-  
-  if (result.resources?.length > 0) {
-    result.resources.forEach(resource => {
-      allImages.add({
-        url: resource.secure_url,
-        publicId: resource.public_id,
-      });
-    });
-
-    if (result.next_cursor) {
-      await new Promise(resolve => setTimeout(resolve, 100)); // Delay for rate limits
-      return fetchImagesByExactMatch(expression, allImages, result.next_cursor);
-    }
-  }
-
-  return Array.from(allImages);
-}
-
-/**
- * Main function to fetch all images for a category
- */
-async function fetchAllImages(category, city = '') {
-  const cleanedCategory = cleanCategory(category); // e.g., Trusted Financial Partners
-  const normalizedCategory = normalizeCategory(cleanedCategory); // e.g., Trusted_Financial_Partners
-  const formats = [
-    cleanedCategory, // Trusted Financial Partners
-    normalizedCategory, // Trusted_Financial_Partners
-    normalizedCategory.toLowerCase(), // trusted_financial_partners
-    cleanedCategory.replace(/\s+/g, '_'), // Trusted_Financial_Partners
-    'Banks', // Fallback generic category
+  // Try these exact folder paths in order
+  const folderPaths = [
+    `Pictures/${normalized}`,          // "Pictures/Best Hospitals"
+    `Pictures/${normalized.replace(/ /g, '_')}`,  // "Pictures/Best_Hospitals"
+    normalized,                       // "Best Hospitals" (root level)
+    `Medical/${normalized}`,          // Alternative medical folder
+    'Pictures/Hospitals'              // Fallback generic
   ];
 
-  if (city) {
-    const normalizedCity = city.replace(/\s+/g, '_'); // e.g., Konanakunte_Bangalore
-    formats.push(`${normalizedCategory}_${normalizedCity}`); // e.g., Trusted_Financial_Partners_Konanakunte_Bangalore
-  }
-
-  // Check cache first
-  for (const format of formats) {
-    if (imageCache.has(format)) {
-      console.log(`Returning cached images for category: ${format}`);
-      return imageCache.get(format);
-    }
-  }
-
-  const allImages = new Set();
-
-  // Try folder matches
-  for (const format of formats) {
+  for (const path of folderPaths) {
     try {
-      const folderPath = format.includes('/')
-        ? `Pictures/${format}` // Keep original slashes for folder
-        : `Pictures/${format.replace(/_/g, ' ')}`; // Convert underscores to spaces for folder
-      const folderImages = await fetchImagesByExactMatch(`folder:${folderPath}`, allImages);
-      console.log(`Found ${folderImages.length} images in folder ${folderPath}`);
+      console.log(`Trying path: "${path}"`);
+      
+      // 1. First try exact folder match
+      const folderResult = await cloudinary.search
+        .expression(`folder="${path}"`)
+        .max_results(50)
+        .execute();
+
+      if (folderResult.resources?.length > 0) {
+        console.log(`Found ${folderResult.resources.length} images in "${path}"`);
+        return folderResult.resources;
+      }
+
+      // 2. Try prefix search if exact folder fails
+      const prefixResult = await cloudinary.api.resources({
+        type: 'upload',
+        prefix: path,
+        max_results: 50
+      });
+
+      if (prefixResult.resources?.length > 0) {
+        console.log(`Found ${prefixResult.resources.length} images with prefix "${path}"`);
+        return prefixResult.resources;
+      }
+
     } catch (error) {
-      console.log(`No images in folder ${format}:`, error.message);
+      console.error(`Search failed for "${path}":`, error.message);
     }
   }
 
-  // Try tag matches
-  for (const format of formats) {
-    try {
-      const tag = format.replace(/\//g, '_').replace(/\s+/g, '_');
-      const tagImages = await fetchImagesByExactMatch(`tags=${tag}`);
-      console.log(`Found ${tagImages.length} images with tag ${tag}`);
-    } catch (error) {
-      console.log(`No images with tag ${format}:`, error.message);
-    }
-  }
-
-  const result = Array.from(allImages);
-  formats.forEach(format => imageCache.set(format, result));
-  console.log(`Total: ${result.length} images for category "${cleanedCategory}"${city ? ` in ${city}` : ''}`);
-
-  return result;
+  return [];
 }
 
+/**
+ * Main image fetching function
+ */
 export default async function handler(req, res) {
-  const { category, city } = req.query;
+  const { category } = req.query;
 
-  if (!category || typeof category !== 'string' || category.trim() === '') {
-    return res.status(400).json({ error: 'Valid category is required' });
+  if (!category) {
+    return res.status(400).json({ 
+      success: false,
+      error: 'Category parameter is required'
+    });
   }
 
   try {
-    const images = await fetchAllImages(category, city);
+    const startTime = Date.now();
+    console.log(`\n=== Fetching images for "${category}" ===`);
+    
+    const resources = await searchImages(category);
+    const images = resources.map(img => ({
+      url: img.secure_url,
+      publicId: img.public_id,
+      width: img.width,
+      height: img.height
+    }));
+
+    console.log(`=== Found ${images.length} images in ${Date.now() - startTime}ms ===\n`);
+    
     return res.status(200).json({
+      success: true,
       images,
       total: images.length,
+      searchedPath: `Pictures/${normalizeCategory(category)}`
     });
+
   } catch (error) {
-    console.error('Error in handler:', error);
-    return res.status(500).json({ 
-      error: 'Failed to fetch images',
-      details: error.message,
+    console.error('Failed to fetch images:', error);
+    return res.status(500).json({
+      success: false,
+      error: error.message,
+      details: `Ensure you have images in "Pictures/Best Hospitals" folder`
     });
   }
 }
-
