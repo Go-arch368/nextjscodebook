@@ -379,7 +379,7 @@ export default function CategoryContent() {
             <h2 className="text-2xl font-bold mb-4">
               Get the List of <span className="text-blue-600">{category}</span>
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               We'll send you contact details in seconds <span className="font-semibold">for free</span>
             </p>
             <form className="space-y-4" onSubmit={handleFormSubmit}>
