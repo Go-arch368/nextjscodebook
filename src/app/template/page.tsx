@@ -1,7 +1,7 @@
-
-import React from "react";
-import { Suspense } from "react";
-import TemplateContent from "@/carservice/TemplateContent";
+// app/template/page.tsx
+import React from 'react';
+import { Suspense } from 'react';
+import TemplateContent from '@/carservice/TemplateContent';
 
 const TemplatePage: React.FC = () => {
   return (
