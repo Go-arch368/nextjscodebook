@@ -1,8 +1,12 @@
 "use client";
 import { useEffect, useState, useCallback } from 'react';
+import { useSearchParams } from 'next/navigation'; // To get URL query parameters
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
+
+
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 // Debounce function
 function debounce(func, wait) {
@@ -21,6 +25,7 @@ function generateRandomPhone() {
 }
 
 export default function CategoryPage() {
+  const searchParams = useSearchParams(); // Get URL query parameters
   const [listings, setListings] = useState([]);
   const [category, setCategory] = useState('Services');
   const [city, setCity] = useState('Your City');
@@ -28,15 +33,21 @@ export default function CategoryPage() {
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
 
+  // Get the category from the URL query parameter (e.g., ?category=AutoSpares%20Hub)
+  const selectedCategory = searchParams.get('category') || 'Services';
+
   const fetchListings = useCallback(
-    debounce(async () => {
-      console.log('[CategoryPage] fetchListings called at:', new Date().toISOString());
+    debounce(async (categoryToFetch) => {
+      console.log('[CategoryPage] fetchListings called at:', new Date().toISOString(), 'for category:', categoryToFetch);
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch('/api/getListings', {
+
+        // Fetch listings with a category filter
+        const response = await fetch(`/api/getListings?category=${encodeURIComponent(categoryToFetch)}`, {
           cache: 'no-store',
         });
+
         if (!response.ok) {
           throw new Error(`Failed to fetch listings: ${response.status}`);
         }
@@ -46,7 +57,7 @@ export default function CategoryPage() {
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
           const uniqueCategories = [...new Set(result.data.map(listing => listing.category))];
           console.log('[CategoryPage] Unique categories:', uniqueCategories);
-          
+
           const imagePromises = uniqueCategories.map(category => {
             const url = `/api/getImagesByCategory?category=${encodeURIComponent(category)}`;
             console.log(`[CategoryPage] Fetching images for category: ${category}, URL: ${url}`);
@@ -75,7 +86,7 @@ export default function CategoryPage() {
           }));
 
           setListings(listingsWithImages);
-          setCategory(result.data[0]?.category || 'Services');
+          setCategory(result.data[0]?.category || categoryToFetch);
           setCity(result.data[0]?.city || 'Your City');
 
           const initialVisibleImages = {};
@@ -84,13 +95,13 @@ export default function CategoryPage() {
           });
           setVisibleImages(initialVisibleImages);
         } else {
-          throw new Error(result.message || 'No listings found');
+          throw new Error(result.message || `No listings found for category: ${categoryToFetch}`);
         }
       } catch (err) {
         console.error('[CategoryPage] Fetch error:', err.message);
         setError(`Unable to load listings: ${err.message}`);
         setListings([]);
-        setCategory('Services');
+        setCategory(categoryToFetch);
         setCity('Your City');
       } finally {
         setLoading(false);
@@ -101,20 +112,20 @@ export default function CategoryPage() {
   );
 
   useEffect(() => {
-    console.log('[CategoryPage] useEffect triggered - Initial page load or reload');
-    fetchListings();
-  }, [fetchListings]);
+    console.log('[CategoryPage] useEffect triggered - Initial page load or reload for category:', selectedCategory);
+    fetchListings(selectedCategory);
+  }, [fetchListings, selectedCategory]);
 
   useEffect(() => {
     const handlePageShow = (event) => {
       if (event.persisted) {
-        console.log('[CategoryPage] Page restored from cache, refetching listings...');
-        fetchListings();
+        console.log('[CategoryPage] Page restored from cache, refetching listings for category:', selectedCategory);
+        fetchListings(selectedCategory);
       }
     };
     window.addEventListener('pageshow', handlePageShow);
     return () => window.removeEventListener('pageshow', handlePageShow);
-  }, [fetchListings]);
+  }, [fetchListings, selectedCategory]);
 
   const handleShowMoreImages = (listingIndex) => {
     setVisibleImages((prev) => ({
@@ -140,40 +151,42 @@ export default function CategoryPage() {
     alert(`Enquiry sent for ${businessName}! Our team will contact you soon.`);
   };
 
-  const handleVisit = (businessName, category) => {
-    switch (category) {
-      case 'Best Hospitals':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Health%26Medical-Hospital-560038';
-        break;
-      case 'Best Clinics':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Health%26Medical-Clinics-560038';
-        break;
-      case 'Best Dentists':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Health%26Medical-Dentists-560062';
-        break;
-      case 'Chemists':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Health%26Medical-Pharmacies-560098';
-        break;
-      case 'Best Veterinarians':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Health%26Medical-Veterinary-560076';
-        break;
-      case 'Car Repair & Services':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Automobile-CarRepair-560062';
-        break;
-      case 'Car Showrooms':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Automobile-CarSales-560062';
-        break;
-      case 'Tyre Dealers':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Automobile-Tires-560062';
-        break;
-      case 'Showing Results for \"Autospares Hub\"':
-        window.location.href = 'http://localhost:3000/template?websiteIdentifier=Automobile-AutoParts-560062';
-        break;
-      default:
-        alert(`Visiting ${businessName}`);
-        break;
-    }
-  };
+
+
+const handleVisit = (businessName, category) => {
+  switch (category) {
+    case 'Best Hospitals':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Hospital-560038`;
+      break;
+    case 'Best Clinics':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Clinics-560038`;
+      break;
+    case 'Best Dentists':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Dentists-560062`;
+      break;
+    case 'Chemists':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Pharmacies-560098`;
+      break;
+    case 'Best Veterinarians':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Veterinary-560076`;
+      break;
+    case 'Car Repair & Services':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-CarRepair-560062`;
+      break;
+    case 'Car Showrooms':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-CarSales-560062`;
+      break;
+    case 'Tyre Dealers':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-Tires-560062`;
+      break;
+    case 'AutoSpares Hub':
+      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-AutoParts-560062`;
+      break;
+    default:
+      alert(`Visiting ${businessName}`);
+      break;
+  }
+};
 
   if (loading) return <div className="text-center text-gray-600 dark:text-gray-300">Loading listings, please wait...</div>;
   if (error) return (
@@ -181,8 +194,8 @@ export default function CategoryPage() {
       {error}
       <Button
         onClick={() => {
-          console.log('[CategoryPage] Retry button clicked, refetching listings...');
-          fetchListings();
+          console.log('[CategoryPage] Retry button clicked, refetching listings for category:', selectedCategory);
+          fetchListings(selectedCategory);
         }}
         className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
       >
