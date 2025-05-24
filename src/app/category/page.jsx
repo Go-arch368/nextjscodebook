@@ -1,4 +1,4 @@
-// app/category/page.jsx
+// src/app/category/page.jsx
 import { Suspense } from 'react';
 import CategoryContent from './CategoryContent';
 

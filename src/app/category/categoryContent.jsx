@@ -1,4 +1,4 @@
-// app/category/CategoryContent.jsx
+// src/app/category/CategoryContent.jsx
 "use client";
 import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
