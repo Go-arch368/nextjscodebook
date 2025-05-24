@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState, useCallback } from 'react';
-import { useSearchParams } from 'next/navigation'; // To get URL query parameters
+import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
 
-
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+// Tell Next.js to render this page dynamically (skip prerendering)
+export const dynamic = 'force-dynamic';
 
 // Debounce function
 function debounce(func, wait) {
@@ -19,13 +19,13 @@ function debounce(func, wait) {
 
 // Generate random phone number
 function generateRandomPhone() {
-  const firstDigit = Math.floor(Math.random() * 4) + 6; // Start with 6, 7, 8, or 9
+  const firstDigit = Math.floor(Math.random() * 4) + 6;
   const randomNum = Math.floor(100000000 + Math.random() * 900000000);
   return `+91${firstDigit}${randomNum.toString().slice(1)}`;
 }
 
 export default function CategoryPage() {
-  const searchParams = useSearchParams(); // Get URL query parameters
+  const searchParams = useSearchParams();
   const [listings, setListings] = useState([]);
   const [category, setCategory] = useState('Services');
   const [city, setCity] = useState('Your City');
@@ -33,7 +33,6 @@ export default function CategoryPage() {
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
 
-  // Get the category from the URL query parameter (e.g., ?category=AutoSpares%20Hub)
   const selectedCategory = searchParams.get('category') || 'Services';
 
   const fetchListings = useCallback(
@@ -43,7 +42,6 @@ export default function CategoryPage() {
         setLoading(true);
         setError(null);
 
-        // Fetch listings with a category filter
         const response = await fetch(`/api/getListings?category=${encodeURIComponent(categoryToFetch)}`, {
           cache: 'no-store',
         });
@@ -151,42 +149,50 @@ export default function CategoryPage() {
     alert(`Enquiry sent for ${businessName}! Our team will contact you soon.`);
   };
 
+  const handleVisit = (businessName, category) => {
+    // Store the category and business name in localStorage
+    try {
+      localStorage.setItem('lastVisitedCategory', category);
+      localStorage.setItem('lastVisitedBusiness', businessName);
+      console.log(`Stored in localStorage: category=${category}, business=${businessName}`);
+    } catch (error) {
+      console.error('Error writing to localStorage:', error);
+    }
 
-
-const handleVisit = (businessName, category) => {
-  switch (category) {
-    case 'Best Hospitals':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Hospital-560038`;
-      break;
-    case 'Best Clinics':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Clinics-560038`;
-      break;
-    case 'Best Dentists':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Dentists-560062`;
-      break;
-    case 'Chemists':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Pharmacies-560098`;
-      break;
-    case 'Best Veterinarians':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Health%26Medical-Veterinary-560076`;
-      break;
-    case 'Car Repair & Services':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-CarRepair-560062`;
-      break;
-    case 'Car Showrooms':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-CarSales-560062`;
-      break;
-    case 'Tyre Dealers':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-Tires-560062`;
-      break;
-    case 'AutoSpares Hub':
-      window.location.href = `${BASE_URL}/template?websiteIdentifier=Automobile-AutoParts-560062`;
-      break;
-    default:
-      alert(`Visiting ${businessName}`);
-      break;
-  }
-};
+    // Redirect using a relative URL (removing BASE_URL for simplicity)
+    switch (category) {
+      case 'Best Hospitals':
+        window.location.href = '/template?websiteIdentifier=Health%26Medical-Hospital-560038';
+        break;
+      case 'Best Clinics':
+        window.location.href = '/template?websiteIdentifier=Health%26Medical-Clinics-560038';
+        break;
+      case 'Best Dentists':
+        window.location.href = '/template?websiteIdentifier=Health%26Medical-Dentists-560062';
+        break;
+      case 'Chemists':
+        window.location.href = '/template?websiteIdentifier=Health%26Medical-Pharmacies-560098';
+        break;
+      case 'Best Veterinarians':
+        window.location.href = '/template?websiteIdentifier=Health%26Medical-Veterinary-560076';
+        break;
+      case 'Car Repair & Services':
+        window.location.href = '/template?websiteIdentifier=Automobile-CarRepair-560062';
+        break;
+      case 'Car Showrooms':
+        window.location.href = '/template?websiteIdentifier=Automobile-CarSales-560062';
+        break;
+      case 'Tyre Dealers':
+        window.location.href = '/template?websiteIdentifier=Automobile-Tires-560062';
+        break;
+      case 'Showing Results for \"Autospares Hub\"':
+        window.location.href = '/template?websiteIdentifier=Automobile-AutoParts-560062';
+        break;
+      default:
+        alert(`Visiting ${businessName}`);
+        break;
+    }
+  };
 
   if (loading) return <div className="text-center text-gray-600 dark:text-gray-300">Loading listings, please wait...</div>;
   if (error) return (
@@ -227,7 +233,7 @@ const handleVisit = (businessName, category) => {
                 total_ratings: listing.totalRatings ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings` : '10,885 Ratings',
                 badges: [
                   listing.isTrusted && 'Trust',
-                  'Verified', // Always include Verified badge
+                  'Verified',
                   listing.isPopular && 'Claimed',
                 ].filter(Boolean),
                 address: listing.address || '123 Main Street',
