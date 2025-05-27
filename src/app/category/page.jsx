@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import CategoryContent from './categoryContent';
 
-// Tell Next.js to render this page dynamically (skip prerendering)
+
 export const dynamic = 'force-dynamic';
 
 export default function CategoryPage() {

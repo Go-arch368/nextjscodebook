@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
 
-// Debounce function
+
 function debounce(func, wait) {
   let timeout;
   return (...args) => {
@@ -15,7 +15,6 @@ function debounce(func, wait) {
   };
 }
 
-// Generate random phone number
 function generateRandomPhone() {
   const firstDigit = Math.floor(Math.random() * 4) + 6;
   const randomNum = Math.floor(100000000 + Math.random() * 900000000);
@@ -267,7 +266,7 @@ export default function CategoryContent() {
                               loading="lazy"
                               onError={() => console.error(`[CategoryPage] Failed to load image ${image.url}`)}
                             />
-                          ))
+                        ))
                         ) : (
                           <div className="w-40 h-40 rounded-md border flex items-center justify-center text-gray-500 dark:text-gray-400">
                             No images available
