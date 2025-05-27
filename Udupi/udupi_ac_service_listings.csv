@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Abhi Cool Waves,<,4.8,17 Ratings,"Kemmannu Road Santhekatte, Udupi",,08401973597,In Store Collect; Shop In Store; Same Day Delivery,true,true,true,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.934Z
+Cerestro Technologies,<,4.4,6 Ratings,"Bijira Grama Kundapura, Udupi",,,Free installation,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.934Z
+Siddhivinayak Enterprises,<,3.8,9 Ratings,"Auditorium Campus Brahmavara, Udupi",,09054917385,AC Installation Services; AC Repair & Services,true,true,false,true,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.934Z
+Whatyouwant Service,<,3.4,149 Ratings,"Main Road Ananth Nagar, Manipal",,08401986217,Electricians; Carpenters,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.934Z
+Shree Keeleshwari Refrigeration,<,4.8,16 Ratings,"Main Road Kundapura Kundapura, Udupi",,,AC Accessory Dealers; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.934Z
+Coolers Service Center,<,4.8,6 Ratings,"Lic  Pervaje  Road Karkala, Karkala",,08401733378,Home Appliance Repair & Services; AC Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Smart Tech,<,4.6,10 Ratings,"Udupi Court Udupi Courts, Udupi",,08401307975,Electronic Goods Showrooms; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Air Cool Services,<,4.0,5 Ratings,"to Harsha Showroom Brahmavara, Udupi",,,AC Dealers; AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Electronic Zone,<,3.9,7 Ratings,"Manipal Alevoor Road Manipal, Manipal",,,Refrigerator Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Hima Refrigeration,<,4.8,4 Ratings,"Kukkikatte Main Road Kukkikatte, Udupi",,,Refrigerator Repair & Services-Videocon; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Prakash Electricals,+,4.8,38 Ratings,"NH 66 Kundapura West, Udupi",,,Inverter; Light; Switch,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Icy Cool Services,+,4.9,19 Ratings,"Near Masjid Doddangudde, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Kv and Bj AIR Conditioner (Ogeneral and Mitsubishi),+,5.0,1 Rating,"Pathonjikatte Karkala, Karkala",,,AC Installation Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Diamond Electronics Service Centre,D,3.7,10 Ratings,"Santhekatte, Udupi",,,Home Appliance Repair & Services-Philips; AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Express Cool,+,5.0,2 Ratings,"Syndicate Crle Manipal, Manipal",,,AC Dealers-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Sai Enterprises Manipal,S,5.0,1 Rating,"Road Manipal Udupi Highway, Manipal",,,Refrigerator Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Mookambika Cooling Technology,M,4.3,16 Ratings,"Chikansal Road Kundapura, Udupi",,,Wiring,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Dolphin Airconditioner And Refrigeration Service,+,5.0,2 Ratings,"Padubidri, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Smart Cool Services,S,5.0,2 Ratings,"Main Road Kollur Devalkunda, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Sahyadri Cooling Process,+,4.1,5 Ratings,"Kundapur Taluk Ganguli, Udupi",,,AC Repair & Services; AC Dealers,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Breezin Cooling Systems,+,4.7,91 Ratings,"Udupi Manipal Road Ambagilu, Udupi",,,AC Repair & Services-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Thaksh AIR Conditioning,+,4.4,19 Ratings,"Road Kunjibettu, Udupi",,,AC Dealers-Daikin; AC Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Sai Refrigeration. Manipal.,+,4.9,44 Ratings,"Rajeev Nagara. Manipal, Manipal",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Cool Tech,+,4.2,3 Ratings,"NH 66 Kundapura, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.935Z
+Keep Cool,K,5.0,10 Ratings,"Kervashe Temple Road Kervashe, Udupi",,,AC Repair & Services; AC AMC,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Aircare Technologies India Pvt Ltd,+,5.0,1 Rating,"Km Marg, Udupi",,,AC Repair & Services; AC Dealers,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Glacies The Cooling Solutions,+,4.8,89 Ratings,"Village Shivalli, Udupi",,,Refrigerator Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Snowking Heating,+,4.9,80 Ratings,"Shivamathi Complex Adi Udupi, Udupi",,,AC Repair & Services; Refrigerator Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Avighna Enterprises,A,4.3,81 Ratings,"Main Road Ambalapadi, Udupi",,,Refrigerator Repair & Services-Whirlpool; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Avighna Enterprises,A,4.3,81 Ratings,"Ambalapadi, Udupi",,,Electronic Goods Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Impra Cooling World,+,4.3,77 Ratings,"Pushpak Complex Kinnimulki, Udupi",,,AC Dealers-Daikin; AC Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Mr.Freeze Airconditoner,+,4.9,63 Ratings,"Malpe Road Krodashrama, Udupi",,,AC Repair & Services; AC Installation Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Dolphin Airconditioner Service,+,4.7,51 Ratings,"Udupi Alevoor Road Kukkikatte, Udupi",,,AC Dealers; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+D K Refrigeration,+,5.0,39 Ratings,"Kalsanka Kalsanka Ambagilu Road, Udupi",,,AC Part Dealers; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Vruddhi Refrigeration,+,4.9,38 Ratings,"Karamballi Karamballi, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+U Cal V Fix,+,4.9,35 Ratings,"Penta Heights Manipal, Manipal",,,AC Repair & Services-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Smart Solution Enterprises,+,4.4,35 Ratings,"Lake Road Manipal, Manipal",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Shivagiri Coolers,+,4.3,30 Ratings,"Kalsanka Nittor, Udupi",,,Electronic Goods Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.936Z
+Nataraj Construction And Refrigeration,+,4.6,17 Ratings,"Nh66 Nittur Ambalapadi, Udupi",,,AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Chill Zone,C,4.8,16 Ratings,"Heroor Bramavara Uppur, Udupi",,,AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Super Power Solutions,+,4.5,15 Ratings,"Udupi HO, Udupi",,,AC Dealers-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+V&j Enginnering,V,4.6,14 Ratings,"Udyavara, Udupi",,,AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Cool Teck Solution,+,4.9,13 Ratings,"Nh 66 Kota, Udupi",,,AC Dealers; AC Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Souza Electronics,+,4.3,13 Ratings,"Church Building Km Marg, Udupi",,,Electronic Goods Showrooms; AC Repair & Services,true,true,false,true,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Ms Sales And Service,+,4.0,13 Ratings,"Bus Stand Road, Udupi",,,Home Appliance Dealers; AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Sri Durga Electronics And Furnitures Sri Durga Electroni,S,5.0,10 Ratings,"Kukkundoor, Karkala",,,Shop In Store,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Pinto Electricals,P,4.9,10 Ratings,"Kbgsdjk Karkala, Karkala",,,Electrical Contractors For Office; Electricians,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Cool Tech Refrigeration,+,4.4,10 Ratings,"Dhanashale Road Karkala, Karkala",,,Refrigerator Dealers; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Naveen Enterprises,+,4.3,10 Ratings,"Karkala Bajegoli, Udupi",,,AC Repair & Services-Voltas; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.937Z
+Cool Care Refrigeration,+,3.9,9 Ratings,"Udupi Main Road Karkala, Karkala",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Bharath Electronics.Service Center,+,3.8,9 Ratings,"Koteshwara, Udupi",,,Electronic Goods Showrooms; AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Siddhivinayak Enterprises,+,3.8,9 Ratings,"Bramavara Brahmavara, Udupi",,,AC Repair & Services; Tower AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Adonis Customer Relation Centre,A,4.1,8 Ratings,"Saphtagiri Kalikambanagar Udupi, Udupi",,,Refrigerator Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Cool Point Air-conditioning & Refrigeration Service,C,4.5,7 Ratings,"Main Road Parkala, Udupi",,,AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Mahesh Electronics,M,4.5,7 Ratings,"Kannar Pethri Cherkadi, Udupi",,,Electronic Goods Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+After Cool Aircare Plaza,+,5.0,6 Ratings,"BAIKADY BRAHMAVAR Brahmavara, Udupi",,,AC Repair & Services-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Sharvi Refrigeration &Aircondition,S,5.0,6 Ratings,"Santhekattte Santhekatte, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+B K Service,B,4.9,6 Ratings,"NEAR COURT MAIN ROAD Adi Udupi, Udupi",,,Electrical Goods Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+BEST Cool,+,4.7,6 Ratings,"Malpe Road Adi Udupi, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.938Z
+Manipal Refrigeration Works (Ni),M,4.6,6 Ratings,"Vaishnavi Complex Manipal, Manipal",,,AC Repair & Services-LG; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Manipal Refrigeration Works,M,4.6,6 Ratings,"Alevoor Road Mit, Manipal",,,Refrigerator Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Amma Refrigeration,A,4.3,6 Ratings,"Servagnya Circle Karkala, Karkala",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Escube Airconditioning Pvt Ltd,E,3.6,7 Ratings,"Maruthi Veethika Udupi Courts, Udupi",,,AC Repair & Services; Electronic Goods Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Mathashrii Electrical Service Center,+,4.0,6 Ratings,"Kundapura Kundapura Market Udupi, Udupi",,,Home Appliance Repair & Services; Electricians,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Shri Poorna Home Appliances Sales and Services,+,4.6,5 Ratings,"Kalsanka Kadiyali Road Kadiyali, Udupi",,,AC Repair & Services-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Brahma Cooling System,B,5.0,4 Ratings,"Shivalli Manipal, Manipal",,,AC Repair & Services; Electronic Goods Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Laxmi Electronic,L,2.7,7 Ratings,"Manipal Road Manipal, Manipal",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Smart Cool,S,4.6,4 Ratings,"NH 66 Kundapura, Udupi",,,TV Repair & Services-Philips; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Bm Cooling Star,B,4.5,4 Ratings,"Manipal Vidyaratna Nagar, Manipal",,,AC Repair & Services; Electronic Goods Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Sri Raghavendra Refrigeration Solution,S,3.9,4 Ratings,"Santhekatte, Udupi",,,Refrigerator Repair & Services-Godrej; AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+CERESTRO Technology India PVT LTD,C,5.0,3 Ratings,"Udupi Main Road Shiribeedu, Udupi",,,AC Spare Part Repair & Services; AC Repair & Services,true,true,false,true,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Airco,A,5.0,3 Ratings,"Market Road Shankarapura Udupi, Udupi",,,AC Repair & Services; Electronic Goods Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Ac Enterprises,A,4.8,3 Ratings,"Market Road Karkala, Karkala",,,Home Appliance Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+National Refrigeration And Air Conditioning And Washing Machine,N,3.5,4 Ratings,"Shirva Udupi, Udupi",,,AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Nithesh System Services,N,4.5,3 Ratings,"Kadri Katte Kota, Udupi",,,CCTV Repair & Services-Hikvision; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Cool Town,C,4.3,3 Ratings,"Manipal Road Kunjibettu, Udupi",,,Electricians; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Smart Tech Computer And Ac Solutions,S,3.7,3 Ratings,"Kadri Katte Kota, Udupi",,,AC Repair & Services; CCTV Dealers,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.939Z
+Sri Durga Refrigeration,+,5.0,2 Ratings,"Near Market Koteshwara, Udupi",,,Washing Machine Repair & Services-LG; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Refrigeration Servicing Centre,+,5.0,2 Ratings,"Mosque Road, Udupi",,,AC Dealers-Carrier; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Shiva Electronics,+,5.0,2 Ratings,"Main Road Kota, Udupi",,,AC Repair & Services; TV Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Kamala Refrigerator And Airconditioner,+,5.0,2 Ratings,"Ambalpady Ambalapadi, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+SRI KATTE AMMA Refrigerators service,+,5.0,2 Ratings,"Santhekatte-Kalathur, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Amma Enterprises,+,5.0,2 Ratings,"Ambagilu, Udupi",,,Washing Machine Repair & Services; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Abhi Refrigeration,+,5.0,2 Ratings,"Opp Nh66 Hemmadi, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Universal Electronics,+,5.0,2 Ratings,"Kinnimulki, Udupi",,,Electronic Goods Showrooms; AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Nataraj construction and Refrigeration,+,5.0,2 Ratings,"Udupi Courts, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+New Cool Care,+,4.8,2 Ratings,"Gudde Yangadi Udyavara, Udupi",,,AC Repair & Services; Washing Machine Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Prince Electronic And Ac Refrigeration Services,P,4.0,2 Ratings,"Joderaste Karkala, Karkala",,,AC Repair & Services; Refrigerator Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Bhagavathi Car Ac Shop,B,4.0,2 Ratings,"Udyavara, Udupi",,,AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+D-Mercy,D,4.0,2 Ratings,"Moodubelle Belle, Udupi",,,AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Sk Cooling System,S,4.0,2 Ratings,"Toodhalli Main Road Shiroor, Udupi",,,AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Jeevan Jyothi Electronics,J,4.0,2 Ratings,"Brahmagiri Brahmagiri, Udupi",,,Electronic Goods Repair & Services; AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Sk Cool Care,S,4.0,2 Ratings,"Hallihole, Udupi",,,AC Repair & Services,true,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Kateel Electronics,K,4.0,2 Ratings,"Kadari Bajagoly Bajagoly, Udupi",,,Electronic Goods Repair & Services; AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Baidashree Air Condition,B,4.0,2 Ratings,"Kudi Nadubail, Udupi",,,AC Repair & Services; Tower AC Repair & Services,false,true,false,false,false,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Refro- Kool Koncepts,+,5.0,1 Rating,"Hiriadka, Udupi",,,AC Repair & Services; Refrigerator Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Bk Service Center,B,5.0,1 Rating,"Manjushri Complex Kundapura, Udupi",,,Refrigerator Repair & Services-Samsung; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+KARAVALI Refrigeration and Air-conditioning,K,5.0,1 Rating,"Gangolli Main Road Kundapura, Udupi",,,AC Repair & Services-Videocon; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+I 2 R Services,I,5.0,1 Rating,"Kundapura, Udupi",,,AC Repair & Services-Daikin; AC Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z
+Shri mookambika Electricals & Air conditioning & Refrigeration,+,5.0,1 Rating,"Lakminagar Manipal, Manipal",,,AC Repair & Services; Refrigerator Repair & Services,true,true,false,false,true,AC Repair & Services,,Udupi,2025-05-27T09:59:54.940Z

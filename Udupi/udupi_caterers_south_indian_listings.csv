@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Udupi Caterers and Event Management,<,4.8,102 Ratings,"Alevoor Rampura Road Alevoor, Udupi",,08401936781,Home Delivery,true,true,true,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.922Z
+Limewood Caterers & Hospitality Services,<,4.9,39 Ratings,"Court Road Udupi Courts, Udupi",,,Home Delivery,true,true,false,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.922Z
+Shetty Caterers,<,4.1,31 Ratings,"Guttu Kaup, Udupi",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+S S Shamiyana,<,5.0,1 Rating,"Parkala Road Athradi, Udupi",,,Balloon Arch; Balloon Backdrop; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Delite Caterers,<,4.5,12 Ratings,"Gardimajal Road Krodashrama, Udupi",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Friends Caterers,<,4.4,54 Ratings,"Shankarapura Shankarapura Udupi, Udupi",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Ocean Caterers,<,4.6,5 Ratings,"NH 66 Kaup, Udupi",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Manipal Food Court,<,4.6,23 Ratings,"Eshawar Nagar Manipal, Manipal",,,Delivery; Dine-in; South Indian,false,false,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Mummas Caterers And Event Managements,<,5.0,3 Ratings,"Kapu Shirva Road Kalathur Udupi, Udupi",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Aniketh Enterprises,<,4.5,1 Rating,"Nalku Beedi Moodubelle Udupi, Udupi",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Vasappa Hotel Prashanth,+,4.4,234 Ratings,"Karkala Main Road Belavai, Mangalore",,,Dine-in; Take away; South Indian,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+West End Caterers,W,4.8,3 Ratings,"Surathkal, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Shree Guru Nithyananda Caterers,S,4.3,14 Ratings,"3rd Block Katipalla, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Suraksha Caterers,S,4.6,34 Ratings,"Guddekopla Road Surathkal, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Surabhi Caterers,S,3.5,4 Ratings,"Krishnapura Surathkal, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.923Z
+Ice N Spice Family Restaurant,+,3.9,287 Ratings,"Bajpe, Mangalore",,,Dine-in; Quick Bite Outlet; Chinese,false,false,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Harshitha Caterers,H,4.1,28 Ratings,"Kaikamba Main Road Kaikamba, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Jahnavi Events,J,5.0,1 Rating,"Gandhi Nagar Kavoor, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Sridevi Caterers,+,4.3,24 Ratings,"Pachanady Bondel, Mangalore",,,Home Delivery,true,true,false,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Muthashi Homely Food,+,4.3,74 Ratings,"Old Shettys Road Derebail, Mangalore",,,South Indian; Kerala; Mangalorean,true,false,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Akshaya Caterers,A,4.1,27 Ratings,"Kb Lane Ashoknagar, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Sai Caterers & Event Management,+,3.8,92 Ratings,"Jail Road Karangalpady, Mangalore",,,Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Sharavu Caterers,S,4.9,9 Ratings,"Dambel Ashoknagar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Webdhaba,W,4.0,1 Rating,"Urwa Stores Urwa, Mangalore",,,Home Delivery,false,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Sri Durga Caterers,S,4.8,4 Ratings,"Mandarabail Konchady, Mangalore",,,Home Delivery,false,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Coastal Hub Family Restaurant,+,3.7,374 Ratings,"Ashoknagar Road Urwa, Mangalore",,,Dine-in; Fine Dining; South Indian,false,false,false,true,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Bhat's Canteen,+,4.2,400 Ratings,"7th Cross Gandhinagar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Sri Sai Caterers,+,4.3,3 Ratings,"Street  Bunts Hostel Road, Mangalore",,,Tiffin Service; Chinese; Punjabi,false,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Hotel Nesal,+,5.0,21 Ratings,"Nantoor Road Kadri, Mangalore",,,Sea Food,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Prathignhya Caterers & Event Management,+,5.0,2 Ratings,"Kodikal Kottara Chowki, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Gokul Caterers,+,4.4,52 Ratings,"Kadri Temple Road Kadri, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Hs Square Event Management,+,5.0,27 Ratings,"Marnamikatta Mangaladevi Road, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.924Z
+Jillus Caterers,+,3.7,14 Ratings,"Ashoknagar Ashoknagar, Mangalore",,,Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Pai Caterers,P,4.4,18 Ratings,"Dongarakere, Mangalore",,,Tiffin Service; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Komals Food Processers & Caterers,+,4.7,11 Ratings,"Kulur Ferry Road Alake, Mangalore",,,Ice Cream Parlour; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Indira Cateres,+,4.8,14 Ratings,"Kulshekara N H Road Kulshekar, Mangalore",,08296125663,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Shree Vaidhyanatha Caterings,S,5.0,2 Ratings,"Konimar Site Neermarga, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+TENT CATERING & WEDDING PLANNER,T,4.6,5 Ratings,"Falnir Road Valencia, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Falnir Dosa Camp,+,5.0,1 Rating,"Britto Lane Falnir Road, Mangalore",,,Caterers; South Indian Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Tulunad Foods,T,4.8,5 Ratings,"Pumpwell, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Mummas Caterers And Event Managements,M,4.5,2 Ratings,"Pumpwell, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Shettys Counter Shot Daba,+,3.9,288 Ratings,"National Highway 75 Kannur, Mangalore",,,Dine-in; Lounge Bars; South Indian,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Spice Box,S,3.5,4 Ratings,"Jain Compound Road Attavar, Mangalore",,,Tiffin Service; Sea Food; Kerala,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.925Z
+Vishwas Caterers,V,4.8,6 Ratings,"M R Bhat Lane Marnamikatta, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Blue Birds Caterers,B,5.0,1 Rating,"Jeppu Jeppu, Mangalore",,,Home Delivery,false,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Nidhi Catering Mangalore,N,5.0,1 Rating,"Post Village Mangaloru Adyar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+J K Caterers,+,4.6,42 Ratings,"Mahakali Padupu Jeppu, Mangalore",,,Home Delivery,true,true,false,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+A.H Events & Celebration,+,5.0,8 Ratings,"Ullal Ullal, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Funtime Restaurant,+,4.4,"1,899 Ratings","Baddaktte Bantwal, Mangalore",,,Delivery; Dine-in; Chinese,false,false,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Mandara Caterers,M,5.0,1 Rating,"Manihalla Navoor Bantwal, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Jyothi Prakash Caterers,J,4.0,1 Rating,"Pilathabettu Punjalkatte, Mangalore",,,Caterers; Caterers Upto 50 Persons,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Shaista Cateering,S,5.0,1 Rating,"Sudhira College Bhatkal, Karwar",,,Tiffin Service; South Indian,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Manjunatha Caterers,+,4.9,33 Ratings,"Aradhana Dharmasthala, Dharmasthala",,,On Site Services,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Rama Somayaji Caterers,R,4.1,20 Ratings,"belthangadi Taluk Dharmasthala, Dharmasthala",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.926Z
+Spoorthi Catering Services And Event Organisers,+,5.0,3 Ratings,"Puttur Parladka Devasya Road, Puttur",,,Parking Available; 24 Hours; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+BISMI CATERING SERVICES,1,4.8,19 Ratings,"Vidyanagar, Kasaragod",,08735955258,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Orange Media Solutions,+,4.4,17 Ratings,"Eden Enclave Kasaragod Ho, Kasaragod",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Hotel Sri Ganesh Prasad,+,3.6,225 Ratings,"Km Road Mudigere, Chikmagalur",,,Dine-in; Take away,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Malabar Outdoor Catering Service,M,5.0,4 Ratings,"AG road Bekal, Bekal",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Ayub Canteen,A,3.7,3 Ratings,"Feet Outer Ring Road Doddapet, Shimoga",,,Casual Dining; Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Thrupthi Catering Services,+,4.3,3 Ratings,"Heerekolale Road Uppalli, Chikmagalur",,,Caterers; Decorators,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Sri Annapurna Mess Pure Veg,+,4.9,6 Ratings,"Sagara Main Road Apmc Marketyard, Shimoga",,,Mess; Tiffin Service; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Sadhu Catering,S,4.7,3 Ratings,"Seegehatti Shimoga City, Shimoga",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.927Z
+Prince Catering.,+,5.0,3 Ratings,"100feet Rd Shimoga Market, Shimoga",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Sln Caterers,+,4.4,14 Ratings,"B B Street Durgigudi, Shimoga",,,Caterers; Veg Caterers,true,true,true,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+New Vaibhav Hotel,+,4.0,97 Ratings,"Mulayanagiri Road Ramanahalli, Chikmagalur",,,Delivery; Dine-in; Udupi,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Inspira Foods,+,4.9,15 Ratings,"Kalyan Nagar Vokkaligara, Chikmagalur",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Prabhu Caterers,P,4.0,1 Rating,"Honavar Bazar, Karwar",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+RK Galaxy Catering Service,+,5.0,1 Rating,"Aza Maszid Chikmagalur City, Chikmagalur",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+D C S Group Catering,+,3.2,12 Ratings,"Nagar Sharavathi Nagar, Shimoga",,09724044969,Caterers; Event Organisers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Royal Caterers,R,4.3,6 Ratings,"Shariff Street Shariff Street, Chikmagalur",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Vaibhavi Restaurant,+,3.5,481 Ratings,"Banglore Highway Karki, Karwar",,,Coffee Shops; Ice Cream Parlour; South Indian,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Taj Caterers,+,4.2,23 Ratings,"1st Cross Shariff Street, Chikmagalur",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Santhosh Catering,S,5.0,1 Rating,"Feet Road Vinoba Nagar Shimoga, Shimoga",,,Caterers; Veg Caterers,false,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Durgamba Fast Food,+,4.0,4 Ratings,"Gopi Circle, Shimoga",,,Fine Dining; Tiffin Service; Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.928Z
+Sri Lakshmi 99 Variety Dosa Cafe,+,4.1,150 Ratings,"Chowki Road Vinoba Nagar Shimoga, Shimoga",,,Delivery; Dine-in; Chinese,false,false,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Hegade Catering,+,4.9,7 Ratings,"100 Feet Road Vinoba Nagar, Shimoga",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Sns Event Organiser,+,3.2,5 Ratings,"Nagar Market Road Chikmagalur, Chikmagalur",,,Banquet Hall Decoration; Car Decoration; 24 Hours,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Ammath Caterers,+,3.9,9 Ratings,"100 Feet Road, Shimoga",,,Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Katti Crew Event Management,+,4.6,79 Ratings,"Old Post Office Road-Shimoga HO, Shimoga",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Sri Gururaja Darshini Mallige Idli Centre,+,4.2,110 Ratings,"Arasu Road Jayanagar Shimoga, Shimoga",,,Tiffin Service; South Indian; Home Delivery,false,false,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Iyer Catering,I,4.7,29 Ratings,"Pension Mohala Bh Road Shimoga, Shimoga",,08904600908,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Shri Krishna Veg,+,3.0,1 Rating,"Main Road Savalanga Road, Shimoga",,,Tiffin Service,false,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Nandhini Food Services,N,5.0,1 Rating,"Machena Halli Shimoga Ho, Shimoga",,,Home Delivery,false,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Shre Chowdeshwari Catring,S,4.7,11 Ratings,"Hale Bommanakatte Bommanakatte, Shimoga",,,Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Kaveri Fish Land,+,3.9,658 Ratings,"Hole Bus Stop Bh Road Shimoga, Shimoga",,,Dine-in; Chinese; South Indian,true,false,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+S S Caters And Events,+,4.8,3 Ratings,"THIRTHAHALLI TQ Chikmagalur Zp, Chikmagalur",,07383210455,Veg Caterers; Caterers,true,true,false,true,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Janatha Events And Management,+,4.0,1 Rating,"H H road Bhadravathi Paper Town, Shimoga",,08296304716,Flower Decorators; Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Bismillah Food And Catering,B,4.0,2 Ratings,"Azad Road Sakleshpur, Sakleshpur",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Indian Coffee House,+,3.7,21 Ratings,"Belur Temple Road, Belur",,,Dine-in; Bar; Chinese,false,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Mallikarjuna Hotel,M,3.0,1 Rating,"Hullavi Sagar Road Sorab, Shimoga",,,Home Delivery,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Prabhu Caterers,P,3.7,4 Ratings,"Kumta Kanara College Road, Karwar",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Pent Restaurant and Catering,+,3.5,"2,531 Ratings","National Highway Kandoth, Kannur",,,Delivery; Dine-in; South Indian,true,true,false,false,false,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Mcr Catering,M,5.0,2 Ratings,"Raj Beedi Mallenahalli, Shimoga",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Festievent Events & Caters,+,4.9,43 Ratings,"NH17 Payyanur, Kannur",,,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Sajesh Ameya Event Management Company,+,5.0,1 Rating,"Court Road Payyanur, Kannur",,,,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.929Z
+Sanvi Veg Catering,+,5.0,26 Ratings,"Vijayanagara Bm Road, Hassan",,08511689664,Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.930Z
+SBL Caterers,+,5.0,25 Ratings,"Hosakoppalu, Hassan",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.930Z
+Chef & Dish Caterers,+,5.0,2 Ratings,"Santhepete Bm Road, Hassan",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.930Z
+Orchid Events,+,5.0,35 Ratings,"Link Road Alakode, Kannur",,,Banquet Hall Decoration; Home Delivery,true,true,false,false,true,Caterers,Popular South Indian Caterers,Udupi,2025-05-27T10:30:05.930Z
