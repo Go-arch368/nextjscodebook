@@ -630,7 +630,7 @@ export default async function handler(req, res) {
     return res.status(405).send('error\n"Method not allowed"');
   }
 
-  const { category, listCategories } = req.query; // Extract query parameters
+  const { category, listCategories } = req.query; 
 
   let browser;
   try {

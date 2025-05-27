@@ -1,101 +1,101 @@
-name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,city,timestamp
-SAFE CRANE SERVICES,<,4.5,54 Ratings,"Channarayapatna, Hassan",,08128960505,Towing Services,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.255Z
-Vinayaka Motors,<,4.4,171 Ratings,"BM Bypass Road Hassan City, Hassan",,08460268667,Car Repair & Services; Garages,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.255Z
-Vishwa Automotive Services,<,3.3,15 Ratings,"Ring Road Hassan City, Hassan",,09054656964,Company Authorised Dealer; Towing Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Bharath Tinkering Works,<,4.2,14 Ratings,"Bharath Tinkering Works Bm Road, Hassan",,07411850165,Motorcycle Painting Services; Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Malnad Towing Service,<,4.8,53 Ratings,"BM Road Sakleshpur Market Road, Sakleshpur",,08401382743,Delivery Available,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Hindustan Auto Works,<,3.9,15 Ratings,"Ballupet Ballupet, Sakleshpur",,,Towing Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Evergreen Car Garage,<,4.0,6 Ratings,"Near Reshme Ilakhe Bm Road, Hassan",,07041632304,DoorStep Service; Towing Services,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Sri Maruthi Auto Work,<,4.1,40 Ratings,"Subhash Maidana Sakleshpur, Sakleshpur",,09980781966,Doorstep Car Repair; Towing Services; On-site Repair,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Sri Maruthi Car Repair and Service,<,4.5,15 Ratings,"SubhasField Sakleshpur, Sakleshpur",,09725519319,Towing Services,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Janatha Tinkering And Painting,<,5.0,1 Rating,"Channarayapatna, Hassan",,08460234067,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Sri Raksha Car Garage,+,4.3,28 Ratings,"Colony Vidyanagar Hassan, Hassan",,08460424526,,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Vidhatri Motors Pvt Ltd,+,4.7,"1,820 Ratings","Kandalli Post Bm Road, Hassan",,09054869102,Shop In Store,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Pavanputhra Car Towing & Car Mechanic,+,5.0,39 Ratings,"Anemahal Donigal, Sakleshpur",,08460233513,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Javeed Body Builder,+,3.5,2 Ratings,"Hulira Road Arsikere, Hassan",,08123030719,Car Repair & Services; Truck Body Building Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Imperial Car Care,+,4.9,52 Ratings,"Tanniruhalla Hassan HO, Hassan",,09725792995,Car Detailing,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Friendly Motors,+,4.7,122 Ratings,"Rajagatta By Pass Road Bm Road, Hassan",,07043608856,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Bsc Car Care,+,4.3,12 Ratings,"Shanthigrama, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Indian Car Auto Works,+,4.3,98 Ratings,"BM Road Sakleshpur, Sakleshpur",,,Oil Change; Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Shri Maruthi Motors,S,5.0,4 Ratings,"DM Halli Hassan City, Hassan",,,Car Repair & Services; Truck Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.256Z
-Arun Motors,+,4.7,50 Ratings,"Bm Road Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Bosch Speed Automotives,B,3.8,50 Ratings,"H N Pura Road Hassan Ho, Hassan",,,Car Repair & Services-Nissan; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Shivamoga Car Workshop,+,3.0,2 Ratings,"Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Auto Craft,+,4.1,28 Ratings,"Opp Mahendhra 1st Bm Road, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Safe Crane Service,S,4.5,54 Ratings,"Channarayapatna, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Ntc Automobile,+,4.4,55 Ratings,"Hassan Road Arsikere, Hassan",,,Company Authorised Dealer; Same Day Delivery; In Store Collect,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Vaishnavi Motors,+,4.7,3 Ratings,"B M Road Shanthigrama, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Sri Pushpagiri Car Clinic,+,3.7,4 Ratings,"D M Halli Hassan Ho, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Harihara Motors,+,4.5,2 Ratings,"Holenarsipura Road Hassan City, Hassan",,,Lockers; Company Authorised Dealer; DoorStep Service,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Sagar Enterprises,+,4.0,2 Ratings,"BM Road Channarayapatna, Hassan",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-National Car Garage,+,4.3,8 Ratings,"B M Road Channarayapatna, Hassan",,,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-M R Car Washing,+,5.0,1 Rating,"Hassan Main Road, Hassan",,,Car Repair & Services; Car AC Repair & Services,false,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Sri Lakshmi Car Care,+,5.0,3 Ratings,"Petrol Pump Channarayapatna, Hassan",,,Car Repair & Services; 24 Hours Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Bharath Car Clinic,+,4.1,13 Ratings,"Bm Road Channarayapatna, Hassan",,,DoorStep Service; Towing Services; 24x7 Customer Support,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Amk Engineering Sales and Service,+,5.0,4 Ratings,"Old Post Office Road Bm Road, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Bajarangi Motors,+,4.8,3 Ratings,"BM Road Kandali, Hassan",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Malnad Motors,+,4.3,24 Ratings,"B M Road Ashoka Road, Sakleshpur",,,Customer Lounge,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Karnataka Car Clinic And Car Electrician,+,4.5,13 Ratings,"Mysore Road Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Ka13 Carinformers,K,5.0,6 Ratings,"Bypass Uddur, Hassan",,,Second Hand Car Dealers; Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Advaith Motors Pvt. Ltd.,+,4.6,"2,402 Ratings","State Highway 57 Thanniruhalla, Hassan",,,Delivery Available,true,true,true,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Advaith Hyundai,+,4.7,"1,259 Ratings","B M Road Thanniruhalla, Hassan",,,Company Authorised Dealer; Customer Lounge,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Tata Motors Showroom,+,4.1,937 Ratings,"Thanniruhalla Bm Road, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.257Z
-Karnataka Agencies,+,3.9,671 Ratings,"D M Halli Bm Road, Hassan",,,Car Dealers; Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Nexa Service Venkat Motors,N,3.6,506 Ratings,"HN Pura Road Hassan Ho, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Hasanamba Car Decor And Honour,+,4.9,309 Ratings,"Outer Ring Road Vidhya Nagar, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Star Hyundai,+,4.5,223 Ratings,"B M Road Channarayapatna, Hassan",,,Loan Facility; Test Ride Offered; Car Insurance Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Inspire Honda,I,4.0,217 Ratings,"Bm Road, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Car Cardiac Care,+,4.8,172 Ratings,"Car Cardiac Care Ring Road, Hassan",,,DoorStep Service,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Carma Car Detailing Services,+,4.3,182 Ratings,"Office Main Road Kuvempu Nagar, Hassan",,,Company Authorised Dealer; Auto Detailing; Car Detailing,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Shine My Car,+,4.2,168 Ratings,"1st Main Road Kuvempu Nagar, Hassan",,,Company Authorised Dealer; Auto Detailing; Car Detailing,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-V2 Autocare,+,4.8,67 Ratings,"Nidagodu Belur, Belur",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Sv Motors Multibrand Car Clinic,+,4.5,70 Ratings,"By Pass Road Thanniruhalla, Hassan",,,Accident Car Repair & Services; Car Repair & Services,true,true,false,true,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-S V Motors Multibrand Car Clinic,+,4.5,70 Ratings,"Karnataka Bm Road, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Rg Automotives,R,4.5,62 Ratings,"Channapattana, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Arjun Emission Test,A,4.7,59 Ratings,"19th A Cross Road Kuvempu Nagar, Hassan",,,Car Repair & Services; Emission Testing Centres,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-City Motors,C,4.7,55 Ratings,"8th Cross Road Hassan HO, Hassan",,,Car Repair & Services; Car Electric Work Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Honour Sports,H,4.9,48 Ratings,"Rc Road Vidya Nagar Hassan, Hassan",,,Car Restoration Services; Car Repair & Services,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Ashok Leyland Showroom,A,4.0,44 Ratings,"Bm Road, Hassan",,,Car Repair & Services; Car Dealers,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Shine My Car,S,3.7,46 Ratings,"B M Road Ashoka Road, Sakleshpur",,,Car Repair & Services; Car Polishing Services,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Ekadantha Tyre Point and Services,+,4.4,38 Ratings,"BM Road Thanniruhalla, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Elite Motors,+,4.7,33 Ratings,"Vivek Nagar Vivekanagara, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-KSRTC Work shop,K,4.3,33 Ratings,"Mangalore Road Shankaripuram, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Manzrabad Auto Electrical,+,4.9,28 Ratings,"M Road Sakleshpur Market Road, Sakleshpur",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-John Auto Service,J,4.5,30 Ratings,"Ashoka Road Ashoka Road, Sakleshpur",,,Automobile Repair & Services; Car Repair & Services,true,true,false,true,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Technic Auto Works,T,3.6,34 Ratings,"Bangalore High Sakleshpur, Sakleshpur",,,Car Repair & Services-Nissan; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Sam Bodyshop,S,3.7,33 Ratings,"Ring Roadsalgame Road Bm Road, Hassan",,,Auto Detailing; Towing Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.258Z
-Shine My Car,S,3.6,32 Ratings,"Bypass Road Arakalagud, Hassan",,,Car Repair & Services,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Sr Auto Works,S,3.7,31 Ratings,"Hassan Road Arakalagud, Hassan",,,Car Repair & Services; Garages,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-M G Service Station,M,3.8,30 Ratings,"Hemavathi Nagar Vidyuthnagara, Hassan",,,Car Repair & Services; Car Electric Work Services,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-S P K Car Motors,+,4.3,23 Ratings,"Bustenahalli, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-New Car Flash,+,4.4,22 Ratings,"Kuvempunagar Main Road Aralepet, Hassan",,,Car Repair & Services-Honda; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Crysta Automotives,+,5.0,18 Ratings,"Thanniruhalla, Hassan",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Venkat Motors,V,3.2,28 Ratings,"Mysore Road Chikkagadduvalli, Hassan",,,Car Repair & Services-Maruti Suzuki; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Ams Motors,+,4.2,19 Ratings,"Arsikere, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Maruthi Motors,+,4.0,19 Ratings,"Road Ravindra Nagar Hassan, Hassan",,,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,true,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Prem Autoworks and Auto Mobiles,P,4.0,19 Ratings,"Hosakoppalu, Hassan",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Kalapana Motors,+,4.3,17 Ratings,"Sh17 Hirisave, Hassan",,,Motorcycle Dealers; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-SADATH TINKERING AND PAINTING WORK,+,4.8,15 Ratings,"Hassan Road Arsikere, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Zen Motors,+,5.0,14 Ratings,"Near Sakleshpur, Sakleshpur",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Moto D Carbo,+,4.4,15 Ratings,"Ring Road Hassan City, Hassan",,,Emission Testing Centres; Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Shine My Car,S,4.0,16 Ratings,"Holenarasipur, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Garuda Motars,G,3.6,16 Ratings,"Belur Road, Hassan",,,DoorStep Service,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Shre Shasthas Auto Works,+,4.8,12 Ratings,"Anemahal Anemahal, Sakleshpur",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Alok Motor Car Care,+,4.6,12 Ratings,"Road Channapatna Extension, Hassan",,,Accident Car Repair & Services; Car Repair & Services,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Satish Motors,S,3.6,14 Ratings,"Jaya Nagar, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Anu car care & wheel Allignment,A,5.0,10 Ratings,"Arkalagudu Road Holenarsipur, Hassan",,,DoorStep Service,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Subramanya Auto Works,S,4.1,12 Ratings,"Megalakere, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Maruthi Car Care,M,4.4,11 Ratings,"Mangalore Road Arsikere, Hassan",,,Car Repair & Services; Garages,false,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Taj Works Shop,T,4.5,10 Ratings,"Holenarasipur Holenarsipur, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Shine N Care Express Foam Car Wash,S,4.4,10 Ratings,"Ballu Ballupet, Hassan",,,Car Repair & Services; Car Washing Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Kanchana Automotive,K,2.9,15 Ratings,"No.X3Q95M Kandali, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Paramesh Puncture Works,P,3.3,13 Ratings,"Yeslur Hassan, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.259Z
-Auto Spa Car Care,+,4.6,9 Ratings,"Vijaya Nagar Belur Road, Hassan",,,Oil Change; Auto Detailing,false,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Am Auto Works,A,3.6,11 Ratings,"Hassan Gorur Road Hanumanthapura, Hassan",,,Auto Rickshaw Repair & Services; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Global Motors,+,3.9,10 Ratings,"Bypass Road Bm Road, Hassan",,,Car Repair & Services; 24 Hours Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Hkgn Auto Works,H,3.9,10 Ratings,"Shanthigrama Road Arsikere, Hassan",,,Car Repair & Services; Car Cleaning Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-N. K. B. Auto Electrical And Battery Works,N,3.9,10 Ratings,"Satyakanth Plaza Chikkakondagola, Hassan",,,Automobile Electrical Part Repair & Services; Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Motozone Sri Lakshmi Motors,M,3.3,11 Ratings,"Hanumanthapura, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Dhanvi Motors,+,5.0,7 Ratings,"Arakalagud, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Jilu Maruthi Service Center And Gas Fitting,J,2.9,12 Ratings,"Bangalore Road Thanniruhalla, Hassan",,,Car Repair & Services; Garages,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
-Pavan Enfield (Kalabairaweshvara Motors),P,4.2,8 Ratings,"Azad Road, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,Hassan,2025-05-26T12:28:57.260Z
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+SAFE CRANE SERVICES,<,4.5,54 Ratings,"Channarayapatna, Hassan",,08128960505,Towing Services,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Sri Maruthi Car Repair and Service,<,4.5,15 Ratings,"SubhasField Sakleshpur, Sakleshpur",,09725519319,Towing Services,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Javeed Body Builder,<,3.5,2 Ratings,"Hulira Road Arsikere, Hassan",,08123030719,Car Repair & Services; Truck Body Building Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Vinayaka Motors,<,4.4,171 Ratings,"BM Bypass Road Hassan City, Hassan",,08460268667,Car Repair & Services; Garages,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Malnad Towing Service,<,4.8,53 Ratings,"BM Road Sakleshpur Market Road, Sakleshpur",,08401382743,Delivery Available,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Sri Maruthi Auto Work,<,4.1,40 Ratings,"Subhash Maidana Sakleshpur, Sakleshpur",,09980781966,Doorstep Car Repair; Towing Services; On-site Repair,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Sri Raksha Car Garage,<,4.3,28 Ratings,"Colony Vidyanagar Hassan, Hassan",,08460424526,,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Friendly Motors,<,4.7,122 Ratings,"Rajagatta By Pass Road Bm Road, Hassan",,07043608856,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Vishwa Automotive Services,<,3.3,15 Ratings,"Ring Road Hassan City, Hassan",,09054656964,Company Authorised Dealer; Towing Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Evergreen Car Garage,<,4.0,6 Ratings,"Near Reshme Ilakhe Bm Road, Hassan",,07041632304,DoorStep Service; Towing Services,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Imperial Car Care,+,4.9,54 Ratings,"Tanniruhalla Hassan HO, Hassan",,09725792995,Car Detailing,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Vidhatri Motors Pvt Ltd,+,4.7,"1,827 Ratings","Kandalli Post Bm Road, Hassan",,09054869102,Shop In Store,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Bharath Tinkering Works,+,4.2,14 Ratings,"Bharath Tinkering Works Bm Road, Hassan",,07411850165,Motorcycle Painting Services; Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.025Z
+Janatha Tinkering And Painting,J,5.0,1 Rating,"Channarayapatna, Hassan",,08460234067,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Pavanputhra Car Towing & Car Mechanic,+,5.0,39 Ratings,"Anemahal Donigal, Sakleshpur",,08460233513,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Hindustan Auto Works,+,3.9,15 Ratings,"Ballupet Ballupet, Sakleshpur",,,Towing Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Safe Crane Service,S,4.5,54 Ratings,"Channarayapatna, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Shri Maruthi Motors,S,5.0,4 Ratings,"DM Halli Hassan City, Hassan",,,Car Repair & Services; Truck Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Auto Craft,+,4.1,28 Ratings,"Opp Mahendhra 1st Bm Road, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Shivamoga Car Workshop,+,3.0,2 Ratings,"Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Indian Car Auto Works,+,4.3,98 Ratings,"BM Road Sakleshpur, Sakleshpur",,,Oil Change; Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Bosch Speed Automotives,B,3.8,50 Ratings,"H N Pura Road Hassan Ho, Hassan",,,Car Repair & Services-Nissan; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Arun Motors,+,4.7,50 Ratings,"Bm Road Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Bharath Car Clinic,+,4.1,13 Ratings,"Bm Road Channarayapatna, Hassan",,,DoorStep Service; Towing Services; 24x7 Customer Support,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Bsc Car Care,+,4.3,12 Ratings,"Shanthigrama, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Sri Lakshmi Car Care,+,5.0,3 Ratings,"Petrol Pump Channarayapatna, Hassan",,,Car Repair & Services; 24 Hours Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Ntc Automobile,+,4.4,55 Ratings,"Hassan Road Arsikere, Hassan",,,Company Authorised Dealer; Same Day Delivery; In Store Collect,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+M R Car Washing,+,5.0,1 Rating,"Hassan Main Road, Hassan",,,Car Repair & Services; Car AC Repair & Services,false,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Bajarangi Motors,+,4.8,3 Ratings,"BM Road Kandali, Hassan",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Sagar Enterprises,+,4.0,2 Ratings,"BM Road Channarayapatna, Hassan",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+National Car Garage,+,4.3,8 Ratings,"B M Road Channarayapatna, Hassan",,,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Vaishnavi Motors,+,4.7,3 Ratings,"B M Road Shanthigrama, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Amk Engineering Sales and Service,+,5.0,4 Ratings,"Old Post Office Road Bm Road, Hassan",,,Towing Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Harihara Motors,+,4.5,2 Ratings,"Holenarsipura Road Hassan City, Hassan",,,Lockers; Company Authorised Dealer; DoorStep Service,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.026Z
+Malnad Motors,+,4.3,24 Ratings,"B M Road Ashoka Road, Sakleshpur",,,Customer Lounge,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Sri Pushpagiri Car Clinic,+,3.7,4 Ratings,"D M Halli Hassan Ho, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Ka13 Carinformers,K,5.0,6 Ratings,"Bypass Uddur, Hassan",,,Second Hand Car Dealers; Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Advaith Motors Pvt. Ltd.,+,4.6,"2,402 Ratings","State Highway 57 Thanniruhalla, Hassan",,,Delivery Available,true,true,true,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Advaith Hyundai,+,4.7,"1,259 Ratings","B M Road Thanniruhalla, Hassan",,,Company Authorised Dealer; Customer Lounge,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Tata Motors Showroom,+,4.1,937 Ratings,"Thanniruhalla Bm Road, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Karnataka Agencies,+,3.9,671 Ratings,"D M Halli Bm Road, Hassan",,,Car Dealers; Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Nexa Service Venkat Motors,N,3.6,506 Ratings,"HN Pura Road Hassan Ho, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Hasanamba Car Decor And Honour,+,4.9,309 Ratings,"Outer Ring Road Vidhya Nagar, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Star Hyundai,+,4.5,223 Ratings,"B M Road Channarayapatna, Hassan",,,Loan Facility; Test Ride Offered; Car Insurance Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Inspire Honda,I,4.0,217 Ratings,"Bm Road, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Car Cardiac Care,+,4.8,172 Ratings,"Car Cardiac Care Ring Road, Hassan",,,DoorStep Service,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Carma Car Detailing Services,+,4.3,182 Ratings,"Office Main Road Kuvempu Nagar, Hassan",,,Company Authorised Dealer; Auto Detailing; Car Detailing,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Shine My Car,+,4.2,168 Ratings,"1st Main Road Kuvempu Nagar, Hassan",,,Company Authorised Dealer; Auto Detailing; Car Detailing,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+V2 Autocare,+,4.8,67 Ratings,"Nidagodu Belur, Belur",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Sv Motors Multibrand Car Clinic,+,4.5,70 Ratings,"By Pass Road Thanniruhalla, Hassan",,,Accident Car Repair & Services; Car Repair & Services,true,true,false,true,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+S V Motors Multibrand Car Clinic,+,4.5,70 Ratings,"Karnataka Bm Road, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Rg Automotives,R,4.5,62 Ratings,"Channapattana, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+Arjun Emission Test,+,4.7,59 Ratings,"19th A Cross Road Kuvempu Nagar, Hassan",,,Car Repair & Services; Emission Testing Centres,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.027Z
+City Motors,C,4.7,55 Ratings,"8th Cross Road Hassan HO, Hassan",,,Car Repair & Services; Car Electric Work Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Honour Sports,H,4.9,48 Ratings,"Rc Road Vidya Nagar Hassan, Hassan",,,Car Restoration Services; Car Repair & Services,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Ashok Leyland Showroom,A,4.0,44 Ratings,"Bm Road, Hassan",,,Car Repair & Services; Car Dealers,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Shine My Car,S,3.7,46 Ratings,"B M Road Ashoka Road, Sakleshpur",,,Car Repair & Services; Car Polishing Services,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Ekadantha Tyre Point and Services,+,4.4,38 Ratings,"BM Road Thanniruhalla, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Elite Motors,+,4.7,33 Ratings,"Vivek Nagar Vivekanagara, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+KSRTC Work shop,K,4.3,33 Ratings,"Mangalore Road Shankaripuram, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Manzrabad Auto Electrical,+,4.9,28 Ratings,"M Road Sakleshpur Market Road, Sakleshpur",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+John Auto Service,J,4.5,30 Ratings,"Ashoka Road Ashoka Road, Sakleshpur",,,Automobile Repair & Services; Car Repair & Services,true,true,false,true,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Technic Auto Works,T,3.6,34 Ratings,"Bangalore High Sakleshpur, Sakleshpur",,,Car Repair & Services-Nissan; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Sam Bodyshop,S,3.7,33 Ratings,"Ring Roadsalgame Road Bm Road, Hassan",,,Auto Detailing; Towing Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Shine My Car,S,3.6,32 Ratings,"Bypass Road Arakalagud, Hassan",,,Car Repair & Services,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Sr Auto Works,S,3.7,31 Ratings,"Hassan Road Arakalagud, Hassan",,,Car Repair & Services; Garages,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+M G Service Station,M,3.8,30 Ratings,"Hemavathi Nagar Vidyuthnagara, Hassan",,,Car Repair & Services; Car Electric Work Services,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+S P K Car Motors,+,4.3,23 Ratings,"Bustenahalli, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+New Car Flash,+,4.4,22 Ratings,"Kuvempunagar Main Road Aralepet, Hassan",,,Car Repair & Services-Honda; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Crysta Automotives,+,5.0,18 Ratings,"Thanniruhalla, Hassan",,,Car Repair & Services; Car AC Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Venkat Motors,V,3.2,28 Ratings,"Mysore Road Chikkagadduvalli, Hassan",,,Car Repair & Services-Maruti Suzuki; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Ams Motors,+,4.2,19 Ratings,"Arsikere, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Maruthi Motors,+,4.0,19 Ratings,"Road Ravindra Nagar Hassan, Hassan",,,Car Repair & Services; Car Repair & Services-Maruti Suzuki,true,true,false,true,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Prem Autoworks and Auto Mobiles,P,4.0,19 Ratings,"Hosakoppalu, Hassan",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Kalapana Motors,+,4.3,17 Ratings,"Sh17 Hirisave, Hassan",,,Motorcycle Dealers; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+SADATH TINKERING AND PAINTING WORK,+,4.8,15 Ratings,"Hassan Road Arsikere, Hassan",,,Delivery Available,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Zen Motors,+,5.0,14 Ratings,"Near Sakleshpur, Sakleshpur",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Moto D Carbo,+,4.4,15 Ratings,"Ring Road Hassan City, Hassan",,,Emission Testing Centres; Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.028Z
+Shine My Car,S,4.0,16 Ratings,"Holenarasipur, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Karnataka Car Clinic And Car Electrician,+,4.5,13 Ratings,"Mysore Road Channarayapatna, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Garuda Motars,G,3.6,16 Ratings,"Belur Road, Hassan",,,DoorStep Service,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Shre Shasthas Auto Works,+,4.8,12 Ratings,"Anemahal Anemahal, Sakleshpur",,,Company Authorised Dealer,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Alok Motor Car Care,+,4.6,12 Ratings,"Road Channapatna Extension, Hassan",,,Accident Car Repair & Services; Car Repair & Services,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Satish Motors,S,3.6,14 Ratings,"Jaya Nagar, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Anu car care & wheel Allignment,A,5.0,10 Ratings,"Arkalagudu Road Holenarsipur, Hassan",,,DoorStep Service,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Subramanya Auto Works,S,4.1,12 Ratings,"Megalakere, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Maruthi Car Care,M,4.4,11 Ratings,"Mangalore Road Arsikere, Hassan",,,Car Repair & Services; Garages,false,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Taj Works Shop,T,4.5,10 Ratings,"Holenarasipur Holenarsipur, Hassan",,,Car Repair & Services; Garages,true,true,false,false,true,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Shine N Care Express Foam Car Wash,S,4.4,10 Ratings,"Ballu Ballupet, Hassan",,,Car Repair & Services; Car Washing Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Kanchana Automotive,K,2.9,15 Ratings,"No.X3Q95M Kandali, Hassan",,,Car Repair & Services; Tyre Puncture Repair,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Paramesh Puncture Works,P,3.3,13 Ratings,"Yeslur Hassan, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Auto Spa Car Care,+,4.6,9 Ratings,"Vijaya Nagar Belur Road, Hassan",,,Oil Change; Auto Detailing,false,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Am Auto Works,A,3.6,11 Ratings,"Hassan Gorur Road Hanumanthapura, Hassan",,,Auto Rickshaw Repair & Services; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Global Motors,+,3.9,10 Ratings,"Bypass Road Bm Road, Hassan",,,Car Repair & Services; 24 Hours Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Hkgn Auto Works,H,3.9,10 Ratings,"Shanthigrama Road Arsikere, Hassan",,,Car Repair & Services; Car Cleaning Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+N. K. B. Auto Electrical And Battery Works,N,3.9,10 Ratings,"Satyakanth Plaza Chikkakondagola, Hassan",,,Automobile Electrical Part Repair & Services; Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Motozone Sri Lakshmi Motors,M,3.3,11 Ratings,"Hanumanthapura, Hassan",,,Car Repair & Services; Tyre Puncture Repair,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Dhanvi Motors,+,5.0,7 Ratings,"Arakalagud, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Jilu Maruthi Service Center And Gas Fitting,J,2.9,12 Ratings,"Bangalore Road Thanniruhalla, Hassan",,,Car Repair & Services; Garages,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z
+Pavan Enfield (Kalabairaweshvara Motors),P,4.2,8 Ratings,"Azad Road, Hassan",,,Car Repair & Services,true,true,false,false,false,Car Repair & Services,,Hassan,2025-05-27T08:01:00.029Z

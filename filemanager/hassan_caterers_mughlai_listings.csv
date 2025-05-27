@@ -1,0 +1,91 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Ilyaz Caterers,<,4.5,1 Rating,"Tippunagar Pension Mohalla, Hassan",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.278Z
+The Sapid,<,4.1,40 Ratings,"Hudco Badavane Hebbal, Mysore",,,Dine-in; Punjabi; Mughlai,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.278Z
+Jeevan Catering,<,4.8,2 Ratings,"Ring Road Bogadi, Mysore",,,Banquet Hall Decoration; Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.278Z
+Mom's Kitchen,<,4.0,4 Ratings,"Heggare Tumkur Ho, Tumkur",,,Dine-in; Tiffin Service; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Mom's Kitchen,<,4.5,34 Ratings,"Manakadavu Coorg Road Kuttiyeri, Kannur",,,Delivery; Dine-in; Chinese,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Penquin Caterers,<,3.0,1 Rating,"Bendoorwell, Mangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Coastal Hub Family Restaurant,<,3.7,374 Ratings,"Ashoknagar Road Urwa, Mangalore",,,Dine-in; Fine Dining; South Indian,false,false,false,true,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Som Sarkar,<,4.0,1 Rating,"6th Block Rajajinagar, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Sai Kutera,<,4.7,3 Ratings,"Srinagara Main Road Chamarajpet, Bangalore",,,Home Delivery,false,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Sri Vishnu Caterers,<,5.0,3 Ratings,"Banashankari 1st Stage, Bangalore",,,Home Delivery,false,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Mom's Kitchen,+,3.7,3 Ratings,"Dollars Colony-RMV 2nd Stage, Bangalore",,,Chinese; Punjabi; Mughlai,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.279Z
+Mayuri Catering,M,3.3,2 Ratings,"14th Cross Sanjay Nagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Mom's Kitchen,+,4.5,1 Rating,"4th Main Road Isro, Bangalore",,,Dine-in; Chinese; Punjabi,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Bombay Caterers,+,4.2,83 Ratings,"Dispensary Road Kalasipalyam, Bangalore",,,Tiffin Service; Take away; Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Indhu Ralhand Caterers,I,4.0,1 Rating,"11th Cross Jp Nagar 3rd Phase, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Silverline Chocolate & Cakes,S,4.0,6 Ratings,"8th Crs Sadashivanagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Purnabrahma Catering Services,+,4.7,539 Ratings,"12th Cross Jp Nagar 7th Phase, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Gani Caterers,G,3.8,49 Ratings,"Road Krishna Rajendra Market, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Ajaz Royal Caterers,A,4.0,1 Rating,"Dinnur Mn Rd Rt Nagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Sankalp Food Zone,S,5.0,1 Rating,"2nd Main Vasanth Nagar, Bangalore",,,Home Delivery,false,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+HKC Caterers,+,3.7,13 Ratings,"3rd Phase Bannerghatta Road, Bangalore",,,Caterers For Function; Caterers,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Gayland Caterers & Furnitures,G,4.2,26 Ratings,"No.23/2 Richmond Road, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Dubai Restaurant,D,4.0,36 Ratings,"Chandni Chowk Road Shivaji Nagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+Caterish Company,C,4.8,4 Ratings,"Near Axis Bank Benson Town, Bangalore",,,Home Delivery,true,false,false,true,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.280Z
+A M Caterers,+,5.0,5 Ratings,"House Road Shivaji Nagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Hideout Fast Food And Andhra Style Family Restaurant,+,3.9,"2,663 Ratings","MCC B Block Mcc, Davangere",,,Delivery; Quick Bite Outlet; Chinese,false,false,false,true,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Mom's Kitchen,+,3.0,1 Rating,"Purandaradas Road Bts Layout, Bangalore",,,Chinese; Punjabi; Mughlai,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Mom's Kitchen,+,3.5,188 Ratings,"arekere village, Bangalore",,,Delivery; Tiffin Service; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+All INDIA Caterers,+,4.4,15 Ratings,"Tengumal Nagar Kaval Byrasandra, Bangalore",,,Caterers; Non Veg Caterers,false,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Noors Family Cuisine,N,4.9,8 Ratings,"Cleveland Road Frazer Town, Bangalore",,,Muslim Food Caterers; Caterers,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Johnny Caterers,+,4.6,416 Ratings,"Jeevanahalli Cox Town, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Vishal Foods,+,3.9,287 Ratings,"Akshay Nagar Dlf New Town, Bangalore",,,Parking Available; Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Mom's Kitchen,+,5.0,7 Ratings,"Bommanahalli Bommanahalli, Bangalore",,,Delivery; Chinese; Punjabi,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Peter Caterers,P,4.4,42 Ratings,"Vivek Nagar Post Ejipura, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.281Z
+Shayan Cafecito,S,3.5,2 Ratings,"Koramangala, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Al Ghani Resetaurant,+,4.4,54 Ratings,"Nehru Road Kammanahalli, Bangalore",,,Dine-in; Quick Bite Outlet; Mughlai,false,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+R K Tent House & Caterer,+,3.5,2 Ratings,"1st Cross Ulsoor, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Foodiction,+,3.8,4 Ratings,"Kudlu Gate Bommanahalli, Bangalore",,,Home Delivery,false,false,false,true,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Mom's Kitchen,+,3.0,1 Rating,"Bommanahalli, Bangalore",,,Chinese; Punjabi; Mughlai,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Yadav Chef,Y,2.8,4 Ratings,"24th Hsr Layout Sector 2, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Hicurry Foods INDIA Pvt. Ltd.,+,3.9,11 Ratings,"4th Cross Banaswadi, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Kitchen Star Caterers,+,4.0,15 Ratings,"Main Road Ramamurthy Nagar, Bangalore",,,Home Delivery,true,false,false,true,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Vaishnavi Caterers,V,3.0,1 Rating,"Naganathapura Electronic City, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Covai Velan Caters,+,4.5,1 Rating,"Kasthuribai Street Ganapathy, Coimbatore",,,Caterers; Caterers Upto 50 Persons,true,false,false,true,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.282Z
+Hotel Kongu Veg And Non Veg,+,4.3,11 Ratings,"Chettikaradu Kavindapadi, Erode",,,Casual Dining; Dhaba; Chinese,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Choco Truffle,+,4.7,89 Ratings,"Kuttippuram Kuttippuram, Malappuram",,,Delivery; Dine-in; Kerala,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Srras Caterers,S,4.3,2 Ratings,"Avinashi Road Chinniampalayam, Coimbatore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Proyal Events & Caterer,+,4.6,151 Ratings,"Thrissur Calicut Road Edappal, Malappuram",,,Corporate; Banquet Hall Decoration; Home Delivery,true,false,false,true,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Leo Karthick Groups Catering Service,+,5.0,3 Ratings,"Athani Main Road Pallapalayam, Erode",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Vijay Agency,+,3.6,17 Ratings,"Municipal Colony Main Road, Erode",,,Pizza Outlets; Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Hotel Kongu Dharbar,+,5.0,2 Ratings,"Nengamam Via Pollachi Bazaar, Pollachi",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Hotel Highway,+,4.1,30 Ratings,"Road Old Hubli Karwar Road, Hubli",,,Caterers; Non Veg Caterers,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Sri Parameshwari Catering Services,+,5.0,6 Ratings,"Salem Main Road Rasipuram HO, Rasipuram",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Moti Mahal Delux,+,3.3,16 Ratings,"Nh 17 Edapally, Ernakulam",,,Dine-in; Fine Dining; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Cochin Caterers,+,3.9,115 Ratings,"Ibrahim Pilla Road Kakkanad, Ernakulam",,,Home Delivery,true,false,false,true,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Joe S Dj,+,4.9,19 Ratings,"3rd Street Sathuvacheri, Vellore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Mom's Kitchen,+,3.0,1 Rating,"May 1st Road Thammanam, Ernakulam",,,Tiffin Service; Quick Bite Outlet; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Mom's Kitchen,+,3.0,100 Ratings,"Alliance Residency Marine Drive, Ernakulam",,,Dine-in; Cafe; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.283Z
+Allahbaksh Catering,A,3.2,5 Ratings,"Rumdamol Margao, Goa",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Shahi Caterer& Event Management,S,5.0,1 Rating,"House No E-500 Navelim, Goa",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Holy Cross Caterers,+,4.7,135 Ratings,"Maina Curtorim Raia, Goa",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Atishs Ruchik,+,5.0,1 Rating,"V 365 Spice Valley Ponda, Goa",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+A.R Catering Services Dindigul,+,4.7,54 Ratings,"1st Cross Street Rm Colony, Dindigul",,,Tiffin Service,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Perista Enterprise,+,5.0,3 Ratings,"Sancoale, Goa",,,Home Delivery,true,false,false,true,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Mom's Kitchen,+,5.0,1 Rating,"19th Main Vidyagiri Bagalkot, Bagalkot",,,Dine-in; Tiffin Service; Chinese,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Mr Hot Caterers,M,5.0,6 Ratings,"Kalaingar Nagar Nagal Nagar, Dindigul",,,Caterers; Biryani Caterers,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Kaffe De Republica 24x7,K,3.0,1 Rating,"MES Masjid Road Zuarinagar, Goa",,,Coffee Shops; Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Mom's Kitchen,+,5.0,1 Rating,"Cts No. 4975 Autonagar Belgaum, Belgaum",,,Tiffin Service; Chinese; Punjabi,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.284Z
+Cafe Paradise,C,5.0,2 Ratings,"Airport Road Chicalim, Goa",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Mom's Kitchen,+,3.0,1 Rating,"Shivbasav Nagar, Belgaum",,,Tiffin Service; Chinese; Punjabi,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Gs Catering,+,4.3,4 Ratings,"Stv Nagar Stv Nagar, Tirupati",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Ashwini Tarcar's Shree Foods,+,4.1,19 Ratings,"Aradi Bandh Santa Cruz, Goa",,,Home Delivery,true,false,false,true,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Mom's Kitchen,+,3.6,"1,246 Ratings","Muttom Church road cherthala, Alappuzha",,,Tiffin Service; Chinese; Punjabi,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+S S Sowkath Ali Kalyana Biriyani,S,4.5,1 Rating,"Big Bazzar Street Clock Tower, Trichy",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Mom's Kitchen,+,3.5,2 Ratings,"Porvorim, Goa",,,Chinese; Punjabi; Multicuisine,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Mom's Kitchen,+,3.1,5 Ratings,"Karakambadi Roadroad Karakambadi, Tirupati",,,Tiffin Service; Chinese; Punjabi,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Mom's Kitchen,+,3.3,34 Ratings,"Sanjeeva Nagar, Nandyal",,,Dhaba; Tiffin Service; Chinese,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.285Z
+Shahi Akbar Hotel,+,3.2,5 Ratings,"Street Control Room Control Room, Kurnool",,,Dhaba; South Indian; Multicuisine,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+Sri Gulab Caterers & Events,+,4.8,43 Ratings,"Androon Quilla, Raichur",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+Sri Maa Asapura Caterers,+,4.8,18 Ratings,"Gunj Road M G Road Raichur, Raichur",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+Josheela Bakers Caterers & Cold Storage,+,4.8,3 Ratings,"Camurlim, Goa",,,Caterers; Caterers For Wedding,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+Asli Thali,A,2.9,9 Ratings,"Block Kanchipuram District, Kanchipuram",,,Casual Dining; South Indian; Multicuisine,false,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+AKASH DECARATION & CATERING CENTER,+,5.0,2 Ratings,"Vanganam Anjipadam, Alappuzha",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.286Z
+Aruna Catering Service,A,4.4,5 Ratings,"Bypass Road Arapalayam, Madurai",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Almass Caterers,+,3.1,7 Ratings,"Pt Rajan Road Narimedu, Madurai",,,Home Delivery,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Mom's Kitchen,+,5.0,2 Ratings,"J N Road Tiruvallur Ho, Tiruvallur",,,Dine-in; Tiffin Service; Chinese,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Mom's Kitchen,+,3.3,61 Ratings,"Periyakuppam, Tiruvallur",,,Tiffin Service; Chinese; Punjabi,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Nanda Catering Service,+,4.5,6 Ratings,"Nagar Lawspet Pondicherry, Pondicherry",,,Home Delivery,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Aasife Biriyani,+,3.8,629 Ratings,"Ponusamy Nager Madalampettai, Kumbakonam",,,Delivery; Dine-in; Chinese,true,false,false,false,false,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z
+Mom's Kitchen,+,4.4,19 Ratings,"Vanjare Wadi, Sindhudurg",,,Tiffin Service; Chinese; Punjabi,true,false,false,false,true,Caterers,Popular Mughlai Caterers,Hassan,2025-05-27T07:44:18.287Z

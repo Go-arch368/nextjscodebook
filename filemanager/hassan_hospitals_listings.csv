@@ -1,101 +1,101 @@
-name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,city,timestamp
-Jeeva Jyothi Hospital,<,3.8,96 Ratings,"Kalyana Mantapa Road Hassan City, Hassan",,09725392090,Pediatric Surgical Consultation,true,true,true,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.007Z
-Janapriya Hospital,<,4.1,321 Ratings,"Math Road Kr Puram Hassan, Hassan",,07383059057,Hospitals,true,false,false,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.007Z
-Homeocare International Pvt Ltd,<,4.6,194 Ratings,"Bm Road, Hassan",,09054579346,Common Cold; Homeopathic Geriatric Care,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.007Z
-Mmm Hospital and Research Centre,<,4.5,69 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,07383446317,24 Hours Centralised Oxygen; 24 Hours Dialysis; 24 Hours Emergency Service,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.008Z
-Karna Multispeciality Hospital,<,4.5,243 Ratings,"Karna Hospital Shankar Mutt Road, Hassan",,07048877107,Practicing at 2 Locations; Gynaecological Cancer Treatment; Donor Insemination Surrogacy,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.008Z
-Tanya Speciality Hospital,<,4.2,465 Ratings,"Sampige Road Kr Puram Hassan, Hassan",,,Nursing Care; Obstetrics Problems,true,true,false,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.008Z
-Manjunatha Hospital,<,4.6,260 Ratings,"Sampoge Road Kr Puram Hassan, Hassan",,08904974596,Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.008Z
-Sahyaadri Multispeciality Hospital,<,4.1,195 Ratings,"RC Road rangoli halla, Hassan",,07383181968,Obstetrics Problems; Vitiligo; Pediatric Surgical Consultation,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.009Z
-Hasanaba Multispeciality Hospital and Gastroenterology,<,4.0,147 Ratings,"Hassan City, Hassan",,09972371879,Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.009Z
-Mani Super Speciality Hospital and Research Institute,<,4.3,884 Ratings,"Samige Road Kr Puram Hassan, Hassan",,09972365493,Gynaecological Cancer Treatment,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.009Z
-Janatha Hospital & Research Centre,+,4.0,112 Ratings,"Race Course Road Hassan, Hassan",,,Contact Lens Prescription; Animal Diseases; Ophthalmic Surgical Consultation,true,true,false,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.010Z
-Bethel Medical Mission Hospital & Hosmat Hospital Education Group,+,4.1,158 Ratings,"Preety Nagar Laggere, Bangalore",,07048209067,Hospitals; Colleges,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.011Z
-Shri Tulasigirish Diabetes Hospital & Diabetes Research Foundation,+,4.2,34 Ratings,"Mahaveer Road Bagalkot, Bagalkot",,,Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.011Z
-Global Health Tourism,G,4.6,37 Ratings,"Lane No 5 Vishwakarma Nagar, Nagpur",,09980635869,Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.011Z
-Pragati Medcity and Stem Cell Centre,+,4.8,30 Ratings,"Ajay Singh Marg Rohit Nagar, Bhopal",,09035344697,Hospitals,true,false,true,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.012Z
-Nephron Kidney Kare Clinic,+,3.9,118 Ratings,"Bariatu Road Bariatu, Ranchi",,,Pediatric Consultation,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.012Z
-Nangal Cancer Hospital & Research Institute,+,4.7,622 Ratings,"College Road Bikaner Agra Road, Bikaner",,,Hematolical Oncology Consultation,true,true,true,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.012Z
-SSM Hospital,+,4.2,"2,024 Ratings","Mutt Road Kr Puram Hassan, Hassan",,,Diseases In Pregnancy; Infertility; Obstetrics Problems,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.012Z
-JSS Hospital,J,4.7,3 Ratings,"Gandhi Road Mysore Hassan Ho, Hassan",,,Private Hospitals; Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.012Z
-Swamy Car Decor And Sticker Cutting,+,4.8,4 Ratings,"B M Road Channarayapatna, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Sparsh Hospital,+,4.2,"1,565 Ratings","Sparsh Hospital Bm Road, Hassan",,,Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Mangala Hospital,+,3.9,753 Ratings,"K R Puram Sampige Road Hassan, Hassan",,,Obstetrics Problems,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Sri Dharamsthala Manjunatheswara College Of Ayurveda,+,4.4,654 Ratings,"Thanniruhalla Bm Road, Hassan",,,Hospitals; Colleges,true,true,true,true,true,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Janapriya Hospital,+,3.9,631 Ratings,"3rd Cross Road Shankaripuram, Hassan",,,Hospitals,true,false,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Keshava Nethralaya,+,4.4,355 Ratings,"Harshamahal Road, Hassan",,,Ophthalmic Surgical Consultation,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Manjunatha Hospital,M,4.6,286 Ratings,"1st Cross Shankar Mutt Road, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.013Z
-Dr. Chaitra Niranjan Tanya Speciality Hospital,+,4.5,252 Ratings,"3rd Cross Kr Puram Hassan, Hassan",,,Obstetrics Problems,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.014Z
-Vijayalakshmi Electro World,+,4.0,269 Ratings,"Circle Park Road Salagame Road, Hassan",,,Same Day Delivery; In Store Collect; Shop In Store,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.014Z
-Hemavathi Hospital,+,3.7,191 Ratings,"Northern Extension Aralepet, Hassan",,,Obstetrics Problems; Pediatric Consultation; Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.014Z
-Dange Hospital,+,3.7,146 Ratings,"Matta Road Mg Road Hassan, Hassan",,,Contact Lens Prescription; Ophthalmic Surgical Consultation; Pediatric ENT Consultation,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Dange Hospital,+,3.7,146 Ratings,"Vidhya Nagar, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Rajeev Hospital,R,4.0,125 Ratings,"Hospital Road Kr Puram Hassan, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Hassanamba Gastroentarolagy Multi Speciality Hospital,H,3.8,117 Ratings,"Hospital Road Rangoli Halla, Hassan",,,Nursing Care,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Sri Chamarajendra Hospital,+,3.8,115 Ratings,"Race Course Road Hassan, Hassan",,,Diseases In Pregnancy; Obstetrics Problems; Diagnostic And Pathology,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Csi Redfern Memorial Hospital,C,4.0,107 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Redfern CSI Mission Hospital,R,3.2,123 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Government Hospital,+,2.9,135 Ratings,"Rangoli Halla, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.015Z
-Vaatsalya Hospital,V,3.4,100 Ratings,"R C Road MG Road Hassan, Hassan",,,Obstetrics Problems; Animal Diseases; Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Vinay Pediatric And Multispeciality Hospital,+,4.5,75 Ratings,"Shankar Mutt Road, Hassan",,,Nursing Care,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Sanjeevani Hospital,S,3.5,96 Ratings,"Saraswathipuram Salagame Road, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Government General Hospital,G,3.3,98 Ratings,"B M Road Alur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Amma Eye And Retina Care Centre,+,4.3,75 Ratings,"Sjp Cross Road Thanniruhalla, Hassan",,,Contact Lens Prescription,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Missan Hospital,+,3.3,93 Ratings,"Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Jayashree Nursing Home,J,4.3,56 Ratings,"Kr Puram Hassan, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Sparsha Hospital,+,3.7,64 Ratings,"Channarayapatna, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Vinay Scans,+,4.0,59 Ratings,"Mutt Road Shankar Mutt Road, Hassan",,,Hospitals; Diagnostic Centres,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Sanjeevini Hospital,S,3.1,76 Ratings,"Mutt Road Shankar Mutt Road, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-S S Hospital And Research Centre,S,3.5,67 Ratings,"Hassan Road Arsikere, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Sanjeevini Co-operative Institute Of Nursing & Hospital,S,3.9,60 Ratings,"Belur Road Kr Puram Hassan, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.016Z
-Mamateya Madilu Hospital,+,3.4,67 Ratings,"D Kalenahalli Road Gulsinda, Hassan",,,Diagnostic And Pathology; Artificial Insemination; Obstetrics Problems,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Rajeev Hospital,+,3.0,72 Ratings,"Rangoli Halla Rangoli Halla, Hassan",,,Hospitals,true,false,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Nagesh Hospital,N,4.3,48 Ratings,"Mysore Road Channarayapatna, Hassan",,,Obstetrics Problems; Cardiologist Consultation; Diseases In Pregnancy,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Government General Hospital,+,3.5,56 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Hassan Government Hospital,H,3.5,55 Ratings,"Holenarasipur Holenarsipur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Sri Hasanamba Multi Speciality And Gastroenterology Centre,S,3.3,58 Ratings,"Jubilee Park Kr Puram Hassan, Hassan",,,Hospitals; Clinics,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Apollo Bgs Hospitals,+,4.2,44 Ratings,"Road Kuvempu Nagar, Hassan",,,Senior Citizen Health Checkup; Cosmetic and Aesthetic; Female Sexual Problems,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Ashraya Hospital,A,4.1,42 Ratings,"K R Puram Sampige Road Hassan, Hassan",,,Hospitals,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Nagabhushan Hospital,N,3.1,53 Ratings,"B H Road Arsikere, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Jajur Umeshpandith Saibaba Paramparika Naativaidhya Hospital,J,4.6,34 Ratings,"Jajur Arsikere, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Venkataramana Hospital,V,3.7,42 Ratings,"Bh Road Arsikere, Hassan",,,Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Sridevi Hospital,S,4.1,37 Ratings,"Channarayapatna, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Kamaldev Nursing Home,K,4.7,32 Ratings,"Sakleshpur Rd Sakleshpur, Sakleshpur",,,Hospitals; Nursing Homes,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Rakesh Nethralaya,+,4.5,33 Ratings,"Hospital Road Rangoli Halla, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Kiran Speciality Hospital,+,4.4,33 Ratings,"Pension Mohalla, Hassan",,,Hospitals,true,false,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.017Z
-Jenukal Hospital,J,3.3,44 Ratings,"BH Road Arsikere, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Government Hospital Arsikere,G,4.0,35 Ratings,"St Mary's Church Colony Arsikere, Hassan",,,Hospitals; Public Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Crawford General Hospital,C,3.5,36 Ratings,"Sakleshpur, Sakleshpur",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Kumaraswamy Hospital,K,2.6,45 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-NIRANTHARA HEALTH CRAE,N,4.2,25 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Acr Diagnostic Laboratory,A,3.4,30 Ratings,"Pura Krishnaraja Pura, Hassan",,,Hospitals; Diagnostic Centres,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Government General hospital,G,4.0,25 Ratings,"Hoghway 110 Vaikunta Street, Belur",,,Hospitals; Public Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-District Hospital,D,4.5,21 Ratings,"1st Flr Bm Road, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Tara Hospital,T,3.9,22 Ratings,"Arakalagud Arkalgud, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Bahubali Children Hospital,B,3.8,20 Ratings,"Hirisave Road Chalya, Shravanabelagola",,,Hospitals; Children Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Navachaitanya Rehab Physiotherapy Centre,N,4.7,15 Ratings,"4th Cross Road Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Sri Jayachamarajendra Government Hospital,S,3.1,20 Ratings,"Arsikere, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Geeta Eye Hospital,G,4.7,13 Ratings,"Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Jayachamarajapura Government Hospital,J,4.1,14 Ratings,"Panchanahalli Road Arsikere, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Community Health Center,C,3.8,15 Ratings,"Mosale Hosahalli Mosalhosahalli, Hassan",,,Health Care Centres; Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Sri Lakshmi Eye Hospital,+,4.6,10 Ratings,"Arsikere, Hassan",,,Contact Lens Prescription,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Srimathi savithramma Shansappa Hospital,S,4.1,11 Ratings,"Hassan Road Arsikere, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Pandith Umesh Paramparika Naativaidyalaya,P,4.1,11 Ratings,"Jajur, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Hoysala Hospital,H,3.6,12 Ratings,"Shankarmutt Road Kr Puram Hassan, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Sakleshpur Government Hospital,S,3.3,13 Ratings,"Thanniruhalla, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Bhuvaneshwari Hospital,+,4.7,9 Ratings,"SH 71E Bhoovanahalli, Hassan",,,Nursing Care,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Hassan Eye Hospital,H,4.3,9 Ratings,"Sampige Road Bm Road, Hassan",,,Contact Lens Prescription; Ophthalmic Surgical Consultation,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Vatsalya Nursing HOME,V,3.8,10 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Sdm Hospital,S,4.1,9 Ratings,"Rangoli Halla Rangoli Halla, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Government Unani & Ayurveda Hospital,G,5.0,7 Ratings,"Arakalagud Arkalgud, Hassan",,,Hospitals; Public Hospitals,true,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Government General Hospital,G,4.1,8 Ratings,"State Highway 8 Holenarsipur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Grass Life Hospital,G,4.4,7 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Dammaningala Government Hospital,D,3.8,8 Ratings,"Dammaningala, Shravanabelagola",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.018Z
-Mch Hospital,M,3.3,9 Ratings,"Holenarsipur, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-H.i.m.s Women And Children Hospital,H,3.6,8 Ratings,"Rangoli Halla, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Vayuputra Polyclinic,V,4.0,7 Ratings,"Hassan Rangoli Halla, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Phc Mallipatna,P,4.5,6 Ratings,"Mallipatna, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Rajeev Hospital,R,3.8,7 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,,Hospitals; Ambulance Services,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Ashwini Nursing Home,A,3.8,7 Ratings,"B.h. Road Arsikere, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Govt Hospital - Primary Health Care,G,4.4,6 Ratings,"Didaga, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
-Government Hospital,G,4.0,6 Ratings,"Konanur, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,Hassan,2025-05-26T12:37:40.019Z
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Jeeva Jyothi Hospital,<,3.8,96 Ratings,"Kalyana Mantapa Road Hassan City, Hassan",,09725392090,Pediatric Surgical Consultation,true,true,true,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.267Z
+Janapriya Hospital,<,4.1,321 Ratings,"Math Road Kr Puram Hassan, Hassan",,07383059057,Hospitals,true,false,false,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.268Z
+Homeocare International Pvt Ltd,<,4.6,195 Ratings,"Bm Road, Hassan",,09054579346,Common Cold; Homeopathic Geriatric Care,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.268Z
+Mmm Hospital and Research Centre,<,4.5,69 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,07383446317,24 Hours Centralised Oxygen; 24 Hours Dialysis; 24 Hours Emergency Service,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.268Z
+Karna Multispeciality Hospital,<,4.4,239 Ratings,"Karna Hospital Shankar Mutt Road, Hassan",,07048877107,Practicing at 2 Locations; Gynaecological Cancer Treatment; Donor Insemination Surrogacy,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.268Z
+Tanya Speciality Hospital,<,4.2,466 Ratings,"Sampige Road Kr Puram Hassan, Hassan",,,Nursing Care; Obstetrics Problems,true,true,false,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.269Z
+Hasanaba Multispeciality Hospital and Gastroenterology,<,4.0,147 Ratings,"Hassan City, Hassan",,09972371879,Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.269Z
+Janatha Hospital & Research Centre,<,4.1,114 Ratings,"Race Course Road Hassan, Hassan",,,Contact Lens Prescription; Animal Diseases; Ophthalmic Surgical Consultation,true,true,false,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.269Z
+Mani Super Speciality Hospital and Research Institute,<,4.3,891 Ratings,"Samige Road Kr Puram Hassan, Hassan",,09972365493,Gynaecological Cancer Treatment,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.269Z
+Manjunatha Hospital,<,4.6,260 Ratings,"Sampoge Road Kr Puram Hassan, Hassan",,08904974596,Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.269Z
+Sahyaadri Multispeciality Hospital,+,4.1,195 Ratings,"RC Road rangoli halla, Hassan",,07383181968,Obstetrics Problems; Vitiligo; Pediatric Surgical Consultation,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Bethel Medical Mission Hospital & Hosmat Hospital Education Group,+,4.1,158 Ratings,"Preety Nagar Laggere, Bangalore",,07048209067,Hospitals; Colleges,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Shri Tulasigirish Diabetes Hospital & Diabetes Research Foundation,+,4.2,34 Ratings,"Mahaveer Road Bagalkot, Bagalkot",,,Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Global Health Tourism,G,4.6,37 Ratings,"Lane No 5 Vishwakarma Nagar, Nagpur",,09980635869,Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Pragati Medcity and Stem Cell Centre,+,4.8,30 Ratings,"Ajay Singh Marg Rohit Nagar, Bhopal",,09035344697,Hospitals,true,false,true,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Nephron Kidney Kare Clinic,+,3.9,118 Ratings,"Bariatu Road Bariatu, Ranchi",,,Pediatric Consultation,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.270Z
+Nangal Cancer Hospital & Research Institute,+,4.7,633 Ratings,"College Road Bikaner Agra Road, Bikaner",,,Hematolical Oncology Consultation,true,true,true,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+SSM Hospital,+,4.3,"2,040 Ratings","Mutt Road Kr Puram Hassan, Hassan",,,Diseases In Pregnancy; Infertility; Obstetrics Problems,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Swamy Car Decor And Sticker Cutting,+,4.8,4 Ratings,"B M Road Channarayapatna, Hassan",,,Company Authorised Dealer,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+JSS Hospital,J,4.7,3 Ratings,"Gandhi Road Mysore Hassan Ho, Hassan",,,Private Hospitals; Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Sparsh Hospital,+,4.2,"1,572 Ratings","Sparsh Hospital Bm Road, Hassan",,,Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Mangala Hospital,+,3.9,763 Ratings,"K R Puram Sampige Road Hassan, Hassan",,,Obstetrics Problems,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Sri Dharamsthala Manjunatheswara College Of Ayurveda,+,4.4,654 Ratings,"Thanniruhalla Bm Road, Hassan",,,Hospitals; Colleges,true,true,true,true,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Janapriya Hospital,+,3.9,632 Ratings,"3rd Cross Road Shankaripuram, Hassan",,,Hospitals,true,false,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Keshava Nethralaya,+,4.4,355 Ratings,"Harshamahal Road, Hassan",,,Ophthalmic Surgical Consultation,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Manjunatha Hospital,M,4.6,286 Ratings,"1st Cross Shankar Mutt Road, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.271Z
+Dr. Chaitra Niranjan Tanya Speciality Hospital,+,4.5,252 Ratings,"3rd Cross Kr Puram Hassan, Hassan",,,Obstetrics Problems,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Vijayalakshmi Electro World,+,4.0,269 Ratings,"Circle Park Road Salagame Road, Hassan",,,Same Day Delivery; In Store Collect; Shop In Store,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Hemavathi Hospital,+,3.7,192 Ratings,"Northern Extension Aralepet, Hassan",,,Obstetrics Problems; Pediatric Consultation; Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Dange Hospital,+,3.7,146 Ratings,"Matta Road Mg Road Hassan, Hassan",,,Contact Lens Prescription; Ophthalmic Surgical Consultation; Pediatric ENT Consultation,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Dange Hospital,+,3.7,146 Ratings,"Vidhya Nagar, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Rajeev Hospital,R,4.0,125 Ratings,"Hospital Road Kr Puram Hassan, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Hassanamba Gastroentarolagy Multi Speciality Hospital,H,3.8,117 Ratings,"Hospital Road Rangoli Halla, Hassan",,,Nursing Care,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Sri Chamarajendra Hospital,+,3.8,115 Ratings,"Race Course Road Hassan, Hassan",,,Diseases In Pregnancy; Obstetrics Problems; Diagnostic And Pathology,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Csi Redfern Memorial Hospital,C,4.0,107 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Redfern CSI Mission Hospital,R,3.2,123 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Government Hospital,+,2.9,135 Ratings,"Rangoli Halla, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Vaatsalya Hospital,V,3.4,100 Ratings,"R C Road MG Road Hassan, Hassan",,,Obstetrics Problems; Animal Diseases; Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Vinay Pediatric And Multispeciality Hospital,+,4.5,75 Ratings,"Shankar Mutt Road, Hassan",,,Nursing Care,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Sanjeevani Hospital,S,3.5,96 Ratings,"Saraswathipuram Salagame Road, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.272Z
+Government General Hospital,G,3.3,98 Ratings,"B M Road Alur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Amma Eye And Retina Care Centre,+,4.3,75 Ratings,"Sjp Cross Road Thanniruhalla, Hassan",,,Contact Lens Prescription,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Missan Hospital,+,3.3,93 Ratings,"Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Jayashree Nursing Home,J,4.3,56 Ratings,"Kr Puram Hassan, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Sparsha Hospital,+,3.7,64 Ratings,"Channarayapatna, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Vinay Scans,+,4.0,59 Ratings,"Mutt Road Shankar Mutt Road, Hassan",,,Hospitals; Diagnostic Centres,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Sanjeevini Hospital,S,3.1,76 Ratings,"Mutt Road Shankar Mutt Road, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+S S Hospital And Research Centre,S,3.5,67 Ratings,"Hassan Road Arsikere, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Sanjeevini Co-operative Institute Of Nursing & Hospital,S,3.9,60 Ratings,"Belur Road Kr Puram Hassan, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Mamateya Madilu Hospital,+,3.4,67 Ratings,"D Kalenahalli Road Gulsinda, Hassan",,,Diagnostic And Pathology; Artificial Insemination; Obstetrics Problems,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Rajeev Hospital,+,3.0,72 Ratings,"Rangoli Halla Rangoli Halla, Hassan",,,Hospitals,true,false,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Nagesh Hospital,N,4.3,48 Ratings,"Mysore Road Channarayapatna, Hassan",,,Obstetrics Problems; Cardiologist Consultation; Diseases In Pregnancy,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.273Z
+Government General Hospital,+,3.5,56 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Hassan Government Hospital,H,3.5,55 Ratings,"Holenarasipur Holenarsipur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Sri Hasanamba Multi Speciality And Gastroenterology Centre,S,3.3,58 Ratings,"Jubilee Park Kr Puram Hassan, Hassan",,,Hospitals; Clinics,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Apollo Bgs Hospitals,+,4.2,44 Ratings,"Road Kuvempu Nagar, Hassan",,,Senior Citizen Health Checkup; Cosmetic and Aesthetic; Female Sexual Problems,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Ashraya Hospital,A,4.1,42 Ratings,"K R Puram Sampige Road Hassan, Hassan",,,Hospitals,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Nagabhushan Hospital,N,3.1,53 Ratings,"B H Road Arsikere, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Jajur Umeshpandith Saibaba Paramparika Naativaidhya Hospital,J,4.6,34 Ratings,"Jajur Arsikere, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Venkataramana Hospital,V,3.7,42 Ratings,"Bh Road Arsikere, Hassan",,,Diseases In Pregnancy,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Sridevi Hospital,S,4.1,37 Ratings,"Channarayapatna, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Kamaldev Nursing Home,K,4.7,32 Ratings,"Sakleshpur Rd Sakleshpur, Sakleshpur",,,Hospitals; Nursing Homes,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Rakesh Nethralaya,+,4.5,33 Ratings,"Hospital Road Rangoli Halla, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Kiran Speciality Hospital,+,4.4,33 Ratings,"Pension Mohalla, Hassan",,,Hospitals,true,false,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.274Z
+Jenukal Hospital,J,3.3,44 Ratings,"BH Road Arsikere, Hassan",,,Hospitals; Private Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Government Hospital Arsikere,G,4.0,35 Ratings,"St Mary's Church Colony Arsikere, Hassan",,,Hospitals; Public Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Crawford General Hospital,C,3.5,36 Ratings,"Sakleshpur, Sakleshpur",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Kumaraswamy Hospital,K,2.6,45 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+NIRANTHARA HEALTH CRAE,N,4.2,25 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Acr Diagnostic Laboratory,A,3.4,30 Ratings,"Pura Krishnaraja Pura, Hassan",,,Hospitals; Diagnostic Centres,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Government General hospital,G,4.0,25 Ratings,"Hoghway 110 Vaikunta Street, Belur",,,Hospitals; Public Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+District Hospital,D,4.5,21 Ratings,"1st Flr Bm Road, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Tara Hospital,T,3.9,22 Ratings,"Arakalagud Arkalgud, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Bahubali Children Hospital,B,3.8,20 Ratings,"Hirisave Road Chalya, Shravanabelagola",,,Hospitals; Children Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Navachaitanya Rehab Physiotherapy Centre,N,4.7,15 Ratings,"4th Cross Road Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Sri Jayachamarajendra Government Hospital,S,3.1,20 Ratings,"Arsikere, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Geeta Eye Hospital,G,4.7,13 Ratings,"Krishnaraja Pura, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Jayachamarajapura Government Hospital,J,4.1,14 Ratings,"Panchanahalli Road Arsikere, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Community Health Center,C,3.8,15 Ratings,"Mosale Hosahalli Mosalhosahalli, Hassan",,,Health Care Centres; Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Sri Lakshmi Eye Hospital,+,4.6,10 Ratings,"Arsikere, Hassan",,,Contact Lens Prescription,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Srimathi savithramma Shansappa Hospital,S,4.1,11 Ratings,"Hassan Road Arsikere, Hassan",,,Hospitals; Private Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.275Z
+Pandith Umesh Paramparika Naativaidyalaya,P,4.1,11 Ratings,"Jajur, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Hoysala Hospital,H,3.6,12 Ratings,"Shankarmutt Road Kr Puram Hassan, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Sakleshpur Government Hospital,S,3.3,13 Ratings,"Thanniruhalla, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Bhuvaneshwari Hospital,+,4.7,9 Ratings,"SH 71E Bhoovanahalli, Hassan",,,Nursing Care,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Sdm Hospital,S,4.2,10 Ratings,"Rangoli Halla Rangoli Halla, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Hassan Eye Hospital,H,4.3,9 Ratings,"Sampige Road Bm Road, Hassan",,,Contact Lens Prescription; Ophthalmic Surgical Consultation,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Vatsalya Nursing HOME,V,3.8,10 Ratings,"Race Course Road Hassan, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.276Z
+Government Unani & Ayurveda Hospital,G,5.0,7 Ratings,"Arakalagud Arkalgud, Hassan",,,Hospitals; Public Hospitals,true,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Government General Hospital,G,4.1,8 Ratings,"State Highway 8 Holenarsipur, Hassan",,,Hospitals; Public Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Grass Life Hospital,G,4.4,7 Ratings,"Byrapura Channarayapatna, Hassan",,,Hospitals,false,true,false,false,true,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Dammaningala Government Hospital,D,3.8,8 Ratings,"Dammaningala, Shravanabelagola",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+H.i.m.s Women And Children Hospital,H,3.3,9 Ratings,"Rangoli Halla, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Mch Hospital,M,3.3,9 Ratings,"Holenarsipur, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Vayuputra Polyclinic,V,4.0,7 Ratings,"Hassan Rangoli Halla, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Phc Mallipatna,P,4.5,6 Ratings,"Mallipatna, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Rajeev Hospital,R,3.8,7 Ratings,"Sampige Road Sampige Road Hassan, Hassan",,,Hospitals; Ambulance Services,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Ashwini Nursing Home,A,3.8,7 Ratings,"B.h. Road Arsikere, Hassan",,,Hospitals; Nursing Homes,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Govt Hospital - Primary Health Care,G,4.4,6 Ratings,"Didaga, Hassan",,,Hospitals,false,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z
+Government Hospital,G,4.0,6 Ratings,"Konanur, Hassan",,,Hospitals,true,true,false,false,false,Best Hospitals,,Hassan,2025-05-27T08:16:47.277Z

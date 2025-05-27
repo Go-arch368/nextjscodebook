@@ -1,31 +1,101 @@
-name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,city,timestamp
-Sdm Art Center,<,4.5,7 Ratings,"Mangalore - Dharmastala Hwy, Dakshina Kannada",,,Drama Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.769Z
-Rajinis Hobby Classes,<,5.0,16 Ratings,"10 Th Main Gokulam 3rd Stage, Mysore",,,Soft Toy Making Classes; Tailoring Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.769Z
-Clay Canvas Mysuru,<,4.9,31 Ratings,"Gokulam 3rd Stage Gokulam, Mysore",,,Drawing Classes; Handwriting Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.769Z
-Chinmaya Vidyalaya,<,4.1,58 Ratings,"4th Cross Jayalakshmipuram, Mysore",,,Hobby Classes,false,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-Curio City,<,5.0,3 Ratings,"Vv Mohalla, Mysore",,,Hobby Classes; Hobby Classes For Children,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-Soni's Daycare & Richa's Art Club,<,4.8,44 Ratings,"2nd Cross Gokulam, Mysore",,,Dance Classes; Language Classes For English Conversation,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-The Hobby Place,<,4.6,455 Ratings,"Vivekananda Road Yadavagiri, Mysore",,,Fabric Painting Classes; Music Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-Eats N Treats Cooking Classes,<,4.5,14 Ratings,"Hospital Road Kuvempunagar, Mysore",,,Cookery Classes For Cake; Cookery Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-Curiocity - School Of Creative Art and Design,<,4.6,39 Ratings,"7th Cross Narasimharaja Mohalla, Mysore",,,Art Schools; Mehendi Artists,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.770Z
-Ananya Creations,<,5.0,1 Rating,"Annasandrapalya Ganesh Nagar, Mysore",,,Hobby Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Champaka Academy,+,4.7,122 Ratings,"E & F Block Ramakrishnanagar, Mysore",,,Dance Classes; Pre Schools,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Kalakuteera Mysore,+,4.1,35 Ratings,"6th Cross Kr Mohalla, Mysore",,,Arts & Crafts Classes For Children; Summer Camps,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-All For Kids,+,4.5,3 Ratings,"Banavadi, Bangalore",,,Hobby Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Tagore Painting & Craft Classes,+,5.0,3 Ratings,"Kottara Kottara Chowki, Mangalore",,,Painting Classes; Arts & Crafts Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Mangalore Surf Club,+,4.8,318 Ratings,"Boloor, Mangalore",,,Surfing Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Indica Surf School,+,4.7,952 Ratings,"Kolachikambla Road Mulki East, Mangalore",,,Surfing Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Drishya School Of Arts,D,4.8,9 Ratings,"No.12137 Vidyaratna Nagar, Manipal",,,Hobby Classes; Art Schools,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Little Millennium,+,4.7,425 Ratings,"Channanayakanapalya Nagasandra, Bangalore",,,Business Owned By Women,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Lakshmi Tailoring Classes And Ladies Tailors,+,3.3,6 Ratings,"Magadi Main Road Sunkadakatte, Bangalore",,,Tailoring Classes; Embroidery Classes,true,false,false,false,false,Hobby Classes,Hassan,2025-05-26T12:39:05.771Z
-Eurokids Rukmininagar,+,4.8,253 Ratings,"Rukmini Nagar Nagasandra, Bangalore",,09054863284,Day Care Centres; Pre Schools,true,false,false,true,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-National School Of Drama Bengaluru Centre,+,4.3,164 Ratings,"Kajana Mallathahalli, Bangalore",,,Drama Classes; Acting Classes,false,false,true,true,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Creative Art Classes,+,4.2,14 Ratings,"2nd Stage Nagarbhavi, Bangalore",,,Fabric Painting Classes; Tutorials,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Ninaadrang,+,5.0,8 Ratings,"Main Road Rajarajeshwari Nagar, Bangalore",,,Dance Classes; Music Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Divya's Art Room,D,5.0,1 Rating,"Layout Rajarajeshwari Nagar, Bangalore",,,Arts & Crafts Classes; Hobby Classes,false,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Little Daffodils,+,4.6,18 Ratings,"3rd Stage Rajarajeshwari Nagar, Bangalore",,,Schools; Day Care Centres,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Pinwheel Montessori School And Activity Centre,P,4.8,4 Ratings,"BEML Layout Rajarajeshwari Nagar, Bangalore",,,Nursery Schools; Schools,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Music Kids,M,3.2,6 Ratings,"9th Block Nagarbhavi 2nd Stage, Bangalore",,,Music Classes; Music Classes For Guitar,true,false,false,false,false,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-SRS Abacus,S,5.0,1 Rating,"Lay Out Vijayanagar Attiguppe, Bangalore",,,Summer Camps; Abacus Classes,true,false,false,false,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Swetha Geetha Tailoring Class,S,3.9,4 Ratings,"Kothnoor Post. Konanakunte, Bangalore",,,Arts & Crafts Classes; Tailoring Classes,true,false,false,false,false,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
-Young Innovators Educational Services Pvt Ltd,+,4.9,93 Ratings,"21st Main Vijayanagar, Bangalore",,,Hobby Classes For Children; Hobby Classes,true,false,false,true,true,Hobby Classes,Hassan,2025-05-26T12:39:05.772Z
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Sdm Art Center,<,4.5,7 Ratings,"Mangalore - Dharmastala Hwy, Dakshina Kannada",,,Drama Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.281Z
+Rajinis Hobby Classes,<,5.0,16 Ratings,"10 Th Main Gokulam 3rd Stage, Mysore",,,Soft Toy Making Classes; Tailoring Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.281Z
+Clay Canvas Mysuru,<,4.9,31 Ratings,"Gokulam 3rd Stage Gokulam, Mysore",,,Drawing Classes; Handwriting Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.281Z
+Chinmaya Vidyalaya,<,4.1,58 Ratings,"4th Cross Jayalakshmipuram, Mysore",,,Hobby Classes,false,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.281Z
+Curio City,<,5.0,3 Ratings,"Vv Mohalla, Mysore",,,Hobby Classes; Hobby Classes For Children,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.281Z
+Soni's Daycare & Richa's Art Club,<,4.8,44 Ratings,"2nd Cross Gokulam, Mysore",,,Dance Classes; Language Classes For English Conversation,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+The Hobby Place,<,4.6,458 Ratings,"Vivekananda Road Yadavagiri, Mysore",,,Fabric Painting Classes; Music Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Eats N Treats Cooking Classes,<,4.5,14 Ratings,"Hospital Road Kuvempunagar, Mysore",,,Cookery Classes For Cake; Cookery Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Curiocity - School Of Creative Art and Design,<,4.6,39 Ratings,"7th Cross Narasimharaja Mohalla, Mysore",,,Art Schools; Mehendi Artists,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Ananya Creations,<,5.0,1 Rating,"Annasandrapalya Ganesh Nagar, Mysore",,,Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Champaka Academy,+,4.7,122 Ratings,"E & F Block Ramakrishnanagar, Mysore",,,Dance Classes; Pre Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Kalakuteera Mysore,+,4.1,35 Ratings,"6th Cross Kr Mohalla, Mysore",,,Arts & Crafts Classes For Children; Summer Camps,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+All For Kids,+,4.5,3 Ratings,"Banavadi, Bangalore",,,Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Tagore Painting & Craft Classes,+,5.0,3 Ratings,"Kottara Kottara Chowki, Mangalore",,,Painting Classes; Arts & Crafts Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Mangalore Surf Club,+,4.8,321 Ratings,"Boloor, Mangalore",,,Surfing Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Indica Surf School,+,4.7,959 Ratings,"Kolachikambla Road Mulki East, Mangalore",,,Surfing Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Drishya School Of Arts,D,4.8,9 Ratings,"No.12137 Vidyaratna Nagar, Manipal",,,Hobby Classes; Art Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.282Z
+Little Millennium,+,4.7,425 Ratings,"Channanayakanapalya Nagasandra, Bangalore",,,Business Owned By Women,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Lakshmi Tailoring Classes And Ladies Tailors,+,3.3,6 Ratings,"Magadi Main Road Sunkadakatte, Bangalore",,,Tailoring Classes; Embroidery Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Eurokids Rukmininagar,+,4.8,253 Ratings,"Rukmini Nagar Nagasandra, Bangalore",,09054863284,Day Care Centres; Pre Schools,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+National School Of Drama Bengaluru Centre,+,4.3,164 Ratings,"Kajana Mallathahalli, Bangalore",,,Drama Classes; Acting Classes,false,false,true,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Creative Art Classes,+,4.2,14 Ratings,"2nd Stage Nagarbhavi, Bangalore",,,Fabric Painting Classes; Tutorials,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Ninaadrang,+,5.0,8 Ratings,"Main Road Rajarajeshwari Nagar, Bangalore",,,Dance Classes; Music Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Divya's Art Room,D,5.0,1 Rating,"Layout Rajarajeshwari Nagar, Bangalore",,,Arts & Crafts Classes; Hobby Classes,false,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Little Daffodils,+,4.6,18 Ratings,"3rd Stage Rajarajeshwari Nagar, Bangalore",,,Schools; Day Care Centres,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Pinwheel Montessori School And Activity Centre,P,4.8,4 Ratings,"BEML Layout Rajarajeshwari Nagar, Bangalore",,,Nursery Schools; Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Music Kids,M,3.2,6 Ratings,"9th Block Nagarbhavi 2nd Stage, Bangalore",,,Music Classes; Music Classes For Guitar,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+SRS Abacus,S,5.0,1 Rating,"Lay Out Vijayanagar Attiguppe, Bangalore",,,Summer Camps; Abacus Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Swetha Geetha Tailoring Class,S,3.9,4 Ratings,"Kothnoor Post. Konanakunte, Bangalore",,,Arts & Crafts Classes; Tailoring Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Young Innovators Educational Services Pvt Ltd,+,4.9,93 Ratings,"21st Main Vijayanagar, Bangalore",,,Hobby Classes For Children; Hobby Classes,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Natya Taranga Nrithyalaya,N,4.0,2 Ratings,"Rpc Layout Vijayanagar, Bangalore",,,Dance Classes; Dance Classes For Bharatnatyam,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+Honey Herbal Beauty Parlour,H,4.3,4 Ratings,"9th K Main Road Vijayanagar, Bangalore",,,Beauty Parlours; Women Beauty Parlours,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.283Z
+The Structural School Of Fine Arts,+,4.5,103 Ratings,"17th Cross Vijayanagar, Bangalore",,,Music Classes; Tutorials,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Little Woods School,+,4.8,66 Ratings,"No 451 Uttarahalli, Bangalore",,,Montessori Schools; Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Towering Heights Kindergarten,T,3.7,16 Ratings,"2nd Stage Vijayanagar, Bangalore",,,Hobby Classes; Nursery Schools,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Bangalore Peoples Tree,B,3.0,1 Rating,"2a Crs Basaveshwara Nagar, Bangalore",,,Kindergartens; Schools,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Handwriting A One.com,+,4.8,357 Ratings,,,09972952858,Summer Camps; Handwriting Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Uniq Fine Arts,U,5.0,1 Rating,"3 Phase Yeshwanthpur, Bangalore",,,Charcoal Sketching Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Parisara Montessori House Of Children,+,4.7,37 Ratings,"Cross Mahalakshmipuram Layout, Bangalore",,,Playgroups; Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Raghavendra P Revankar,R,3.0,1 Rating,"Rajajinagar 1st Block, Bangalore",,,Hobby Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Dream Strokes,D,4.0,1 Rating,"Manjunath Nagar Rajajinagar, Bangalore",,,Painting Classes; Institutes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Sri Rajarajeshwari Computer Embroidery,S,3.0,1 Rating,"Dr Raj Kumar Rasthe Rajajinagar, Bangalore",,,Embroidery Job Works; Hobby Classes,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Aim Montessori,+,4.8,95 Ratings,"Bank Colony Uttarahalli, Bangalore",,,Baby Sitters; Language Classes For Kannada,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Padmini Raghuram,P,4.0,3 Ratings,"17th Cross Mathikere, Bangalore",,,Hobby Classes; Arts & Crafts Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Madhuri Cooking & Hobby Classes,M,5.0,2 Ratings,"Rajajinagar Rajajinagar, Bangalore",,,Hobby Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Preeti Art Classes,+,3.0,3 Ratings,"Dollars Colony New Bel Road, Bangalore",,,Hobby Classes; Pottery Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Ronav Hobby Classes,R,4.5,1 Rating,"Prakash Nagar, Bangalore",,,Hobby Classes; Kuchu Work Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Mudrika Foundation For Indian Performing Arts,M,4.0,20 Ratings,"18th Cross Malleswaram West, Bangalore",,,Dance Classes; Dance Classes For Bharatnatyam,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Hobby Ideas,H,3.2,4 Ratings,"Mathikere, Bangalore",,,Hobby Classes; Arts & Crafts Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Natya Niketan,+,4.6,30 Ratings,"10th Crs Padmanabhanagar, Bangalore",,,Dance Classes; Dance Classes For Bharatnatyam,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.284Z
+Sai Cubes,+,4.8,14 Ratings,"Bull Temple Road Thyagaraj Nagar, Bangalore",,,Arts & Crafts Classes; Abacus Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Arts Film Academy,+,4.9,44 Ratings,"Subedarpalya Yeshwanthpur Circle, Bangalore",,09980781101,Videography,true,false,true,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Happy Landings India,+,4.5,60 Ratings,"Layout Vidyaranyapura  Block 6, Bangalore",,,Toy Dealers; Stationery Shops,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Art Film Academy,+,4.8,6 Ratings,"Main Road Parimala Nagar, Bangalore",,,Computer Training Institutes; Tutorials,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Vruddhi Center For Learning,+,3.9,28 Ratings,"5th Block Vidyaranyapura, Bangalore",,,Dance Classes At Home; Dance Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Magic Touch School Of Arts,M,4.0,11 Ratings,"10th Cross Hanumantha Nagar, Bangalore",,,Hobby Classes; Arts & Crafts Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Kre8ive Kolors,+,4.9,14 Ratings,"8th Main Malleswaram West, Bangalore",,,Madhubani Painting Classes; Drawing Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Rainbow Club Kids Library,+,4.4,18 Ratings,"17th Cross Malleswaram West, Bangalore",,,Children Libraries; Dance Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Young Creators Den,Y,4.5,9 Ratings,"7th Cross Banashankari 1st Stage, Bangalore",,,Summer Camps; Libraries,false,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+LIFEACE,L,5.0,1 Rating,,,,Hobby Classes; MS Excel Training Institutes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Anamika Choudhary,A,3.0,1 Rating,"6th Main Road Thyagaraj Nagar, Bangalore",,,Drawing Classes; Hobby Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Deeptanshu Art And Hobby Classes,+,4.0,1 Rating,"3rd Main Jp Nagar 1st Phase, Bangalore",,,Hobby Classes; Arts & Crafts Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Jayanthi Arts,J,5.0,2 Ratings,"8th Cross Jayanagar 7th Block, Bangalore",,,Flower Decorators; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Dimension,+,4.9,53 Ratings,"Netkalappa Circle Basavanagudi, Bangalore",,08867842994,Dance Classes; Music Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Kids To Chefs,+,3.5,6 Ratings,"A Cross Banashankari 2nd Stage, Bangalore",,,Hobby Classes For Children; Cookery Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Citrine Classes,C,3.9,17 Ratings,"AECS Layout Sanjay Nagar, Bangalore",,09980231564,,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Gyanpro,+,4.7,192 Ratings,"38th Cross Jayanagar 5th Block, Bangalore",,,Workshop For Science; Acting Classes,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.285Z
+Utsaha Summer Camp,+,4.8,18 Ratings,"B Main Jayanagar 7th Block, Bangalore",,,Summer Camps; Drawing Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Kids Studio,K,4.5,2 Ratings,"29th Cross Jayanagar 7th Block, Bangalore",,,Summer Camps; Dance Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Go Bananas,G,4.0,1 Rating,"Vasanth Nagar, Bangalore",,,Party Organisers; Summer Camps,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+School Project Kart,+,4.5,22 Ratings,"2nd Banashankari 2nd Stage, Bangalore",,,Education Consultants; School Project Model Manufacturers,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Perfect Institute Of Fine Arts,P,3.9,4 Ratings,"Main Road Chikka Bommasandra, Bangalore",,,Hobby Classes For Children; Institutes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Gayatri Music Classes,G,4.7,66 Ratings,"Nagar Jp Nagar 6th Phase, Bangalore",,,Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Myndea,+,3.5,2 Ratings,"Rbi Layout Jp Nagar, Bangalore",,,Hobby Classes; Creativity Training Centres,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Mamathas Creations,M,5.0,2 Ratings,"Main Road Jayanagar 2nd Block, Bangalore",,,Painting Classes; Dance Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Glitterers Dance and Fitness Studio,+,4.4,260 Ratings,"No328/12 Jayanagar 2nd Block, Bangalore",,,Get Your Own Trainer,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Ravi,+,4.8,12 Ratings,"11th Main Jayanagar 4th Block, Bangalore",,,Painting Classes; Drawing Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Jnana Lahari Institute,J,4.6,5 Ratings,"1st Blk East Jayanagar, Bangalore",,,Dance Classes; Music Classes,false,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Kidzee Pre School,+,4.8,39 Ratings,"Layout Jp Nagar 8th Phase, Bangalore",,09724389963,Pre Schools; Dance Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Savis Fashion Studio,+,4.6,140 Ratings,"14th Cross Judicial Layout, Bangalore",,,Tailoring Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Graphology School Of India and Handwriting School Of India,+,4.7,146 Ratings,"26th A Main Jayanagar 9th Block, Bangalore",,,English Handwriting Classes; Handwriting Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Zebra Robotics,+,4.3,6 Ratings,"18th Main Jayanagar 4th T Block, Bangalore",,,Robotic Training Centres; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Artihc Creations,+,4.5,4 Ratings,"Vinayakanagar Hebbal, Bangalore",,,Painting Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Kriti Hobby Classes & Tuitions,K,4.0,2 Ratings,"R T Nagar Rt Nagar, Bangalore",,,Tutorials; Dance Classes,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.286Z
+Poshan,P,4.3,18 Ratings,"Judicial Layout Rt Nagar, Bangalore",,,Playgroups; Day Care Centres,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Ingene Skills Academy,+,4.8,126 Ratings,"Bank Layout Bannerghatta Road, Bangalore",,09980231023,Summer Camps; Handwriting Classes,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Masterpiece International Preschool,+,4.8,64 Ratings,"NRI Layout Kalkere, Bangalore",,,Abacus Classes; Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Tattoos Praveen D,T,5.0,1 Rating,"5th Main Road.5th Cross Rt Nagar, Bangalore",,,Painting Classes; Drawing Classes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Institute Of Baking And Cake Art,+,4.0,"1,023 Ratings","No.46/3 Mission Road, Bangalore",,,Bakery Institutes; Institutes,true,false,false,true,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Latas Creativity,L,3.6,15 Ratings,"Rd Crs Cunningham Road, Bangalore",,,Gift Box Making Classes; Institutes,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+S H Fashion Designing Institute,+,4.8,11 Ratings,"Road 2nd Jayanagar 9th Block, Bangalore",,,Institutes; Fashion Designing Institutes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+National School Of Drama,N,4.3,46 Ratings,"Tank Bund Road Gandhi Nagar, Bangalore",,,Hobby Classes; Drama Classes,false,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Anncee,A,3.0,1 Rating,"Bhuvaneshwari Nagar Hebbal, Bangalore",,,Hobby Classes; Cookery Classes,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Tailoring Classes By Rabiya J,+,4.8,135 Ratings,"Sultanpalya Main Road Rt Nagar, Bangalore",,,Tailoring Classes; Hobby Classes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Kara 4 Kids,+,3.7,45 Ratings,"Jayamahal Extension Benson Town, Bangalore",,,Nursery Schools; Schools,true,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Sun Shine Labz,+,4.2,78 Ratings,"Layout Jp Nagar 5th Phase, Bangalore",,,Institutes; Computer Training Institutes,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Hobbies Unlimited,H,3.0,3 Ratings,"Millers Road Benson Town, Bangalore",,,Music Classes; Cookery Classes,false,false,false,false,false,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+R A Study Center,+,5.0,8 Ratings,"BG ROAD Gottigere, Bangalore",,08511750571,Assignment Writing Services; School Project Model Manufacturers,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Cubby Tales,+,4.9,80 Ratings,"Bengaluru Hebbal, Bangalore",,,Pre Schools; Nursery Schools,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
+Saraswathi Sangeetha School Of Arts,+,4.6,30 Ratings,"3rd Cross Road Hebbal, Bangalore",,,Music Classes For Vocal; Home Tutors,true,false,false,false,true,Hobby Classes,,Hassan,2025-05-27T08:25:12.287Z
