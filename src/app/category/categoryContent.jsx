@@ -1,11 +1,10 @@
-// src/app/category/CategoryContent.jsx
-"use client";
+'use client';
+
 import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
-
+import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown } from 'lucide-react';
 
 function debounce(func, wait) {
   let timeout;
@@ -17,8 +16,8 @@ function debounce(func, wait) {
 
 function generateRandomPhone() {
   const firstDigit = Math.floor(Math.random() * 4) + 6;
-  const randomNum = Math.floor(100000000 + Math.random() * 900000000);
-  return `+91${firstDigit}${randomNum.toString().slice(1)}`;
+  const randomNum = Math.floor(Math.random() * 900000000) + 100000000;
+  return `+91${firstDigit}${randomNum}`;
 }
 
 export default function CategoryContent() {
@@ -29,17 +28,31 @@ export default function CategoryContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
+  const [sortOption, setSortOption] = useState('default'); // State for dropdown sort option
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for sort dropdown
+  const [topRatedSort, setTopRatedSort] = useState(null); // State for Top Rated sort: null, 'desc', or 'asc'
+  const [sortByVerified, setSortByVerified] = useState(false); // State for JD Verified sort
+  const [sortByTrusted, setSortByTrusted] = useState(false); // State for JD Trust sort
+  const [ratingSort, setRatingSort] = useState(null); // State for rating sort: null, 5, 4.5, 4.0, 3.5
+  const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false); // State for rating dropdown
 
   const selectedCategory = searchParams.get('category') || 'Services';
 
   const fetchListings = useCallback(
-    debounce(async (categoryToFetch) => {
-      console.log('[CategoryPage] fetchListings called at:', new Date().toISOString(), 'for category:', categoryToFetch);
+    debounce(async (categoryToFetch, sort, sortFields) => {
+      console.log('Fetching listings for category:', categoryToFetch, 'sort:', sort, 'sortFields:', sortFields);
       try {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`/api/getListings?category=${encodeURIComponent(categoryToFetch)}`, {
+        // Build query string
+        let query = `category=${encodeURIComponent(categoryToFetch)}`;
+        if (sort) query += `&sort=${sort}`;
+        if (sortFields.sortByVerified) query += `&sortByVerified=true`;
+        if (sortFields.sortByTrusted) query += `&sortByTrusted=true`;
+        if (sortFields.ratingSort) query += `&sortByRating=${sortFields.ratingSort}`;
+
+        const response = await fetch(`/api/getListings?${query}`, {
           cache: 'no-store',
         });
 
@@ -47,31 +60,24 @@ export default function CategoryContent() {
           throw new Error(`Failed to fetch listings: ${response.status}`);
         }
         const result = await response.json();
-        console.log('[CategoryPage] API Response from getListings:', result);
 
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
           const uniqueCategories = [...new Set(result.data.map(listing => listing.category))];
-          console.log('[CategoryPage] Unique categories:', uniqueCategories);
 
           const imagePromises = uniqueCategories.map(category => {
-            const url = `/api/getImagesByCategory?category=${encodeURIComponent(category)}`;
-            console.log(`[CategoryPage] Fetching images for category: ${category}, URL: ${url}`);
-            return fetch(url, {
+            return fetch(`/api/getImagesByCategory?category=${encodeURIComponent(category)}`, {
               cache: 'no-store',
             })
               .then(res => res.json().then(data => ({ category, data })))
               .catch(error => {
-                console.error(`[CategoryPage] Failed to fetch images for ${category}: ${error.message}`);
+                console.error(`Failed to fetch images for ${category}: ${error.message}`);
                 return { category, data: { images: [] } };
               });
           });
 
           const imageResults = await Promise.all(imagePromises);
           const imageMap = Object.fromEntries(
-            imageResults.map(({ category, data }) => {
-              console.log(`[CategoryPage] Images for ${category}: ${data.images?.length || 0}`);
-              return [category, data.images || []];
-            })
+            imageResults.map(({ category, data }) => [category, data.images || []])
           );
 
           const listingsWithImages = result.data.map(listing => ({
@@ -93,34 +99,51 @@ export default function CategoryContent() {
           throw new Error(result.message || `No listings found for category: ${categoryToFetch}`);
         }
       } catch (err) {
-        console.error('[CategoryPage] Fetch error:', err.message);
+        console.error('Fetch error:', err.message);
         setError(`Unable to load listings: ${err.message}`);
         setListings([]);
         setCategory(categoryToFetch);
         setCity('Your City');
       } finally {
         setLoading(false);
-        console.log('[CategoryPage] fetchListings completed at:', new Date().toISOString());
       }
     }, 1000),
     []
   );
 
   useEffect(() => {
-    console.log('[CategoryPage] useEffect triggered - Initial page load or reload for category:', selectedCategory);
-    fetchListings(selectedCategory);
-  }, [fetchListings, selectedCategory]);
+    console.log('Category, sort, or sortFields changed:', selectedCategory, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort);
+    let sort = null;
+    if (topRatedSort === 'desc') {
+      sort = 'totalRatings-desc';
+    } else if (topRatedSort === 'asc') {
+      sort = 'totalRatings-asc';
+    } else if (sortOption === 'rating') {
+      sort = 'rating';
+    }
+    const sortFields = { sortByVerified, sortByTrusted, ratingSort };
+    fetchListings(selectedCategory, sort, sortFields);
+  }, [fetchListings, selectedCategory, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
 
   useEffect(() => {
     const handlePageShow = (event) => {
       if (event.persisted) {
-        console.log('[CategoryPage] Page restored from cache, refetching listings for category:', selectedCategory);
-        fetchListings(selectedCategory);
+        console.log('Page restored from cache, refetching listings');
+        let sort = null;
+        if (topRatedSort === 'desc') {
+          sort = 'totalRatings-desc';
+        } else if (topRatedSort === 'asc') {
+          sort = 'totalRatings-asc';
+        } else if (sortOption === 'rating') {
+          sort = 'rating';
+        }
+        const sortFields = { sortByVerified, sortByTrusted, ratingSort };
+        fetchListings(selectedCategory, sort, sortFields);
       }
     };
     window.addEventListener('pageshow', handlePageShow);
     return () => window.removeEventListener('pageshow', handlePageShow);
-  }, [fetchListings, selectedCategory]);
+  }, [fetchListings, selectedCategory, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
 
   const handleShowMoreImages = (listingIndex) => {
     setVisibleImages((prev) => ({
@@ -133,11 +156,23 @@ export default function CategoryContent() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = {
-      assistance: formData.get('assistance'),
+      assistance:
+        topRatedSort === 'desc'
+          ? 'Top Rated (Descending)'
+          : topRatedSort === 'asc'
+          ? 'Top Rated (Ascending)'
+          : sortOption === 'rating'
+          ? 'Rating'
+          : 'Default',
+      sortFields: {
+        verified: sortByVerified ? 'Sort by Verified' : 'None',
+        trusted: sortByTrusted ? 'Sort by Trusted' : 'None',
+        rating: ratingSort ? `Sort by Rating >= ${ratingSort}` : 'None',
+      },
       name: formData.get('name'),
       mobile: formData.get('mobile'),
     };
-    console.log('[CategoryPage] Form Submission:', data);
+    console.log('Form Submission:', data);
     alert('Enquiry submitted successfully!');
     e.target.reset();
   };
@@ -150,7 +185,6 @@ export default function CategoryContent() {
     try {
       localStorage.setItem('lastVisitedCategory', category);
       localStorage.setItem('lastVisitedBusiness', businessName);
-      console.log(`Stored in localStorage: category=${category}, business=${businessName}`);
     } catch (error) {
       console.error('Error writing to localStorage:', error);
     }
@@ -180,7 +214,7 @@ export default function CategoryContent() {
       case 'Tyre Dealers':
         window.location.href = '/template?websiteIdentifier=Automobile-Tires-560062';
         break;
-      case 'Showing Results for "Autospares Hub"':
+      case 'Autospares Hub':
         window.location.href = '/template?websiteIdentifier=Automobile-AutoParts-560062';
         break;
       default:
@@ -195,8 +229,16 @@ export default function CategoryContent() {
       {error}
       <Button
         onClick={() => {
-          console.log('[CategoryPage] Retry button clicked, refetching listings for category:', selectedCategory);
-          fetchListings(selectedCategory);
+          let sort = null;
+          if (topRatedSort === 'desc') {
+            sort = 'totalRatings-desc';
+          } else if (topRatedSort === 'asc') {
+            sort = 'totalRatings-asc';
+          } else if (sortOption === 'rating') {
+            sort = 'rating';
+          }
+          const sortFields = { sortByVerified, sortByTrusted, ratingSort };
+          fetchListings(selectedCategory, sort, sortFields);
         }}
         className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
       >
@@ -208,9 +250,126 @@ export default function CategoryContent() {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mt-3 pl-4">
-          {category} in {city}
-        </h1>
+        <div className="flex justify-start gap-2 flex-wrap">
+          <div className="relative">
+            <Button
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+                setTopRatedSort(null); // Reset Top Rated when using dropdown
+              }}
+              className="bg-gray-200 text-gray-800 hover:bg-gray-300 flex items-center gap-2 px-4"
+              aria-label="Sort options"
+              aria-expanded={isDropdownOpen}
+            >
+              Sort by: {sortOption === 'rating' ? 'Rating' : 'Default'} <ChevronDown className="h-4 w-4" />
+            </Button>
+            {isDropdownOpen && (
+              <div className="absolute -right-20 mt-2 w-40 bg-white shadow-md rounded-md z-10">
+                <button
+                  onClick={() => {
+                    setSortOption('default');
+                    setIsDropdownOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-800"
+                >
+                  Default
+                </button>
+                <button
+                  onClick={() => {
+                    setSortOption('rating');
+                    setIsDropdownOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-800"
+                >
+                  Rating
+                </button>
+              </div>
+            )}
+          </div>
+          <Button
+            onClick={() => {
+              setTopRatedSort((prev) => {
+                if (prev === null) return 'desc';
+                if (prev === 'desc') return 'asc';
+                return null;
+              });
+              setSortOption('default'); // Reset dropdown to default
+            }}
+            className={`${
+              topRatedSort === 'desc'
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : topRatedSort === 'asc'
+                ? 'bg-blue-400 text-white hover:bg-blue-500'
+                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+            } px-4 flex items-center gap-1`}
+            aria-label={
+              topRatedSort === 'desc'
+                ? 'Sort by Top Rated descending'
+                : topRatedSort === 'asc'
+                ? 'Sort by Top Rated ascending'
+                : 'Enable Top Rated sorting'
+            }
+          >
+            Top Rated {topRatedSort === 'desc' ? '↓' : topRatedSort === 'asc' ? '↑' : ''}
+          </Button>
+          <Button
+            onClick={() => setSortByVerified(!sortByVerified)}
+            className={`${
+              sortByVerified
+                ? 'bg-green-600 text-white hover:bg-green-700'
+                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+            } px-4`}
+            aria-label={sortByVerified ? 'Disable JD Verified sorting' : 'Enable JD Verified sorting'}
+          >
+            JD Verified
+          </Button>
+          <Button
+            onClick={() => setSortByTrusted(!sortByTrusted)}
+            className={`${
+              sortByTrusted
+                ? 'bg-yellow-600 text-white hover:bg-yellow-700'
+                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+            } px-4`}
+            aria-label={sortByTrusted ? 'Disable JD Trust sorting' : 'Enable JD Trust sorting'}
+          >
+            JD Trust
+          </Button>
+          <div className="relative">
+            <Button
+              onClick={() => setIsRatingDropdownOpen(!isRatingDropdownOpen)}
+              className="bg-gray-200 text-gray-800 hover:bg-gray-300 flex items-center gap-2 px-4"
+              aria-label="Rating sort options"
+              aria-expanded={isRatingDropdownOpen}
+            >
+              Ratings: {ratingSort ? `${ratingSort}+` : 'All'} <ChevronDown className="h-4 w-4" />
+            </Button>
+            {isRatingDropdownOpen && (
+              <div className="absolute -right-20 mt-2 w-40 bg-white shadow-md rounded-md z-10">
+                <button
+                  onClick={() => {
+                    setRatingSort(null);
+                    setIsRatingDropdownOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-800"
+                >
+                  All
+                </button>
+                {[5, 4.5, 4.0, 3.5].map((value) => (
+                  <button
+                    key={value}
+                    onClick={() => {
+                      setRatingSort(value);
+                      setIsRatingDropdownOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-800"
+                  >
+                    {value}+
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
@@ -228,7 +387,7 @@ export default function CategoryContent() {
                 total_ratings: listing.totalRatings ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings` : '10,885 Ratings',
                 badges: [
                   listing.isTrusted && 'Trust',
-                  'Verified',
+                  listing.isVerified && 'Verified',
                   listing.isPopular && 'Claimed',
                 ].filter(Boolean),
                 address: listing.address || '123 Main Street',
@@ -264,9 +423,9 @@ export default function CategoryContent() {
                               alt={`${business.name} image ${imgIndex + 1}`}
                               className="w-40 h-40 rounded-md object-cover border"
                               loading="lazy"
-                              onError={() => console.error(`[CategoryPage] Failed to load image ${image.url}`)}
+                              onError={() => console.error(`Failed to load image ${image.url}`)}
                             />
-                        ))
+                          ))
                         ) : (
                           <div className="w-40 h-40 rounded-md border flex items-center justify-center text-gray-500 dark:text-gray-400">
                             No images available
