@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Khargone/search?q=autospares-hub&stype=company_list&trkid=9970468686-fcomp&term=AutoSpares%20Hub';
+    const url = req.query.url || 'https://www.justdial.com/Coimbatore/AC-Services-in-Thiruvenkadam-Street/nct-10890481?trkid=49749-remotecity-fcat&term=';
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
