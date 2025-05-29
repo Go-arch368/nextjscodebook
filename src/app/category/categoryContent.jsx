@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown } from 'lucide-react';
+import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown, X } from 'lucide-react';
 
 function debounce(func, wait) {
   let timeout;
@@ -28,13 +28,14 @@ export default function CategoryContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
-  const [sortOption, setSortOption] = useState('default'); // State for dropdown sort option
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for sort dropdown
-  const [topRatedSort, setTopRatedSort] = useState(null); // State for Top Rated sort: null, 'desc', or 'asc'
-  const [sortByVerified, setSortByVerified] = useState(false); // State for JD Verified sort
-  const [sortByTrusted, setSortByTrusted] = useState(false); // State for JD Trust sort
-  const [ratingSort, setRatingSort] = useState(null); // State for rating sort: null, 5, 4.5, 4.0, 3.5
-  const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false); // State for rating dropdown
+  const [sortOption, setSortOption] = useState('default');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [topRatedSort, setTopRatedSort] = useState(null);
+  const [sortByVerified, setSortByVerified] = useState(false);
+  const [sortByTrusted, setSortByTrusted] = useState(false);
+  const [ratingSort, setRatingSort] = useState(null);
+  const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false);
+  const [showAllFilters, setShowAllFilters] = useState(false);
 
   const selectedCategory = searchParams.get('category') || 'Services';
 
@@ -223,6 +224,14 @@ export default function CategoryContent() {
     }
   };
 
+  const resetAllFilters = () => {
+    setSortOption('default');
+    setTopRatedSort(null);
+    setSortByVerified(false);
+    setSortByTrusted(false);
+    setRatingSort(null);
+  };
+
   if (loading) return <div className="text-center text-gray-600 dark:text-gray-300">Loading listings, please wait...</div>;
   if (error) return (
     <div className="text-center text-red-500 dark:text-red-400">
@@ -251,11 +260,13 @@ export default function CategoryContent() {
     <div className="container mx-auto px-4 py-6">
       <div className="mb-6">
         <div className="flex justify-start gap-2 flex-wrap">
+          
+
           <div className="relative">
             <Button
               onClick={() => {
                 setIsDropdownOpen(!isDropdownOpen);
-                setTopRatedSort(null); // Reset Top Rated when using dropdown
+                setTopRatedSort(null);
               }}
               className="bg-gray-200 text-gray-800 hover:bg-gray-300 flex items-center gap-2 px-4"
               aria-label="Sort options"
@@ -293,7 +304,7 @@ export default function CategoryContent() {
                 if (prev === 'desc') return 'asc';
                 return null;
               });
-              setSortOption('default'); // Reset dropdown to default
+              setSortOption('default');
             }}
             className={`${
               topRatedSort === 'desc'
@@ -367,10 +378,168 @@ export default function CategoryContent() {
                   </button>
                 ))}
               </div>
-            )}
+            )}   
           </div>
+
+          <Button
+            onClick={() => setShowAllFilters(true)}
+            className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-4"
+          >
+            All Filters
+          </Button>
         </div>
       </div>
+
+      {/* All Filters Popup */}
+      {showAllFilters && (
+        <div className="fixed inset-0 bg-gray-200 bg-opacity-0 flex items-center justify-center z-10">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full relative">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">All Filters</h3>
+              <button 
+                onClick={() => setShowAllFilters(false)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-medium mb-2">Sort By</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    onClick={() => setSortOption('default')}
+                    className={`${
+                      sortOption === 'default'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    Default
+                  </Button>
+                  <Button
+                    onClick={() => setSortOption('rating')}
+                    className={`${
+                      sortOption === 'rating'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    Rating
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-2">Top Rated</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    onClick={() => setTopRatedSort('desc')}
+                    className={`${
+                      topRatedSort === 'desc'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    Descending
+                  </Button>
+                  <Button
+                    onClick={() => setTopRatedSort('asc')}
+                    className={`${
+                      topRatedSort === 'asc'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    Ascending
+                  </Button>
+                  <Button
+                    onClick={() => setTopRatedSort(null)}
+                    className={`${
+                      topRatedSort === null
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    None
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-2">Verified & Trust</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    onClick={() => setSortByVerified(!sortByVerified)}
+                    className={`${
+                      sortByVerified
+                        ? 'bg-green-600 text-white hover:bg-green-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    JD Verified
+                  </Button>
+                  <Button
+                    onClick={() => setSortByTrusted(!sortByTrusted)}
+                    className={`${
+                      sortByTrusted
+                        ? 'bg-yellow-600 text-white hover:bg-yellow-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    JD Trust
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-2">Minimum Rating</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    onClick={() => setRatingSort(null)}
+                    className={`${
+                      ratingSort === null
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                    } px-4`}
+                  >
+                    All
+                  </Button>
+                  {[5, 4.5, 4.0, 3.5].map((value) => (
+                    <Button
+                      key={value}
+                      onClick={() => setRatingSort(value)}
+                      className={`${
+                        ratingSort === value
+                          ? 'bg-blue-600 text-white hover:bg-blue-700'
+                          : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                      } px-4`}
+                    >
+                      {value}+
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-between">
+              <Button
+                onClick={resetAllFilters}
+                className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-4"
+              >
+                Reset All
+              </Button>
+              <Button
+                onClick={() => setShowAllFilters(false)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4"
+              >
+                Apply Filters
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="lg:w-2/3 w-full pr-5">

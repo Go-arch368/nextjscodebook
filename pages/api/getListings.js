@@ -15,36 +15,36 @@ export default async function handler(req, res) {
       query.category = { $regex: `^${category}$`, $options: 'i' };
     }
 
-    // Build sort options
+   
     const sortOptions = {};
     if (sortByVerified === 'true') {
-      sortOptions.isVerified = -1; // True first
+      sortOptions.isVerified = -1; 
     }
     if (sortByTrusted === 'true') {
-      sortOptions.isTrusted = -1; // True first
+      sortOptions.isTrusted = -1; 
     }
     if (sort === 'rating') {
-      sortOptions.rating = -1; // Descending
+      sortOptions.rating = -1; 
     } else if (sort === 'totalRatings-desc') {
-      sortOptions.totalRatings = -1; // Descending
+      sortOptions.totalRatings = -1; 
     } else if (sort === 'totalRatings-asc') {
-      sortOptions.totalRatings = 1; // Ascending
+      sortOptions.totalRatings = 1; 
     }
 
     let listings = await BusinessListing.find(query).lean();
 
-    // Handle rating-based sorting
+   
     if (sortByRating) {
       const ratingThreshold = parseFloat(sortByRating);
       if (!isNaN(ratingThreshold)) {
         listings = listings.sort((a, b) => {
-          // Compute priority: 1 if rating >= threshold, 0 otherwise
+         
           const aPriority = a.rating >= ratingThreshold ? 1 : 0;
           const bPriority = b.rating >= ratingThreshold ? 1 : 0;
           if (aPriority !== bPriority) {
-            return bPriority - aPriority; // Higher priority (1) first
+            return bPriority - aPriority; 
           }
-          // Within same priority, apply other sorts
+        
           if (sortByVerified === 'true') {
             if (a.isVerified !== b.isVerified) return b.isVerified ? -1 : 1;
           }
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
         });
       }
     } else {
-      // Apply sortOptions if no rating sort
+    
       listings = await BusinessListing.find(query).sort(sortOptions).lean();
     }
 

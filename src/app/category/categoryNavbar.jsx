@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Mail, PlusCircle, Bell, User, Menu, Search, MapPin } from 'lucide-react';
@@ -9,6 +9,7 @@ const CategoryNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
+  const [showAllCategories, setShowAllCategories] = useState(false);
   const router = useRouter();
 
   const categoryIdToName = {
@@ -38,10 +39,8 @@ const CategoryNavbar = () => {
     24: "Trusted Financial Partners : Banks near me",
     25: "Loan Agency Services",
     26: 'AC Repair & Services',
-    // Removed duplicate "Best Deals - Top Hotels"
   };
 
-  // Convert to array of objects with both id and name
   const categories = Object.entries(categoryIdToName).map(([id, name]) => ({
     id: parseInt(id),
     name
@@ -49,81 +48,84 @@ const CategoryNavbar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setShowAllCategories(true);
     if (searchQuery || location) {
       router.push(`/category?category=${encodeURIComponent(searchQuery)}`);
       setMobileMenuOpen(false);
     }
   };
 
-  const filteredCategories = categories.filter((cat) =>
-    cat.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const handleSearchButtonClick = () => {
+    setShowAllCategories(!showAllCategories);
+  };
+
+  const filteredCategories = searchQuery 
+    ? categories.filter(cat => 
+        cat.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    : categories;
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-    
         <Link href="/" className="text-2xl font-bold text-orange-600">
           LOGOS
         </Link>
 
-       
         <div className="hidden md:flex items-center flex-1 mx-8 gap-2">
-              <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
-              <input
-                type="text"
-                placeholder="Location"
-              
-                className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              
-            </div>
+          <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+            <input
+              type="text"
+              placeholder="Location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+          </div>
+          
           <div className="relative w-[40%] min-w-[200px]">
-            
             <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search categories..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setShowAllCategories(false);
+                }}
                 className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 aria-label="Search for services"
               />
               <button
-                onClick={handleSearch}
+                onClick={handleSearchButtonClick}
                 className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
                 aria-label="Search"
               >
                 <Search className="h-7 w-7" />
               </button>
             </div>
-           
-            {searchQuery && (
+            
+            {(showAllCategories || searchQuery) && (
               <div className="absolute z-10 w-full bg-white shadow-md rounded-md mt-1 max-h-60 overflow-y-auto">
-                {filteredCategories.length > 0 ? (
-                  filteredCategories.map((category) => (
-                    <Link
-                      key={category.id}  
-                      href={`/category?category=${encodeURIComponent(category.name)}`}
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => {
-                        console.log('Selected category:', category.name);
-                        setSearchQuery(category.name);
-                        setMobileMenuOpen(false);
-                      }}
-                    >
-                      {category.name}
-                    </Link>
-                  ))
-                ) : (
-                  <div className="px-4 py-2 text-gray-500">No results found</div>
-                )}
+                {filteredCategories.map((category) => (
+                  <Link
+                    key={category.id}
+                    href={`/category?category=${encodeURIComponent(category.name)}`}
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSearchQuery(category.name);
+                      setShowAllCategories(false);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    {category.name}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
         </div>
 
-       
+        {/* Rest of your component remains the same */}
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/leads" className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
             <Mail className="h-5 w-5 text-blue-600 mr-1" />
@@ -141,7 +143,6 @@ const CategoryNavbar = () => {
           </Link>
         </div>
 
-    
         <button
           className="md:hidden text-gray-700"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
@@ -151,11 +152,10 @@ const CategoryNavbar = () => {
         </button>
       </div>
 
-      
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col p-4 space-y-3">
-            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden max-w-[70%]">
+            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
               <MapPin className="h-5 w-5 text-gray-500 mx-2" />
               <input
                 type="text"
@@ -163,53 +163,46 @@ const CategoryNavbar = () => {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full py-2 px-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                aria-label="Enter location"
               />
             </div>
 
-            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden max-w-[80%]">
+            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search categories..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                aria-label="Search for services"
               />
               <button
-                onClick={handleSearch}
+                onClick={() => setShowAllCategories(!showAllCategories)}
                 className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
-                aria-label="Search"
               >
                 <Search className="h-4 w-4" />
               </button>
             </div>
 
-            {searchQuery && (
-              <div className="relative z-10 w-full bg-white shadow-md rounded-md mt-1 max-h-60 overflow-y-auto">
-                {filteredCategories.length > 0 ? (
-                  filteredCategories.map((category) => (
-                    <Link
-                      key={category.id}  // Using the unique ID as key
-                      href={`/category?category=${encodeURIComponent(category.name)}`}
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => {
-                        console.log('Selected category:', category.name);
-                        setSearchQuery(category.name);
-                        setMobileMenuOpen(false);
-                      }}
-                    >
-                      {category.name}
-                    </Link>
-                  ))
-                ) : (
-                  <div className="px-4 py-2 text-gray-500">No results found</div>
-                )}
+            {(showAllCategories || searchQuery) && (
+              <div className="max-h-96 overflow-y-auto">
+                {filteredCategories.map((category) => (
+                  <Link
+                    key={category.id}
+                    href={`/category?category=${encodeURIComponent(category.name)}`}
+                    className="block px-4 py-2 hover:bg-gray-100 border-b border-gray-100"
+                    onClick={() => {
+                      setSearchQuery(category.name);
+                      setShowAllCategories(false);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    {category.name}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
 
-          <div className="flex flex-col p-4 space-y-4">
+          <div className="flex flex-col p-4 space-y-4 border-t border-gray-200">
             <Link href="/leads" className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
               <Mail className="h-5 w-5 text-blue-600 mr-2" />
               Leads
