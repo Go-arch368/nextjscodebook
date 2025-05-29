@@ -1,56 +1,106 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Mail, PlusCircle, Bell, User, Menu, Search, MapPin } from 'lucide-react';
+import { Mail, PlusCircle, Bell, User, Menu, Search, MapPin, Clock } from 'lucide-react';
+import { debounce } from 'lodash';
 
 const CategoryNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [recentSearches, setRecentSearches] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  const categoryIdToName = {
-    1: 'Best Clinics',
-    2: 'Best Hospitals',
-    3: 'Best Dentists',
-    4: 'Chemists',
-    5: 'Best Veterinarians',
-    6: 'Car Repair & Services',
-    7: 'Car Showrooms',
-    8: 'Tyre Dealers',
-    9: 'Autospares Hub',
-    10: "Top Educational Institutions : Colleges",
-    11: "Best Fast Food",
-    12: "Best Bakeries",
-    13: "Leading Educational Institutions : Top Schools",
-    14: "Lawyers",
-    15: "Marketing Agencies",
-    16: "Professional Business Consultants",
-    17: "Carpenters",
-    18: "Electricians",
-    19: "Plumbers",
-    20: "Cleaning Services",
-    21: "Airlines",
-    22: "Best Deals - Top Hotels",
-    23: "Travel Agents",
-    24: "Trusted Financial Partners : Banks near me",
-    25: "Loan Agency Services",
-    26: 'AC Repair & Services',
+  // Load recent searches from localStorage on mount
+  useEffect(() => {
+    const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+    setRecentSearches(storedSearches);
+  }, []);
+
+  // Save recent searches to localStorage
+  const saveRecentSearch = (query) => {
+    if (!query) return;
+    let updatedSearches = [...recentSearches];
+    // Remove duplicate
+    updatedSearches = updatedSearches.filter(search => search.toLowerCase() !== query.toLowerCase());
+    // Add new search to top
+    updatedSearches.unshift(query);
+    // Keep only last 5 searches
+    updatedSearches = updatedSearches.slice(0, 5);
+    setRecentSearches(updatedSearches);
+    localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
   };
 
-  const categories = Object.entries(categoryIdToName).map(([id, name]) => ({
-    id: parseInt(id),
-    name
-  }));
+  // Clear recent searches
+  const clearRecentSearches = () => {
+    setRecentSearches([]);
+    localStorage.removeItem('recentSearches');
+  };
+
+  // Debounced fetch for categories
+  const fetchCategories = useCallback(
+    debounce(async (query) => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`/api/getListings?category=${encodeURIComponent(query)}`, {
+          cache: 'no-store',
+        });
+        const result = await response.json();
+        if (result.success && result.categories) {
+          setCategories(result.categories.map((name, index) => ({ id: index + 1, name })));
+        } else {
+          setCategories([]);
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        setCategories([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 200),
+    []
+  );
+
+  useEffect(() => {
+    if (searchQuery) {
+      fetchCategories(searchQuery);
+    } else {
+      fetchCategories('');
+    }
+  }, [searchQuery, fetchCategories]);
+
+  // Function to determine the best matching category
+  const getBestMatchingCategory = (query, categories) => {
+    if (!query || categories.length === 0) return query;
+    const lowercaseQuery = query.toLowerCase();
+    // Prioritize specific mappings
+    if (lowercaseQuery.includes('clinics')) {
+      const bestMatch = categories.find(cat => cat.name.toLowerCase() === 'best clinics');
+      if (bestMatch) return bestMatch.name;
+    }
+    if (lowercaseQuery.includes('auto spares') || lowercaseQuery.includes('autospares')) {
+      const bestMatch = categories.find(cat => cat.name.toLowerCase() === 'autospares hub');
+      if (bestMatch) return bestMatch.name;
+    }
+    // Fallback to first matching category
+    const firstMatch = categories.find(cat => cat.name.toLowerCase().includes(lowercaseQuery));
+    return firstMatch ? firstMatch.name : query;
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setShowAllCategories(true);
     if (searchQuery || location) {
-      router.push(`/category?category=${encodeURIComponent(searchQuery)}`);
+      // Select the best matching category
+      const selectedCategory = getBestMatchingCategory(searchQuery, categories);
+      saveRecentSearch(selectedCategory);
+      router.push(`/category?category=${encodeURIComponent(selectedCategory)}`);
+      setSearchQuery(selectedCategory);
+      setShowAllCategories(false);
       setMobileMenuOpen(false);
     }
   };
@@ -59,9 +109,8 @@ const CategoryNavbar = () => {
     setShowAllCategories(!showAllCategories);
   };
 
-  const filteredCategories = searchQuery 
-    ? categories.filter(cat => 
-        cat.name.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredCategories = searchQuery
+    ? categories.filter(cat => cat.name.toLowerCase().includes(searchQuery.toLowerCase()))
     : categories;
 
   return (
@@ -81,51 +130,95 @@ const CategoryNavbar = () => {
               className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
-          
+
           <div className="relative w-[40%] min-w-[200px]">
-            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
-              <input
-                type="text"
-                placeholder="Search categories..."
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setShowAllCategories(false);
-                }}
-                className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                aria-label="Search for services"
-              />
-              <button
-                onClick={handleSearchButtonClick}
-                className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
-                aria-label="Search"
-              >
-                <Search className="h-7 w-7" />
-              </button>
-            </div>
-            
-            {(showAllCategories || searchQuery) && (
+            <form onSubmit={handleSearch}>
+              <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                <input
+                  type="text"
+                  placeholder="Search categories..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowAllCategories(true);
+                  }}
+                  onFocus={() => setShowAllCategories(true)}
+                  className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  aria-label="Search for services"
+                />
+                <button
+                  type="button"
+                  onClick={handleSearchButtonClick}
+                  className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
+                  aria-label="Toggle categories"
+                >
+                  <Search className="h-7 w-7" />
+                </button>
+              </div>
+            </form>
+
+            {showAllCategories && (
               <div className="absolute z-10 w-full bg-white shadow-md rounded-md mt-1 max-h-60 overflow-y-auto">
-                {filteredCategories.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/category?category=${encodeURIComponent(category.name)}`}
-                    className="block px-4 py-2 hover:bg-gray-100"
-                    onClick={() => {
-                      setSearchQuery(category.name);
-                      setShowAllCategories(false);
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
+                {/* Recent Searches */}
+                {recentSearches.length > 0 && (
+                  <div className="border-b border-gray-200">
+                    <div className="px-4 py-2 text-sm font-semibold text-gray-700 flex justify-between items-center">
+                      Recent Searches
+                      <button
+                        onClick={clearRecentSearches}
+                        className="text-red-500 text-xs hover:underline"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    {recentSearches.map((search, index) => (
+                      <Link
+                        key={index}
+                        href={`/category?category=${encodeURIComponent(search)}`}
+                        className="px-4 py-2 hover:bg-gray-100 flex items-center"
+                        onClick={() => {
+                          setSearchQuery(search);
+                          setShowAllCategories(false);
+                          setMobileMenuOpen(false);
+                          saveRecentSearch(search);
+                        }}
+                      >
+                        <Clock className="h-4 w-4 text-gray-500 mr-2" />
+                        {search}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Category Suggestions */}
+                <div>
+                  {isLoading ? (
+                    <div className="px-4 py-2 text-gray-500">Loading...</div>
+                  ) : filteredCategories.length > 0 ? (
+                    filteredCategories.map((category) => (
+                      <Link
+                        key={category.id}
+                        href={`/category?category=${encodeURIComponent(category.name)}`}
+                        className="block px-4 py-2 hover:bg-gray-100"
+                        onClick={() => {
+                          setSearchQuery(category.name);
+                          setShowAllCategories(false);
+                          setMobileMenuOpen(false);
+                          saveRecentSearch(category.name);
+                        }}
+                      >
+                        {category.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <div className="px-4 py-2 text-gray-500">No categories found</div>
+                  )}
+                </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Rest of your component remains the same */}
         <div className="hidden md:flex items-center space-x-6">
           <Link href="/leads" className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
             <Mail className="h-5 w-5 text-blue-600 mr-1" />
@@ -166,38 +259,86 @@ const CategoryNavbar = () => {
               />
             </div>
 
-            <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
-              <input
-                type="text"
-                placeholder="Search categories..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <button
-                onClick={() => setShowAllCategories(!showAllCategories)}
-                className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
-              >
-                <Search className="h-4 w-4" />
-              </button>
-            </div>
+            <form onSubmit={handleSearch}>
+              <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+                <input
+                  type="text"
+                  placeholder="Search categories..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowAllCategories(true);
+                  }}
+                  onFocus={() => setShowAllCategories(true)}
+                  className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+                <button
+                  type="button"
+                  onClick={handleSearchButtonClick}
+                  className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
+                >
+                  <Search className="h-4 w-4" />
+                </button>
+              </div>
+            </form>
 
-            {(showAllCategories || searchQuery) && (
+            {showAllCategories && (
               <div className="max-h-96 overflow-y-auto">
-                {filteredCategories.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/category?category=${encodeURIComponent(category.name)}`}
-                    className="block px-4 py-2 hover:bg-gray-100 border-b border-gray-100"
-                    onClick={() => {
-                      setSearchQuery(category.name);
-                      setShowAllCategories(false);
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
+                {/* Recent Searches */}
+                {recentSearches.length > 0 && (
+                  <div className="border-b border-gray-200">
+                    <div className="px-4 py-2 text-sm font-semibold text-gray-700 flex justify-between items-center">
+                      Recent Searches
+                      <button
+                        onClick={clearRecentSearches}
+                        className="text-red-500 text-xs hover:underline"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    {recentSearches.map((search, index) => (
+                      <Link
+                        key={index}
+                        href={`/category?category=${encodeURIComponent(search)}`}
+                        className="flex px-4 py-2 hover:bg-gray-100 items-center border-b border-gray-100"
+                        onClick={() => {
+                          setSearchQuery(search);
+                          setShowAllCategories(false);
+                          setMobileMenuOpen(false);
+                          saveRecentSearch(search);
+                        }}
+                      >
+                        <Clock className="h-4 w-4 text-gray-500 mr-2" />
+                        {search}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Category Suggestions */}
+                <div>
+                  {isLoading ? (
+                    <div className="px-4 py-2 text-gray-500">Loading...</div>
+                  ) : filteredCategories.length > 0 ? (
+                    filteredCategories.map((category) => (
+                      <Link
+                        key={category.id}
+                        href={`/category?category=${encodeURIComponent(category.name)}`}
+                        className="block px-4 py-2 hover:bg-gray-100 border-b border-gray-100"
+                        onClick={() => {
+                          setSearchQuery(category.name);
+                          setShowAllCategories(false);
+                          setMobileMenuOpen(false);
+                          saveRecentSearch(category.name);
+                        }}
+                      >
+                        {category.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <div className="px-4 py-2 text-gray-500">No categories found</div>
+                  )}
+                </div>
               </div>
             )}
           </div>

@@ -2,16 +2,14 @@ import { v2 as cloudinary } from 'cloudinary';
 
 const imageCache = new Map();
 
-// Configure Cloudinary
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-/**
- * Normalizes category names for Cloudinary
- */
+
 function normalizeCategory(category) {
   return decodeURIComponent(category)
     .replace(/near me/gi, '')
@@ -19,14 +17,12 @@ function normalizeCategory(category) {
     .trim();
 }
 
-/**
- * Search strategies for Cloudinary
- */
+
 async function searchImages(category) {
   const normalized = normalizeCategory(category);
   console.log(`Searching for: "${normalized}"`);
 
-  // Try these exact folder paths in order
+ 
   const folderPaths = [
     `Pictures/${normalized}`,          // "Pictures/Best Hospitals"
     `Pictures/${normalized.replace(/ /g, '_')}`,  // "Pictures/Best_Hospitals"
@@ -70,9 +66,7 @@ async function searchImages(category) {
   return [];
 }
 
-/**
- * Main image fetching function
- */
+
 export default async function handler(req, res) {
   const { category } = req.query;
 

@@ -12,39 +12,36 @@ export default async function handler(req, res) {
     const { category, sort, sortByVerified, sortByTrusted, sortByRating } = req.query;
     const query = {};
     if (category) {
-      query.category = { $regex: `^${category}$`, $options: 'i' };
+      // Use partial-match regex instead of exact match
+      query.category = { $regex: category, $options: 'i' };
     }
 
-   
     const sortOptions = {};
     if (sortByVerified === 'true') {
-      sortOptions.isVerified = -1; 
+      sortOptions.isVerified = -1;
     }
     if (sortByTrusted === 'true') {
-      sortOptions.isTrusted = -1; 
+      sortOptions.isTrusted = -1;
     }
     if (sort === 'rating') {
-      sortOptions.rating = -1; 
+      sortOptions.rating = -1;
     } else if (sort === 'totalRatings-desc') {
-      sortOptions.totalRatings = -1; 
+      sortOptions.totalRatings = -1;
     } else if (sort === 'totalRatings-asc') {
-      sortOptions.totalRatings = 1; 
+      sortOptions.totalRatings = 1;
     }
 
     let listings = await BusinessListing.find(query).lean();
 
-   
     if (sortByRating) {
       const ratingThreshold = parseFloat(sortByRating);
       if (!isNaN(ratingThreshold)) {
         listings = listings.sort((a, b) => {
-         
           const aPriority = a.rating >= ratingThreshold ? 1 : 0;
           const bPriority = b.rating >= ratingThreshold ? 1 : 0;
           if (aPriority !== bPriority) {
-            return bPriority - aPriority; 
+            return bPriority - aPriority;
           }
-        
           if (sortByVerified === 'true') {
             if (a.isVerified !== b.isVerified) return b.isVerified ? -1 : 1;
           }
@@ -58,32 +55,34 @@ export default async function handler(req, res) {
           } else if (sort === 'totalRatings-asc') {
             return (a.totalRatings || 0) - (b.totalRatings || 0);
           }
-          return 0; // Maintain order
+          return 0;
         });
       }
     } else {
-    
       listings = await BusinessListing.find(query).sort(sortOptions).lean();
     }
 
+    // Get unique categories for the response
+    const uniqueCategories = [...new Set(listings.map(listing => listing.category))];
+
     console.log(
-      `Fetched ${listings.length} listings for category: ${category || 'All'}, sort: ${sort || 'Default'}, sortBy: `,
+      `Fetched ${listings.length} listings for category query: ${category || 'All'}, sort: ${sort || 'Default'}, sortBy: `,
       { sortByVerified: sortByVerified === 'true', sortByTrusted: sortByTrusted === 'true', sortByRating }
     );
 
     if (listings.length === 0) {
       return res.status(200).json({
         success: false,
-        message: `No listings found for category: ${category || 'all'}`,
+        message: `No listings found for category query: ${category || 'all'}`,
         data: [],
-        category: category || 'Services',
+        categories: [],
       });
     }
 
     return res.status(200).json({
       success: true,
       data: listings,
-      category: category || 'Services',
+      categories: uniqueCategories, // Return unique categories for autocomplete
     });
   } catch (error) {
     console.error('Error fetching listings:', error.message);
