@@ -330,7 +330,7 @@ export default function CategoryContent() {
                   : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
               } px-4`}
             >
-              JD Verified
+              <DB></DB> Verified
             </Button>
 
             
@@ -342,7 +342,7 @@ export default function CategoryContent() {
                   : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
               } px-4`}
             >
-              JD Trust
+              DB Trust
             </Button>
 
             
@@ -484,7 +484,7 @@ export default function CategoryContent() {
                           : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
                       } px-4`}
                     >
-                      JD Verified
+                      DB Verified
                     </Button>
                     <Button
                       onClick={() => setSortByTrusted(!sortByTrusted)}
@@ -494,7 +494,7 @@ export default function CategoryContent() {
                           : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
                       } px-4`}
                     >
-                      JD Trust
+                      DB Trust
                     </Button>
                   </div>
                 </div>
