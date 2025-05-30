@@ -28,31 +28,46 @@ export default function CategoryContent() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
+
   const [sortOption, setSortOption] = useState('default');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [topRatedSort, setTopRatedSort] = useState(null);
   const [sortByVerified, setSortByVerified] = useState(false);
   const [sortByTrusted, setSortByTrusted] = useState(false);
   const [ratingSort, setRatingSort] = useState(null);
+
+  const [stagedSortOption, setStagedSortOption] = useState('default');
+  const [stagedTopRatedSort, setStagedTopRatedSort] = useState(null);
+  const [stagedSortByVerified, setStagedSortByVerified] = useState(false);
+  const [stagedSortByTrusted, setStagedSortByTrusted] = useState(false);
+  const [stagedRatingSort, setStagedRatingSort] = useState(null);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false);
   const [showAllFilters, setShowAllFilters] = useState(false);
 
-  const selectedCategory = searchParams.get('category') || 'Services';
+  const selectedCategory = searchParams.get('category');
+  const selectedName = searchParams.get('name');
+  const query = searchParams.get('query');
 
   const fetchListings = useCallback(
-    debounce(async (categoryToFetch, sort, sortFields) => {
-      console.log('Fetching listings for category:', categoryToFetch, 'sort:', sort, 'sortFields:', sortFields);
+    debounce(async (category, name, query, sort, sortFields) => {
       try {
         setLoading(true);
         setError(null);
 
-        let query = `category=${encodeURIComponent(categoryToFetch)}`;
-        if (sort) query += `&sort=${sort}`;
-        if (sortFields.sortByVerified) query += `&sortByVerified=true`;
-        if (sortFields.sortByTrusted) query += `&sortByTrusted=true`;
-        if (sortFields.ratingSort) query += `&sortByRating=${sortFields.ratingSort}`;
+        const queryParams = new URLSearchParams();
+        if (category) queryParams.append('category', category);
+        if (name) queryParams.append('name', name);
+        if (query) {
+          queryParams.append('name', query);
+          queryParams.append('category', query);
+        }
+        if (sort) queryParams.append('sort', sort);
+        if (sortFields.sortByVerified) queryParams.append('sortByVerified', 'true');
+        if (sortFields.sortByTrusted) queryParams.append('sortByTrusted', 'true');
+        if (sortFields.ratingSort) queryParams.append('sortByRating', sortFields.ratingSort);
 
-        const response = await fetch(`/api/getListings?${query}`, {
+        const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
           cache: 'no-store',
         });
 
@@ -62,32 +77,32 @@ export default function CategoryContent() {
         const result = await response.json();
 
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
-          const uniqueCategories = [...new Set(result.data.map(listing => listing.category))];
+          const uniqueCategories = [...new Set(result.data.map((listing) => listing.category))];
 
-          const imagePromises = uniqueCategories.map(category => {
-            return fetch(`/api/getImagesByCategory?category=${encodeURIComponent(category)}`, {
+          const imagePromises = uniqueCategories.map((cat) =>
+            fetch(`/api/getImagesByCategory?category=${encodeURIComponent(cat)}`, {
               cache: 'no-store',
             })
-              .then(res => res.json().then(data => ({ category, data })))
-              .catch(error => {
-                console.error(`Failed to fetch images for ${category}: ${error.message}`);
-                return { category, data: { images: [] } };
-              });
-          });
+              .then((res) => res.json().then((data) => ({ category: cat, data })))
+              .catch((error) => {
+                console.error(`Failed to fetch images for ${cat}: ${error.message}`);
+                return { category: cat, data: { images: [] } };
+              })
+          );
 
           const imageResults = await Promise.all(imagePromises);
           const imageMap = Object.fromEntries(
             imageResults.map(({ category, data }) => [category, data.images || []])
           );
 
-          const listingsWithImages = result.data.map(listing => ({
+          const listingsWithImages = result.data.map((listing) => ({
             ...listing,
             images: imageMap[listing.category] || [],
             imageError: imageMap[listing.category]?.length ? null : `No images found for ${listing.category}`,
           }));
 
           setListings(listingsWithImages);
-          setCategory(categoryToFetch || result.data[0]?.category || 'Services');
+          setCategory(category || result.data[0]?.category || 'Services');
           setCity(result.data[0]?.city || 'Your City');
 
           const initialVisibleImages = {};
@@ -96,13 +111,13 @@ export default function CategoryContent() {
           });
           setVisibleImages(initialVisibleImages);
         } else {
-          throw new Error(result.message || `No listings found for category: ${categoryToFetch}`);
+          throw new Error(result.message || `No listings found for query`);
         }
       } catch (err) {
         console.error('Fetch error:', err.message);
         setError(`Unable to load listings: ${err.message}`);
         setListings([]);
-        setCategory(categoryToFetch);
+        setCategory(category || 'Services');
         setCity('Your City');
       } finally {
         setLoading(false);
@@ -121,8 +136,8 @@ export default function CategoryContent() {
       sort = 'rating';
     }
     const sortFields = { sortByVerified, sortByTrusted, ratingSort };
-    fetchListings(selectedCategory, sort, sortFields);
-  }, [fetchListings, selectedCategory, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
+    fetchListings(selectedCategory, selectedName, query, sort, sortFields);
+  }, [fetchListings, selectedCategory, selectedName, query, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
 
   useEffect(() => {
     const handlePageShow = (event) => {
@@ -137,12 +152,22 @@ export default function CategoryContent() {
           sort = 'rating';
         }
         const sortFields = { sortByVerified, sortByTrusted, ratingSort };
-        fetchListings(selectedCategory, sort, sortFields);
+        fetchListings(selectedCategory, selectedName, query, sort, sortFields);
       }
     };
     window.addEventListener('pageshow', handlePageShow);
     return () => window.removeEventListener('pageshow', handlePageShow);
-  }, [fetchListings, selectedCategory, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
+  }, [fetchListings, selectedCategory, selectedName, query, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
+
+  useEffect(() => {
+    if (showAllFilters) {
+      setStagedSortOption(sortOption);
+      setStagedTopRatedSort(topRatedSort);
+      setStagedSortByVerified(sortByVerified);
+      setStagedSortByTrusted(sortByTrusted);
+      setStagedRatingSort(ratingSort);
+    }
+  }, [showAllFilters, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
 
   const handleShowMoreImages = (listingIndex) => {
     setVisibleImages((prev) => ({
@@ -204,17 +229,20 @@ export default function CategoryContent() {
       case 'Best Veterinarians':
         window.location.href = '/template?websiteIdentifier=Health%26Medical-Veterinary-560076';
         break;
-      case 'Car Repair & Services':
+      case 'Car Repair':
         window.location.href = '/template?websiteIdentifier=Automobile-CarRepair-560062';
         break;
       case 'Car Showrooms':
         window.location.href = '/template?websiteIdentifier=Automobile-CarSales-560062';
         break;
       case 'Tyre Dealers':
-        window.location.href = '/template?websiteIdentifier=Automobile-Tires-560062';
+        window.location.href = '/template?websiteIdentifier=Automobile-Tires-560064';
         break;
-      case 'Autospares Hub':
+      case 'Autospares':
         window.location.href = '/template?websiteIdentifier=Automobile-AutoParts-560062';
+        break;
+      case 'Best Physiotherapists':
+        window.location.href = '/template?websiteIdentifier=Health&Medical-Physiotherapy-560025';
         break;
       default:
         alert(`Visiting ${businessName}`);
@@ -223,11 +251,20 @@ export default function CategoryContent() {
   };
 
   const resetAllFilters = () => {
-    setSortOption('default');
-    setTopRatedSort(null);
-    setSortByVerified(false);
-    setSortByTrusted(false);
-    setRatingSort(null);
+    setStagedSortOption('default');
+    setStagedTopRatedSort(null);
+    setStagedSortByVerified(false);
+    setStagedSortByTrusted(false);
+    setStagedRatingSort(null);
+  };
+
+  const applyFilters = () => {
+    setSortOption(stagedSortOption);
+    setTopRatedSort(stagedTopRatedSort);
+    setSortByVerified(stagedSortByVerified);
+    setSortByTrusted(stagedSortByTrusted);
+    setRatingSort(stagedRatingSort);
+    setShowAllFilters(false);
   };
 
   if (loading) return <div className="flex justify-center items-center h-screen text-gray-600 dark:text-gray-300">Loading listings, please wait...</div>;
@@ -246,7 +283,7 @@ export default function CategoryContent() {
               sort = 'rating';
             }
             const sortFields = { sortByVerified, sortByTrusted, ratingSort };
-            fetchListings(selectedCategory, sort, sortFields);
+            fetchListings(selectedCategory, selectedName, query, sort, sortFields);
           }}
           className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
         >
@@ -257,23 +294,22 @@ export default function CategoryContent() {
   );
 
   return (
-    <div className="flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-4xl px-4 py-6">
-    
         <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
           <div className="flex flex-wrap items-center gap-3">
-            
             <div className="relative">
               <Button
                 onClick={() => {
                   setIsDropdownOpen(!isDropdownOpen);
                   setTopRatedSort(null);
+                  setStagedTopRatedSort(null);
                 }}
                 className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 flex items-center gap-2 px-4"
                 aria-label="Sort options"
                 aria-expanded={isDropdownOpen}
               >
-                Sort by: {sortOption === 'rating' ? 'Rating' : 'Default'} 
+                Sort by: {sortOption === 'rating' ? 'Rating' : 'Default'}
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isDropdownOpen && (
@@ -281,6 +317,7 @@ export default function CategoryContent() {
                   <button
                     onClick={() => {
                       setSortOption('default');
+                      setStagedSortOption('default');
                       setIsDropdownOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -290,6 +327,7 @@ export default function CategoryContent() {
                   <button
                     onClick={() => {
                       setSortOption('rating');
+                      setStagedSortOption('rating');
                       setIsDropdownOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -300,15 +338,13 @@ export default function CategoryContent() {
               )}
             </div>
 
-          
             <Button
               onClick={() => {
-                setTopRatedSort((prev) => {
-                  if (prev === null) return 'desc';
-                  if (prev === 'desc') return 'asc';
-                  return null;
-                });
                 setSortOption('default');
+                setStagedSortOption('default');
+                const newTopRatedSort = topRatedSort === 'desc' ? 'asc' : topRatedSort === 'asc' ? null : 'desc';
+                setTopRatedSort(newTopRatedSort);
+                setStagedTopRatedSort(newTopRatedSort);
               }}
               className={`${
                 topRatedSort === 'desc'
@@ -321,21 +357,27 @@ export default function CategoryContent() {
               Top Rated {topRatedSort === 'desc' ? '↓' : topRatedSort === 'asc' ? '↑' : ''}
             </Button>
 
-            
             <Button
-              onClick={() => setSortByVerified(!sortByVerified)}
+              onClick={() => {
+                const newSortByVerified = !sortByVerified;
+                setSortByVerified(newSortByVerified);
+                setStagedSortByVerified(newSortByVerified);
+              }}
               className={`${
                 sortByVerified
                   ? 'bg-green-600 text-white hover:bg-green-700'
                   : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
               } px-4`}
             >
-              <DB></DB> Verified
+              DB Verified
             </Button>
 
-            
             <Button
-              onClick={() => setSortByTrusted(!sortByTrusted)}
+              onClick={() => {
+                const newSortByTrusted = !sortByTrusted;
+                setSortByTrusted(newSortByTrusted);
+                setStagedSortByTrusted(newSortByTrusted);
+              }}
               className={`${
                 sortByTrusted
                   ? 'bg-yellow-600 text-white hover:bg-yellow-700'
@@ -345,7 +387,6 @@ export default function CategoryContent() {
               DB Trust
             </Button>
 
-            
             <div className="relative">
               <Button
                 onClick={() => setIsRatingDropdownOpen(!isRatingDropdownOpen)}
@@ -353,7 +394,7 @@ export default function CategoryContent() {
                 aria-label="Rating sort options"
                 aria-expanded={isRatingDropdownOpen}
               >
-                Ratings: {ratingSort ? `${ratingSort}+` : 'All'} 
+                Ratings: {ratingSort ? `${ratingSort}+` : 'All'}
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isRatingDropdownOpen && (
@@ -361,6 +402,7 @@ export default function CategoryContent() {
                   <button
                     onClick={() => {
                       setRatingSort(null);
+                      setStagedRatingSort(null);
                       setIsRatingDropdownOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -372,6 +414,7 @@ export default function CategoryContent() {
                       key={value}
                       onClick={() => {
                         setRatingSort(value);
+                        setStagedRatingSort(value);
                         setIsRatingDropdownOpen(false);
                       }}
                       className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
@@ -383,7 +426,6 @@ export default function CategoryContent() {
               )}
             </div>
 
-         
             <Button
               onClick={() => setShowAllFilters(true)}
               className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4"
@@ -393,167 +435,171 @@ export default function CategoryContent() {
           </div>
         </div>
 
-        {/* All Filters Modal */}
         {showAllFilters && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">All Filters</h3>
-                <button
-                  onClick={() => setShowAllFilters(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
-              <div className="space-y-6">
-                {/* Sort By Section */}
-                <div>
-                  <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Sort By</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      onClick={() => setSortOption('default')}
-                      className={`${
-                        sortOption === 'default'
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      Default
-                    </Button>
-                    <Button
-                      onClick={() => setSortOption('rating')}
-                      className={`${
-                        sortOption === 'rating'
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      Rating
-                    </Button>
-                  </div>
+          <>
+            <div
+              className="fixed inset-0 bg-gray-900/30 backdrop-blur-sm z-40"
+              onClick={() => setShowAllFilters(false)}
+            />
+            <div
+              className={`fixed top-0 right-0 h-full w-96 bg-white dark:bg-gray-800 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+                showAllFilters ? 'translate-x-0' : 'translate-x-full'
+              }`}
+            >
+              <div className="p-6 h-full flex flex-col">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">All Filters</h3>
+                  <button
+                    onClick={() => setShowAllFilters(false)}
+                    className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
                 </div>
 
-                {/* Top Rated Section */}
-                <div>
-                  <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Top Rated</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      onClick={() => setTopRatedSort('desc')}
-                      className={`${
-                        topRatedSort === 'desc'
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      Descending
-                    </Button>
-                    <Button
-                      onClick={() => setTopRatedSort('asc')}
-                      className={`${
-                        topRatedSort === 'asc'
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      Ascending
-                    </Button>
-                    <Button
-                      onClick={() => setTopRatedSort(null)}
-                      className={`${
-                        topRatedSort === null
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      None
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Verified & Trust Section */}
-                <div>
-                  <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Verified & Trust</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      onClick={() => setSortByVerified(!sortByVerified)}
-                      className={`${
-                        sortByVerified
-                          ? 'bg-green-600 text-white hover:bg-green-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      DB Verified
-                    </Button>
-                    <Button
-                      onClick={() => setSortByTrusted(!sortByTrusted)}
-                      className={`${
-                        sortByTrusted
-                          ? 'bg-yellow-600 text-white hover:bg-yellow-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      DB Trust
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Minimum Rating Section */}
-                <div>
-                  <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Minimum Rating</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      onClick={() => setRatingSort(null)}
-                      className={`${
-                        ratingSort === null
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
-                      } px-4`}
-                    >
-                      All
-                    </Button>
-                    {[5, 4.5, 4.0, 3.5].map((value) => (
+                <div className="flex-1 space-y-6 overflow-y-auto">
+                  <div>
+                    <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Sort By</h4>
+                    <div className="flex flex-wrap gap-2">
                       <Button
-                        key={value}
-                        onClick={() => setRatingSort(value)}
+                        onClick={() => setStagedSortOption('default')}
                         className={`${
-                          ratingSort === value
+                          stagedSortOption === 'default'
                             ? 'bg-blue-600 text-white hover:bg-blue-700'
                             : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
                         } px-4`}
                       >
-                        {value}+
+                        Default
                       </Button>
-                    ))}
+                      <Button
+                        onClick={() => setStagedSortOption('rating')}
+                        className={`${
+                          stagedSortOption === 'rating'
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        Rating
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Top Rated</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        onClick={() => setStagedTopRatedSort('desc')}
+                        className={`${
+                          stagedTopRatedSort === 'desc'
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        Descending
+                      </Button>
+                      <Button
+                        onClick={() => setStagedTopRatedSort('asc')}
+                        className={`${
+                          stagedTopRatedSort === 'asc'
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        Ascending
+                      </Button>
+                      <Button
+                        onClick={() => setStagedTopRatedSort(null)}
+                        className={`${
+                          stagedTopRatedSort === null
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        None
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Verified & Trust</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        onClick={() => setStagedSortByVerified(!stagedSortByVerified)}
+                        className={`${
+                          stagedSortByVerified
+                            ? 'bg-green-600 text-white hover:bg-green-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        DB Verified
+                      </Button>
+                      <Button
+                        onClick={() => setStagedSortByTrusted(!stagedSortByTrusted)}
+                        className={`${
+                          stagedSortByTrusted
+                            ? 'bg-yellow-600 text-white hover:bg-yellow-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        DB Trust
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">Minimum Rating</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        onClick={() => setStagedRatingSort(null)}
+                        className={`${
+                          stagedRatingSort === null
+                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                        } px-4`}
+                      >
+                        All
+                      </Button>
+                      {[5, 4.5, 4.0, 3.5].map((value) => (
+                        <Button
+                          key={value}
+                          onClick={() => setStagedRatingSort(value)}
+                          className={`${
+                            stagedRatingSort === value
+                              ? 'bg-blue-600 text-white hover:bg-blue-700'
+                              : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
+                          } px-4`}
+                        >
+                          {value}+
+                        </Button>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6 flex justify-between">
-                <Button
-                  onClick={resetAllFilters}
-                  className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4"
-                >
-                  Reset All
-                </Button>
-                <Button
-                  onClick={() => setShowAllFilters(false)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4"
-                >
-                  Apply Filters
-                </Button>
+                <div className="mt-6 flex justify-between">
+                  <Button
+                    onClick={resetAllFilters}
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4"
+                  >
+                    Reset All
+                  </Button>
+                  <Button
+                    onClick={applyFilters}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4"
+                  >
+                    Apply Filters
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
 
-        {/* Listings Section */}
         <div className="flex flex-col gap-6">
           <div className="w-full">
             {listings.length === 0 ? (
               <div className="text-center text-gray-600 dark:text-gray-300 py-10">
-                No listings found for "{selectedCategory}".
+                No listings found for "{selectedCategory || selectedName || query || 'Services'}".
               </div>
             ) : (
               listings.map((listing, index) => {
@@ -563,7 +609,7 @@ export default function CategoryContent() {
                   imageError: listing.imageError || null,
                   name: listing.name || 'Unknown Business',
                   rating: listing.rating ? parseFloat(listing.rating).toFixed(1) : '4.8',
-                  total_ratings: listing.totalRatings ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings` : '10,885 Ratings',
+                  totalRatings: listing.totalRatings ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings` : '10,885 Ratings',
                   badges: [
                     listing.isTrusted && 'Trust',
                     listing.isVerified && 'Verified',
@@ -597,8 +643,7 @@ export default function CategoryContent() {
                                 key={imgIndex}
                                 src={image.url.includes('/upload/')
                                   ? image.url.replace(/\/upload\//, '/upload/w_200,h_200,c_fill/')
-                                  : image.url
-                                }
+                                  : image.url}
                                 alt={`${business.name} image ${imgIndex + 1}`}
                                 className="w-40 h-40 rounded-md object-cover border"
                                 loading="lazy"
@@ -613,7 +658,7 @@ export default function CategoryContent() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-2xl font-semibold flex items-center gap-2 text-gray-900 dark:text-gray-100">
-                            <ThumbsUp className="w-5 h-5 !text-white !bg-black p-1 rounded-md dark:!bg-gray-700 dark:!text-gray-200" />
+                            <ThumbsUp className="w-5 h-5 !text-white !bg-black p-1 rounded-full dark:!bg-gray-700 dark:!text-gray-200" />
                             {business.name}
                           </h3>
 
@@ -623,7 +668,7 @@ export default function CategoryContent() {
                               <Star className="w-3 h-3 !text-white fill-current" />
                             </Badge>
                             <span className="text-sm text-gray-700 dark:text-gray-300">
-                              {business.total_ratings}
+                              {business.totalRatings}
                             </span>
                             {business.badges.map((badge, idx) => (
                               <Badge
@@ -633,13 +678,14 @@ export default function CategoryContent() {
                                     ? '!bg-yellow-400 !text-black text-xs dark:!bg-yellow-500 dark:!text-gray-900'
                                     : badge === 'Verified'
                                     ? '!bg-blue-500 !text-white text-xs dark:!bg-blue-600 dark:!text-gray-100'
-                                    : '!bg-black !text-white text-xs dark:!bg-gray-900 dark:!text-gray-100'
+                                    : '!bg-gray-100 !text-gray-800 text-xs dark:!bg-gray-700 dark:!text-gray-200'
                                 }
                               >
-                                {badge === 'Verified' ? `${badge} ✓` : badge}
+                                {badge}
                               </Badge>
                             ))}
                           </div>
+
                           <div className="text-sm text-gray-700 dark:text-gray-300 mt-1 flex items-center gap-1">
                             <MapPin className="w-4 h-4" />
                             {business.address}, {business.city}

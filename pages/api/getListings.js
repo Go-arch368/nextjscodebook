@@ -9,11 +9,17 @@ export default async function handler(req, res) {
   try {
     await dbConnect();
 
-    const { category, sort, sortByVerified, sortByTrusted, sortByRating } = req.query;
+    const { category, name, sort, sortByVerified, sortByTrusted, sortByRating } = req.query;
     const query = {};
-    if (category) {
-      // Use partial-match regex instead of exact match
-      query.category = { $regex: category, $options: 'i' };
+
+    if (category || name) {
+      query.$or = [];
+      if (category) {
+        query.$or.push({ category: { $regex: category, $options: 'i' } });
+      }
+      if (name) {
+        query.$or.push({ name: { $regex: name, $options: 'i' } });
+      }
     }
 
     const sortOptions = {};
@@ -62,18 +68,17 @@ export default async function handler(req, res) {
       listings = await BusinessListing.find(query).sort(sortOptions).lean();
     }
 
-    // Get unique categories for the response
-    const uniqueCategories = [...new Set(listings.map(listing => listing.category))];
+    const uniqueCategories = [...new Set(listings.map((listing) => listing.category))];
 
     console.log(
-      `Fetched ${listings.length} listings for category query: ${category || 'All'}, sort: ${sort || 'Default'}, sortBy: `,
+      `Fetched ${listings.length} listings for query: category=${category || 'All'}, name=${name || 'None'}, sort=${sort || 'Default'}, sortBy: `,
       { sortByVerified: sortByVerified === 'true', sortByTrusted: sortByTrusted === 'true', sortByRating }
     );
 
     if (listings.length === 0) {
       return res.status(200).json({
         success: false,
-        message: `No listings found for category query: ${category || 'all'}`,
+        message: `No listings found for query: category=${category || 'all'}, name=${name || 'none'}`,
         data: [],
         categories: [],
       });
@@ -82,7 +87,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       success: true,
       data: listings,
-      categories: uniqueCategories, // Return unique categories for autocomplete
+      categories: uniqueCategories,
     });
   } catch (error) {
     console.error('Error fetching listings:', error.message);

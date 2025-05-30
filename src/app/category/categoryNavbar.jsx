@@ -10,54 +10,69 @@ const CategoryNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
-  const [showAllCategories, setShowAllCategories] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [businesses, setBusinesses] = useState([]);
   const [categories, setCategories] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // Load recent searches from localStorage on mount
   useEffect(() => {
     const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
     setRecentSearches(storedSearches);
   }, []);
 
-  // Save recent searches to localStorage
   const saveRecentSearch = (query) => {
     if (!query) return;
     let updatedSearches = [...recentSearches];
-    // Remove duplicate
-    updatedSearches = updatedSearches.filter(search => search.toLowerCase() !== query.toLowerCase());
-    // Add new search to top
+    updatedSearches = updatedSearches.filter((search) => search.toLowerCase() !== query.toLowerCase());
     updatedSearches.unshift(query);
-    // Keep only last 5 searches
     updatedSearches = updatedSearches.slice(0, 5);
     setRecentSearches(updatedSearches);
     localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
   };
 
-  // Clear recent searches
   const clearRecentSearches = () => {
     setRecentSearches([]);
     localStorage.removeItem('recentSearches');
   };
 
-  // Debounced fetch for categories
-  const fetchCategories = useCallback(
+  const fetchResults = useCallback(
     debounce(async (query) => {
       try {
         setIsLoading(true);
-        const response = await fetch(`/api/getListings?category=${encodeURIComponent(query)}`, {
+        const queryParams = new URLSearchParams();
+        if (query) {
+          queryParams.append('name', query);
+          queryParams.append('category', query);
+        }
+        const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
           cache: 'no-store',
         });
         const result = await response.json();
-        if (result.success && result.categories) {
-          setCategories(result.categories.map((name, index) => ({ id: index + 1, name })));
+        if (result.success && result.data) {
+          setBusinesses(
+            result.data.map((item, index) => ({
+              id: item._id || `biz-${index}`,
+              name: item.name,
+              type: 'business',
+              category: item.category,
+            }))
+          );
+          setCategories(
+            result.categories.map((cat, index) => ({
+              id: `cat-${index}`,
+              name: cat,
+              type: 'category',
+            }))
+          );
         } else {
+          setBusinesses([]);
           setCategories([]);
         }
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error fetching results:', error);
+        setBusinesses([]);
         setCategories([]);
       } finally {
         setIsLoading(false);
@@ -67,51 +82,33 @@ const CategoryNavbar = () => {
   );
 
   useEffect(() => {
-    if (searchQuery) {
-      fetchCategories(searchQuery);
-    } else {
-      fetchCategories('');
-    }
-  }, [searchQuery, fetchCategories]);
-
-  // Function to determine the best matching category
-  const getBestMatchingCategory = (query, categories) => {
-    if (!query || categories.length === 0) return query;
-    const lowercaseQuery = query.toLowerCase();
-    // Prioritize specific mappings
-    if (lowercaseQuery.includes('clinics')) {
-      const bestMatch = categories.find(cat => cat.name.toLowerCase() === 'best clinics');
-      if (bestMatch) return bestMatch.name;
-    }
-    if (lowercaseQuery.includes('auto spares') || lowercaseQuery.includes('autospares')) {
-      const bestMatch = categories.find(cat => cat.name.toLowerCase() === 'autospares hub');
-      if (bestMatch) return bestMatch.name;
-    }
-    // Fallback to first matching category
-    const firstMatch = categories.find(cat => cat.name.toLowerCase().includes(lowercaseQuery));
-    return firstMatch ? firstMatch.name : query;
-  };
+    fetchResults(searchQuery);
+  }, [searchQuery, fetchResults]);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchQuery || location) {
-      // Select the best matching category
-      const selectedCategory = getBestMatchingCategory(searchQuery, categories);
-      saveRecentSearch(selectedCategory);
-      router.push(`/category?category=${encodeURIComponent(selectedCategory)}`);
-      setSearchQuery(selectedCategory);
-      setShowAllCategories(false);
+    if (searchQuery) {
+      saveRecentSearch(searchQuery);
+      router.push(`/category?query=${encodeURIComponent(searchQuery)}`);
+      setShowResults(false);
       setMobileMenuOpen(false);
     }
   };
 
   const handleSearchButtonClick = () => {
-    setShowAllCategories(!showAllCategories);
+    setShowResults(!showResults);
   };
 
-  const filteredCategories = searchQuery
-    ? categories.filter(cat => cat.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    : categories;
+  const filteredResults = searchQuery
+    ? [
+        ...categories.filter((cat) => cat.name.toLowerCase().includes(searchQuery.toLowerCase())),
+        ...businesses.filter(
+          (biz) =>
+            biz.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            biz.category.toLowerCase().includes(searchQuery.toLowerCase())
+        ),
+      ]
+    : [...categories, ...businesses];
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -122,6 +119,7 @@ const CategoryNavbar = () => {
 
         <div className="hidden md:flex items-center flex-1 mx-8 gap-2">
           <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
+            <MapPin className="h-5 w-5 text-gray-500 mx-2" />
             <input
               type="text"
               placeholder="Location"
@@ -136,30 +134,29 @@ const CategoryNavbar = () => {
               <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
                 <input
                   type="text"
-                  placeholder="Search categories..."
+                  placeholder="Search businesses or categories..."
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
-                    setShowAllCategories(true);
+                    setShowResults(true);
                   }}
-                  onFocus={() => setShowAllCategories(true)}
+                  onFocus={() => setShowResults(true)}
                   className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  aria-label="Search for services"
+                  aria-label="Search for businesses or categories"
                 />
                 <button
                   type="button"
                   onClick={handleSearchButtonClick}
                   className="px-2 py-1.5 bg-blue-600 text-white hover:bg-blue-700 rounded-r-md"
-                  aria-label="Toggle categories"
+                  aria-label="Toggle search results"
                 >
                   <Search className="h-7 w-7" />
                 </button>
               </div>
             </form>
 
-            {showAllCategories && (
+            {showResults && (
               <div className="absolute z-10 w-full bg-white shadow-md rounded-md mt-1 max-h-60 overflow-y-auto">
-                {/* Recent Searches */}
                 {recentSearches.length > 0 && (
                   <div className="border-b border-gray-200">
                     <div className="px-4 py-2 text-sm font-semibold text-gray-700 flex justify-between items-center">
@@ -174,11 +171,11 @@ const CategoryNavbar = () => {
                     {recentSearches.map((search, index) => (
                       <Link
                         key={index}
-                        href={`/category?category=${encodeURIComponent(search)}`}
+                        href={`/category?query=${encodeURIComponent(search)}`}
                         className="px-4 py-2 hover:bg-gray-100 flex items-center"
                         onClick={() => {
                           setSearchQuery(search);
-                          setShowAllCategories(false);
+                          setShowResults(false);
                           setMobileMenuOpen(false);
                           saveRecentSearch(search);
                         }}
@@ -190,28 +187,37 @@ const CategoryNavbar = () => {
                   </div>
                 )}
 
-                {/* Category Suggestions */}
                 <div>
                   {isLoading ? (
                     <div className="px-4 py-2 text-gray-500">Loading...</div>
-                  ) : filteredCategories.length > 0 ? (
-                    filteredCategories.map((category) => (
+                  ) : filteredResults.length > 0 ? (
+                    filteredResults.map((item) => (
                       <Link
-                        key={category.id}
-                        href={`/category?category=${encodeURIComponent(category.name)}`}
+                        key={item.id}
+                        href={
+                          item.type === 'business'
+                            ? `/category?name=${encodeURIComponent(item.name)}`
+                            : `/category?category=${encodeURIComponent(item.name)}`
+                        }
                         className="block px-4 py-2 hover:bg-gray-100"
                         onClick={() => {
-                          setSearchQuery(category.name);
-                          setShowAllCategories(false);
+                          setSearchQuery(item.name);
+                          setShowResults(false);
                           setMobileMenuOpen(false);
-                          saveRecentSearch(category.name);
+                          saveRecentSearch(item.name);
                         }}
                       >
-                        {category.name}
+                        {item.type === 'business' ? (
+                          <>
+                            {item.name} <span className="text-sm text-gray-500">({item.category})</span>
+                          </>
+                        ) : (
+                          item.name
+                        )}
                       </Link>
                     ))
                   ) : (
-                    <div className="px-4 py-2 text-gray-500">No categories found</div>
+                    <div className="px-4 py-2 text-gray-500">No results found</div>
                   )}
                 </div>
               </div>
@@ -263,13 +269,13 @@ const CategoryNavbar = () => {
               <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
                 <input
                   type="text"
-                  placeholder="Search categories..."
+                  placeholder="Search businesses or categories..."
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
-                    setShowAllCategories(true);
+                    setShowResults(true);
                   }}
-                  onFocus={() => setShowAllCategories(true)}
+                  onFocus={() => setShowResults(true)}
                   className="w-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <button
@@ -282,9 +288,8 @@ const CategoryNavbar = () => {
               </div>
             </form>
 
-            {showAllCategories && (
+            {showResults && (
               <div className="max-h-96 overflow-y-auto">
-                {/* Recent Searches */}
                 {recentSearches.length > 0 && (
                   <div className="border-b border-gray-200">
                     <div className="px-4 py-2 text-sm font-semibold text-gray-700 flex justify-between items-center">
@@ -299,11 +304,11 @@ const CategoryNavbar = () => {
                     {recentSearches.map((search, index) => (
                       <Link
                         key={index}
-                        href={`/category?category=${encodeURIComponent(search)}`}
+                        href={`/category?query=${encodeURIComponent(search)}`}
                         className="flex px-4 py-2 hover:bg-gray-100 items-center border-b border-gray-100"
                         onClick={() => {
                           setSearchQuery(search);
-                          setShowAllCategories(false);
+                          setShowResults(false);
                           setMobileMenuOpen(false);
                           saveRecentSearch(search);
                         }}
@@ -315,28 +320,37 @@ const CategoryNavbar = () => {
                   </div>
                 )}
 
-                {/* Category Suggestions */}
                 <div>
                   {isLoading ? (
                     <div className="px-4 py-2 text-gray-500">Loading...</div>
-                  ) : filteredCategories.length > 0 ? (
-                    filteredCategories.map((category) => (
+                  ) : filteredResults.length > 0 ? (
+                    filteredResults.map((item) => (
                       <Link
-                        key={category.id}
-                        href={`/category?category=${encodeURIComponent(category.name)}`}
+                        key={item.id}
+                        href={
+                          item.type === 'business'
+                            ? `/category?name=${encodeURIComponent(item.name)}`
+                            : `/category?category=${encodeURIComponent(item.name)}`
+                        }
                         className="block px-4 py-2 hover:bg-gray-100 border-b border-gray-100"
                         onClick={() => {
-                          setSearchQuery(category.name);
-                          setShowAllCategories(false);
+                          setSearchQuery(item.name);
+                          setShowResults(false);
                           setMobileMenuOpen(false);
-                          saveRecentSearch(category.name);
+                          saveRecentSearch(item.name);
                         }}
                       >
-                        {category.name}
+                        {item.type === 'business' ? (
+                          <>
+                            {item.name} <span className="text-sm text-gray-500">({item.category})</span>
+                          </>
+                        ) : (
+                          item.name
+                        )}
                       </Link>
                     ))
                   ) : (
-                    <div className="px-4 py-2 text-gray-500">No categories found</div>
+                    <div className="px-4 py-2 text-gray-500">No results found</div>
                   )}
                 </div>
               </div>
