@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Shridevi Hospital,<,3.7,100 Ratings,"Road 1st MG Road Tumkur, Tumkur",,07383823492,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.295Z
+Kasturba Hospital (Dr Durgadas Asranna),<,4.3,32 Ratings,"Puram Main Road SS Puram, Tumkur",,07041622154,,true,false,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.295Z
+Homeocare International Pvt Ltd,<,4.6,175 Ratings,"Ashok Nagar Kyatasandra, Tumkur",,08460500773,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.295Z
+Js Hospital,<,3.4,40 Ratings,"Pavagada Main Road Madhugiri, Tumkur",,08904893569,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.295Z
+Jayashree Nursing Home,<,4.4,236 Ratings,"KR Extension Bh Road, Tumkur",,07383644636,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.295Z
+Kasturba Hospital,<,4.7,"1,065 Ratings","SS Puram Main Road SS Puram, Tumkur",,07383084798,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Kumar Hospital,<,4.4,214 Ratings,"Coronation Road Cross Tiptur, Tumkur",,07383076851,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Omaha Ayurveda,<,4.1,17 Ratings,"1 2 3 Bh Road, Tumkur",,07383808152,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Vinayaka Hospital,<,4.6,"1,618 Ratings","B H Ashok Nagar Tumkur, Tumkur",,07383056118,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Vignesh Children Hospital,<,4.8,40 Ratings,"Madhugiri Road Arakere Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Ths Superspeciality Hospital,+,3.4,217 Ratings,"Bh Road, Tumkur",,08105325816,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+M C Orthopaedic Arthroscopy And Joint Replacement Center,+,4.6,300 Ratings,"2nd Cross Ashok Nagar Bh Road, Tumkur",,,Animal Diseases,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Hms Unani Medical College and Hospital,+,4.2,107 Ratings,"Sadasivnagar Melekote, Tumkur",,09036244304,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Kaveri Hospital and Kidney Care Centre,+,4.1,74 Ratings,"Railway Station Road Bh Road, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Akshay Hospital,A,4.1,56 Ratings,"2nd Cross Ashok Nagar Tumkur, Tumkur",,07383341716,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Siddaramanna Hospital,+,4.2,173 Ratings,"Gandhi Nagar Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+G S Health Care,+,4.9,8 Ratings,"Cross 7th Main Sadashivanagar, Tumkur",,09731635904,,true,false,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Dr. K Narasimhaiah Hospital,+,3.9,68 Ratings,"Nagar Road Gandhi Nagar Tumkur, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Siddaganga Hospital And Research Center,+,4.0,"1,166 Ratings","Shivakumar Swamji Road Bh Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Sri Manjunatha Hospital,+,3.8,91 Ratings,"Shettihalli Main Road Jayanagar, Tumkur",,07383797381,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Rajalakshmi Nursing Home,R,3.9,29 Ratings,"Rajalakshmi Nursing Home Sit, Tumkur",,07041475948,,true,false,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.296Z
+Shameer Hospital,+,4.6,121 Ratings,"Kunigal Kunigal, Tumkur",,08460555126,,true,false,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Bethel Medical Mission Hospital & Hosmat Hospital Education Group,+,4.1,158 Ratings,"Preety Nagar Laggere, Bangalore",,07048209067,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Shri Tulasigirish Diabetes Hospital & Diabetes Research Foundation,+,4.2,34 Ratings,"Mahaveer Road Bagalkot, Bagalkot",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Global Health Tourism,G,4.6,37 Ratings,"Lane No 5 Vishwakarma Nagar, Nagpur",,09980635869,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Pragati Medcity and Stem Cell Centre,+,4.8,30 Ratings,"Ajay Singh Marg Rohit Nagar, Bhopal",,09035344697,,true,false,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Nephron Kidney Kare Clinic,+,3.9,119 Ratings,"Bariatu Road Bariatu, Ranchi",,,,true,false,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Nangal Cancer Hospital & Research Institute,+,4.7,633 Ratings,"College Road Bikaner Agra Road, Bikaner",,,,true,true,false,true,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Dr. Mahadevappa Eye Laser Hospital,+,3.8,83 Ratings,"Office Road SS Puram, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Kalpatharu Hospital,K,4.2,14 Ratings,"2nd Main Road Bh Road, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Eshwari Health Care,+,5.0,9 Ratings,"Sira Road Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Pavana Hospital,+,3.8,47 Ratings,"Bh Road Bh Road, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Krsnaa Diagnostics (District Hospital Tumkuru),K,4.8,"2,583 Ratings","Ashoka Road Tumkur, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Aditi Women and Childrens Hospital,+,4.8,739 Ratings,"Sira Gate Sira Road Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Vaibhavi Multi Speciality Hospital,+,4.8,604 Ratings,"Arasikere Road Tiptur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Aruna Hospital,+,4.1,681 Ratings,"Dr Radhakrishnan Road Ss Puram, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Sri Siddaganga Hospital,S,3.9,700 Ratings,"Bengaluru Honnavar Road SS Puram, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Car Tronix,+,4.7,480 Ratings,"Masjid Road MG Road Tumkur, Tumkur",,,Company Authorised Dealer,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Chinmaya Hospital And Fertility Centre,+,4.7,297 Ratings,"2nd Phase Batawadi, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Shridevi Institute Of Medical Sciences,+,3.6,383 Ratings,"Highway 4 Sira Road Tumkur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Adarsha Nursing Home,+,4.2,312 Ratings,"Sharada Devi Nagar Bh Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Mudra Hospital,M,4.2,310 Ratings,"3rd Main Road Kr Extn Tiptur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Akshara Eye Foundation,+,4.5,243 Ratings,"SS Puram Someswarapuram Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+M M Multispeciality Hospital,+,4.2,207 Ratings,"KRS Agrahara Kunigal, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+Pragathi Hospital,+,3.4,252 Ratings,"Coffee Board Colony Ss Puram, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.297Z
+District Hospital,D,3.2,224 Ratings,"Bh Road, Tumkur",,,Coronavirus Testing Centres; Hospitals,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Mookambika Modi Eye Hospital,+,4.7,150 Ratings,"3rd Main Bh Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Bharathi Hospital,+,4.0,159 Ratings,"K R Extension Bh Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Fortis Adarsha Heart Hospital,F,4.3,144 Ratings,"Sharadadevi Nagar Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Ganga Hospital,G,4.6,122 Ratings,"Antharasanahalli, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Nandi Hospital,+,3.6,154 Ratings,"1st Cross Mg Road Tumkur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Janani Hospital,J,4.8,115 Ratings,"Gandhi Nagar Tiptur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Suraksha Hospital,+,3.9,131 Ratings,"SIT Main Road Sit, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Ashwini Ayurvedic Medical College & Research Center,+,3.8,134 Ratings,"Saraswathipuram Gulur, Tumkur",,,Ayurvedic Colleges; Hospitals,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Drishti Dhama Eye Hospital,+,4.6,109 Ratings,"Sante Pete Main Road Sira Bazar, Sira",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Hemavathi Arthopedic Chroma Center Hospital,+,3.9,121 Ratings,"Dr Radhakrishnan Road SS Puram, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Hms Unani Medical College & Hospital,+,4.2,107 Ratings,"Sadashivanagar, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Bapuji Nursing Home,+,3.8,102 Ratings,"1st Cross Someswarapuram Tumkur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Mahesh Ortho Hospital,+,4.2,91 Ratings,"Gandhi Nagar, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Doddamane Hospital,D,4.0,91 Ratings,"Bengaluru Honnavar Road Bh Road, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Ashwini Ayurvedic Medical College & Hospital,A,4.0,90 Ratings,"Ring Road Maralur, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Shanthi Hospital,+,4.5,79 Ratings,"Pavagada, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Renuka Hospital,R,3.9,89 Ratings,"Koratagere, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Surya Hospital,+,4.1,84 Ratings,"Nagar Vivekananda Road Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Surya Hospital,+,4.1,84 Ratings,"MAIN FIRST CROSS Vinobha Nagar, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Sri Venkateshwara Hospital And Health Care Services,+,4.8,69 Ratings,"Nagara Cross Vinayaka Nagar, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Expert Hospital,+,4.6,71 Ratings,"BH Road Bh Road, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Moto Grafix Mg2,+,4.2,74 Ratings,"Beside Valmiki Hostel Bh Road, Tumkur",,,Company Authorised Dealer,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Kaveri Hospital Kidney Care Centre,+,4.1,74 Ratings,"Road Gandhi Nagar Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Government Hospital,G,4.3,70 Ratings,"Bh Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.298Z
+Chalukya Hospital,C,4.7,61 Ratings,"1st Cross Gubbi, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Shree Sapthagiri Hospital,+,4.1,66 Ratings,"B M Road Kunigal, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Government General Hospital,G,3.2,79 Ratings,"Tiptur Bazar, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Shridevi Research Hospital,+,3.6,69 Ratings,"Sira Road Sira Road Tumkur, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+M C Hospital,M,4.6,54 Ratings,"1st A Cross Upparhalli, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Dr. Thammaiah Hospital,D,3.8,65 Ratings,"Road Kuvempunagar Tumkur, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Shri Sai Ganga Hi Tech Hospital,S,4.1,59 Ratings,"Chikkanayakanahalli Tumkur, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Adarsha Speciality Hospital,A,4.0,60 Ratings,"Sharadadevi Nagar Tumkur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Sneha Manovikasa Kendra,+,3.8,61 Ratings,"Radha Krishna Road Ss Puram, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Doddamane Nursing Home,+,4.0,56 Ratings,"4th Cross Bh Road, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Muddarangappa Hospital,M,4.4,50 Ratings,"Ss Puram, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Mm Hospital,M,3.3,66 Ratings,"Main Road Kunigal, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+S S Multispeciality Hospital,S,3.3,65 Ratings,"Tiptur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Ss Multispeciality Hospital,S,3.3,65 Ratings,"Tiptur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Sukrutha Hospital Ivf And Ortho Center,S,3.5,57 Ratings,"Manjunath Nagar Batawadi, Tumkur",,,,true,false,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Esi Dispensary,E,4.4,45 Ratings,"Convent Road Gandhi Nagar Tumkur, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Sukrutha Hospital,S,3.3,56 Ratings,"Gokula Extension Jayanagar, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Samruddhi Netralaya And Charmalaya,+,4.7,39 Ratings,"Road Sharadadevi Nagar Tumkur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Shree Siddartha Dental College Hospital,+,4.2,42 Ratings,"Agala Kote 12th Cross Road, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Sri Ranga Hospital,S,4.3,41 Ratings,"Mavinathopu Tiptur, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+B Siddaramanna Hospital,B,3.7,45 Ratings,"Gandhinagar Gandhi Nagar, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Namma Hospital,N,4.5,37 Ratings,"GBN Road Madhugiri, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Bidare Lingappa Hospital,B,3.6,46 Ratings,"B H Road Kr Extn Tiptur, Tumkur",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Abhinandan Hospital,A,3.5,46 Ratings,"Mg Raod Gubbi, Tumkur",,,,true,false,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Tumkur Specialty Hospital,T,4.8,30 Ratings,"Ward No.18 Tumkur City, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Kavery Eye Hospital,K,4.7,30 Ratings,"Vidya Nagar Tiptur, Tumkur",,,,true,false,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+S M S Hospital,S,4.1,34 Ratings,"Csi Layout, Tumkur",,,,false,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Kaveri Hospital,K,4.9,28 Ratings,"Rice Mill Road Rangappanapalya, Sira",,,,true,true,false,false,false,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Siddaganga Medical College & Research Institute,+,4.9,28 Ratings,"Honnavar Road KEB Main Road, Tumkur",,,,false,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z
+Tiptur Health Centre,T,4.7,29 Ratings,"Krishna Raja Extension Tiptur, Tumkur",,,,true,true,false,false,true,Best Hospitals,,Tumkur,2025-05-31T11:37:10.299Z

@@ -615,7 +615,6 @@
 //     res.status(500).send(`error\n"Scraping failed: ${error.message}"`);
 //   }
 // }
-
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
@@ -661,18 +660,18 @@ export default async function handler(req, res) {
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
     // Create the filemanager directory if it doesn't exist
-    const outputDir = path.join(process.cwd(), 'Mysore');
+    const outputDir = path.join(process.cwd(), 'Tumkur');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
       console.log(`Created directory: ${outputDir}`);
     }
 
-    // Navigate to Justdial Mysore page
-    const mysoreBaseUrl = 'https://www.justdial.com/Mysore';
-    await page.goto(mysoreBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-    console.log('Navigated to Justdial Mysore page');
-    await page.screenshot({ path: path.join(outputDir, 'mysore-page.png'), fullPage: true });
-    console.log(`Screenshot saved: ${path.join(outputDir, 'mysore-page.png')}`);
+    // Navigate to Justdial Tumkur page
+    const tumkurBaseUrl = 'https://www.justdial.com/Tumkur';
+    await page.goto(tumkurBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+    console.log('Navigated to Justdial Tumkur page');
+    await page.screenshot({ path: path.join(outputDir, 'tumkur-page.png'), fullPage: true });
+    console.log(`Screenshot saved: ${path.join(outputDir, 'tumkur-page.png')}`);
 
     // Handle cookie consent popup
     try {
@@ -704,51 +703,51 @@ export default async function handler(req, res) {
       console.log('No auto-location popup found or failed to click:', e.message);
     }
 
-    // Verify location is Mysore and click "Popular Categories" button
+    // Verify location is Tumkur and click "Popular Categories" button
     try {
-      console.log('Verifying location is Mysore...');
+      console.log('Verifying location is Tumkur...');
       const locationInputSelector = '#city, [name="city"], [id*="location"], [class*="city"] input, [placeholder*="city"], [class*="location"] input, #home-city-autocomplete';
       const locationInput = await page.waitForSelector(locationInputSelector, { visible: true, timeout: 15000 });
       if (locationInput) {
         const currentValue = await page.evaluate(el => el.value, locationInput);
         console.log('Current location input:', currentValue);
-        if (!currentValue.toLowerCase().includes('mysore')) {
-          console.log('Location not set to Mysore, setting now...');
+        if (!currentValue.toLowerCase().includes('tumkur')) {
+          console.log('Location not set to Tumkur, setting now...');
           await locationInput.click({ clickCount: 3 });
           await locationInput.press('Backspace');
-          await locationInput.type('Mysore', { delay: 100 });
+          await locationInput.type('Tumkur', { delay: 100 });
           await delay(3000);
 
-          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Mysore")';
+          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Tumkur")';
           await page.waitForSelector(suggestionSelector, { visible: true, timeout: 10000 });
           await page.evaluate(() => {
             const suggestions = document.querySelectorAll('.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li');
             for (let suggestion of suggestions) {
-              if (suggestion.textContent.toLowerCase().includes('mysore')) {
+              if (suggestion.textContent.toLowerCase().includes('tumkur')) {
                 suggestion.click();
                 break;
               }
             }
           });
-          console.log('Clicked "Mysore" from suggestions');
+          console.log('Clicked "Tumkur" from suggestions');
           await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 });
           console.log('Navigation completed after selecting city');
 
           const newValue = await page.evaluate(el => el.value, locationInput);
           console.log('New location input:', newValue);
-          if (!newValue.toLowerCase().includes('mysore')) {
-            throw new Error('Failed to set location to Mysore, found: ' + newValue);
+          if (!newValue.toLowerCase().includes('tumkur')) {
+            throw new Error('Failed to set location to Tumkur, found: ' + newValue);
           }
         }
-        console.log('Successfully confirmed location as Mysore');
+        console.log('Successfully confirmed location as Tumkur');
       } else {
         console.log('Location input not found, relying on URL');
       }
 
       const currentUrl = await page.url();
-      if (!currentUrl.includes('/Mysore')) {
-        console.log('URL does not contain Mysore, navigating to correct URL');
-        await page.goto(mysoreBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+      if (!currentUrl.includes('/Tumkur')) {
+        console.log('URL does not contain Tumkur, navigating to correct URL');
+        await page.goto(tumkurBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       }
 
       console.log('Looking for Popular Categories button with id="popular_categories"...');
@@ -923,9 +922,9 @@ export default async function handler(req, res) {
         await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
 
         const currentUrl = await page.url();
-        if (!currentUrl.includes('/Mysore')) {
-          console.log(`Location changed in URL: ${currentUrl}, resetting to Mysore`);
-          await page.goto(mysoreBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+        if (!currentUrl.includes('/Tumkur')) {
+          console.log(`Location changed in URL: ${currentUrl}, resetting to Tumkur`);
+          await page.goto(tumkurBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
           await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
         }
 
@@ -1004,12 +1003,12 @@ export default async function handler(req, res) {
         const data = await page.evaluate((scrapedUrl, categoryText, subCategoryText) => {
           let category = categoryText;
           let subcategory = subCategoryText;
-          let city = 'Mysore';
+          let city = 'Tumkur';
           const heading = document.querySelector('h1')?.textContent || '';
           const headingMatch = heading.match(/(.+?)\s+in\s+(.+)/i);
           if (headingMatch) {
             const headingCategory = headingMatch[1]?.trim();
-            city = headingMatch[2]?.trim() || 'Mysore';
+            city = headingMatch[2]?.trim() || 'Tumkur';
             if (subCategoryText) {
               subcategory = headingCategory; // Subcategory might be in the heading
             } else {
@@ -1141,7 +1140,7 @@ export default async function handler(req, res) {
         // Generate and save CSV for the main category
         const mainCategoryCsvData = convertToCSV(mainCategoryResults);
         const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-        const mainCategoryFileName = `mysore_${safeMainCategoryName}_listings.csv`;
+        const mainCategoryFileName = `tumkur_${safeMainCategoryName}_listings.csv`;
         const mainCategoryFilePath = path.join(outputDir, mainCategoryFileName);
 
         fs.writeFileSync(mainCategoryFilePath, mainCategoryCsvData);
@@ -1182,7 +1181,7 @@ export default async function handler(req, res) {
             const subcategoryCsvData = convertToCSV(subcategoryResults);
             const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
             const safeSubcategoryName = subcategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-            const subcategoryFileName = `mysore_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
+            const subcategoryFileName = `tumkur_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
             const subcategoryFilePath = path.join(outputDir, subcategoryFileName);
 
             fs.writeFileSync(subcategoryFilePath, subcategoryCsvData);
@@ -1219,7 +1218,7 @@ export default async function handler(req, res) {
 
       const csvData = convertToCSV(results);
       const safeCategoryName = category.toLowerCase().replace(/[^a-z0-9]/g, '_');
-      const fileName = `mysore_${safeCategoryName}_all_subcategories_listings.csv`;
+      const fileName = `tumkur_${safeCategoryName}_all_subcategories_listings.csv`;
       const filePath = path.join(outputDir, fileName);
 
       // Save the CSV file
@@ -1242,9 +1241,9 @@ export default async function handler(req, res) {
         allResults.push(...categoryResults);
       }
 
-      // Navigate back to the Mysore page
-      console.log('Navigating back to Mysore page:', mysoreBaseUrl);
-      await page.goto(mysoreBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+      // Navigate back to the Tumkur page
+      console.log('Navigating back to Tumkur page:', tumkurBaseUrl);
+      await page.goto(tumkurBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
       try {
         const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 20000 });
@@ -1277,14 +1276,14 @@ export default async function handler(req, res) {
 
     // Generate and save the combined CSV file
     const combinedCsvData = convertToCSV(allResults);
-    const combinedFileName = 'mysore_all_categories_listings.csv';
+    const combinedFileName = 'tumkur_all_categories_listings.csv';
     const combinedFilePath = path.join(outputDir, combinedFileName);
     fs.writeFileSync(combinedFilePath, combinedCsvData);
     console.log(`Combined file saved: ${path.resolve(combinedFilePath)}`);
 
     // Send the combined CSV file as the response
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="mysore_all_categories_listings.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="tumkur_all_categories_listings.csv"');
     res.status(200).send(combinedCsvData);
   } catch (error) {
     console.error('Scraping error:', error);
