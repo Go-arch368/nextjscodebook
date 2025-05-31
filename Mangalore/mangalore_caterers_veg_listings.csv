@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Snackies Cake Shop and Restaurant,<,4.0,756 Ratings,"Sturrock Road Attavar, Mangalore",,08511843183,,false,false,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.281Z
+Coastal Hub Family Restaurant,<,3.7,374 Ratings,"Ashoknagar Road Urwa, Mangalore",,,,false,false,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.282Z
+J K Caterers,<,4.6,42 Ratings,"Mahakali Padupu Jeppu, Mangalore",,,Home Delivery,true,true,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.282Z
+Illadha Vanas,<,4.3,318 Ratings,"PPSA Building Chillimbi, Mangalore",,08511238039,,true,false,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.283Z
+Hotel Sri Balaji,<,3.8,161 Ratings,"Oldkent Road Pandeshwar, Mangalore",,,,true,false,false,true,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.284Z
+Indira Cateres,<,4.8,14 Ratings,"Kulshekara N H Road Kulshekar, Mangalore",,08296125663,Home Delivery,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.285Z
+Thehomefood.in,<,3.9,205 Ratings,"Bridge Road Balmatta, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.285Z
+Harshitha Caterers,<,4.1,28 Ratings,"Kaikamba Main Road Kaikamba, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.285Z
+Tiffinant,<,4.4,5 Ratings,"Kadri Temple Road Kadri, Mangalore",,07490051853,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.285Z
+Sridevi Caterers,<,4.3,24 Ratings,"Pachanady Bondel, Mangalore",,,Home Delivery,true,true,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.286Z
+Annapurna Catering,+,4.7,29 Ratings,"Shree Rama Vasyam Car Street, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.286Z
+Jeeth Electricals & Arrangers,+,4.4,10 Ratings,"Jayashree Gate Bikkernakatta, Mangalore",,,Caterers; Event Organisers,true,true,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.287Z
+Shiva Krupa Marriage Booking,+,5.0,6 Ratings,"Dharmasthala, Dharmasthala",,08460550557,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.287Z
+SUMRUM Decorator's & Event Management,S,5.0,2 Ratings,"Farangipeta Adyar, Mangalore",,08511941761,Event Organisers; Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.288Z
+Funtime Restaurant,+,4.4,"1,899 Ratings","Baddaktte Bantwal, Mangalore",,,,false,false,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.288Z
+Hotel Machli,+,4.1,845 Ratings,"Samagaragundy Moodbidri, Moodbidri",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.289Z
+Hotel Janatha Deluxe,+,4.3,"4,961 Ratings","KS Rao Road Hampankatta, Mangalore",,,,false,false,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.289Z
+Bhat's Canteen,+,4.2,400 Ratings,"7th Cross Gandhinagar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.290Z
+Yummy Biriyani Caterers,+,4.9,192 Ratings,"Batkall Bazar Car Street, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.290Z
+Kusum Catering Service,+,4.4,142 Ratings,"Kusum Building Car Street, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.290Z
+Oasis Caterers And Arrangers,+,4.5,183 Ratings,"Oasis House Bajpe, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.290Z
+Share Eat Restaurant,+,4.3,467 Ratings,"Kinnigoli, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.290Z
+Raos New City Lunch Home,+,3.7,773 Ratings,"Surathkal Main Road Surathkal, Mangalore",,,,false,false,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.291Z
+Bright Catering & Arrangers,+,4.7,39 Ratings,"Bazar Road Hogie Bazar, Mangalore",,,Caterers; Event Organisers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.291Z
+Kamath Caterers,+,4.3,546 Ratings,"Car Street, Mangalore",,,Caterers; Veg Caterers,true,true,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.291Z
+Ice N Spice Family Restaurant,+,3.9,287 Ratings,"Bajpe, Mangalore",,,,false,false,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.291Z
+Anchan Caterers,A,4.8,24 Ratings,"Ganga Layout Kankanady, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Hotel Halli Mane,H,4.2,29 Ratings,"Charmadi Road Ujire, Dharmasthala",,,,false,false,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Shettys Counter Shot Daba,+,3.9,288 Ratings,"National Highway 75 Kannur, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Webdhaba,W,4.0,1 Ratings,"Urwa Stores Urwa, Mangalore",,,,false,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Prashanth Bar & Restaurant,+,4.0,142 Ratings,"Old Gate Sullia, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Hotel Nesal,+,5.0,21 Ratings,"Nantoor Road Kadri, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.292Z
+Prince Caterers,P,4.6,147 Ratings,"Neermarga, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Gokul Caterers,+,4.4,52 Ratings,"Kadri Temple Road Kadri, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Chandragiri Lunch Home,+,4.3,171 Ratings,"Fisharish Road Surathkal, Mangalore",,,,true,false,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Kerala Spicy Family Restaurant,+,3.9,275 Ratings,"Puttur Road Vittal, Mangalore",,,,true,false,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Vishwas Caterers,+,4.8,111 Ratings,"Marnamikatta Jeppu, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Vasappa Hotel Prashanth,+,4.4,234 Ratings,"Karkala Main Road Belavai, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.293Z
+Shade Caterers,+,4.5,30 Ratings,"Temple Road Pandeshwar, Mangalore",,,Caterers; Veg Caterers,true,true,false,true,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.294Z
+Sai Caterers & Event Management,+,3.8,92 Ratings,"Jail Road Karangalpady, Mangalore",,,Home Delivery,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.294Z
+Trupti Hotel And Caterers,+,3.7,78 Ratings,"Managaladevi Bolar, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.294Z
+Sanvi Catering,S,4.1,16 Ratings,"Fisharies Road Kulai, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.294Z
+Sri Bhagavathi,S,4.1,30 Ratings,"Morgans Gate Jeppu, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Hotel Sai Samrudhi,+,3.4,15 Ratings,"Airport Road Padavinangady, Mangalore",,,,false,false,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Family Caterers,F,4.2,77 Ratings,"Derebail Konchady, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Hs Square Event Management,+,5.0,27 Ratings,"Marnamikatta Mangaladevi Road, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Profession Catering,P,3.3,7 Ratings,"Akash Bhavan Kavoor, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Suraksha Caterers,S,4.6,34 Ratings,"Guddekopla Road Surathkal, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Hotel Sunshine,H,4.4,24 Ratings,"Near Navadeep Bar Moodbidri, Moodbidri",,,Veg Caterers; Caterers For Wedding,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.295Z
+Mangalore Caterers,+,4.7,20 Ratings,"Koppalkad Road Maryhill, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+Surabhi Caterers,S,3.5,4 Ratings,"Krishnapura Surathkal, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+GOOD LUCK Caterers & Arrangers,G,4.9,8 Ratings,"Main Road Kudroli, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+Dreamstrokes,D,5.0,1 Ratings,"Pvs Kalakunji Road Kodialbail, Mangalore",,,Wedding Decorators; Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+Akshaya Caterers,A,4.1,27 Ratings,"Kb Lane Ashoknagar, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+Rego Caterers,R,4.2,51 Ratings,"Niddele Kushekar Padil, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.296Z
+Perfect Caterers,+,5.0,5 Ratings,"Chokkabettu Surathkal, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.297Z
+Shree Guru Nithyananda Caterers,S,4.3,14 Ratings,"3rd Block Katipalla, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.297Z
+Santhosh Caterers and Arrangers,+,5.0,2 Ratings,"Kumpala Bypass Kumpala, Mangalore",,,Caterers; Veg Caterers,false,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.297Z
+Choice Caterers,+,4.5,9 Ratings,"Surathkal, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.298Z
+Twins Caterers,+,5.0,38 Ratings,"Vamanjoor Vamanjur, Mangalore",,,Home Delivery,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.298Z
+Jillus Caterers,+,3.7,14 Ratings,"Ashoknagar Ashoknagar, Mangalore",,,Home Delivery,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.299Z
+Mangala Caterers,M,4.1,7 Ratings,"Bangerkullur Kulur, Mangalore",,,Caterers; Veg Caterers,true,true,false,true,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.299Z
+Family Caterers,F,3.9,20 Ratings,"Janalisa Building Kadri, Mangalore",,,Caterers; Veg Caterers,true,true,false,true,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.299Z
+M Dsouza and Sons Caterers,+,4.6,23 Ratings,"Sulthan Battery Road Bockapatna, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.300Z
+Komals Food Processers & Caterers,+,4.7,11 Ratings,"Kulur Ferry Road Alake, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.300Z
+House Of Beard Chef,H,3.7,11 Ratings,"Padua Road Shaktinagar, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.300Z
+Manjunatha Caterers,+,4.9,33 Ratings,"Aradhana Dharmasthala, Dharmasthala",,,On Site Services,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.300Z
+Sri Durga Caterers,S,4.8,4 Ratings,"Mandarabail Konchady, Mangalore",,,Home Delivery,false,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.301Z
+Ultimate Productions,+,4.4,4 Ratings,"Karangalpady, Mangalore",,,Car Decoration,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.301Z
+Nazo Caterers,N,4.4,14 Ratings,"Balika Ashram Road Kankanady, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.301Z
+Pinto Caterers,+,4.3,30 Ratings,"Kodical Ashoknagar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.302Z
+Street Spoon Caterers,+,5.0,4 Ratings,"Kodical Road Ashoknagar, Mangalore",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.303Z
+Rao Caterers,R,4.9,8 Ratings,"2-171/1A Kudupu, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.303Z
+Acharya Caterers,A,5.0,2 Ratings,"7th Cross Konchady, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.304Z
+Hotel Korimeen,+,5.0,3 Ratings,"Bejan Church Road Bejai, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.304Z
+St Antony Caterers,S,5.0,1 Ratings,"Modankap Post Bantwal, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.304Z
+Komal'S Sweets & Caterers,+,5.0,11 Ratings,"Kulur Ferry Road Alake, Mangalore",,,Home Delivery,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.304Z
+A.H Events & Celebration,+,5.0,8 Ratings,"Ullal Ullal, Mangalore",,,Caterers; Event Organisers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.305Z
+Sharavu Caterers,S,4.9,9 Ratings,"Dambel Ashoknagar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.305Z
+Tulunad Food Catering Service,T,3.0,2 Ratings,"Padil, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.305Z
+Swasthik Caterers,+,4.4,8 Ratings,"Krishnapura Katipalla, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.305Z
+Maya Caterers,M,4.6,7 Ratings,"GHS Road, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.305Z
+Pai Caterers,P,4.4,18 Ratings,"Dongarakere, Mangalore",,,,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Sri Sai Caterers,+,4.3,3 Ratings,"Street  Bunts Hostel Road, Mangalore",,,,false,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Blue Birds Caterers,B,5.0,1 Ratings,"Jeppu Jeppu, Mangalore",,,Home Delivery,false,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Nidhi Caterers Mangalore,+,4.9,11 Ratings,"19th Cross Adyar, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Rama Somayaji Caterers,R,4.1,20 Ratings,"belthangadi Taluk Dharmasthala, Dharmasthala",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Vishwas Caterers,V,4.8,6 Ratings,"M R Bhat Lane Marnamikatta, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.306Z
+Shree Sai Catering Arrangers,+,5.0,2 Ratings,"Kunjathbail Road Kavoor, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+Nice Caterers,N,5.0,5 Ratings,"Kaikamba Road Gurpur, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+Prarthana Events House,+,4.8,6 Ratings,"Shyam Complex Pumpwell, Mangalore",,,Car Decoration; Banquet Hall Decoration,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+Shri Durga Caterers,+,4.6,5 Ratings,"High Way Road Thokottu, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+Cherry Square Events And Florist,+,5.0,4 Ratings,"Castelino Colony Kulshekar, Mangalore",,,Event Decoration,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+Menezes Caterers (Christians Specialist),+,4.5,11 Ratings,"Berebail Bejai, Mangalore",,09972429182,Caterers; Veg Caterers,true,true,false,true,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.307Z
+The Tea Junction,+,3.5,2 Ratings,"Milagres-Falnir Road Falnir Road, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z
+Aryadurga Hotel,A,3.3,3 Ratings,"Baddakatte Amtady, Mangalore",,,,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z
+Prathignhya Caterers & Event Management,+,5.0,2 Ratings,"Kodikal Kottara Chowki, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z
+Chamundeshwari Enterprises,C,5.0,1 Ratings,"Kullangal House Surathkal, Mangalore",,,Caterers; Veg Caterers,false,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z
+Tulunad Foods,T,4.8,5 Ratings,"Pumpwell, Mangalore",,,Caterers; Veg Caterers,true,true,false,false,false,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z
+Hotel Srishti,H,4.9,11 Ratings,"Moodabidri Karkala Road Alangar, Moodbidri",,,Caterers; Veg Caterers,true,true,false,false,true,Caterers,Popular Veg Caterers,Mangalore,2025-05-31T15:38:25.308Z

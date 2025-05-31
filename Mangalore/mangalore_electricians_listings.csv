@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Durga Electricals,<,4.7,100 Ratings,"Kankanady, Mangalore",,08511281987,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.466Z
+Om Electricals,<,4.5,106 Ratings,"Bikkarnakatte, Mangalore",,08511316528,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.468Z
+All Pro Fixit Solutions,<,4.4,178 Ratings,"Dr Ansari Road Bunder, Mangalore",,08511205139,Electricians; Plumbers,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.468Z
+Pearl Enterprises Power Work,<,4.1,7 Ratings,"Chilimbi Gudda Chillimbi, Mangalore",,08511847075,Electricians; Electrical Contractors,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.469Z
+Likith Electricals,<,4.7,43 Ratings,"KADRI Nanthoor, Mangalore",,08123763806,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.469Z
+Shilpa Electricals,<,5.0,7 Ratings,"Bunts Hostel Road Kadri, Mangalore",,09724714322,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.470Z
+Alpha Electricals,<,4.7,76 Ratings,"PVS Circle M G Road, Mangalore",,,Electrical Goods Dealers; Electricians,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.471Z
+Kala Electronics and Electricals,<,4.2,30 Ratings,"Mannagudda Main Road Ballalbagh, Mangalore",,08511770475,Solar,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.472Z
+Doy Electricals,<,4.8,238 Ratings,"Nagori Kankanady, Mangalore",,08511921023,,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.473Z
+Kingdom Enterprises India,<,4.3,11 Ratings,"2nd Cross Jeppu, Mangalore",,,Garden Landscaping Designers; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.473Z
+Mandeep Electricals,+,5.0,3 Ratings,"Vamanjoor Mangalore Vamanjur, Mangalore",,08460256815,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.474Z
+Panchami The Complete Power Solution,P,4.3,16 Ratings,"Koppalakadu Yeyyadi, Mangalore",,,Mini,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.474Z
+Raviraj Electronics & Electricals,R,4.0,5 Ratings,"Pvs Kalakunji Road Kodialbail, Mangalore",,,Borewell Contractors; Electricians,true,true,false,true,false,Electricians,,Mangalore,2025-05-31T15:50:21.474Z
+Sri Venkateshwara Aluminium & Interiors,+,4.5,17 Ratings,"to Warehouse Road Ballalbagh, Mangalore",,08460529832,Aluminium Sliding Door Dealers; Building,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.474Z
+Total Care,+,4.4,57 Ratings,"Falnir Falnir Road, Mangalore",,07041849820,Electricians; Carpenters,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Dv All Work Maintenance,+,5.0,1 Ratings,"Pumpwell, Mangalore",,07383606136,Electrical Installation Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Skylark Electricals,+,5.0,1 Ratings,"Kadri Hills Kadri, Mangalore",,08401274913,Electrical Contractors; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Ontime Solution,+,4.8,68 Ratings,"Neethinagar Shaktinagar, Mangalore",,08792487489,Banner; Book,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Valencia Services,+,4.3,7 Ratings,"Souterpeta Valencia, Mangalore",,,Electricians; Plumbers,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Shree Mookambika Enterprises,S,4.5,4 Ratings,"Urwa Store Road Urwa, Mangalore",,08511840673,Electrical Contractors For Power Plant Sub Station; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.475Z
+Shreyan Enterprises,S,4.8,5 Ratings,"Kadri -Mallikatte Road Kadri, Mangalore",,08511282982,Textured Wall Painting,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+Renita Enterprises,+,4.1,8 Ratings,"Jeppu Market Road Jeppu, Mangalore",,,Economy,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+Shilpa Electricals,+,4.1,25 Ratings,"Padil, Mangalore",,,Building; Quick Visit,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+Revolution Technology,+,4.1,29 Ratings,"Kankanady Mangalore Kankanady, Mangalore",,,Window AC Repair & Services; AC Repair & Services,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+Whitebird Electric,+,5.0,1 Ratings,"Moodbidri, Moodbidri",,,,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+A-1 Electrical and Electronics Service Centre,+,3.8,4 Ratings,"Madoor Road Kotekar, Mangalore",,,UPS Repair & Services; AC Repair & Services,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.476Z
+Electra INDIA,E,4.9,4 Ratings,"Kudroli Kudroli, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+Al Hamd Maintenance & Construction Co.,+,3.8,5 Ratings,"Azizudin Road Bunder, Mangalore",,,Civil Contractors; Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+Royston Enterprises,+,5.0,5 Ratings,"BOLAR Bolar, Mangalore",,,Wiring,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+Adarsh Electrical Works,+,4.3,21 Ratings,"Maiden West Road Nellikai Road, Mangalore",,08511843404,,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+A1 Electrical,A,3.3,3 Ratings,"Derlakatte, Mangalore",,,Electricians; Plumbers,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+Souza Electricals,+,4.2,19 Ratings,"Mangaladevi Road, Mangalore",,,AC Repair & Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.477Z
+Adithya Electricals,+,5.0,4 Ratings,"CHITHRAPURA DHWARA Baikampady, Mangalore",,,Electricians; Electrical Contractors,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+Super Engineering Works,S,5.0,1 Ratings,"Pumpwell Flyover Pumpwell, Mangalore",,,Building; Industrial,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+SH ELECTRICAL AND PLUMBING,+,5.0,1 Ratings,"Hampankatta Ks Rao Road, Mangalore",,,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+All Pro Fixit Solution,+,4.4,178 Ratings,"Main Road Bunder, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+Mahalakshmi Electrical & Maintenance Work,+,4.8,69 Ratings,"459/3 Kadri B Kadri, Mangalore",,,Fan; Inverter; Wiring,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+Sannidhi Electricals,+,4.9,41 Ratings,"Car Street, Mangalore",,,Electricians; Plumbers,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+M M Constructions,+,4.2,29 Ratings,"Old Pumpwell Road Kankanady, Mangalore",,,Civil Contractors; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.478Z
+Sana Electricals,+,4.7,23 Ratings,"Wogo Sports Ullal Ullal, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+La Solutions,+,4.8,18 Ratings,"Near NH66 Ullal, Mangalore",,,AC Repair & Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+Keerthi Electrical,+,4.7,18 Ratings,"Chitra Road Basavangudi Street, Mangalore",,,Electricians; Electricians For Residence,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+Ms Electrical,+,4.2,19 Ratings,"Gandhi Nagar Kavoor, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+Micro Electricals,+,4.4,18 Ratings,"M G Road, Mangalore",,,Company Authorised Dealer,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+Akshaya Power Services,+,4.8,16 Ratings,"Attavar, Mangalore",,,Electricians; Electrical Contractors,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.479Z
+Divya Electronics,D,4.2,14 Ratings,"Moodbidri, Moodbidri",,,Electricians; Electronic Goods Showrooms,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Mahindra Electricals,+,4.9,12 Ratings,"Kankandy By Pass Road Kankanady, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Shekars Electrical And Maintenance Work,+,4.0,14 Ratings,"Mangaluru Boloor, Mangalore",,,Electrical Shops; Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Bhagawan Bhagavathi Durga Parameshwari Enterprises,+,5.0,11 Ratings,"Main Road Pumpwell, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Harish Technician,+,4.5,12 Ratings,"Hampankatta, Mangalore",,,AC Repair & Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Praveen Enterprises,P,4.3,11 Ratings,"Arala Village Bantwal, Mangalore",,,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Arun Electricals,+,4.6,10 Ratings,"Arun Electricals Kadri, Mangalore",,,Electricians; Electrical Contractors,true,true,false,true,false,Electricians,,Mangalore,2025-05-31T15:50:21.480Z
+Design Smart,+,4.6,9 Ratings,"Alrahaba Complex State Bank Road, Mangalore",,,Building,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Souza Electricals,+,4.9,8 Ratings,"4th Mile Mullakad Cross Derebail, Mangalore",,,Electrical Shops; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Matha Technical Services,+,4.9,8 Ratings,"Padil Shaktinagar, Mangalore",,,Civil Contractors; AC Repair & Services,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+R B Electricals,R,4.7,8 Ratings,"Kotimura Kulshekar, Mangalore",,,Electrical Contractors For Building; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Bagavan Bhagavathi Electricals,+,5.0,7 Ratings,"Pumpwell Circle, Mangalore",,,Switch; Socket; MCB & Fuse,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Daya Electricals,+,5.0,7 Ratings,"Maidan Road Hampankatta, Mangalore",,,Electrical Goods Dealers; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Myola Electric Works,+,4.7,7 Ratings,"Maroli Kulshekar, Mangalore",,,Electrical Contractors; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.481Z
+Star Electricals,+,3.8,8 Ratings,"Attavar Road Attavar, Mangalore",,,Electricians; Electronic Goods Showrooms,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Rajalaxmi Trading,+,4.9,6 Ratings,"Cross Maidan Road Maidan Road, Mangalore",,,Electricians; Electrical Shops,true,true,false,true,true,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Kateeleshwari Electrical & Plumbing,+,4.8,6 Ratings,"Kuloor Road Kavoor, Mangalore",,,Electrical Shops; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Premier Electrical & Plumbing,+,3.8,7 Ratings,"Thokottu, Mangalore",,,Pipe Dealers; Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Sun Enterprises,+,5.0,5 Ratings,"Airport Road Kavoor, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Roshani Power Services,R,5.0,5 Ratings,"Bala Bala, Mangalore",,,Electrical Maintenance Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Raja Sanitary and Electricals,R,5.0,5 Ratings,"K R Road Karangalpady, Mangalore",,,Electricians,false,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.482Z
+Sai Ram Systems,+,4.9,5 Ratings,"Jappu Bappal Marnamikatte, Mangalore",,,CCTV Installation Services; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Shri Ullalthi Electricals And Civil Contractor,+,4.8,5 Ratings,"Jothinagar KHP Colony Kulshekar, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Navratan Electric And Plumbing,+,4.2,5 Ratings,"Kavoor Road Bejai, Mangalore",,,Electricians; Electrical Shops,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Unique Interior Polygranite,U,5.0,4 Ratings,"Bikkarnakatte, Mangalore",,,Decorative; Wpc Door Dealers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+S S Electricals,S,5.0,4 Ratings,"No. 2/28/1 Katipalla, Mangalore",,,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Prasadh Electronics,P,5.0,4 Ratings,"Ratha Bidhi Sullia, Mangalore",,,Electricians; Electronic Goods Wholesalers,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Electric Solution,+,4.9,4 Ratings,"Hostel Circle Bunts Hostel Road, Mangalore",,,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.483Z
+Ideal Kitchen And Interior,+,4.9,4 Ratings,"Mugulya Complex Pumpwell, Mangalore",,,Interior Designers; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Shree Nagneshi Electrical,S,3.8,5 Ratings,"4th Cross Maidan Road, Mangalore",,,Electrical Shops; Electricians,false,true,false,true,false,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Mr. Fixer,M,4.5,4 Ratings,"Britto Road Attavar, Mangalore",,,Electricians; Plumbers,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Rakshan,R,4.1,4 Ratings,"Naiger Lane Bikkarnakatte, Mangalore",,,Electricians; Plumbers,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Shri Durgaparameshwari Electricals And Plumbing Work,S,3.2,5 Ratings,"Marnamikatta, Mangalore",,,24 Hours Open,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Shree Vijayalaxmi Electricals,+,5.0,3 Ratings,"Bejai Kapikar Road Bejai, Mangalore",,,Electrical Shops; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Mangalore Electrical & Plumbing Services,+,5.0,3 Ratings,"Bolar Mangaladevi Road, Mangalore",,,Electricians; Electrical Shops,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.484Z
+Abroad Building Solutions,+,4.7,3 Ratings,"Bunder Road Bunder, Mangalore",,,3D Painting; Textured Wall Painting,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Ucc Construction,+,4.3,3 Ratings,"Mastikatte Thokottu, Mangalore",,,Civil Contractors; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Crasta Electrical Works,C,4.3,3 Ratings,"Bantwal Bc Road, Mangalore",,,Electricians; Electricians For Residence,false,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Ganesh Electricals,G,4.3,3 Ratings,"Santakatte Belthangadi, Mangalore",,,Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Bharath Hardware & Electricals,B,4.0,3 Ratings,"Melkar Bantwal, Mangalore",,,Electricians; Hardware Shops,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Brothers Electricals,B,4.0,3 Ratings,"Azizuddin Rd Bunder, Mangalore",,,Electrical Contractors; Electricians,false,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Bhramari Electrical Engineers & Contractors,B,5.0,2 Ratings,"Gandhinagar Junction Kavoor, Mangalore",,,Electrical Contractors; Electricians,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Shiva Electricals,S,5.0,2 Ratings,"Bajpe Main Road Bajpe, Mangalore",,,Electrical Contractors; Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.485Z
+Prakash Electricals,+,5.0,2 Ratings,"Bejai Church Road Bejai, Mangalore",,,Electrical Shops; Electricians,true,true,false,true,false,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+E M Electrical,+,5.0,2 Ratings,"Attavar Road-Attavar Attavar, Mangalore",,,24 Hours Open,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Ullal Electrician,U,5.0,2 Ratings,"Masthikatte Ullal, Mangalore",,,Electricians; Plumbers,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Nityadar Electricals,N,5.0,2 Ratings,"Lorrert Bantwal, Mangalore",,,Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Akshaya Power Systems,A,5.0,2 Ratings,"Attavar, Mangalore",,,Electricians; Electricians For Residence,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Mangalore Enterprises,M,5.0,2 Ratings,"GHS Road Hampankatta, Mangalore",,,Electricians; Labour Contractors,false,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Hamco Builders & Developers,H,5.0,2 Ratings,"M G Road, Mangalore",,,Electricians; Builders,true,true,false,false,true,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Shivya Electricals,+,5.0,2 Ratings,"Sullia, Mangalore",,,Electricians,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.486Z
+Maruthi Electricals,+,3.3,3 Ratings,"4th Cross Maidan Road, Mangalore",,,Electricians; Electrical Shops,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.487Z
+SHANKAR KUMAR CONSTRUCTION,S,3.3,3 Ratings,"Urwa, Mangalore",,,24 Hours Open,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.487Z
+Suraksha Associates,S,4.8,2 Ratings,"Hamapankatta Road Hampankatta, Mangalore",,,Electricians; Civil Contractors,true,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.487Z
+Shakthi Electricals,S,3.0,3 Ratings,"Attavar Road Attavar, Mangalore",,,Electricians; Electrical Consultants,false,true,false,false,false,Electricians,,Mangalore,2025-05-31T15:50:21.489Z

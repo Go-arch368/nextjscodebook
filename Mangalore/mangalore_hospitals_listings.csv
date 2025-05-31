@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+KMC Hospital,<,4.5,"6,678 Ratings","Dr Br Ambedkar Circle Balmatta, Mangalore",,07383029923,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.230Z
+Highland Hospital Research and Diagnostic Centre,<,3.6,241 Ratings,"Mother Therasa Road Falnir Road, Mangalore",,09035567220,,true,true,false,true,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.231Z
+Father Muller Medical College Hospital,<,4.2,"1,653 Ratings","Kankanady, Mangalore",,07383105274,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.232Z
+Homeocare International Pvt Ltd,<,4.4,240 Ratings,"House No 15-11-607 Mallikatta, Mangalore",,09054572448,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.232Z
+Vishal Children's & Maternity Hospital,<,4.2,66 Ratings,"West Kodial Guthu Mannagudda, Mangalore",,08460494916,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.233Z
+A J Hospital And Research Centre,<,4.4,"5,264 Ratings","Kuntikana Junction Bejai, Mangalore",,,,true,false,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.233Z
+Padmavathi Hospital,<,3.7,125 Ratings,"Padmavathi Hospital Surathkal, Mangalore",,07383234637,,true,true,false,true,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.234Z
+SCS Hospital Pvt Ltd,<,4.4,"1,481 Ratings","Upper Bendoor Bendoor, Mangalore",,07383171544,,true,false,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.234Z
+Atharva Ortho Care,<,4.3,308 Ratings,"NH 66 Surathkal, Mangalore",,07405339244,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.234Z
+Mangalore Institute Of Oncology,<,4.6,"1,142 Ratings","Mahaveer Circle Pumpwell, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.235Z
+Janapriya Multi-Speciality Hospital,+,4.5,129 Ratings,"Kannur, Mangalore",,08147956597,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.235Z
+City Hospital Research & Diagnostic Centre,+,3.4,286 Ratings,"Pound Garden Kadri, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.235Z
+Ayursparsha Ayurveda Hospital & Panchakarma Center,+,4.9,20 Ratings,"Malali Cross Road Ganjimat, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.235Z
+Indiana Hospital and Heart Institute Ltd,+,4.8,"9,823 Ratings","Pumpwell, Mangalore",,07383062672,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.235Z
+Bethel Medical Mission Hospital & Hosmat Hospital Education Group,+,4.1,158 Ratings,"Preety Nagar Laggere, Bangalore",,07048209067,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.236Z
+Shri Tulasigirish Diabetes Hospital & Diabetes Research Foundation,+,4.2,34 Ratings,"Mahaveer Road Bagalkot, Bagalkot",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.236Z
+Global Health Tourism,G,4.6,37 Ratings,"Lane No 5 Vishwakarma Nagar, Nagpur",,09980635869,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.236Z
+Pragati Medcity and Stem Cell Centre,+,4.8,30 Ratings,"Ajay Singh Marg Rohit Nagar, Bhopal",,09035344697,,true,false,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.236Z
+Nephron Kidney Kare Clinic,+,3.9,119 Ratings,"Bariatu Road Bariatu, Ranchi",,,,true,false,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.236Z
+Nangal Cancer Hospital & Research Institute,+,4.7,633 Ratings,"College Road Bikaner Agra Road, Bikaner",,,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.237Z
+Tejaswini Hospital,T,4.5,728 Ratings,"Mallikatta Kadri, Mangalore",,07947252864,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.237Z
+Maruti Motors,M,4.7,51 Ratings,"Kumaradhara Subramanya, Subramanya",,,24x7 Customer Support; Towing Services,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.237Z
+Medoc Polyclinic,+,4.7,118 Ratings,"Bridge Bay Building Thokottu, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.237Z
+Kmc Hospital,K,4.7,"3,912 Ratings","Hampankatta, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.237Z
+Sdm Yoga & Nature Cure Hospital,+,4.5,"2,230 Ratings","Shanthivana Dharmasthala, Dharmasthala",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+Srinivas Medical College & Hospital,+,4.4,"2,040 Ratings","Mukka Surathkal, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+K S Hegde Hospital,+,4.4,"1,891 Ratings","Road Nithyananda Nagar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+Unity Hospital,+,4.4,"1,795 Ratings","Falnir Road Kankanady, Mangalore",,,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+A J Institute Of Medical Sciences & Research Centre,+,4.1,"1,504 Ratings","Kuntikana, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+Yenepoya Specialty Hospital,+,4.1,"1,288 Ratings","K S Rao Road Kodialbail, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+KMC Hospital,+,4.1,"1,274 Ratings","Nandigudda Road Attavar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.238Z
+Tejasvini Hospital,+,4.3,"1,057 Ratings","Kadri Temple Road Kadri, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Father Muller Hospital - Asha Kiran Ward,+,3.7,"1,151 Ratings","Kankanady, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Mullers Hospital,M,3.9,997 Ratings,"Father Muller Road Kankanady, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+First Neuro Brain And Spine Super Speciality Hospital,+,4.0,858 Ratings,"Padil, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Tejaswini Hospital,T,4.5,728 Ratings,"Kadri Temple Road Kadri, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Wenlock District Hospital,W,4.0,773 Ratings,"Mydan Road Hampankatta, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Father Muller Homeopathic Medical College And Hospital,F,4.2,511 Ratings,"University Road Derlakatte, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.239Z
+Bhats Nursing Home,+,4.5,427 Ratings,"7th Cross Gandhinagar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.240Z
+Prasad Netralaya,+,4.4,415 Ratings,"M G Road Lalbagh, Mangalore",,,,true,false,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.240Z
+Mangala Hospital And Kidney Foundation,+,4.2,400 Ratings,"Vajra Hills Kadri, Mangalore",,,,true,true,false,true,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.240Z
+Yenepoya Medical College Hospital,+,3.3,375 Ratings,"University Road Derlakatte, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.240Z
+Sharada Ayurveda Hospital,+,4.7,256 Ratings,"Thalapady Devinagar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.241Z
+Sri Dharmasthala Manjunatheshwara Ayurvedic Hospital,+,4.4,260 Ratings,"Bejai Main Road Bejai, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.242Z
+Father Muller Charitable Institutions,F,4.2,251 Ratings,"Father Muller Road Kankanady, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.242Z
+Sharada Ayurveda Medical College & Hospital,+,4.7,210 Ratings,"Manjeshwar Ukkada Road Devinagar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.242Z
+Janapriya Hospital,J,4.5,213 Ratings,"Padil, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.242Z
+Lady Goschen Hospital,+,3.5,272 Ratings,"Market Road Maidan Road, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.242Z
+Athena Hospital,+,3.4,266 Ratings,"Athena Hospital Falnir Road, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+Athena Hospital,+,3.4,266 Ratings,"Mangaluru Bendoor, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+Karavali Ayurvedic Medical College Hospital And Research Centre,+,3.7,240 Ratings,"NeeruMarga Road neermarga, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+Omega Hospitals Pvt Ltd,+,3.8,233 Ratings,"Kankanady, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+K V G Medical College & Hospital,+,3.5,238 Ratings,"Kurunjibhag Sullia, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+Colaco Hospital,+,3.8,204 Ratings,"Bendoorwell Main Road Kankanady, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.243Z
+Medical Paramedical Admission Guidance Mangalore,+,4.0,193 Ratings,"University Road Derlakatte, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Kateel Shri Durga Sanjeevani Charitable Trust Hospital,K,4.5,166 Ratings,"U Kateel, Kateel",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Kmc Hospital Ambedkar Circle,K,3.9,181 Ratings,"Circlebalmatta Road Attavar, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Kanachur Hospital & Research Centre,+,3.2,214 Ratings,"University Road Derlakatte, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Alvas Niraamaya Multi Speciality Ayush Hospital,+,4.8,132 Ratings,"Moodbidri, Moodbidri",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Yenepoya Hospital,+,4.2,141 Ratings,"Someshwar Someshwar Uchil, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Mangalore Nursing Home,+,3.4,168 Ratings,"Upper Bendoor Kankanady, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.244Z
+Harsha Modern Diagnostics & Medical Centre,H,4.8,117 Ratings,"Anegundi Road Bejai, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.245Z
+Dr. M V Shetty Memorial Trust College & Hospital,+,3.8,142 Ratings,"Vidyanagar Mangalore Ho, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.245Z
+Yenepoya Ayurveda Medical College & Hospital,Y,4.6,108 Ratings,"Naringana, Mangalore",,,Colleges; Hospitals,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.245Z
+Employees State Insurance Hospital,+,3.4,144 Ratings,"Shivabagh Kadri, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.245Z
+Easy Ayurveda Hospital,+,4.8,96 Ratings,"Morgans Gate, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.246Z
+Mangalore Nursing Home,+,3.9,114 Ratings,"Balmatta Road Mangalore Ho, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.246Z
+Nethradhama Super Speciality Eye Hospital,N,4.6,96 Ratings,"Mallikatte Kadri, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+White Doves Psychiatric Nursing and Destitute Home,W,4.6,96 Ratings,"Kulshekar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+Kvg Dental College,+,4.0,99 Ratings,"Sullia Dakshina Kannada, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+Mangalore Implant Centre,+,4.9,79 Ratings,"Kudroli, Mangalore",,,,true,false,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+Vijaya Clinic General Hospital,V,3.9,94 Ratings,"Hostel Circle Bunts Hostel Road, Mangalore",,,,true,true,false,true,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+Indira Hospital,I,3.7,96 Ratings,"Indira Hospital Falnir Road, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.247Z
+Namma Arogyadhama,+,4.9,70 Ratings,"Bellare Sullia, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Netaji A Yellappa Memorial Hospital,N,3.7,83 Ratings,"Thokottu, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Mount Rosary Hospital,M,3.8,79 Ratings,"Padumarnadu Alangar, Moodbidri",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Jayashree Nursing Home,J,3.8,78 Ratings,"Hampannakatta Ks Rao Road, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Shri Krishna Hospital,+,4.5,64 Ratings,"Tenkakajekar, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Mangalore Institute Of Oncology Hospital,M,4.2,56 Ratings,"Vinaya Clinic Road Kadri, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Sharada Yoga & Naturopathy,S,4.5,52 Ratings,"Devinagar Talapady, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.248Z
+Yenepoya Nursing Home,+,3.7,63 Ratings,"Old By Pass Road Kankanady, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Nirmala Hospital,+,4.4,51 Ratings,"Azad Nagar Ullal, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+U Kogganna Nayak,U,4.3,52 Ratings,"Bendoor, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Concetta Hospital,C,3.4,59 Ratings,"2nd Main Road Kinnigoli, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Veterinary Hospital,+,3.7,54 Ratings,"Surathkal, Mangalore",,,,true,false,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Perliya Nursing Home,+,3.7,53 Ratings,"B. C Road Bc Road, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Mediglen Healthcare,M,4.9,40 Ratings,"Valencia Church Road Kankanady, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.249Z
+Kmc New Wing,K,4.4,44 Ratings,"Collectors Gate Circle, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Sri Vedamaayu Ayurveda Multispeciality Hospital,+,4.8,39 Ratings,"Padua High School Road Konchady, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Mangalore Institute Of Medical Sciences & Government Hospital,M,4.7,39 Ratings,"Mydan Road Hampankatta, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+G.R Medical College Hospital & Research Centre,G,4.1,41 Ratings,"Neermarga Road Neermarga, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Jeppu Government Hospital,J,3.8,44 Ratings,"Mangala Nagar, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Primary Health Care Centre,+,3.7,40 Ratings,"Ullal, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Sri Devi Nursing Home,+,4.3,34 Ratings,"Karangalpady, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Esi Corporation Hospital,E,3.8,37 Ratings,"Esi Branch Office Baikampady, Mangalore",,,,false,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.250Z
+Chirashree Nursing Home,+,4.0,35 Ratings,"Surathkal, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.251Z
+Ave Maria Hospice-Palliative Care Centre,A,5.0,28 Ratings,"Vamanjoor Mangaluru Vamanjur, Mangalore",,,,true,false,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.251Z
+Misquith Hospital & Panchakarma Centre,+,3.8,36 Ratings,"Iddya Surathkal, Mangalore",,,,true,true,false,false,false,Best Hospitals,,Mangalore,2025-05-31T16:02:57.251Z
+Shaffi Ayurvedic Nursing Home,S,4.5,30 Ratings,"Jeepina Mogaru, Mangalore",,,,false,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.251Z
+St Joseph's Ayurvedic Hospital,+,4.7,25 Ratings,"Kakkinje, Mangalore",,,,true,true,false,false,true,Best Hospitals,,Mangalore,2025-05-31T16:02:57.251Z
