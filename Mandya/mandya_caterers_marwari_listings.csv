@@ -1,0 +1,50 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Swaad Food Express,<,3.6,3 Ratings,"B M Road Gandhi Nagar Mandya, Mandya",,,,false,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.301Z
+Mother Caterers,<,4.4,4 Ratings,"Nagar Narasimharaja Mohalla, Mysore",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.302Z
+Jeevan Catering,<,4.8,2 Ratings,"Ring Road Bogadi, Mysore",,,Banquet Hall Decoration; Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.302Z
+Stall Desk Pvt Ltd,<,4.5,4 Ratings,"Mysore Road Kengeri, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.303Z
+Sar Catering,<,4.6,35 Ratings,"JP Nagar Post Jhbcs Layout, Bangalore",,09980917838,Home Delivery,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.303Z
+Golden Moments,<,5.0,7 Ratings,"Chandra Layout Chandra Layout, Bangalore",,,Caterers; Caterers Upto 50 Persons,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.303Z
+Srinidhi Catering,<,4.0,1 Ratings,"5th Cross Banashankari 3rd Stage, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.304Z
+Jagadish Caterers,<,4.5,6 Ratings,"RPC Layout Vijayanagar, Bangalore",,,,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.304Z
+Sri Vishnu Caterers,<,5.0,3 Ratings,"Banashankari 1st Stage, Bangalore",,,Home Delivery,false,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.304Z
+Shree Annapoorneshwari Caterers,<,4.5,30 Ratings,"KHB Calony Basaveshwara Nagar, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.304Z
+Swadd Kitchen,+,5.0,81 Ratings,"Dvg Road Basavanagudi, BANGALORE",,,,false,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.305Z
+HORA SERVICES,+,4.6,131 Ratings,"Road Bannerghatta Road, Bangalore",,,Caterers; Flower Decorators,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.305Z
+Annapurna Restaurant,+,3.2,160 Ratings,"Road Electronic City Phase 1, Bangalore",,,,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.305Z
+Joth Khalsa Caterers,+,4.9,15 Ratings,"3rd Crs Jc Road, Bangalore",,,Caterers; Veg Caterers,true,false,false,true,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.306Z
+Rakesh Ladduwala,+,4.0,180 Ratings,"Manipal Country Road Singasandra, Bangalore",,09035019972,Caterers; Veg Caterers,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.307Z
+Sri Lakshmi Mess,+,4.0,1 Ratings,"20 Main Madiwala, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.307Z
+Rajwada Kulfi,R,5.0,1 Ratings,"Bomanhalli Bommanahalli, Bangalore",,,,false,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.307Z
+R K Caterers,R,4.7,20 Ratings,"Nagappa Street Seshadripuram, Bangalore",,,Caterers; Event Organisers,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.307Z
+Mealswala Food Services,M,4.8,2 Ratings,"1st Main HSR Layout, Bangalore",,,Caterers; Event Organisers,false,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.307Z
+Foodiction,+,3.8,4 Ratings,"Kudlu Gate Bommanahalli, Bangalore",,,,false,false,false,true,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Nand Gopal Caterers,+,4.3,17 Ratings,"Block A Electronic City Phase 2, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Cheftalk Food And Hospitality Services Pvt. Ltd.,+,4.8,519 Ratings,"Mangamana Palya Bommanahalli, Bangalore",,,,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Gayland Caterers & Furnitures,G,4.2,26 Ratings,"No.23/2 Richmond Road, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Caterish Company,C,4.8,4 Ratings,"Near Axis Bank Benson Town, Bangalore",,,Home Delivery,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Sankalp Food Zone,S,5.0,1 Ratings,"2nd Main Vasanth Nagar, Bangalore",,,Home Delivery,false,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Brij Mohan Shambhu Dayal,B,5.0,1 Ratings,"Training Centre Vivek Nagar, Bangalore",,,Home Delivery,true,false,false,true,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.308Z
+Silverline Chocolate & Cakes,S,4.0,6 Ratings,"8th Crs Sadashivanagar, Bangalore",,,,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Peter Caterers,P,4.4,42 Ratings,"Vivek Nagar Post Ejipura, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Flavours Of INDIA,+,4.0,10 Ratings,"Craig Park Layout Ashoknagar, Bangalore",,,,true,false,false,true,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Hungrazzy,H,3.8,5 Ratings,"1st C Main Road Koramangala, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Ansuvi Food Club Pvt Ltd,+,4.9,66 Ratings,"Haralur-HSR Layout, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Sagar Caterers,+,4.3,"3,124 Ratings","Palace Ground Mekhri Circle, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Shahi Restaurant,S,3.5,510 Ratings,"Chandni Chowk Road Shivaji Nagar, Bangalore",,,,false,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Rajwadi Caterers,+,4.7,109 Ratings,"27Th Main Road HSR Layout, Bangalore",,,Caterers; Event Organisers,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Charbhuja Caterers,+,4.8,5 Ratings,"15th Cross SS Puram, Tumkur",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.309Z
+Ajaz Royal Caterers,A,4.0,1 Ratings,"Dinnur Mn Rd Rt Nagar, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+R K Tent House & Caterer,+,3.5,2 Ratings,"1st Cross Ulsoor, Bangalore",,,Home Delivery,false,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Prem CATRERES,P,5.0,1 Ratings,"Fortune Valley Hebbal, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Sharma Caterers,S,4.2,6 Ratings,"Old Madras Road Indiranagar, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+S 2 V Catering Service,+,4.2,33 Ratings,"Main Road Rt Nagar, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Diamond Cooks And Caterers,+,3.8,3 Ratings,"Rashad Nagar-Govindapura, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Indian Kitchen,+,4.5,20 Ratings,"Vidyaranyapura, Bangalore",,,Caterers; Veg Caterers,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Subodh Caterers,+,5.0,3 Ratings,"Hebbal Hebbal Agri Farm, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+TSM Events and Caterers,+,4.9,37 Ratings,"Oil Mill Road Kammanahalli, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.310Z
+Sukhdev Caterers,+,4.7,162 Ratings,"Kempapura Hebbal, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.311Z
+Ramakanta Caterers,R,4.5,2 Ratings,"#1 Mariyannapalya, Bangalore",,,Caterers; Caterers Upto 50 Persons,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.311Z
+Jai Mataji Farsan And Sweets,+,4.2,"1,770 Ratings","4th Main Banaswadi, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.311Z
+Sri Ganesh Caterers,S,2.8,4 Ratings,"Yelahanka Main Road Hebbal, Bangalore",,,Home Delivery,true,false,false,false,false,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.311Z
+Grace Catering Services,+,4.7,6 Ratings,"1st Block Kalyan Nagar, Bangalore",,,Home Delivery,true,false,false,false,true,Caterers,Popular Marwari Caterers,Mandya,2025-06-02T15:35:38.311Z
