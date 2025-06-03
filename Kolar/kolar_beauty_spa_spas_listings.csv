@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+K L Saloon & Spa,<,4.3,59 Ratings,"75 Service Road Narasapura Kolar, Kolar",,07487871293,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Blowdry Unisex Family Salon,<,4.4,14 Ratings,"Nanagali Main Road Mulbagal, Kolar",,08460405379,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Siri Beauty Care,<,4.0,40 Ratings,"Mg Road Gowripet Kolar, Kolar",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Allu Arjun Hair Styler,<,4.8,19 Ratings,"Dasarahosahalli, Kolar",,,Beauty Spas,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Namana Beauty Care & Spa,<,3.9,39 Ratings,"Chikka Tirupati Chikka Tirupathi, Kolar",,,Home Services Offered; Skin Treatment,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Bangalore Boys Hair Salon,<,4.2,63 Ratings,"Hospital Circle Gowripet Kolar, Kolar",,,Beauty Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Shiva Mens Parlour,<,5.0,3 Ratings,"NH 75 Mulbagal, Kolar",,,Home Services Offered,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Bangalore Boys Mens Saloon,<,4.1,34 Ratings,"Mb Road, Kolar",,,Beauty Salons; Beauty Spas,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Mayuri Beauty Care,<,4.4,27 Ratings,"Temple Street Road Kolar HO, Kolar",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.407Z
+Surabhi Beauty Palour,<,4.6,17 Ratings,"Madiah Road Bangarapet, Kolar",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Natures Family Salon And Spa,N,4.3,9 Ratings,"Bangarpet Main Road Bangarapet, Kolar",,,Beauty Spas; Salons,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Hairport Style Spa,H,3.7,9 Ratings,"Jayanagar Kolar HO, Kolar",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Siri Beauty Care And Spa,S,3.6,18 Ratings,"Near MG Road Gowripet Kolar, Kolar",,,Thai Massage,false,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Men's Parlour,M,3.0,3 Ratings,"Punganur Road Mulbagal, Kolar",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Blue & Blue Salon & Spa,B,3.7,9 Ratings,"Road Chintamani Chickballapur, Chintamani",,,Salons; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Bharath Hair Style,+,3.3,3 Ratings,"Kanakanagara Main Road Hoskote, Bangalore",,,Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Manju Beauty Spa,M,4.8,12 Ratings,"Gangamma Gudi Road Hoskote, Bangalore",,,Home Services Offered; Hair Spa; Aroma Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+V Care Beauty Spa,V,3.8,11 Ratings,"Vivekananda School Road Hoskote, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Beauty Plus Salon And Academy,+,4.6,55 Ratings,"K R Market Road Hoskote, Bangalore",,,Home Services Offered; Hair Spa; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Glamspa Mens Salon And Spa,+,4.0,2 Ratings,"KSRTC Depot Ashwini layout, Chintamani",,,Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+SH Parlour & Spa Unisex,+,4.3,5 Ratings,"Venkatagirikota, Chittoor",,,Beauty Spas; Unisex Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Sangeetha Beauty Parlour,+,5.0,16 Ratings,"No. 2/150 Samethanahalli, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+V Care Beauty Spa,V,4.9,5 Ratings,"Katamnallur Cross Katamnallur, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Gsvk Unisex Family Saloon,+,5.0,4 Ratings,"Road Thirumalashettyhalli, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Kanjira Ayurveda & Beauty Spa,K,4.0,4 Ratings,"Bagalur Thalappalli, Krishnagiri",,,Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Pooja Saloon And Spa,P,5.0,1 Ratings,"2nd Cross Whitefield, Bangalore",,,Beauty Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.408Z
+Thirumala Gents Parlour,T,4.0,1 Ratings,"New Puttamma Badavane Kadugodi, Bangalore",,,Beauty Parlours For Hair Style; Beauty Spas,false,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Scent Lifestyle,+,4.3,554 Ratings,"Bengaluru Kannamangala, Bangalore",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Beauty Paradise Unisex Spa And Salon,+,3.7,30 Ratings,"Main Road Kadugodi, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Naturals Salon,+,4.3,"2,244 Ratings","Kannamangala Kadugodi, Bangalore",,,Hair Spa,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Naturals Salon,+,3.9,153 Ratings,"Main Road Kannamangala Kadugodi, Bangalore",,,Hair Spa,true,true,false,true,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Mirrors Salon & Spa,M,5.0,2 Ratings,"Gas Godam Road Kadugodi, Bangalore",,,Beauty Spas; Salons,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Sri Sathya Sai Mens Saloons,S,4.8,2 Ratings,"Channasandra Main Road Kadugodi, Bangalore",,,Beauty Spas; Salons,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+New Splash Hair and Beauty Salon,+,3.9,121 Ratings,"Kadugodi-Channasandra, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Ishta Salon & Spa,I,4.0,3 Ratings,"Main Road Kadugodi, Bangalore",,,Beauty Salons; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Outlook Hair And Skin Unisex Studio,+,4.1,862 Ratings,"Seegehalli Main Road Kadugodi, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Ishta Saloon And Spa,I,3.6,12 Ratings,"Alli2 Apple City Opp Kadugodi, Bangalore",,,Beauty Salons; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Royal Creations,+,4.2,95 Ratings,"Bengaluru Belathur, Bangalore",,,Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Royal Creations,+,4.2,115 Ratings,"1st Main Road Kadugodi, Bangalore",,,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Natural Beauty Care,+,4.0,12 Ratings,"Kadugodi, Bangalore",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Greenfield Spa And Salon,+,3.8,3 Ratings,"Hoskote Main Road Kadugodi, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Arvind's Hair Plazza 2,A,5.0,2 Ratings,"Whitefield, Bangalore",,,Beauty Salons For Men; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.409Z
+Vatika Spa,+,4.0,3 Ratings,"Thallapalli Street Bagalur, Hosur",,,Body Massage Centres; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Look,+,4.7,129 Ratings,"Opp DSR Green Filed Whitefield, Bangalore",,,Beauty Spas For Women; Body Massage Centres,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Hair Styles,+,4.6,5 Ratings,"VSR Layout Kadugodi, Bangalore",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Royal Gents Parlour,R,3.6,28 Ratings,"Bommanahalli, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Signature Salon & Spa,+,3.7,80 Ratings,"Belathur Village Kadugodi, Bangalore",,,Beauty Parlours; Body Massage Centres,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Sri Laxmi Cosmetics Shop,+,5.0,1 Ratings,"Channasandra Channasandra, Bangalore",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Aishwarya Beauty Parlour And Training Centre,+,4.7,8 Ratings,"- Hoskote Main Road Kadugodi, Bangalore",,,Home Services Offered; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Aainaa Womens Saloon,+,4.1,9 Ratings,"V L Colony Kadugodi, Bangalore",,,Aroma Massage; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Studio11 Salon & Spa,+,4.5,"1,611 Ratings","Budigere Main Road Mandur, Bangalore",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+F Trendz,+,3.0,2 Ratings,"Whitefield Main Road Kadugodi, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Signature Spa & Salon,S,3.9,71 Ratings,"Renaissance Hvv Villas, Bangalore",,,Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Me & Guys Unisex Salon,M,4.6,4 Ratings,"1st Main Road Belathur, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Eden La Bella,E,3.8,22 Ratings,"Kadugodi-Channasandra, Bangalore",,,Salons; Body Massage Centres,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Signature Unisex Salon And Spa,+,4.1,33 Ratings,"Channasandra Whitefield, Bangalore",,,Beauty Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Vaibhav Mens Salon,V,5.0,1 Ratings,"Nagondanahalli Road Channasandra, Bangalore",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.410Z
+Aroma Beauty Zone,A,3.8,72 Ratings,"Kadugodi Road Kadugodi, Bangalore",,09606251207,,true,true,false,true,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+CENTRAL UNISEX SALOON,+,4.9,4 Ratings,"Bagalur Road Bagalur, Hosur",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+ME Unisex Salon & Spa,+,3.3,15 Ratings,"DSR Sunrise Tower Channasandra, Bangalore",,,Beauty Spas; Salons,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Zenday,+,4.5,18 Ratings,"Near Tower Bagalur, Hosur",,,Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Angel's Beauty World,A,3.9,100 Ratings,"Main Road Whitefield, Bangalore",,,Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+The Green Unisex Salon,+,4.5,113 Ratings,"Immadihalli Main Road Whitefield, Bangalore",,,Beauty Spas; Beauty Spas For Women,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Meghavi Sp Zinc Hotels Whitefield,M,4.8,78 Ratings,"Main Road Channasandra, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Bombay Beauty Parlour,B,4.5,1 Ratings,"Immadihalli Mian Road Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Ghogi Spa,+,4.3,192 Ratings,"Whitefield Main Road, Bangalore",,07411566575,,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.411Z
+Texture Touch Salon (Arya Hub Mall),+,3.7,158 Ratings,"Hope Farm Hope Farm Circle, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Cocoon Day Spa,+,4.3,369 Ratings,"Whitefield Road Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Sense Salon And Spa,S,3.2,49 Ratings,"Inner Valley Whitefield, Bangalore",,,Hair Spa,false,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Fruit Salon And Spa,F,3.8,146 Ratings,"1st Block Whitefield, Bangalore",,,Hair Spa,false,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Outlook Unisex Salon,+,4.3,761 Ratings,"1st Cross Whitefield, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Naturals Salons,+,4.2,"2,423 Ratings","Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.412Z
+Manya Shree Pearl Beauty Touch,+,4.9,4 Ratings,"Devasandra Main Road Virgonagar, Bangalore",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Arvinds Hair Plazza Family Beauty Salon And Spa,+,4.1,127 Ratings,"Main Road Hagadur Whitefield, Bangalore",,,,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+New Look Ladies Beauty Parlour,N,5.0,1 Ratings,"Hagdoor Whitefield, Bangalore",,,Aroma Massage; Skin Treatment,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Sun Saloon and,+,4.2,14 Ratings,"Thimayya Compound Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Creative Enrich Unisex Salon & Spa,C,3.7,17 Ratings,"Whitefield Main Road Whitefield, Bangalore",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Princes Beauty Care & Spa,+,5.0,1 Ratings,"Hagadur-Whitefield, Bangalore",,,Women Beauty Parlours (Economy); Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Royal Creations Wellness Spa And Saloon,+,3.6,6 Ratings,"1st Cross Prasanth Layout, Bangalore",,,Hair Spa; Thai Massage; Aroma Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Aaryans Spa And Salon,+,4.1,540 Ratings,"Whitefield Main Road Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Harshitha Beauty Parlour,H,5.0,1 Ratings,"to Medahalli Road Virgonagar, Bangalore",,,Home Services Offered; Hair Spa,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+New Angel Beauty Care,+,4.5,108 Ratings,"Hagadur-Whitefield, Bangalore",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Princess Beauty Care,P,4.6,125 Ratings,"Hagadur Main Road Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.413Z
+Body Raaga Wellness Spa,+,4.1,966 Ratings,"Sathya Sai Layout Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+R S Unisex Salon and Spa,+,4.2,6 Ratings,"Hagadur Main Road Whitefield, Bangalore",,09980106177,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+Purple Beauty Parlour,+,4.8,3 Ratings,"Immadihalli Main Road Whitefield, Bangalore",,,Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+SLV THAI SPA,+,4.2,42 Ratings,"Main Road Whitefield, Bangalore",,,Home Services Offered; Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+Ms Saritha,+,4.5,277 Ratings,"Vinayaka Nagar Whitefield, Bangalore",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+Star Look Salon,S,4.4,9 Ratings,"Whitefield Main Road, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+The Spa,T,4.5,4 Ratings,"Mangala Industrial Whitefield, Bangalore",,,Beauty Spas,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.414Z
+Rathi Spa,R,5.0,1 Ratings,"Main Riad Whitefield, Bangalore",,,Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+The Best Little Hair House,+,4.1,32 Ratings,"Outer Circle Road Whitefield, Bangalore",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+Renchin Beauty Touch Saloon For Ladies And Children,R,4.2,9 Ratings,"Whitefield Main Road, Bangalore",,,Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+Rmn Beauty Salon,+,4.2,39 Ratings,"Main Road HIRANDAHALLI, Bangalore",,,,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+Budha Blessing Spa,+,5.0,3 Ratings,"Kurudu Sonnenahalli Virgonagar, Bangalore",,09035128323,Beauty Parlours; Body Massage Centres,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+Ashiyana Beauty Saloon,A,4.1,40 Ratings,"3rd Cross Whitefield, Bangalore",,,Home Services Offered; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.415Z
+Silver Spa And Salon,S,3.6,40 Ratings,"Borewell Road Whitefield, Bangalore",,,Home Services Offered; Thai Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.416Z
+Hugge Wellness And Spa,+,4.3,72 Ratings,"Sumeru Arcade Whitefield, Bangalore",,07947237940,Body Massage Centres; Beauty Spas,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.416Z
+Star Saloon & Spa,S,4.3,6 Ratings,"Borewell Road Whitefield, Bangalore",,,Thai Massage; Aroma Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.416Z
+Imera Spa,I,4.5,1 Ratings,"Sevaganapalli, Hosur",,,Beauty Spas; Beauty Spas For Women,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Kolar,2025-06-03T16:29:56.416Z

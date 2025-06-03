@@ -1,3 +1,4 @@
+
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
@@ -15,7 +16,7 @@ export default async function handler(req, res) {
   try {
     browser = await puppeteer.launch({
       headless: process.env.NODE_ENV === 'production' ? 'new' : false,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-geolocation', '--disable-dev-shm-usage'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-geolocation'],
       executablePath:
         process.env.NODE_ENV === 'production'
           ? process.env.PUPPETEER_EXECUTABLE_PATH
@@ -40,42 +41,27 @@ export default async function handler(req, res) {
     await page.setViewport({ width: 1366, height: 768 });
     await page.setJavaScriptEnabled(true);
 
-    const delay = (ms) => new Promise((r) => setTimeout(r, ms + Math.random() * 100));
+    const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
     // Create the filemanager directory if it doesn't exist
-    const outputDir = path.join(process.cwd(), 'Shivamogga');
+    const outputDir = path.join(process.cwd(), 'Kolar');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
       console.log(`Created directory: ${outputDir}`);
     }
 
-    // Navigate to Justdial Shivamogga page
-    const shivamoggaBaseUrl = 'https://www.justdial.com/Shivamogga';
-    const navigateWithRetry = async (url, retries = 3) => {
-      for (let attempt = 1; attempt <= retries; attempt++) {
-        try {
-          await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
-          console.log(`Navigated to ${url}`);
-          return true;
-        } catch (e) {
-          console.error(`Navigation to ${url} failed (attempt ${attempt}/${retries}):`, e.message);
-          if (attempt === retries) {
-            throw new Error(`Failed to navigate to ${url} after ${retries} attempts: ${e.message}`);
-          }
-          await delay(5000);
-        }
-      }
-    };
-
-    await navigateWithRetry(shivamoggaBaseUrl);
-    await page.screenshot({ path: path.join(outputDir, 'shivamogga-page.png'), fullPage: true });
-    console.log(`Screenshot saved: ${path.join(outputDir, 'shivamogga-page.png')}`);
+    // Navigate to Justdial Kolar page
+    const kolarBaseUrl = 'https://www.justdial.com/Kolar';
+    await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+    console.log('Navigated to Justdial Kolar page');
+    await page.screenshot({ path: path.join(outputDir, 'kolar-page.png'), fullPage: true });
+    console.log(`Screenshot saved: ${path.join(outputDir, 'kolar-page.png')}`);
 
     // Handle cookie consent popup
     try {
       const acceptCookiesBtn = await page.waitForSelector(
         '#cookie_btn, .cookie-agree, [id*="cookie"][id*="accept"], [class*="cookie"][class*="accept"]',
-        { timeout: 10000 }
+        { timeout: 5000 }
       );
       if (acceptCookiesBtn) {
         await acceptCookiesBtn.click();
@@ -90,7 +76,7 @@ export default async function handler(req, res) {
     try {
       const denyLocationBtn = await page.waitForSelector(
         '[id*="geo"][id*="deny"], [class*="geo"][class*="deny"], [class*="location"][class*="reject"], [class*="button"][class*="reject"]',
-        { timeout: 10000 }
+        { timeout: 5000 }
       );
       if (denyLocationBtn) {
         await denyLocationBtn.click();
@@ -101,55 +87,55 @@ export default async function handler(req, res) {
       console.log('No auto-location popup found or failed to click:', e.message);
     }
 
-    // Verify location is Shivamogga and click "Popular Categories" button
+    // Verify location is Kolar and click "Popular Categories" button
     try {
-      console.log('Verifying location is Shivamogga...');
+      console.log('Verifying location is Kolar...');
       const locationInputSelector = '#city, [name="city"], [id*="location"], [class*="city"] input, [placeholder*="city"], [class*="location"] input, #home-city-autocomplete';
-      const locationInput = await page.waitForSelector(locationInputSelector, { visible: true, timeout: 20000 });
+      const locationInput = await page.waitForSelector(locationInputSelector, { visible: true, timeout: 15000 });
       if (locationInput) {
         const currentValue = await page.evaluate(el => el.value, locationInput);
         console.log('Current location input:', currentValue);
-        if (!currentValue.toLowerCase().includes('shivamogga')) {
-          console.log('Location not set to Shivamogga, setting now...');
+        if (!currentValue.toLowerCase().includes('kolar')) {
+          console.log('Location not set to Kolar, setting now...');
           await locationInput.click({ clickCount: 3 });
           await locationInput.press('Backspace');
-          await locationInput.type('Shivamogga', { delay: 100 });
+          await locationInput.type('Kolar', { delay: 100 });
           await delay(3000);
 
-          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Shivamogga")';
-          await page.waitForSelector(suggestionSelector, { visible: true, timeout: 15000 });
+          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Kolar")';
+          await page.waitForSelector(suggestionSelector, { visible: true, timeout: 10000 });
           await page.evaluate(() => {
             const suggestions = document.querySelectorAll('.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li');
             for (let suggestion of suggestions) {
-              if (suggestion.textContent.toLowerCase().includes('shivamogga')) {
+              if (suggestion.textContent.toLowerCase().includes('kolar')) {
                 suggestion.click();
                 break;
               }
             }
           });
-          console.log('Clicked "Shivamogga" from suggestions');
-          await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 90000 });
+          console.log('Clicked "Kolar" from suggestions');
+          await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 });
           console.log('Navigation completed after selecting city');
 
           const newValue = await page.evaluate(el => el.value, locationInput);
           console.log('New location input:', newValue);
-          if (!newValue.toLowerCase().includes('shivamogga')) {
-            throw new Error('Failed to set location to Shivamogga, found: ' + newValue);
+          if (!newValue.toLowerCase().includes('kolar')) {
+            throw new Error('Failed to set location to Kolar, found: ' + newValue);
           }
         }
-        console.log('Successfully confirmed location as Shivamogga');
+        console.log('Successfully confirmed location as Kolar');
       } else {
         console.log('Location input not found, relying on URL');
       }
 
       const currentUrl = await page.url();
-      if (!currentUrl.includes('/Shivamogga')) {
-        console.log('URL does not contain Shivamogga, navigating to correct URL');
-        await navigateWithRetry(shivamoggaBaseUrl);
+      if (!currentUrl.includes('/Kolar')) {
+        console.log('URL does not contain Kolar, navigating to correct URL');
+        await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       }
 
       console.log('Looking for Popular Categories button with id="popular_categories"...');
-      const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 40000 });
+      const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 30000 });
       if (!popularCategoriesBtn) {
         throw new Error('Popular Categories button with id="popular_categories" not found');
       }
@@ -170,7 +156,7 @@ export default async function handler(req, res) {
       await page.screenshot({ path: path.join(outputDir, 'after-popular-categories-click.png'), fullPage: true });
       console.log(`Screenshot saved: ${path.join(outputDir, 'after-popular-categories-click.png')}`);
 
-      const sideMenu = await page.waitForSelector('.sidemenu_cateitem', { timeout: 15000 });
+      const sideMenu = await page.waitForSelector('.sidemenu_cateitem', { timeout: 10000 });
       if (!sideMenu) {
         throw new Error('Side menu with categories did not appear after clicking Popular Categories');
       }
@@ -189,7 +175,7 @@ export default async function handler(req, res) {
     let categoryLinks = [];
     try {
       console.log('Extracting category links from sidemenu_catebox...');
-      await page.waitForSelector('.sidemenu_cateitem', { timeout: 40000 });
+      await page.waitForSelector('.sidemenu_cateitem', { timeout: 30000 });
       categoryLinks = await page.evaluate(() => {
         const links = [];
         const categoryItems = document.querySelectorAll('.sidemenu_cateitem');
@@ -233,7 +219,7 @@ export default async function handler(req, res) {
         await new Promise((resolve) => {
           let totalHeight = 0;
           const distance = 300;
-          const maxScrolls = 5000; // Increased to ensure all content is loaded
+          const maxScrolls = 1000;
           let scrollCount = 0;
           let lastScrollHeight = document.body.scrollHeight;
           let unchangedCount = 0;
@@ -256,7 +242,7 @@ export default async function handler(req, res) {
             }
 
             if (
-              unchangedCount >= 20 ||
+              unchangedCount >= 15 ||
               scrollCount >= maxScrolls ||
               (window.innerHeight + window.scrollY) >= document.body.scrollHeight
             ) {
@@ -301,9 +287,9 @@ export default async function handler(req, res) {
         return str;
       };
 
-      const rows = data.map(item => {
+      const rows = data.map((item) => {
         const tagsString = Array.isArray(item.tags) ? item.tags.join('; ') : item.tags || '';
-        return headers.map(header => {
+        return headers.map((header) => {
           if (header === 'tags') {
             return escapeCsvValue(tagsString);
           }
@@ -316,21 +302,23 @@ export default async function handler(req, res) {
 
     // Function to scrape a single category or subcategory
     const scrapeListings = async (href, categoryName, subcategoryName = '') => {
-      console.log(`Scraping ${subcategoryName ? `subcategory: ${subcategoryName} under ${categoryName}` : `category: ${categoryName}`} (${href})`);
+      console.log(
+        `Scraping ${subcategoryName ? `subcategory: ${subcategoryName} under ${categoryName}` : `category: ${categoryName}`} (${href})`
+      );
       let results = [];
 
       try {
-        await navigateWithRetry(href);
+        await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
 
         const currentUrl = await page.url();
-        if (!currentUrl.includes('/Shivamogga')) {
-          console.log(`Location changed in URL: ${currentUrl}, resetting to Shivamogga`);
-          await navigateWithRetry(shivamoggaBaseUrl);
-          await navigateWithRetry(href);
+        if (!currentUrl.includes('/Kolar')) {
+          console.log(`Location changed in URL: ${currentUrl}, resetting to Kolar`);
+          await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+          await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
         }
 
         try {
-          await page.waitForSelector('.resultbox', { timeout: 40000 });
+          await page.waitForSelector('.resultbox', { timeout: 30000 });
           console.log(`Initial .resultbox elements found for ${subcategoryName || categoryName}`);
         } catch (e) {
           console.error(`Selector .resultbox not found for ${subcategoryName || categoryName}:`, e.message);
@@ -339,56 +327,53 @@ export default async function handler(req, res) {
 
         let previousCount = 0;
         let attempts = 0;
-        const maxAttempts = 20; // Increased for more attempts
+        const maxAttempts = 10;
+        const maxListingCount = 500;
+
+        await autoScroll(page);
+        await delay(2000);
 
         while (attempts < maxAttempts) {
-          await autoScroll(page);
-          await delay(3000);
-
-          const currentCount = await page.evaluate(
-            () => document.querySelectorAll('.resultbox').length
-          );
+          const currentCount = await page.evaluate(() => document.querySelectorAll('.resultbox').length);
           console.log(`Attempt ${attempts + 1}: Found ${currentCount} .resultbox elements`);
+
+          if (currentCount >= maxListingCount) {
+            console.log(`Reached maximum of ${maxListingCount} listings, stopping.`);
+            break;
+          }
 
           if (currentCount === previousCount) {
             console.log('No new results loaded, checking for load more button...');
-            let loadMoreBtn = null;
-            for (let retry = 1; retry <= 3; retry++) {
-              try {
-                loadMoreBtn = await page.$('.btn-load-more, .load-more-btn, [id*="load-more"], [class*="load-more"], .more-btn');
-                if (loadMoreBtn) break;
-                console.log(`Load more button not found on retry ${retry}, waiting...`);
-                await delay(5000);
-              } catch (e) {
-                console.log(`Error finding load more button on retry ${retry}:`, e.message);
-              }
-            }
+            const loadMoreBtn = await page.$(
+              '.btn-load-more, .load-more-btn, [id*="load-more"], [class*="load-more"], .more-btn'
+            );
 
             if (loadMoreBtn) {
               console.log('Load More Button found, attempting to click...');
               try {
-                await page.evaluate(btn => {
+                await page.evaluate((btn) => {
                   btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, loadMoreBtn);
-                await delay(1500);
+                await delay(1000);
                 await loadMoreBtn.click({ delay: 100 });
                 console.log('Clicked load more button');
 
                 await Promise.race([
                   page.waitForResponse(
-                    response => response.url().includes('/search') && response.status() === 200,
-                    { timeout: 15000 }
+                    (response) => response.url().includes('/search') && response.status() === 200,
+                    { timeout: 10000 }
                   ),
                   page.waitForFunction(
-                    count => document.querySelectorAll('.resultbox').length > count,
-                    { timeout: 15000 },
+                    (count) => document.querySelectorAll('.resultbox').length > count,
+                    { timeout: 10000 },
                     currentCount
                   ),
-                  delay(10000)
+                  delay(5000)
                 ]);
 
                 console.log('New listings loaded after click');
-                await delay(3000);
+                await autoScroll(page);
+                await delay(2000);
               } catch (clickError) {
                 console.log('Click failed:', clickError.message);
                 break;
@@ -401,18 +386,18 @@ export default async function handler(req, res) {
 
           previousCount = currentCount;
           attempts++;
-          await delay(4000 + Math.random() * 1000);
+          await delay(3000 + Math.random() * 1000);
         }
 
         const data = await page.evaluate((scrapedUrl, categoryText, subCategoryText) => {
           let category = categoryText;
           let subcategory = subCategoryText;
-          let city = 'Shivamogga';
+          let city = 'Kolar';
           const heading = document.querySelector('h1')?.textContent || '';
           const headingMatch = heading.match(/(.+?)\s+in\s+(.+)/i);
           if (headingMatch) {
             const headingCategory = headingMatch[1]?.trim();
-            city = headingMatch[2]?.trim() || 'Shivamogga';
+            city = headingMatch[2]?.trim() || 'Kolar';
             if (subCategoryText) {
               subcategory = headingCategory; // Subcategory might be in the heading
             } else {
@@ -428,8 +413,7 @@ export default async function handler(req, res) {
           const containers = document.querySelectorAll('.resultbox');
 
           containers.forEach((container) => {
-            const getText = (selector) =>
-              container.querySelector(selector)?.textContent?.trim() || '';
+            const getText = (selector) => container.querySelector(selector)?.textContent?.trim() || '';
 
             const name =
               getText('.resultbox_title_anchor') ||
@@ -438,14 +422,11 @@ export default async function handler(req, res) {
               getText('.jcn');
 
             let initial = '';
-            const imageBoxText =
-              container.querySelector('.resultbox_imagebox')?.textContent?.trim() || '';
+            const imageBoxText = container.querySelector('.resultbox_imagebox')?.textContent?.trim() || '';
             initial = imageBoxText[0] || name?.[0] || '';
 
             const rating =
-              getText('.resultbox_totalrate') ||
-              getText('.green-box') ||
-              getText('.rating-count');
+              getText('.resultbox_totalrate') || getText('.green-box') || getText('.rating-count');
 
             const totalRatings =
               getText('.resultbox_countrate') ||
@@ -454,19 +435,13 @@ export default async function handler(req, res) {
               getText('.rev-count');
 
             const address =
-              getText('.resultbox_address .locatcity') ||
-              getText('.comp-text') ||
-              getText('.cont_fl_addr');
+              getText('.resultbox_address .locatcity') || getText('.comp-text') || getText('.cont_fl_addr');
 
             const distance =
-              getText('.resultbox_address > .font12') ||
-              getText('.rsw__distance') ||
-              getText('.dist');
+              getText('.resultbox_address > .font12') || getText('.rsw__distance') || getText('.dist');
 
             const phoneAnchor = container.querySelector('a[href^="tel:"]');
-            let phone = phoneAnchor
-              ? phoneAnchor.getAttribute('href')?.replace('tel:', '').trim()
-              : '';
+            let phone = phoneAnchor ? phoneAnchor.getAttribute('href')?.replace('tel:', '').trim() : '';
 
             const callNow = container.querySelector('.callNowAnchor, .call-btn');
             const callText = callNow?.textContent?.trim();
@@ -527,7 +502,6 @@ export default async function handler(req, res) {
         }
       } catch (e) {
         console.error(`Error scraping ${subcategoryName || categoryName}:`, e.message);
-        await page.screenshot({ path: path.join(outputDir, `error-${subcategoryName || categoryName}.png`), fullPage: true });
         return [];
       }
     };
@@ -545,7 +519,7 @@ export default async function handler(req, res) {
         // Generate and save CSV for the main category
         const mainCategoryCsvData = convertToCSV(mainCategoryResults);
         const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-        const mainCategoryFileName = `shivamogga_${safeMainCategoryName}_listings.csv`;
+        const mainCategoryFileName = `kolar_${safeMainCategoryName}_listings.csv`;
         const mainCategoryFilePath = path.join(outputDir, mainCategoryFileName);
 
         fs.writeFileSync(mainCategoryFilePath, mainCategoryCsvData);
@@ -556,7 +530,7 @@ export default async function handler(req, res) {
       let subcategoryLinks = [];
       try {
         console.log(`Extracting subcategories for ${mainCategoryName}...`);
-        await page.waitForSelector('.filter_items, [class*="filter"]', { timeout: 15000 });
+        await page.waitForSelector('.filter_items, [class*="filter"]', { timeout: 10000 });
         subcategoryLinks = await page.evaluate(() => {
           const links = [];
           const subcategoryItems = document.querySelectorAll('.filter_items a, [class*="filter"] a');
@@ -570,7 +544,7 @@ export default async function handler(req, res) {
           return links;
         });
 
-        console.log(`Found ${subcategoryLinks.length} subcategories for ${mainCategoryName}:`, subcategoryLinks.map(link => link.subcategoryName));
+        console.log(`Found ${subcategoryLinks.length} subcategories for ${mainCategoryName}:`, subcategoryLinks.map((link) => link.subcategoryName));
       } catch (e) {
         console.log(`No subcategories found for ${mainCategoryName} or failed to extract:`, e.message);
       }
@@ -586,7 +560,7 @@ export default async function handler(req, res) {
             const subcategoryCsvData = convertToCSV(subcategoryResults);
             const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
             const safeSubcategoryName = subcategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-            const subcategoryFileName = `shivamogga_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
+            const subcategoryFileName = `kolar_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
             const subcategoryFilePath = path.join(outputDir, subcategoryFileName);
 
             fs.writeFileSync(subcategoryFilePath, subcategoryCsvData);
@@ -594,7 +568,7 @@ export default async function handler(req, res) {
           }
 
           // Navigate back to the main category page
-          await navigateWithRetry(mainCategoryHref);
+          await page.goto(mainCategoryHref, { waitUntil: 'networkidle2', timeout: 60000 });
           console.log(`Navigated back to category page for ${mainCategoryName}`);
           await delay(2000);
         }
@@ -605,7 +579,7 @@ export default async function handler(req, res) {
 
     // If a specific category is provided, scrape only that category and its subcategories
     if (category) {
-      const categoryLink = categoryLinks.find(link => link.categoryName.toLowerCase() === category.toLowerCase());
+      const categoryLink = categoryLinks.find((link) => link.categoryName.toLowerCase() === category.toLowerCase());
       if (!categoryLink) {
         await browser.close();
         res.setHeader('Content-Type', 'text/csv');
@@ -623,7 +597,7 @@ export default async function handler(req, res) {
 
       const csvData = convertToCSV(results);
       const safeCategoryName = category.toLowerCase().replace(/[^a-z0-9]/g, '_');
-      const fileName = `shivamogga_${safeCategoryName}_all_subcategories_listings.csv`;
+      const fileName = `kolar_${safeCategoryName}_all_subcategories_listings.csv`;
       const filePath = path.join(outputDir, fileName);
 
       // Save the CSV file
@@ -646,12 +620,12 @@ export default async function handler(req, res) {
         allResults.push(...categoryResults);
       }
 
-      // Navigate back to the Shivamogga page
-      console.log('Navigating back to Shivamogga page:', shivamoggaBaseUrl);
-      await navigateWithRetry(shivamoggaBaseUrl);
+      // Navigate back to the Kolar page
+      console.log('Navigating back to Kolar page:', kolarBaseUrl);
+      await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
       try {
-        const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 30000 });
+        const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 20000 });
         if (popularCategoriesBtn) {
           await page.evaluate(() => {
             const btn = document.querySelector('#popular_categories');
@@ -668,7 +642,7 @@ export default async function handler(req, res) {
         console.log('Failed to re-click Popular Categories button:', e.message);
       }
 
-      await delay(5000);
+      await delay(4000);
     }
 
     await browser.close();
@@ -681,22 +655,20 @@ export default async function handler(req, res) {
 
     // Generate and save the combined CSV file
     const combinedCsvData = convertToCSV(allResults);
-    const combinedFileName = 'shivamogga_all_categories_listings.csv';
+    const combinedFileName = 'kolar_all_categories_listings.csv';
     const combinedFilePath = path.join(outputDir, combinedFileName);
     fs.writeFileSync(combinedFilePath, combinedCsvData);
     console.log(`Combined file saved: ${path.resolve(combinedFilePath)}`);
 
     // Send the combined CSV file as the response
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="shivamogga_all_categories_listings.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="kolar_all_categories_listings.csv"');
     res.status(200).send(combinedCsvData);
   } catch (error) {
     console.error('Scraping error:', error);
 
     if (browser) {
       try {
-        await page.screenshot({ path: path.join(outputDir, 'final-error.png'), fullPage: true });
-        console.log(`Final error screenshot saved: ${path.join(outputDir, 'final-error.png')}`);
         await browser.close();
       } catch (e) {
         console.error('Error closing browser:', e);
