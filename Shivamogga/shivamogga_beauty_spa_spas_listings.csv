@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Invouge Saloon And Spa,<,4.5,255 Ratings,"Textile Nehru Road Shimoga, Shimoga",,08401138042,Home Services Offered; Hair Spa; Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.121Z
+Angel Wings Spa And Saloon And Academy,<,3.9,122 Ratings,"Police Station Road Durgigudi, Shimoga",,08105072648,Thai Massage,true,true,false,true,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.122Z
+Raaga Wellness Skin Laser Beauty & Spa,<,3.9,24 Ratings,"Main Road Bh Road Shimoga, Shimoga",,07041643542,Thai Massage; Aroma Massage,true,true,false,true,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.122Z
+Thai Center,<,4.1,53 Ratings,"Jayanar Road Jayanagar Shimoga, Shimoga",,08128765917,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.122Z
+Lotus Lens Unisex Saloon,<,4.0,69 Ratings,"Lbs Nagar Savalanga Road, Shimoga",,08128771810,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.123Z
+Empire Salon And Spa,<,4.2,210 Ratings,"Bh Road Bhadravathi, Bhadravathi-Karnataka",,,Hair Spa; Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.124Z
+Aroma International Skin Laser Beauty Salon And Spa,<,4.0,82 Ratings,"100ft Road Vinoba Nagar, Shimoga",,09725069733,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.124Z
+Beautyc,<,4.1,442 Ratings,"1st Cross Durgigudi, Shimoga",,08128531665,,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.125Z
+Olympic Unisex Salon,<,4.1,457 Ratings,"Nehru Road Nehru Road Shimoga, Shimoga",,,Home Services Offered; Thai Massage; Aroma Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.125Z
+Lathe Herbal Beauty Parlour,<,4.4,22 Ratings,"Extension Gopala Extension, Shimoga",,09035669170,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.125Z
+Natural Unisex Salon & Haircut,+,4.2,55 Ratings,"Main Road Savalanga Road, Shimoga",,08123845949,Home Services Offered; Hair Spa,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.126Z
+Alankar Family Saloon And Spa,+,3.4,54 Ratings,"Jaideva Complex Durgigudi, Shimoga",,08128836770,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.126Z
+Star Beauty Family Salon And Spa,+,4.6,106 Ratings,"City Center Bh Road Shimoga, Shimoga",,09035647180,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.126Z
+Malnad Thai Spa & Therapy,+,4.0,93 Ratings,"Karnatak Sangha Bh Road Shimoga, Shimoga",,07487862109,Hair Spa; Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.126Z
+U R Lucky Star Unisex Saloon,+,3.5,16 Ratings,"Shankar Mutt Road Shimoga, Shimoga",,09980151990,Thai Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.127Z
+Star Wings,+,4.0,34 Ratings,"100feet Road Vinoba Nagar, Shimoga",,07487979460,Thai Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.127Z
+The Royal Beauty Parlour Family Salon and Spa,+,3.1,21 Ratings,"Chirag Bulding Bh Road Shimoga, Shimoga",,08511951549,Home Services Offered; Thai Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.127Z
+Alpha Beauty And Spa,+,4.7,"3,543 Ratings","Circle Vinoba Nagar Shimoga, Shimoga",,,Home Services Offered; Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.127Z
+Big Beauty,+,4.2,9 Ratings,"Airpot Road Vidyanagar Shimoga, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.127Z
+Alfa Beauty Care & Spa,+,4.8,"1,925 Ratings","Bh Road Shimoga, Shimoga",,,Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+LK Family Salon,+,4.7,626 Ratings,"Police Chowki Vinoba Nagar, Shimoga",,09054656850,Home Services Offered; Skin Treatment,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+V. Like Saloon,V,4.8,30 Ratings,"Sagar Road, Shimoga",,,Hair Stylists; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+Cre8 Salon,+,4.8,86 Ratings,"Hudco Colony Vinoba Nagar, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+Reva Relax Unisex Salon & Beauty Parlour,+,4.4,16 Ratings,"Savalanga Road, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+U Shine Unisex Salon and Spa,+,3.8,28 Ratings,"1st Cross Gandhi Nagar, Shimoga",,,Thai Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.128Z
+Toni And Boy Salon And Spa,+,4.1,154 Ratings,"Rajendra Nagar Rajendra Nagar, Shimoga",,,Salons; Body Massage Centres,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.129Z
+Black and White Mens Salon,+,3.8,13 Ratings,"Feet Road Vinoba Nagar Shimoga, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.129Z
+Princess Unisex Salon,+,3.8,90 Ratings,"Blood Bank Road Savalanga Road, Shimoga",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.129Z
+Mirrors Loreal Family Salon,+,4.3,12 Ratings,"100 Feet Road Gandhi Nagar, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.129Z
+Golden Touch Salon & Beauty Nest,+,4.3,104 Ratings,"Badavane Gopala Extension, Shimoga",,,Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.129Z
+Olympic Salon,+,4.2,100 Ratings,"Main Road Tilaknagar Shimoga, Shimoga",,,Beauty Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+GOLDEN BEAUTY FAMILY SALOON,+,3.8,34 Ratings,"Jail Road Jail Road Shimoga, Shimoga",,,Thai Massage; Aroma Massage,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+Unicorn Studio,+,4.8,50 Ratings,"Vidyanagar Shimoga, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+Cosmic Spa Beauty Parlour,C,4.1,13 Ratings,"SLV Complex Gandhi Bazar, Shimoga",,,Beauty Spas; Beauty Parlours,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+Saundarya Hair Dresser,S,4.2,7 Ratings,"100 Feet Road Gopala Extension, Shimoga",,,Hair Stylists; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+New Look Beauty Parlour,+,4.1,28 Ratings,"Mutt Road Tilaknagar Shimoga, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.130Z
+Magic Beauty Salon & Parlour,+,4.6,21 Ratings,"Sharadha Complex Savalanga Road, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.131Z
+Your Image Mens Salon,+,3.8,31 Ratings,"Feet Road Gopala Gowda Extension, Shimoga",,,Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.132Z
+Royal Trend Salon,+,4.5,143 Ratings,"1st Main Road Vinoba Nagar, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.132Z
+The Urban Unisex Salon,T,4.3,26 Ratings,"Police Chowki Vinoba Nagar, Shimoga",,,Home Services Offered; Hair Spa; Thai Massage,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.133Z
+U Shine Unisex Salon and,+,4.2,18 Ratings,"Gandhi Nagar, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.133Z
+Vijeths Hair Port,+,4.8,21 Ratings,"JPN Road Gopi Circle, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.134Z
+Attitude Beauty And Spa,+,3.8,11 Ratings,"Ganndhi Nagar Road GANDHI NAGAR, Shimoga",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.134Z
+A1 Gents Parlour,+,2.5,2 Ratings,"Main Road Balaraj Urs Road, Shimoga",,,Hair Stylists; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.135Z
+Vibhas Unisex Professional Salon,+,4.1,5 Ratings,"Feet Road Gopala Gowda Extension, Shimoga",,,Hair Spa; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.135Z
+New Look Beauty Parlour,N,4.6,5 Ratings,"JC Road Sagar Shimoga, Sagara",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.135Z
+Ck Beauty Centre,C,2.5,2 Ratings,"Bipass Urgadur, Shimoga",,,Beauty Spas; Beauty Parlours,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+Luminous Unisex Family Saloon And,L,3.5,10 Ratings,"100 Feet Road Sominakoppa, Shimoga",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+Mg Saloons Men And Women,+,5.0,2 Ratings,"Prule Main Road Purle, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+Popular Mens Saloon,+,4.7,7 Ratings,"1st Cross N.T Road, Shimoga",,,Beauty Salons For Men; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+VT Loreal Professional Salon & Spa,V,4.1,5 Ratings,"Main Road THIRTHAHALLI, Shimoga",,,Hair Spa,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+Poonam Beauty Family Salon & Tatoo S,+,4.9,7 Ratings,"B. H Road Bhadravathi, Bhadravathi-Karnataka",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.136Z
+Amardeep Beauty Parlour,A,4.7,10 Ratings,"Gandhi Nagar, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Surabhi Beauty Parlour,+,3.7,11 Ratings,"Old Thirthahalli Road Shimoga HO, Shimoga",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Radiance Spa,R,3.0,6 Ratings,"Durgigudi, Shimoga",,,Beauty Spas; Beauty Spas For Men,false,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Royal Beauty,R,5.0,2 Ratings,"S S Road, Shimoga",,,Women Beauty Parlours; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+VNCC Family Salon & Spa,+,3.7,9 Ratings,"100ft Road Vinoba Nagar Shimoga, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Thaithantra Unisex Spa,T,3.0,3 Ratings,"100 Ft Road Rajendra Nagar, Shimoga",,,Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Logic Salon & Tattoos,+,4.4,5 Ratings,"Doddapet, Shimoga",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Uniqe Mens Saloon And Spa,U,3.7,6 Ratings,"Jail Road Gandhi Nagar, Shimoga",,,Beauty Spas; Salons,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+YOSO Unisex Spa,Y,3.5,14 Ratings,"Nehru Road Nehru Road Shimoga, Shimoga",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Om Hair Dressers,O,5.0,1 Ratings,"Main Road Vinoba Nagar, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Queen Spa Ladies Beauty Parlour,Q,4.0,3 Ratings,"Gadikoppa, Shimoga",,,Beauty Spas; Beauty Parlours,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Alpha Beauty & Spa,+,4.6,10 Ratings,"Double Road Bh Road Shimoga, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.137Z
+Janvi Herbal Beauty Parlour,J,3.8,5 Ratings,"Upper Utta Bhadravathi, Bhadravathi-Karnataka",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+princess Unisex Spa And Parlour,p,3.1,5 Ratings,"Vinoba Nagar, Shimoga",,,Beauty Spas; Unisex Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Aarya Gents Parlour,+,4.8,4 Ratings,"6th Cross Gandhi Bazar, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Women's Beauty Bar,W,5.0,3 Ratings,"Ragi Gudda, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Shrungar Hair Salon,+,5.0,2 Ratings,"5th Cross Ragi Gudda, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Rathans Style In,+,5.0,2 Ratings,"Highway Road Vidya Nagar Shimoga, Shimoga",,,Beauty Spas; Beauty Parlours,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Humlog Mens Saloon,+,4.3,9 Ratings,"Ot Road Kr Puram Shimoga, Shimoga",,,Beauty Spas; Beauty Parlours,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Prakash Mens Saloon,P,5.0,1 Ratings,"Chennagiri Road, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Ranjan Saloon,R,2.8,2 Ratings,"Ranjan Saloon Shiralakoppa, Shimoga",,,Salons; Beauty Spas,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.138Z
+Vt Loreal Professional Family Salon Men & Women,+,4.5,1 Ratings,"Raod Karnataka Bank, Shimoga",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.139Z
+Mangalore Hair Saloon,+,4.5,1 Ratings,"Shagra Road Gadikoppa, Shimoga",,,Home Services Offered,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.139Z
+City Look Beauty Parlour,C,3.5,3 Ratings,"B H Road Vidyanagar Shimoga, Shimoga",,,Home Services Offered; Hair Spa,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.139Z
+Santosh Saloon,+,3.5,2 Ratings,"Nagar First Main Bapuji Nagar, Shimoga",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.140Z
+New Select Hair Dresses,+,5.0,1 Ratings,"A.N.K Road Jail Road Shimoga, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.141Z
+Akash Hair Saloon,A,5.0,1 Ratings,"Gopala Extension, Shimoga",,,Salons; Beauty Spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.141Z
+Ayur Body Massage and Spa,+,4.5,28 Ratings,"Adimastan Building Tarikere, Chikmagalur",,08197609964,Home Services Offered; Thai Massage; Aroma Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.141Z
+Phinix Mens Ac Parlour,P,3.4,13 Ratings,"Road Birur Chikmagalur, Chikmagalur",,,Home Services Offered,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.141Z
+Princess Beauty Saloon,P,4.5,4 Ratings,"Chikkerur Road Hirekerur, Haveri",,,Salons; Beauty Spas,false,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Janees Beauty Salon & Spa,+,4.5,9 Ratings,"Railway Station Road Kadur, Chikmagalur",,,Hair Spa,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Sandra Beauty Parlour,+,3.5,4 Ratings,"N R PURA ROAD Balehonnur, Chikmagalur",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Fab U Look,F,5.0,8 Ratings,"Biet Road Biet, Davangere",,,Beauty Spas; Beauty Parlours,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Shashi Beauty Parlour,+,5.0,1 Ratings,"Road Nittuvalli Davangere, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Studio11 Salon & Spa,+,4.7,888 Ratings,"Boys Hostal Road Mcc, Davangere",,,Beauty Spas; Salons,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Unique Unisex Hair Salon & Spa,+,4.5,22 Ratings,"Shamnur Road SS Layout, Davangere",,,Home Services Offered; Skin Treatment,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Hi-tech Hair Stylist,H,4.2,15 Ratings,"BIT Road Biet, Davangere",,,Beauty Spas; Salons,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+B-natural,B,3.9,8 Ratings,"Biet Road Biet, Davangere",,,,true,true,false,false,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Bilva'S Beauty & Spa,B,4.6,9 Ratings,"Biet College Road Davangere City, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Alpha Unisex Salon & Spa,A,4.7,"2,387 Ratings","College Road Davangere, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Swings Unisex Salon & Spa,+,4.6,62 Ratings,"7th Cross Mcc, Davangere",,08460270738,Thai Massage; Aroma Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.142Z
+Lotus Unisex Salon and Spa,+,3.8,58 Ratings,"Mcc 9th Main 7th Cross Mcc, Davangere",,09972368986,,true,true,false,true,false,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Lotus Lens Beauty & Spa Unisex Salon,+,4.2,18 Ratings,"B Block SS Layout, Davangere",,09725337621,Home Services Offered; Thai Massage; Aroma Massage,true,true,false,true,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Crystal Hair Salon,+,4.5,1 Ratings,"1st Main Taralabalu Extension, Davangere",,,Home Services Offered,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Veena Lucky Makeover,+,5.0,2 Ratings,"Ring Road Davangere City, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Pro Masters,+,4.5,57 Ratings,"Cross B Block Mcc, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Shree Sai Beauty & Slim Care,+,4.3,3 Ratings,"B Block Mcc, Davangere",,,Beauty spas,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z
+Saelac Unisex Salon,+,4.0,375 Ratings,"MCC B Block Shamanur Davangere, Davangere",,,,true,true,false,false,true,Beauty Spa,Popular Beauty Spas,Shivamogga,2025-06-03T13:33:52.143Z

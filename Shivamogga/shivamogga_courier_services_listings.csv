@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+East West Tourist Corporation,<,3.3,576 Ratings,"Na Srvm Road Mv Road, Shimoga",,,Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.020Z
+VRL Logistics Ltd,<,3.7,451 Ratings,"Savarline Road, Shimoga",,,Cargo Service; Domestic Courier; International Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.020Z
+Fastmove Courier,<,4.7,3 Ratings,"Kurudusonnenahalli, Bangalore",,08105091177,Corporate Courier; Ecommerce Courier; Cargo Service,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.021Z
+Apeksha Logistics Pvt Ltd,<,4.5,1 Ratings,"Main Road Singahalli, Bangalore",,07041967715,Cargo Service; Domestic Courier; Urgent Shipment Delivery,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.021Z
+Sri Ganapathy Transport and Traveling Agency,<,4.5,19 Ratings,"Palayam Kalappa Naicken Palayam, Coimbatore",,08123376960,Courier Services; Transporters,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.022Z
+Sky Land Xpress Cargo,<,3.7,40 Ratings,"KPN Colony Union Mill Road, Tirupur",,,,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.022Z
+Urbx Worldwide,<,4.7,74 Ratings,"Cochin Special Economic Zone, Ernakulam",,08401097476,International Courier; Cargo Service; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.022Z
+Alleppey Parcel Service L L P,<,4.0,74 Ratings,"Vazhichery Ward Court Road, Alappuzha",,,Commercial Courier; Corporate Courier; Ecommerce Courier,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.023Z
+Fastmove Courier & Cargo Services,<,3.5,2 Ratings,"Transport Nagar-Nigdi, Pune",,07041651674,Ecommerce Courier; Bulk Courier; Cargo Service,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.023Z
+Fastmove Courier & Cargo Services,<,5.0,2 Ratings,"MD Farm Road Kanajiguda, Hyderabad",,08733880985,Corporate Courier; Bulk Courier; Speed Post,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.024Z
+Aastik Maharaj Trader,+,5.0,1 Ratings,"Kukatpally Kukatpally, Hyderabad",,07411644350,,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.024Z
+Xpress INDIA,+,4.2,400 Ratings,"Street Industrial Colony Trichy, Trichy",,07383608407,Cargo Service; Trucks On Rent; Bulk Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.024Z
+Speedman Express,+,3.9,81 Ratings,"Chira Bazar-Kalbadevi, Mumbai",,08128897011,Ecommerce Courier; Domestic Courier; Bulk Courier,true,true,false,true,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.025Z
+South Indian Transport Company,+,3.8,14 Ratings,"Mankoli Road Bhiwandi City, Bhiwandi",,07041943753,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.025Z
+Vrltransport Services,+,3.6,10 Ratings,"Masjid Bunder, Mumbai",,09980763661,Electronic,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.026Z
+Shubhaam Logistics Services,S,5.0,1 Ratings,"Swadeshi Mill Road Sion, Mumbai",,09606413539,Cargo Service,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.026Z
+Fastmove Courier & Cargo Services,+,4.2,9 Ratings,"Sainaka Andheri East, Mumbai",,08123380727,Commercial Courier; Cargo Service; Corporate Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.026Z
+Jpg Logistics,J,4.5,8 Ratings,"SOUTH BAGHSEWANIYA Amrai Parisar, Bhopal",,08460300399,Cargo Service; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.026Z
+Associated Logistics Corporation Of INDIA,+,4.1,185 Ratings,"Sector - C Sonagiri Indrapuri, Bhopal",,08460280113,Bulk Courier; Domestic Courier; Corporate Courier,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.027Z
+Mirai Logistics India Private Limited,+,3.4,278 Ratings,"Kesarwani College Garha Phatak, Jabalpur",,08511256279,International Courier; All India; Cargo Service,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.027Z
+Bajrang Roadlines,+,4.5,12 Ratings,"Etaura Rewa Super Bazar, Rewa",,08401896025,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.028Z
+India Door to Door Cargo Services,I,3.1,10 Ratings,"SSB Camp Rangamati, Ranchi",,08460507650,Cargo Service; Domestic Courier; Air Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.028Z
+Fastmove Courier & Cargo Services,+,4.2,51 Ratings,"Road No. 5K Kishoreganj Chowk, Ranchi",,08197493875,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.028Z
+Om Sai Angdiya,O,4.3,20 Ratings,"Hana Ansari Road Darya Ganj, Delhi",,07383240726,,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.028Z
+Transxpress World Wide,T,3.6,14 Ratings,"Janakpuri B Block, Delhi",,08511712179,Cargo Service,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.028Z
+Pooja Logistic,+,4.0,8 Ratings,"Kiran Garden-uttam Nagar, Delhi",,07411590145,Commercial Courier; Domestic Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.029Z
+Prime Transport Solution,P,4.1,11 Ratings,"Chandan Hola Chatarpur Noida, Noida",,08460506360,24X7 Customer Care; Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.029Z
+Mahadev Courier Cargo Services,M,4.7,3 Ratings,"Behind Metro Kashmere Gate, Delhi",,08050623191,Cargo Service; Domestic Courier; Bulk Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.029Z
+Priority Premium Courier Services,+,5.0,4 Ratings,"GALI RAJA KEDARNATH Chawri Bazar, Delhi",,08401398590,,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.029Z
+Dr Courier Express Pvt. Ltd.,+,3.5,20 Ratings,"Main Vasant Kunj Road Mahipalpur, Delhi",,08460567203,Government Verified; Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.029Z
+Swiftline Cargo & Express Logistics Pvt. Ltd,S,5.0,16 Ratings,"Uttam Nagar Rewari Bypass Road, Rewari",,08511338696,Government Verified; 24X7 Customer Care; Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Fastmove Courier & Cargo Services,+,4.0,51 Ratings,"NH 30 Adarsh Colony Road, Patna",,09980741983,Commercial Courier; Corporate Courier; Ecommerce Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Engineers Parcel,+,4.2,21 Ratings,"I2H Building IIT ISM Hirapur, Dhanbad",,08971740245,Courier Services; Packers And Movers,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Door to Door All India Service,+,5.0,3 Ratings,"Bhumi Link Road Link Road, Mathura",,08460406701,Domestic Courier; Air Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Gati Cargo Packer and Mover,+,4.8,4 Ratings,"Najafgarh, Delhi",,09008921591,Domestic Courier; Air Cargo; Air Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Shakti Transport Company,S,4.3,9 Ratings,"Gorakhpur Road Deoria Sadar, Deoria",,08460434045,All India; Within City,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Digital Cargo,D,4.1,16 Ratings,"5 Kaushik Enclave Burari, Delhi",,08792663371,Bulk Courier; Commercial Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.030Z
+Fastmove Logistics,+,4.3,34 Ratings,"Baguipara Baguiati, Kolkata",,07405327680,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+Omshiv Express Courier Cargo,O,3.5,14 Ratings,"Office A1 Khengrapatti, Kolkata",,07041477183,24X7 Customer Care; Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+Express India Logistic,E,4.5,13 Ratings,"Khajuri Khas, Delhi",,08460270918,,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+DHL Express Courier,D,4.8,178 Ratings,"Gt Road Anand Avenue, Amritsar",,06366535081,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+Door 2 Door Cargo Service,+,4.0,69 Ratings,"Poonch Road Akhnoor, Jammu",,09035020896,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+Deekins Travel Solutions Pvt Ltd,D,4.0,11 Ratings,"Jammu and Kashmir Horzey, Leh Ladakh",,09606165447,Cargo Service; Domestic Courier; Bulk Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+Blue Dart Express Ltd,+,3.8,427 Ratings,"Srinidhi Complex Gandhi Nagar, Shimoga",,,Bulk Courier; Commercial Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+The Professional Couriers,+,4.1,368 Ratings,"Shankar Mutt Road Shimoga, Shimoga",,,International Courier; Domestic Courier; Corporate Courier,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.031Z
+DTDC Express Ltd,+,3.8,288 Ratings,"3rd Cross Durgigudi, Shimoga",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+Tpc,T,3.8,243 Ratings,"Circle Bh Road Bhadravathi, Bhadravathi-Karnataka",,,International Courier; Domestic Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+Instakart,I,3.7,160 Ratings,"Gadikoppa, Shimoga",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+The Professional Couriers,+,4.2,102 Ratings,"Azad Road Thirthahalli, Shimoga",,,International Courier; Domestic Courier; Corporate Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+Post Office,+,3.4,116 Ratings,"Nehru Road Durgigudi, Shimoga",,,Speed Post,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+VRL Logistics Ltd,+,3.7,77 Ratings,"Old Town Bh Road Bhadravathi, Bhadravathi-Karnataka",,,International Courier; Domestic Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+DTDC Express Ltd,+,4.1,68 Ratings,"Joseph Nagara Bh Road Shimoga, Shimoga",,,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+The Professional Couriers,+,3.9,71 Ratings,"JC Road Sagar Shimoga, Sagara",,,International Courier; Domestic Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+First Flight Couriers Ltd,F,3.8,68 Ratings,"1st Cross Kr Puram Shimoga, Shimoga",,,Door to Door,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+DTDC Express Ltd,+,3.6,67 Ratings,"Gopala Extension Vinoba Nagar, Shimoga",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+Prasad Service Station,P,3.5,68 Ratings,"B H Road Bhadravathi, Bhadravathi-Karnataka",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.032Z
+DTDC Express Ltd,+,4.0,58 Ratings,"3rd Cross Garden Area, Shimoga",,,Door to Door,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+DTDC Express Ltd,+,3.5,66 Ratings,"9th Cross Bh Road Bhadravathi, Bhadravathi-Karnataka",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Ecom Express,+,2.8,80 Ratings,"Talaguppa, Shimoga",,,Domestic Courier; Bulk Courier; Ecommerce Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+The Professional Couriers,+,4.0,56 Ratings,"Main Road Sorab, Shimoga",,,International Courier; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Delhivery Pvt Ltd,+,2.9,76 Ratings,"Milagatta Gandhi Bazar, Shimoga",,,Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Ecom Express,+,3.3,63 Ratings,"Sadath Colony Bhadravathi, Bhadravathi-Karnataka",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Trackon Couriers Pvt Ltd,T,2.9,69 Ratings,"Bh Road Shimoga, Shimoga",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+DTDC,+,4.4,41 Ratings,"Kuvempur Road Sharavathi Nagar, Shimoga",,,Bulk Courier; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Gati Express,+,3.6,46 Ratings,"2nd Stage Gandhi Bazar Shimoga, Shimoga",,,Cargo Service; Domestic Courier; Bulk Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+The Professional Couriers,+,4.3,35 Ratings,"Shikaripur, Shimoga",,,International Courier; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+TCI Express Ltd,+,3.6,37 Ratings,"RML Nagar Achutha Rao Layout, Shimoga",,,Domestic Courier; International Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.033Z
+Ekart Logistics,+,3.0,44 Ratings,"5th Cross Road Vinoba Nagar, Shimoga",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Garudavega Courier,+,4.0,29 Ratings,"Vinoba Nagar, Shimoga",,,Bulk Courier; International Courier; Domestic Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Ecom Express,+,3.8,26 Ratings,"Vidya Nagara Nagara, Shimoga",,,Door to Door,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Proffesional Courier,P,3.7,25 Ratings,"Lashkar Mohalla, Shimoga",,,Bulk Courier; Domestic Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+DTDC Express Ltd,+,3.3,27 Ratings,"Bh Road Vinoba Nagar, Shimoga",,,Door to Door,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Gms Worldwide Express Pvt Ltd,G,3.6,24 Ratings,"Main Road Durgigudi, Shimoga",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Blue Dart Express Ltd,B,3.9,22 Ratings,"Gandhi Bazar, Shimoga",,,International Courier; Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Delhivery Courier Office,D,3.4,24 Ratings,"Internal Road, Shimoga",,,Courier Services,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+VRL Logistics Ltd,+,4.1,19 Ratings,"Aryarakeri Shikaripur, Shimoga",,,Cargo Service; Domestic Courier; International Courier,true,true,false,true,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Blue Dart Express Ltd,B,4.1,18 Ratings,"Tarikere Road, Shimoga",,,International Courier; Domestic Courier,false,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+VRL Logistics Ltd,+,4.5,13 Ratings,"Bypass Road Balaraj Urs Road, Shimoga",,,Cargo Service; Domestic Courier; International Courier,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Post Office,P,4.1,14 Ratings,"Kr Puram Shivamogga Kote, Shimoga",,,Speed Post; Franking From Post Office,false,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.034Z
+Rivigo Services Pvt Ltd,R,4.3,13 Ratings,"Shivamogga Milagatta, Shimoga",,,Cargo Service; Domestic Courier; Warehouses Services,true,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Shree Maruti Courier Services Pvt Ltd,+,3.0,16 Ratings,"ANK Road Bh Road Shimoga, Shimoga",,,Domestic Courier; International Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Shree Maruti Courier Services Pvt Ltd,+,3.0,16 Ratings,"Durgi Gundi Main Road Durgigudi, Shimoga",,,Domestic Courier; International Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Flyking Courier Services Pvt Ltd,F,3.1,15 Ratings,"Bazar Road Bh Road Shimoga, Shimoga",,,International Courier; Domestic Courier; Air Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Delhivery Pvt Ltd,+,2.7,17 Ratings,"Doddapete Road Shikaripur, Shimoga",,,Bulk Courier; Ecommerce Courier; International Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+First Flight Couriers Ltd,F,4.4,10 Ratings,"3rd Cross Durgigudi, Shimoga",,,International Courier; Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Franch Express Courier,+,2.7,16 Ratings,"Gskm Road Bh Road Shimoga, Shimoga",,,Domestic Courier; International Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+G M S Courier,G,3.6,12 Ratings,"Rekha Complex Durgigudi, Shimoga",,,Corporate Courier; International Courier; Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Delhivery Pvt Ltd,+,4.2,10 Ratings,"Sagar, Sagara",,,International Courier; Domestic Courier; Bulk Courier,false,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Ksrtc Shimoga Namma Cargo Courier,K,3.8,11 Ratings,"Durgigudi, Shimoga",,,Cargo Service; Domestic Courier; Bulk Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Gati Courier,G,2.8,14 Ratings,"Shivamogga Annanagar Shimoga, Shimoga",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.035Z
+Gms Worldwide Express Pvt Ltd,G,4.2,9 Ratings,"Shruthi Complex Llr Road, Shimoga",,,Bulk Courier; Corporate Courier; Domestic Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Blue Dart Express,+,4.4,8 Ratings,"Nagar Main Road Gandhi Nagar, Shimoga",,,Domestic Courier; Bulk Courier; International Courier,false,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+The Professional Couriers,T,3.9,9 Ratings,"Bhadra Reservoir Project, Shimoga",,,International Courier; Domestic Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Hindustan International Courier,H,5.0,7 Ratings,"Shimoga Basavanagudi Shimoga, Shimoga",,,Domestic Courier; International Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Gms Courier,G,4.2,8 Ratings,"Rajendra Vinoba Nagar Shimoga, Shimoga",,,Domestic Courier; Bulk Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Blue Dart Express,+,4.1,8 Ratings,"Vinayaka Nagar Shikaripur, Shimoga",,,Bulk Courier; International Courier; Domestic Courier,false,true,false,false,true,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+DTDC Express Ltd,+,3.4,9 Ratings,"Sorab, Shimoga",,,Door to Door,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Gati Limited,+,2.7,10 Ratings,"Shimoga Ho, Shimoga",,,Cargo Service; Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+First Flight Couriers Ltd,F,2.7,10 Ratings,"Savlanga Road Gandhi Nagar, Shimoga",,,Commercial Courier; Domestic Courier; Corporate Courier,true,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
+Channakeshava Nagara Courier Office Shikaripura,C,4.0,6 Ratings,"Shikaripur, Shimoga",,,Bulk Courier; Domestic Courier,false,true,false,false,false,Courier Services,,Shivamogga,2025-06-03T14:23:06.036Z
