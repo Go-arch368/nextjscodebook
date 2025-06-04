@@ -49,7 +49,7 @@ export default function CategoryContent() {
   const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false);
   const [showAllFilters, setShowAllFilters] = useState(false);
 
-  // Get all query parameters
+  // Get all possible query parameters
   const query = searchParams.get('query');
   const selectedCategory = searchParams.get('category');
   const selectedSubcategory = searchParams.get('subcategory');
@@ -66,18 +66,18 @@ export default function CategoryContent() {
         setError(null);
 
         const queryParams = new URLSearchParams();
-        if (params.query) queryParams.set('q', params.query);
-        if (params.category) queryParams.set('category', params.category);
-        if (params.subcategory) queryParams.set('subcategory', params.subcategory);
-        if (params.tag) queryParams.set('tag', params.tag);
-        if (params.name) queryParams.set('name', params.name);
-        if (params.address) queryParams.set('address', params.address);
-        if (params.city) queryParams.set('city', params.city);
-        if (params.pincode) queryParams.set('pincode', params.pincode);
-        if (sort) queryParams.set('sort', sort);
-        if (sortFields.sortByVerified) queryParams.set('sortByVerified', 'true');
-        if (sortFields.sortByTrusted) queryParams.set('sortByTrusted', 'true');
-        if (sortFields.ratingSort) queryParams.set('sortByRating', sortFields.ratingSort);
+        if (params.query) queryParams.append('q', params.query);
+        if (params.category) queryParams.append('category', params.category);
+        if (params.subcategory) queryParams.append('subcategory', params.subcategory);
+        if (params.tag) queryParams.append('tag', params.tag);
+        if (params.name) queryParams.append('name', params.name);
+        if (params.address) queryParams.append('address', params.address);
+        if (params.city) queryParams.append('city', params.city);
+        if (params.pincode) queryParams.append('pincode', params.pincode);
+        if (sort) queryParams.append('sort', sort);
+        if (sortFields.sortByVerified) queryParams.append('sortByVerified', 'true');
+        if (sortFields.sortByTrusted) queryParams.append('sortByTrusted', 'true');
+        if (sortFields.ratingSort) queryParams.append('sortByRating', sortFields.ratingSort);
 
         const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
           cache: 'no-store',
@@ -253,9 +253,16 @@ export default function CategoryContent() {
     }
 
     const categoryRoutes = {
-      'Leading Educational Institutions : Top Schools': '/template?websiteIdentifier=Education-Schools-560038',
+      'Best Hospitals': '/template?websiteIdentifier=Health%26Medical-Hospital-560038',
+      'Best Clinics': '/template?websiteIdentifier=Health%26Medical-Clinics-560038',
+      'Best Dentists': '/template?websiteIdentifier=Health%26Medical-Dentists-560062',
+      Chemists: '/template?websiteIdentifier=Health%26Medical-Pharmacies-560098',
       'Best Veterinarians': '/template?websiteIdentifier=Health%26Medical-Veterinary-560076',
-      // Add other category routes as needed
+      'Car Repair': '/template?websiteIdentifier=Automobile-CarRepair-560062',
+      'Car Showrooms': '/template?websiteIdentifier=Automobile-CarSales-560062',
+      'Tyre Dealers': '/template?websiteIdentifier=Automobile-Tires-560064',
+      Autospares: '/template?websiteIdentifier=Automobile-AutoParts-560062',
+      'Best Physiotherapists': '/template?websiteIdentifier=Health&Medical-Physiotherapy-560025',
     };
 
     const url = categoryRoutes[category] || '/category';
@@ -351,15 +358,13 @@ export default function CategoryContent() {
   return (
     <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-6xl px-4 py-6">
-        {(query || selectedPincode || selectedCity || selectedCategory || selectedName) && (
+        {(query || selectedPincode || selectedCity || selectedCategory) && (
           <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
             Showing results for:{' '}
             {query && <span>Search: "{query}"</span>}
-            {(query && (selectedPincode || selectedCity || selectedCategory || selectedName)) && ', '}
-            {selectedName && <span>Name: "{selectedName}"</span>}
-            {(query || selectedName) && (selectedPincode || selectedCity || selectedCategory) && ', '}
+            {(query && (selectedPincode || selectedCity || selectedCategory)) && ', '}
             {selectedCategory && <span>Category: {selectedCategory}</span>}
-            {(query || selectedName || selectedCategory) && (selectedPincode || selectedCity) && ', '}
+            {(query || selectedCategory) && (selectedPincode || selectedCity) && ', '}
             {selectedPincode && <span>Pincode: {selectedPincode}</span>}
             {selectedPincode && selectedCity && ', '}
             {selectedCity && <span>City: {selectedCity}</span>}
@@ -709,15 +714,17 @@ export default function CategoryContent() {
                   images: Array.isArray(listing.images) ? listing.images : [],
                   imageError: listing.imageError || null,
                   name: listing.name || 'Unknown Business',
-                  rating: listing.rating ? parseFloat(listing.rating).toFixed(1) : 'N/A',
-                  totalRatings: listing.totalRatings || 'No Ratings',
+                  rating: listing.rating ? parseFloat(listing.rating).toFixed(1) : '4.8',
+                  totalRatings: listing.totalRatings
+                    ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings`
+                    : '10,885 Ratings',
                   badges: [
                     listing.isTrusted && 'Trust',
                     listing.isVerified && 'Verified',
                     listing.isPopular && 'Claimed',
                   ].filter(Boolean),
-                  address: listing.address || 'Unknown Address',
-                  city: listing.city || 'Unknown City',
+                  address: listing.address || '123 Main Street',
+                  city: listing.city || 'Your City',
                   pincode: listing.pincode || 'Unknown Pincode',
                   contact: { phone: listing.phone || generateRandomPhone() },
                   category: listing.category || 'Unknown Category',
