@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+Nijaguna Hotels And Resorts,<,3.5,23 Ratings,"Road Chamarajanagar Ho, Chamarajanagar",,,Beauty Spas; Beauty Parlours,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.106Z
+Classic Men Parlour,<,4.4,32 Ratings,"Agrahara Street Chamarajanagar, Chamarajanagar",,,Beauty Spas; Beauty Parlours,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.106Z
+Chandu Mens Parlour,<,3.0,1 Ratings,"Vaniyar Street Chamarajanagar, Chamarajanagar",,,Home Services Offered,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.106Z
+Fast Gooo Centre,<,4.0,7 Ratings,"Bm Buildinh Gundlupet, Chamarajanagar",,,Beauty Spas; Beauty Parlours,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.106Z
+SURI MENS Parlour,<,3.5,4 Ratings,"Cross Double Road Chamarajanagar, Chamarajanagar",,,Home Services Offered,false,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Riva Beauty Salon & Spa,<,3.8,116 Ratings,"RP Road Nanjangud, Nanjangud",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Blue Moon Beauty World,<,5.0,10 Ratings,"80 Feet Road Alanahalli, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Pretty Curls,<,5.0,4 Ratings,"Patel Nagar Alanahalli, Mysore",,,Home Services Offered; Hair Spa; Skin Treatment,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+V Care Beauty Parlour and Spa,<,4.2,9 Ratings,"Mysore - Bannur Road Vajamangala, Mysore",,,Thai Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Golden Wellness Spa,<,4.3,29 Ratings,"Nazarbad Mohalla Ittigegud, Mysore",,,Ayurvedic Body Massage Centres; Body Massage Centres,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Sona Beaty Parlour,S,3.9,4 Ratings,"Siddarthanagar, Mysore",,,Beauty Spas; Beauty Parlours,false,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Usha Herbal Beauty Parlour,+,3.5,2 Ratings,"Road 1st Block Ramabai Nagar, Mysore",,,,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Yashu beauty parlour & ladies tailor,+,5.0,2 Ratings,"1st Block Ramabai Nagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Spectra Fitness,S,4.9,7 Ratings,"Station Main Road Jp Nagar, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Naveen Men's Saloon,+,4.1,12 Ratings,"10th Main Road Manandavadi Road, Mysore",,,Beauty Spas; Salons,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Reflect Hair And Skin,+,2.7,6 Ratings,"1St Stage J P Nagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Stylen Shave Hair and Skin Care,+,4.8,226 Ratings,"Siddhartha Layout, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Family Saloon,+,3.8,14 Ratings,"Vinaya Marga Siddarthanagar, Mysore",,,Hair Spa,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+New Wella,+,4.3,506 Ratings,"Main Road Siddarthanagar, Mysore",,,Skin Treatment,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Silver Cloud Spa And Massage,S,4.7,13 Ratings,"Muthoot Finance Siddarthanagar, Mysore",,,Thai Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.107Z
+Nithyasri Beauty Parlour S,+,4.5,2 Ratings,"6Th Cross J P Nagar, Mysore",,,Home Services Offered,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+MS Men's Salon,+,4.0,2 Ratings,"Vinay Marga Siddhartha Layout, Mysore",,,Hair Spa; Skin Treatment,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Emerge Spa,E,3.8,4 Ratings,"Simhaji Road Nazarbad, Mysore",,,Beauty Spas,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Royal Look Unsex Salon,+,4.8,540 Ratings,"Siddarthanagar, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+An B Style Saloon,+,4.3,28 Ratings,"Trishula Marga Siddarthanagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Castel Beauty Salon And Spa,C,3.4,9 Ratings,"Bannur Main Road Siddarthanagar, Mysore",,,Beauty Spas; Salons,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Green Trends Salon,+,4.6,"1,698 Ratings","Vinay Marga Siddhartha Layout, Mysore",,,Home Services Offered; Hair Spa; Skin Treatment,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Classic Mens Palour,C,4.0,4 Ratings,"Vidyaranyapuram, Mysore",,,Hair Spa,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Style Hair Dressers,S,3.7,3 Ratings,"Vidyaranyapuram, Mysore",,,Home Services Offered,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Macho Mens Parlour,M,4.0,12 Ratings,"Vidyaranyapuram, Mysore",,,Hair Stylists; Beauty Spas,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Swastik Herbal Beauty Parlour,+,5.0,1 Ratings,"Main Road Raghavendra Nagar, Mysore",,,Home Services Offered,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Glam and Glow Beauty Salon For Women,+,4.6,214 Ratings,"B Layout Banni Mantap, Mysore",,,Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+SPA.ce The Spa,+,4.4,77 Ratings,"Abba Road Nazarbad, Mysore",,,Thai Massage; Aroma Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Tulip Spa,T,3.5,22 Ratings,"Abba Road Nazarbad, Mysore",,,Body Massage Centres; Beauty Spas,false,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Tattva Spa,+,4.7,932 Ratings,"Agrahara Chamrajpura, Mysore",,,Thai Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Tattva Spa (Radisson Blu Plaza Hotel),+,4.5,2 Ratings,"M G Road, Mysore",,,Beauty Spas; Beauty Spas For Men,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Kavi Beauty Care,+,4.0,23 Ratings,"Main Road Sathagalli Layout, Mysore",,,,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Spa.Ce The Spa,+,4.4,12 Ratings,"Ooty Main Road Masinagudi, Ooty",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Greenapplle Unisex Salon & Spa,+,4.3,110 Ratings,"MG Road Agrahara, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Sedective Trend Style,S,5.0,1 Ratings,"Ashwath Road Kalyana Girinagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Magic Fingers Unisex Saloon And Spa,+,4.5,1 Ratings,"Zoo Garden Road Ittigegud, Mysore",,,Salons; Beauty Spas,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Pavithra Beauty Parlour,P,5.0,3 Ratings,"Ramanuja Road Fort Mohalla, Mysore",,,,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Pink And Purple Unisex Saloon & Spa,+,4.0,12 Ratings,"Zoo Garden Main Road Nazarbad, Mysore",,,Home Services Offered; Hair Spa; Skin Treatment,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+N S Beauty Parlour,+,5.0,4 Ratings,"Masjid Road Kalyana Girinagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Rishika Beauty Parlour,+,4.5,1 Ratings,"Main Road Vishweshwara Nagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.108Z
+Kushi Beauty Zone,+,4.0,2 Ratings,"Uttaradi Mutt Road Mysore Fort, Mysore",,,,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Ethnic Profinical Beauty Salon,+,4.2,9 Ratings,"Basaveshwara Road Kr Mohalla, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+The Mysore Spa,T,4.2,10 Ratings,"SH 88  Chamrajpura Agrahara, Mysore",,,Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+New Rathan Men's Parlour,+,4.0,2 Ratings,"Road Sathagalli Layout, Mysore",,,Beauty Spas; Beauty Parlours,false,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Green Trees Beauty Saloon,G,4.8,6 Ratings,"Vivekananda Circle Kuvempunagar, Mysore",,,Home Services Offered; Hair Spa; Skin Treatment,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Vital Beauty Parlour,+,3.8,24 Ratings,"Thyagaraja Road Agrahara, Mysore",,09972919101,Home Services Offered; Skin Treatment,true,false,false,true,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Baba Ramdev Patanjali Kendra,+,3.0,2 Ratings,"Main Road Vivekananda Nagar, Mysore",,,Beauty Parlours; Beauty Spas,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+The Divine S Pa and Beauty Zone,T,4.3,91 Ratings,"Nazarabad Main Road Nazarbad, Mysore",,,Aroma Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Sri Divya Beauty Parlour,S,4.5,4 Ratings,"Main Road Gayathripuram, Mysore",,,Home Services Offered,false,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Shravya Spa Beauty Parlour,+,3.8,84 Ratings,"Road Siddappa Square, Mysore",,09972930263,Body Massage Centres; Massage Centres For Men,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Colors Hair And Beauty Salon,+,4.6,449 Ratings,"Layout Vivekananda Nagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Yashsri Herbal And Professional Beauty Care,+,5.0,1 Ratings,"M Block Kuvempunagar, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Isha Beauty Zone,+,5.0,2 Ratings,"Street  'm' Block Kuvempunagar, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.109Z
+Lavender Beauty Spa,L,3.6,12 Ratings,"No.73 SK Continental Nazarbad, Mysore",,,Hair Spa; Skin Treatment,false,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Shree Beauty Parlour and S'pa,+,4.1,30 Ratings,"Nazrabad Main Road Nazarbad, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Nisarga Ayurvedic Spa,N,3.8,49 Ratings,"Suburb Bus Stand Road Nazarbad, Mysore",,08511318301,Body Massage Centres; Beauty Spas,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Histyle Hair Salon,+,4.5,54 Ratings,"Nrupathunga Road Kuvempunagar, Mysore",,,Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Sanjeevani Ayurveda Spa,+,4.3,11 Ratings,"Flat No. 85 Gayathripuram, Mysore",,,Aesthetic Dermatology Consultation,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Nature'S High 5 International Spa & Wellness,+,4.5,170 Ratings,"Niligiri Road BN Road Mysore, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Angel Beauty & Spa,A,4.6,6 Ratings,"Sri Harsha Road, Mysore",,,Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Ayurtouch Beauty Parlour and Spa,+,3.4,49 Ratings,"Lashkar Mohalla Mandi Mohalla, Mysore",,08511983056,Body Massage Centres; Massage Centres For Men,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Naturre Ayurvedic Wellness And Spa,+,4.6,15 Ratings,"No2722/1 Lashkar Mohalla, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Imagine Men's Salone,+,3.3,3 Ratings,"Sante Pete Kr Mohalla, Mysore",,,Home Services Offered,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Malabar Ayurveda Spa,M,3.8,22 Ratings,"B N Road Lashkar Mohalla, Mysore",,,Thai Massage,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Green Tree Unisex Beauty Salon,+,4.3,157 Ratings,"Nrupatunga Road Kuvempunagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Nannu Herbal Beauty Parlour,+,4.7,2 Ratings,"2nd Main Jayanagar, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Shie Salon Skin,+,4.3,117 Ratings,"Nrupathunga Road Kuvempunagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Vedic Ayurvedic Spa & Beaution,+,4.0,33 Ratings,"Lashkar Mohalla Mandi Mohalla, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Imagine Hair And Beauty,+,5.0,1 Ratings,"Kempajamba Road Agrahara, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Spark Beauty World,+,4.1,618 Ratings,"K - Block Kuvempunagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Charvi Beauty Parlour,+,4.3,31 Ratings,"Sayyaji New Sayyaji Rao Road, Mysore",,,Thai Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Happy Trimming Men's Parlour,+,4.9,6 Ratings,"Ramakrishnanagar, Mysore",,,Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Green Relief Salon And Spa,+,4.1,50 Ratings,"BN Road Mandi Mohalla, Mysore",,07383525724,Body Massage Centres; Massage Centres For Men,true,false,false,true,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Manya's Orchid,+,4.0,3 Ratings,"Main 2nd Cross Sharadadevi Nagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+V.S.Beauty Parlour,+,5.0,2 Ratings,"Main Road Shanthinagar, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Seena Men's Beauty Care,+,4.9,4 Ratings,"2nd Stage Kuvempunagar, Mysore",,,Beauty Salons For Men; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Sky'S Beauty Parlour & Spa,S,4.4,37 Ratings,"Ramvilas Road Kr Mohalla, Mysore",,,Salons; Body Massage Centres,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.110Z
+Aristo Mens Parlour,A,4.0,3 Ratings,"Ramakrishnanagar, Mysore",,,,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+ELIXIR BALI Spa,+,4.8,73 Ratings,"RTO CIRCLE Chamrajpura, Mysore",,08401082436,,true,false,false,true,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Saloon Express,+,4.4,9 Ratings,"Mahadevapura Main Road Udayagiri, Mysore",,,Home Services Offered,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Green Trends Unisex Hair & Style Salon,+,4.1,"1,424 Ratings","N S Road Kr Mohalla, Mysore",,,Skin Treatment,true,false,false,true,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Royal Beautician Spa,R,4.8,336 Ratings,"City Bustand Devaraja Mohalla, Mysore",,,Thai Massage,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Royal Wellness Spa,R,4.6,21 Ratings,"2727 5Th Bn Road Mysore, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Proelite Salon Spa & Makeup Studio,+,3.9,15 Ratings,"Vani Vilas Road Law Court Mysore, Mysore",,,Hair Spa; Thai Massage; Aroma Massage,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Perfect Image Beaty Saloon,+,4.8,2 Ratings,"Nimishamba Layout Kuvempunagar, Mysore",,,Home Services Offered; Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Ayur Touch Spa,+,4.7,121 Ratings,"D Subbaiah Road Ramaswamy Circle, Mysore",,,Body Massage Centres; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Herbal Beauty Parlour,+,5.0,1 Ratings,"Mahadevapura Main Road Udayagiri, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Aakarsh Beauty S'pa and Saloon,+,4.2,66 Ratings,"Doulbe Road Chamrajpura, Mysore",,08511462037,Body Massage Centres; Beauty Spas,true,false,false,true,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Ashu Beauty Parlour,+,3.9,27 Ratings,"No 209 Kr Mohalla, Mysore",,,Home Services Offered,true,false,false,false,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+American Hair Dressers,A,4.4,5 Ratings,"No 1 Ramaswamy Circle, Mysore",,,Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Style Saloon,+,5.0,1 Ratings,"Nrupatunga Road Kuvempunagar, Mysore",,,Salons; Beauty Spas,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Rich Layers Unisex Salon,+,4.7,"2,668 Ratings","Forum Centre City Mall Nazarbad, Mysore",,,,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.111Z
+Bliss Family Spa & Salon,+,4.1,30 Ratings,"Hyder Ali Road Lashkar Mohalla, Mysore",,09054094711,Thai Massage; Aroma Massage,true,false,false,true,false,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.112Z
+Reshitha Spa & Saloon,R,5.0,3 Ratings,"Navilu Road Kuvempunagar, Mysore",,,Hair Spa,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.112Z
+Agni Spa,+,4.4,141 Ratings,"Subbarayanakere Chamrajpura, Mysore",,,Outdoor Services,true,false,false,false,true,Beauty Spa,Popular Beauty Spas,Chamarajanagar,2025-06-04T09:23:36.112Z

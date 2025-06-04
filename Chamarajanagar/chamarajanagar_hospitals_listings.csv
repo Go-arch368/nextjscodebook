@@ -1,0 +1,101 @@
+name,initial,rating,totalRatings,address,distance,phone,tags,hasWhatsApp,hasEnquiry,isTrusted,isVerified,isPopular,category,subcategory,city,timestamp
+JSS Hospital,<,3.3,139 Ratings,"Gandhi Road Chamarajanagar Ho, Chamarajanagar",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.543Z
+Holy Cross Hospital,<,3.9,551 Ratings,"Kollegal Taluk Kamakerai, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.543Z
+Bethel Medical Mission Hospital & Hosmat Hospital Education Group,<,4.1,158 Ratings,"Preety Nagar Laggere, Bangalore",,07048209067,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Shri Tulasigirish Diabetes Hospital & Diabetes Research Foundation,<,4.2,34 Ratings,"Mahaveer Road Bagalkot, Bagalkot",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Global Health Tourism,<,4.6,38 Ratings,"Lane No 5 Vishwakarma Nagar, Nagpur",,09980635869,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Pragati Medcity and Stem Cell Centre,<,4.8,30 Ratings,"Ajay Singh Marg Rohit Nagar, Bhopal",,09035344697,,true,false,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Nephron Kidney Kare Clinic,<,3.9,119 Ratings,"Bariatu Road Bariatu, Ranchi",,,,true,false,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Nangal Cancer Hospital & Research Institute,<,4.7,635 Ratings,"College Road Bikaner Agra Road, Bikaner",,,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.544Z
+Government District Hospital,<,3.1,81 Ratings,"Agrahara Street Chamarajanagar, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Janani Hospital,<,3.3,67 Ratings,"Basaveshwara Nagar Kollegal, Chamarajanagar",,,,true,true,false,true,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Kollegal Government Hospital,+,3.1,58 Ratings,"- Kollegala road Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Assisi Hospital,+,3.2,50 Ratings,"Veeranapura Road Gundlupet, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Basavarajendra Hospital,+,3.5,34 Ratings,"Gangavadi Mariyala, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Basavarajendra Hospital,+,3.5,34 Ratings,"Road Badanaguppe Chamrajnagar, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Apollo Bgs Hospitals,A,4.1,28 Ratings,"Road Chamarajanagar Ho, Chamarajanagar",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Shanti Nursing Home,S,3.3,28 Ratings,"Kollegal Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+R K Hospital,R,4.0,20 Ratings,"Hills Road Bramaramba Extension, Chamarajanagar",,,,true,false,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Mudduveerappa Memorial Hospital,M,3.8,20 Ratings,"Southern Extension Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+Vijaya Lakshmi Nursing Home,V,4.0,19 Ratings,"Southern Extension Road Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.545Z
+A.V.S.Hospital,A,3.5,20 Ratings,"4th Cross Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Vam Hospital,V,3.2,21 Ratings,"Ooty Mysore Road Gundlupet, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+District Hospital,D,3.7,17 Ratings,"Double Road Chamarajanagar, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+G Madegowda Super Speciality Hospital,+,4.2,11 Ratings,"Doddi Mandya - Kollegal, Chamarajanagar",,,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Government Hospital,G,4.0,11 Ratings,"Aralikatte, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Kshema Hospital,K,2.6,16 Ratings,"Double Road Chamarajanagar, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Sri Shivarathri Rajendra Hospital,S,3.2,10 Ratings,"Double Road Chamarajanagar, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Holy Cross Mission Hospital,+,3.2,10 Ratings,"Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+N S Speciality Hospital,N,4.4,7 Ratings,"Main Road Kollegal, Chamarajanagar",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+St. Joseph Hospital,+,4.3,7 Ratings,"Hills Road Siddhartha Nagar, Chamarajanagar",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Nanjappa Eye Hospital,N,4.6,6 Ratings,"Southern Extension Kollegal, Chamarajanagar",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+R K Hospital,R,4.3,6 Ratings,"Basaveshwara Nagar Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Government General Hospital,G,4.3,6 Ratings,"Santhemaranahalli, Chamarajanagar",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Heggavadipura,H,4.6,5 Ratings,Chamarajanagar,,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Dharani Hospital,D,4.8,4 Ratings,"Kollegal Road Santhemaranahalli, Chamarajanagar",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Chamarajanagar Institute Of Medical Sciences Hospital,C,3.5,4 Ratings,"Agrahara Street Chamarajanagar, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Kmc Mother And Child Hospital,K,4.3,3 Ratings,"Mahal Road Southern Extension, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Muddu Veerappa Hospital,M,3.1,4 Ratings,"Ramalinga Shastry Road Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+BMS Hospital,B,4.5,2 Ratings,"Basaveshwara Nagar Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Primary Health Centre,P,4.0,2 Ratings,"Ummathur, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Srinivas Vet & Pet Medical,S,4.0,2 Ratings,"Achattipura, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Sapthagiri Medicals,S,4.0,2 Ratings,"Ambedkar Road Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Primary Health Centre,P,4.0,2 Ratings,"Sri Hangala, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.546Z
+Bharat Medical,B,4.0,2 Ratings,"Bandalli, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Medical Officer Government Hospital,M,5.0,1 Ratings,"Kollegala Kollegal, Chamarajanagar",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Government Hospital 6 Anganawadi Kendra,G,5.0,1 Ratings,"Kagalawadi Alur Chamrajnagar, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+AVS Hospital,A,5.0,1 Ratings,"Kollegal Kollegal, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Primary Health Centre,P,5.0,1 Ratings,"Gundalpeth Chamarajanagar Ho, Chamarajanagar",,,T B Relief Centres; Hospitals,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+AVS Hospital,A,4.0,1 Ratings,"Extension Road Chamarajanagar Ho, Chamarajanagar",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Ashwini Hospital,A,3.7,17 Ratings,"Nh948 Ambale, Yelandur",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Nattu Vidhya Salai,N,3.8,5 Ratings,"Thalavadi Talavadi, Erode",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Assisi Hospital,A,4.2,14 Ratings,"Talamalai Road Talamalai, Erode",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Assisi Hospital,A,4.0,4 Ratings,"Talavadi, Erode",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Hedathale Deliver Hospital,H,4.3,3 Ratings,"Hedathale, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+R K Hospital,R,3.3,23 Ratings,"Cross Road Basaveshwara Nagar, Bangalore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Government Hospital,G,3.1,7 Ratings,"Talakadu, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+JSS Hospital,J,3.9,11 Ratings,"Sutturu Suttur, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Brundha hospital,+,4.8,40 Ratings,"Hospital Road T Narasipura, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Cureplus Hospital,C,4.0,2 Ratings,"Tirumakudalu Narasipura, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Government Women & Children Hospital,G,4.8,5 Ratings,"Gandhi Shatabdi Road Nanjangud, Nanjangud",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Apollo Bgs Hospital,+,4.8,"37,744 Ratings","Road Sujathapuram, Nanjangud",,09725441915,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Krishna Hospital,+,4.7,"1,155 Ratings","18th Cross RP Road Nanjangud, Nanjangud",,,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.547Z
+Mamatha Hospital,M,3.3,25 Ratings,"R P Road Nanjangud, Nanjangud",,,,true,false,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Apollo Emergency Care Center,A,4.8,"1,182 Ratings","14th Cross nanjangud, Nanjangud",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Ideal hospital,+,4.4,60 Ratings,"Gowda Layout Kempe Gowda Layout, Nanjangud",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Primary Health Centre,P,4.6,18 Ratings,"Kasuvinahalli, Mysore",,,T B Relief Centres; Hospitals,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Balaji Medical And General Store,B,4.0,2 Ratings,"Area Road Chikkaiahnachatra, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Government Primary Health Centre,G,5.0,1 Ratings,"Thengumarahada Kannerimukku, Kotagiri",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Lakshmi Medical,L,4.3,3 Ratings,"Belakavadi Janatha Colony, Mandya",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Government Unani Health And Wellness Centre,G,3.5,2 Ratings,"B Bettahalli Aravattige Koppal, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Appolo Hospital,A,2.5,4 Ratings,"Mysuru Varakodu, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Govt Primary Hospital,G,4.0,3 Ratings,"Utanahalli, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Viveka Hospital,V,4.7,12 Ratings,"Ganga Nagar Vajamangala, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.548Z
+Viveka Hospital,+,4.7,473 Ratings,"60ft Road Vajamangala, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Ayur Matam,+,4.4,332 Ratings,"Mogarahalli Metagalli, Mysore",,07383171508,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Kodanadu Phc,K,4.6,12 Ratings,"Keradamattam Kodanad, Kotagiri",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Nirmala Hospital,+,4.8,"2,957 Ratings","Doctors Layout Alanahalli, Mysore",,07383235960,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Primary Health Center Hediyala,P,4.0,2 Ratings,"Amakahalli Hediyala, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+JSS Ayurveda Hospital,+,4.1,251 Ratings,"Lalithadripura Road Alanahalli, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Government General Hospital,G,4.5,23 Ratings,"Kuppalur J P Nagar, Mysore",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Mellahalli Clinic,M,4.0,2 Ratings,"Mellahalli Alanahalli, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Acme Panacea Hospital,+,3.5,209 Ratings,"2nd Stage J P Nagar, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Danish Medical & Clinic,D,4.0,2 Ratings,"Kiragavalu, Mandya",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.549Z
+Sompura Basappa Hospital,+,4.5,18 Ratings,"Bannur Road Alanahalli, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Premedical Care,P,4.0,1 Ratings,"No.112 Kc Layout, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Narayana Medicals,N,4.0,2 Ratings,"Devegowda Circle, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Shakthi Hill View Hospital,S,3.7,90 Ratings,"T Narasipura Road Alanahalli, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Ragibommanahalli Government Hospital,R,3.5,2 Ratings,"Ragibommanahalli, Mandya",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Cauvery Heart And Multispeciality Hospital,+,4.4,"3,848 Ratings","Yaragna Halli Siddarthanagar, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Sgs Ayurvedic Hospital,+,4.8,47 Ratings,"Dattanagar, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Mrc Hospital,M,4.0,2 Ratings,"Cross Road Siddhartha Layout, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Queen Mary Hospital,+,4.6,26 Ratings,"HD Kote Road Rayanakere, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Kamakshi Hospital,+,4.0,198 Ratings,"Nachannahalli Palya Jp Nagar, Mysore",,,,true,true,false,true,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Shree Ganapathi Sachidananda Hospital,S,3.7,3 Ratings,"Outy Road Ooty Road, Mysore",,,,false,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Community Health Centre,C,4.5,2 Ratings,"Cross Ramaiah Road Ashokapuram, Mysore",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Naipunya Dental Care,+,5.0,24 Ratings,"Rajkumar Road Raghavendra Nagar, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Sathyanarayana Hospital,+,4.2,13 Ratings,"Main Road Raghavendra Nagar, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Sathyanarayana Multispeciality Hospital,S,4.0,11 Ratings,"Giriboviya Palya, Mysore",,,,true,false,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+A V Hospital,+,4.3,48 Ratings,"Vinaya Marga Siddarthanagar, Mysore",,,,true,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Shree Mahadeshwara Nursing Home,S,3.6,221 Ratings,"Main Road Siddhartha Layout, Mysore",,,,true,true,false,false,false,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z
+Mrc Eye Hospital,+,4.1,215 Ratings,"9th Main Road Siddarthanagar, Mysore",,,,false,true,false,false,true,Best Hospitals,,Chamarajanagar,2025-06-04T09:51:28.550Z

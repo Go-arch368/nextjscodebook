@@ -1,4 +1,3 @@
-
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
@@ -6,7 +5,7 @@ import path from 'path';
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="error.csv"');
+    res.setHeader('Content-Display', 'attachment; filename="error.csv"');
     return res.status(405).send('error\n"Method not allowed"');
   }
 
@@ -44,18 +43,18 @@ export default async function handler(req, res) {
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
     // Create the filemanager directory if it doesn't exist
-    const outputDir = path.join(process.cwd(), 'Kolar');
+    const outputDir = path.join(process.cwd(), 'Chamarajanagar');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
       console.log(`Created directory: ${outputDir}`);
     }
 
-    // Navigate to Justdial Kolar page
-    const kolarBaseUrl = 'https://www.justdial.com/Kolar';
-    await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
-    console.log('Navigated to Justdial Kolar page');
-    await page.screenshot({ path: path.join(outputDir, 'kolar-page.png'), fullPage: true });
-    console.log(`Screenshot saved: ${path.join(outputDir, 'kolar-page.png')}`);
+    // Navigate to Justdial Chamarajanagar page
+    const chamarajanagarBaseUrl = 'https://www.justdial.com/Chamarajanagar';
+    await page.goto(chamarajanagarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+    console.log('Navigated to Justdial Chamarajanagar page');
+    await page.screenshot({ path: path.join(outputDir, 'chamarajanagar-page.png'), fullPage: true });
+    console.log(`Screenshot saved: ${path.join(outputDir, 'chamarajanagar-page.png')}`);
 
     // Handle cookie consent popup
     try {
@@ -87,51 +86,51 @@ export default async function handler(req, res) {
       console.log('No auto-location popup found or failed to click:', e.message);
     }
 
-    // Verify location is Kolar and click "Popular Categories" button
+    // Verify location is Chamarajanagar and click "Popular Categories" button
     try {
-      console.log('Verifying location is Kolar...');
+      console.log('Verifying location is Chamarajanagar...');
       const locationInputSelector = '#city, [name="city"], [id*="location"], [class*="city"] input, [placeholder*="city"], [class*="location"] input, #home-city-autocomplete';
       const locationInput = await page.waitForSelector(locationInputSelector, { visible: true, timeout: 15000 });
       if (locationInput) {
         const currentValue = await page.evaluate(el => el.value, locationInput);
         console.log('Current location input:', currentValue);
-        if (!currentValue.toLowerCase().includes('kolar')) {
-          console.log('Location not set to Kolar, setting now...');
+        if (!currentValue.toLowerCase().includes('chamarajanagar')) {
+          console.log('Location not set to Chamarajanagar, setting now...');
           await locationInput.click({ clickCount: 3 });
           await locationInput.press('Backspace');
-          await locationInput.type('Kolar', { delay: 100 });
+          await locationInput.type('Chamarajanagar', { delay: 100 });
           await delay(3000);
 
-          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Kolar")';
+          const suggestionSelector = '.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li:contains("Chamarajanagar")';
           await page.waitForSelector(suggestionSelector, { visible: true, timeout: 10000 });
           await page.evaluate(() => {
             const suggestions = document.querySelectorAll('.suggestions_list li, .city-suggestion, .autocomplete-suggestion, [class*="suggestion"], [class*="autoComplete"], li');
             for (let suggestion of suggestions) {
-              if (suggestion.textContent.toLowerCase().includes('kolar')) {
+              if (suggestion.textContent.toLowerCase().includes('chamarajanagar')) {
                 suggestion.click();
                 break;
               }
             }
           });
-          console.log('Clicked "Kolar" from suggestions');
+          console.log('Clicked "Chamarajanagar" from suggestions');
           await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 60000 });
           console.log('Navigation completed after selecting city');
 
           const newValue = await page.evaluate(el => el.value, locationInput);
           console.log('New location input:', newValue);
-          if (!newValue.toLowerCase().includes('kolar')) {
-            throw new Error('Failed to set location to Kolar, found: ' + newValue);
+          if (!newValue.toLowerCase().includes('chamarajanagar')) {
+            throw new Error('Failed to set location to Chamarajanagar, found: ' + newValue);
           }
         }
-        console.log('Successfully confirmed location as Kolar');
+        console.log('Successfully confirmed location as Chamarajanagar');
       } else {
         console.log('Location input not found, relying on URL');
       }
 
       const currentUrl = await page.url();
-      if (!currentUrl.includes('/Kolar')) {
-        console.log('URL does not contain Kolar, navigating to correct URL');
-        await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+      if (!currentUrl.includes('/Chamarajanagar')) {
+        console.log('URL does not contain Chamarajanagar, navigating to correct URL');
+        await page.goto(chamarajanagarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
       }
 
       console.log('Looking for Popular Categories button with id="popular_categories"...');
@@ -311,9 +310,9 @@ export default async function handler(req, res) {
         await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
 
         const currentUrl = await page.url();
-        if (!currentUrl.includes('/Kolar')) {
-          console.log(`Location changed in URL: ${currentUrl}, resetting to Kolar`);
-          await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+        if (!currentUrl.includes('/Chamarajanagar')) {
+          console.log(`Location changed in URL: ${currentUrl}, resetting to Chamarajanagar`);
+          await page.goto(chamarajanagarBaseUrl, { waitUntil: 'networkidle2', timeout: 30000 });
           await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
         }
 
@@ -392,12 +391,12 @@ export default async function handler(req, res) {
         const data = await page.evaluate((scrapedUrl, categoryText, subCategoryText) => {
           let category = categoryText;
           let subcategory = subCategoryText;
-          let city = 'Kolar';
+          let city = 'Chamarajanagar';
           const heading = document.querySelector('h1')?.textContent || '';
           const headingMatch = heading.match(/(.+?)\s+in\s+(.+)/i);
           if (headingMatch) {
             const headingCategory = headingMatch[1]?.trim();
-            city = headingMatch[2]?.trim() || 'Kolar';
+            city = headingMatch[2]?.trim() || 'Chamarajanagar';
             if (subCategoryText) {
               subcategory = headingCategory; // Subcategory might be in the heading
             } else {
@@ -519,7 +518,7 @@ export default async function handler(req, res) {
         // Generate and save CSV for the main category
         const mainCategoryCsvData = convertToCSV(mainCategoryResults);
         const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-        const mainCategoryFileName = `kolar_${safeMainCategoryName}_listings.csv`;
+        const mainCategoryFileName = `chamarajanagar_${safeMainCategoryName}_listings.csv`;
         const mainCategoryFilePath = path.join(outputDir, mainCategoryFileName);
 
         fs.writeFileSync(mainCategoryFilePath, mainCategoryCsvData);
@@ -560,7 +559,7 @@ export default async function handler(req, res) {
             const subcategoryCsvData = convertToCSV(subcategoryResults);
             const safeMainCategoryName = mainCategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
             const safeSubcategoryName = subcategoryName.toLowerCase().replace(/[^a-z0-9]/g, '_');
-            const subcategoryFileName = `kolar_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
+            const subcategoryFileName = `chamarajanagar_${safeMainCategoryName}_${safeSubcategoryName}_listings.csv`;
             const subcategoryFilePath = path.join(outputDir, subcategoryFileName);
 
             fs.writeFileSync(subcategoryFilePath, subcategoryCsvData);
@@ -597,7 +596,7 @@ export default async function handler(req, res) {
 
       const csvData = convertToCSV(results);
       const safeCategoryName = category.toLowerCase().replace(/[^a-z0-9]/g, '_');
-      const fileName = `kolar_${safeCategoryName}_all_subcategories_listings.csv`;
+      const fileName = `chamarajanagar_${safeCategoryName}_all_subcategories_listings.csv`;
       const filePath = path.join(outputDir, fileName);
 
       // Save the CSV file
@@ -620,9 +619,9 @@ export default async function handler(req, res) {
         allResults.push(...categoryResults);
       }
 
-      // Navigate back to the Kolar page
-      console.log('Navigating back to Kolar page:', kolarBaseUrl);
-      await page.goto(kolarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+      // Navigate back to the Chamarajanagar page
+      console.log('Navigating back to Chamarajanagar page:', chamarajanagarBaseUrl);
+      await page.goto(chamarajanagarBaseUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
       try {
         const popularCategoriesBtn = await page.waitForSelector('#popular_categories', { visible: true, timeout: 20000 });
@@ -655,14 +654,14 @@ export default async function handler(req, res) {
 
     // Generate and save the combined CSV file
     const combinedCsvData = convertToCSV(allResults);
-    const combinedFileName = 'kolar_all_categories_listings.csv';
+    const combinedFileName = 'chamarajanagar_all_categories_listings.csv';
     const combinedFilePath = path.join(outputDir, combinedFileName);
     fs.writeFileSync(combinedFilePath, combinedCsvData);
     console.log(`Combined file saved: ${path.resolve(combinedFilePath)}`);
 
     // Send the combined CSV file as the response
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="kolar_all_categories_listings.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="chamarajanagar_all_categories_listings.csv"');
     res.status(200).send(combinedCsvData);
   } catch (error) {
     console.error('Scraping error:', error);

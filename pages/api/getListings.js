@@ -1,3 +1,4 @@
+// pages/api/getListings.js
 import dbConnect from '@/lib/dbConnect';
 import BusinessListing from '../../models/BusinessListing';
 
@@ -9,85 +10,87 @@ export default async function handler(req, res) {
   try {
     await dbConnect();
 
-    const { category, name, sort, sortByVerified, sortByTrusted, sortByRating } = req.query;
+    const {
+      q,
+      pincode,
+      category,
+      subcategory,
+      tag,
+      name,
+      address,
+      city,
+      sort,
+      sortByVerified,
+      sortByTrusted,
+      sortByRating,
+    } = req.query;
     const query = {};
 
-    if (category || name) {
-      query.$or = [];
-      if (category) {
-        query.$or.push({ category: { $regex: category, $options: 'i' } });
-      }
-      if (name) {
-        query.$or.push({ name: { $regex: name, $options: 'i' } });
-      }
+    // Unified search across multiple fields
+    if (q) {
+      query.$or = [
+        { name: { $regex: q, $options: 'i' } },
+        { category: { $regex: q, $options: 'i' } },
+        { subcategory: { $regex: q, $options: 'i' } },
+        { tags: { $regex: q, $options: 'i' } },
+        { address: { $regex: q, $options: 'i' } },
+        { city: { $regex: q, $options: 'i' } },
+      ];
     }
 
-    const sortOptions = {};
-    if (sortByVerified === 'true') {
-      sortOptions.isVerified = -1;
-    }
-    if (sortByTrusted === 'true') {
-      sortOptions.isTrusted = -1;
-    }
-    if (sort === 'rating') {
-      sortOptions.rating = -1;
-    } else if (sort === 'totalRatings-desc') {
-      sortOptions.totalRatings = -1;
-    } else if (sort === 'totalRatings-asc') {
-      sortOptions.totalRatings = 1;
-    }
+    // Specific field filters
+    if (category) query.category = { $regex: category, $options: 'i' };
+    if (subcategory) query.subcategory = { $regex: subcategory, $options: 'i' };
+    if (tag) query.tags = { $regex: tag, $options: 'i' };
+    if (name) query.name = { $regex: `^${name}$`, $options: 'i' }; // Exact match for name
+    if (address) query.address = { $regex: address, $options: 'i' };
+    if (city) query.city = { $regex: city, $options: 'i' };
+    if (pincode) query.pincode = { $regex: `^${pincode}`, $options: 'i' };
+    if (sortByVerified === 'true') query.isVerified = true;
+    if (sortByTrusted === 'true') query.isTrusted = true;
+    if (sortByRating) query.rating = { $gte: parseFloat(sortByRating) };
 
-    let listings = await BusinessListing.find(query).lean();
-
-    if (sortByRating) {
-      const ratingThreshold = parseFloat(sortByRating);
-      if (!isNaN(ratingThreshold)) {
-        listings = listings.sort((a, b) => {
-          const aPriority = a.rating >= ratingThreshold ? 1 : 0;
-          const bPriority = b.rating >= ratingThreshold ? 1 : 0;
-          if (aPriority !== bPriority) {
-            return bPriority - aPriority;
-          }
-          if (sortByVerified === 'true') {
-            if (a.isVerified !== b.isVerified) return b.isVerified ? -1 : 1;
-          }
-          if (sortByTrusted === 'true') {
-            if (a.isTrusted !== b.isTrusted) return b.isTrusted ? -1 : 1;
-          }
-          if (sort === 'rating') {
-            return b.rating - a.rating;
-          } else if (sort === 'totalRatings-desc') {
-            return (b.totalRatings || 0) - (a.totalRatings || 0);
-          } else if (sort === 'totalRatings-asc') {
-            return (a.totalRatings || 0) - (b.totalRatings || 0);
-          }
-          return 0;
-        });
-      }
-    } else {
-      listings = await BusinessListing.find(query).sort(sortOptions).lean();
+    // Sorting
+    let sortOptions = {};
+    if (sort) {
+      if (sort === 'totalRatings-desc') sortOptions.totalRatings = -1;
+      if (sort === 'totalRatings-asc') sortOptions.totalRatings = 1;
+      if (sort === 'rating') sortOptions.rating = -1;
     }
 
-    const uniqueCategories = [...new Set(listings.map((listing) => listing.category))];
+    // Fetch all matching listings
+    const listings = await BusinessListing.find(query)
+      .sort(sortOptions)
+      .lean();
 
-    console.log(
-      `Fetched ${listings.length} listings for query: category=${category || 'All'}, name=${name || 'None'}, sort=${sort || 'Default'}, sortBy: `,
-      { sortByVerified: sortByVerified === 'true', sortByTrusted: sortByTrusted === 'true', sortByRating }
-    );
-
-    if (listings.length === 0) {
+    if (!listings.length) {
       return res.status(200).json({
         success: false,
-        message: `No listings found for query: category=${category || 'all'}, name=${name || 'none'}`,
+        message: `No listings found for query: q=${q || 'none'}, name=${name || 'none'}, pincode=${pincode || 'none'}`,
         data: [],
         categories: [],
+        subcategories: [],
+        tags: [],
+        addresses: [],
+        cities: [],
       });
     }
+
+    // Extract unique fields
+    const uniqueCategories = [...new Set(listings.map((listing) => listing.category).filter(Boolean))];
+    const uniqueSubcategories = [...new Set(listings.map((listing) => listing.subcategory).filter(Boolean))];
+    const uniqueTags = [...new Set(listings.flatMap((listing) => listing.tags || []).filter(Boolean))];
+    const uniqueAddresses = [...new Set(listings.map((listing) => listing.address).filter(Boolean))];
+    const uniqueCities = [...new Set(listings.map((listing) => listing.city).filter(Boolean))];
 
     return res.status(200).json({
       success: true,
       data: listings,
       categories: uniqueCategories,
+      subcategories: uniqueSubcategories,
+      tags: uniqueTags,
+      addresses: uniqueAddresses,
+      cities: uniqueCities,
     });
   } catch (error) {
     console.error('Error fetching listings:', error.message);
