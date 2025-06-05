@@ -88,6 +88,22 @@ const businessListingSchema = new mongoose.Schema(
   }
 );
 
-businessListingSchema.index({ name: 1, city: 1 });
+// Define text index
+businessListingSchema.index({
+  name: 'text',
+  category: 'text',
+  tags: 'text',
+  city: 'text',
+  address: 'text',
+});
+
+// Ensure indexes are created
+businessListingSchema.on('index', (error) => {
+  if (error) {
+    console.error('Error creating indexes:', error.message);
+  } else {
+    console.log('Text index created successfully');
+  }
+});
 
 export default mongoose.models.BusinessListing || mongoose.model('BusinessListing', businessListingSchema);

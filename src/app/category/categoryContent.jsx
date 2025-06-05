@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown, X } from 'lucide-react';
 
+
 function debounce(func, delay) {
   let timeout;
   return (...args) => {
@@ -24,9 +25,6 @@ function generateRandomPhone() {
 export default function CategoryContent() {
   const searchParams = useSearchParams();
   const [listings, setListings] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [city, setCity] = useState('Your City');
-  const [pincode, setPincode] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleImages, setVisibleImages] = useState({});
@@ -49,15 +47,14 @@ export default function CategoryContent() {
   const [isRatingDropdownOpen, setIsRatingDropdownOpen] = useState(false);
   const [showAllFilters, setShowAllFilters] = useState(false);
 
-  // Get all possible query parameters
+  // Get query parameters
   const query = searchParams.get('query');
   const selectedCategory = searchParams.get('category');
-  const selectedSubcategory = searchParams.get('subcategory');
   const selectedTag = searchParams.get('tag');
   const selectedName = searchParams.get('name');
   const selectedAddress = searchParams.get('address');
   const selectedCity = searchParams.get('city');
-  const selectedPincode = searchParams.get('pincode');
+  const selectedPincode = searchParams.get('pincode') || '560062';
 
   const fetchListings = useCallback(
     debounce(async (params, sort, sortFields) => {
@@ -66,40 +63,40 @@ export default function CategoryContent() {
         setError(null);
 
         const queryParams = new URLSearchParams();
-        if (params.query) queryParams.append('q', params.query);
+        if (params.query) queryParams.append('query', params.query);
         if (params.category) queryParams.append('category', params.category);
-        if (params.subcategory) queryParams.append('subcategory', params.subcategory);
         if (params.tag) queryParams.append('tag', params.tag);
         if (params.name) queryParams.append('name', params.name);
         if (params.address) queryParams.append('address', params.address);
         if (params.city) queryParams.append('city', params.city);
-        if (params.pincode) queryParams.append('pincode', params.pincode);
+        queryParams.append('pincode', params.pincode);
+
         if (sort) queryParams.append('sort', sort);
         if (sortFields.sortByVerified) queryParams.append('sortByVerified', 'true');
         if (sortFields.sortByTrusted) queryParams.append('sortByTrusted', 'true');
         if (sortFields.ratingSort) queryParams.append('sortByRating', sortFields.ratingSort);
 
+        console.log('Fetching listings with URL:', `/api/getListings?${queryParams.toString()}`);
         const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
           cache: 'no-store',
         });
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch listings: ${response.status}`);
+          throw new Error(`HTTP error: ${response.status}`);
         }
         const result = await response.json();
+        console.log('API response:', result);
 
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
-          const uniqueCategories = [...new Set(result.data.map((listing) => listing.category).filter(Boolean))];
-
-          // Fetch images for categories
-          const imagePromises = uniqueCategories.map((cat) =>
-            fetch(`/api/getImagesByCategory?category=${encodeURIComponent(cat)}`, {
+          // Fetch images for listings
+          const imagePromises = result.data.map((listing) =>
+            fetch(`/api/getImagesByCategory?category=${encodeURIComponent(listing.category)}`, {
               cache: 'no-store',
             })
-              .then((res) => res.json().then((data) => ({ category: cat, data })))
+              .then((res) => res.json().then((data) => ({ category: listing.category, data })))
               .catch((error) => {
-                console.error(`Failed to fetch images for ${cat}: ${error.message}`);
-                return { category: cat, data: { images: [] } };
+                console.error(`Failed to fetch images for ${listing.category}: ${error.message}`);
+                return { category: listing.category, data: { images: [] } };
               })
           );
 
@@ -115,24 +112,19 @@ export default function CategoryContent() {
           }));
 
           setListings(listingsWithImages);
-          setCategories(uniqueCategories);
-          setCity(params.city || result.data[0]?.city || 'Your City');
-          setPincode(params.pincode || result.data[0]?.pincode || '');
           const initialVisibleImages = {};
           listingsWithImages.forEach((_, index) => {
             initialVisibleImages[index] = 1;
           });
           setVisibleImages(initialVisibleImages);
         } else {
-          throw new Error(result.message || 'No listings found');
+          setListings([]);
+          setError(result.message || 'No listings found for the given query');
         }
       } catch (err) {
         console.error('Fetch error:', err.message);
         setError(`Unable to load listings: ${err.message}`);
         setListings([]);
-        setCategories([]);
-        setCity(params.city || 'Your City');
-        setPincode(params.pincode || '');
       } finally {
         setLoading(false);
       }
@@ -153,7 +145,6 @@ export default function CategoryContent() {
     const params = {
       query,
       category: selectedCategory,
-      subcategory: selectedSubcategory,
       tag: selectedTag,
       name: selectedName,
       address: selectedAddress,
@@ -165,7 +156,6 @@ export default function CategoryContent() {
     fetchListings,
     query,
     selectedCategory,
-    selectedSubcategory,
     selectedTag,
     selectedName,
     selectedAddress,
@@ -194,7 +184,6 @@ export default function CategoryContent() {
         const params = {
           query,
           category: selectedCategory,
-          subcategory: selectedSubcategory,
           tag: selectedTag,
           name: selectedName,
           address: selectedAddress,
@@ -210,7 +199,6 @@ export default function CategoryContent() {
     fetchListings,
     query,
     selectedCategory,
-    selectedSubcategory,
     selectedTag,
     selectedName,
     selectedAddress,
@@ -300,7 +288,6 @@ export default function CategoryContent() {
     const params = {
       query,
       category: selectedCategory,
-      subcategory: selectedSubcategory,
       tag: selectedTag,
       name: selectedName,
       address: selectedAddress,
@@ -325,16 +312,6 @@ export default function CategoryContent() {
           {error}
           <Button
             onClick={() => {
-              const params = {
-                query,
-                category: selectedCategory,
-                subcategory: selectedSubcategory,
-                tag: selectedTag,
-                name: selectedName,
-                address: selectedAddress,
-                city: selectedCity,
-                pincode: selectedPincode,
-              };
               let sort = null;
               if (topRatedSort === 'desc') {
                 sort = 'totalRatings-desc';
@@ -344,6 +321,15 @@ export default function CategoryContent() {
                 sort = 'rating';
               }
               const sortFields = { sortByVerified, sortByTrusted, ratingSort };
+              const params = {
+                query,
+                category: selectedCategory,
+                tag: selectedTag,
+                name: selectedName,
+                address: selectedAddress,
+                city: selectedCity,
+                pincode: selectedPincode,
+              };
               fetchListings(params, sort, sortFields);
             }}
             className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
@@ -358,16 +344,24 @@ export default function CategoryContent() {
   return (
     <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-6xl px-4 py-6">
-        {(query || selectedPincode || selectedCity || selectedCategory) && (
+      
+
+        {(query || selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
           <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
             Showing results for:{' '}
             {query && <span>Search: "{query}"</span>}
-            {(query && (selectedPincode || selectedCity || selectedCategory)) && ', '}
+            {(query && (selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress)) && ', '}
             {selectedCategory && <span>Category: {selectedCategory}</span>}
-            {(query || selectedCategory) && (selectedPincode || selectedCity) && ', '}
-            {selectedPincode && <span>Pincode: {selectedPincode}</span>}
-            {selectedPincode && selectedCity && ', '}
+            {(query || selectedCategory) && (selectedPincode !== '560062' || selectedCity || selectedTag || selectedName || selectedAddress) && ', '}
+            {selectedTag && <span>Tag: {selectedTag}</span>}
+            {(query || selectedCategory || selectedTag) && (selectedPincode !== '560062' || selectedCity || selectedName || selectedAddress) && ', '}
+            {selectedName && <span>Name: {selectedName}</span>}
+            {(query || selectedCategory || selectedTag || selectedName) && (selectedPincode !== '560062' || selectedCity || selectedAddress) && ', '}
+            {selectedAddress && <span>Address: {selectedAddress}</span>}
+            {(query || selectedCategory || selectedTag || selectedName || selectedAddress) && (selectedPincode !== '560062' || selectedCity) && ', '}
             {selectedCity && <span>City: {selectedCity}</span>}
+            {(query || selectedCategory || selectedTag || selectedName || selectedAddress || selectedCity) && selectedPincode !== '560062' && ', '}
+            {selectedPincode !== '560062' && <span>Pincode: {selectedPincode}</span>}
           </div>
         )}
 
@@ -381,21 +375,21 @@ export default function CategoryContent() {
                   setStagedTopRatedSort(null);
                 }}
                 className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 flex items-center gap-2 px-4 py-2 rounded-md"
-                aria-label="Sort options"
+                aria-label="sort-options"
                 aria-expanded={isDropdownOpen}
               >
                 Sort by: {sortOption === 'rating' ? 'Rating' : 'Default'}
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isDropdownOpen && (
-                <div className="absolute z-10 mt-2 w-40 bg-white dark:bg-gray-700 shadow-lg rounded-md">
+                <div className="absolute z-10 mt-2 rounded-md bg-white shadow-lg w-40 dark:bg-gray-700">
                   <button
                     onClick={() => {
                       setSortOption('default');
                       setStagedSortOption('default');
                       setIsDropdownOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
                   >
                     Default
                   </button>
@@ -405,7 +399,7 @@ export default function CategoryContent() {
                       setStagedSortOption('rating');
                       setIsDropdownOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
                   >
                     Rating
                   </button>
@@ -466,21 +460,21 @@ export default function CategoryContent() {
               <Button
                 onClick={() => setIsRatingDropdownOpen(!isRatingDropdownOpen)}
                 className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 flex items-center gap-2 px-4 py-2 rounded-md"
-                aria-label="Rating sort options"
+                aria-label="rating sort-options"
                 aria-expanded={isRatingDropdownOpen}
               >
                 Ratings: {ratingSort ? `${ratingSort}+` : 'All'}
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isRatingDropdownOpen && (
-                <div className="absolute z-10 mt-2 w-40 bg-white dark:bg-gray-700 shadow-lg rounded-md">
+                <div className="absolute z-10 mt-1 w-32 bg-white rounded-md shadow-lg dark:bg-gray-700">
                   <button
                     onClick={() => {
                       setRatingSort(null);
                       setStagedRatingSort(null);
                       setIsRatingDropdownOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
                   >
                     All
                   </button>
@@ -492,7 +486,7 @@ export default function CategoryContent() {
                         setStagedRatingSort(value);
                         setIsRatingDropdownOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200"
+                      className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
                     >
                       {value}+
                     </button>
@@ -513,7 +507,7 @@ export default function CategoryContent() {
               sortByVerified ||
               sortByTrusted ||
               ratingSort ||
-              selectedPincode ||
+              selectedPincode !== '560062' ||
               selectedCity) && (
               <Button
                 onClick={clearAllFilters}
@@ -528,7 +522,7 @@ export default function CategoryContent() {
         {showAllFilters && (
           <>
             <div
-              className="fixed inset-0 bg-gray-900/30 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-gray-900 bg-opacity-30 backdrop-blur-sm z-40"
               onClick={() => setShowAllFilters(false)}
             />
             <div
@@ -542,6 +536,7 @@ export default function CategoryContent() {
                   <button
                     onClick={() => setShowAllFilters(false)}
                     className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
+                    aria-label="Close filter modal"
                   >
                     <X className="h-6 w-6" />
                   </button>
@@ -685,27 +680,11 @@ export default function CategoryContent() {
           </>
         )}
 
-        {categories.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Categories</h2>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {categories.map((cat, index) => (
-                <Badge
-                  key={index}
-                  className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                >
-                  {cat}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        )}
-
         <div className="flex flex-col gap-6">
           <div className="w-full">
             {listings.length === 0 ? (
               <div className="text-center text-gray-600 dark:text-gray-300 py-10">
-                No listings found for "{query || selectedCategory || selectedName || 'your search'}".
+                No listings found for your query. Try adjusting your search or filters.
               </div>
             ) : (
               listings.map((listing, index) => {
@@ -724,11 +703,10 @@ export default function CategoryContent() {
                     listing.isPopular && 'Claimed',
                   ].filter(Boolean),
                   address: listing.address || '123 Main Street',
-                  city: listing.city || 'Your City',
-                  pincode: listing.pincode || 'Unknown Pincode',
+                  city: listing.city || 'Bangalore',
+                  pincode: listing.pincode || '560062',
                   contact: { phone: listing.phone || generateRandomPhone() },
                   category: listing.category || 'Unknown Category',
-                  subcategory: listing.subcategory || '',
                 };
 
                 const visibleImageCount = visibleImages[index] || 1;
@@ -809,7 +787,6 @@ export default function CategoryContent() {
 
                           <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
                             Category: {business.category}
-                            {business.subcategory && ` > ${business.subcategory}`}
                           </div>
 
                           <div className="mt-4 flex gap-2 flex-wrap">

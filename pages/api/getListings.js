@@ -8,47 +8,54 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Connecting to MongoDB...');
     await dbConnect();
+    console.log('MongoDB connection established');
 
     const {
-      q,
+      query,
       category,
       tag,
       name,
       address,
       city,
+      pincode = '560062',
       sort,
       sortByVerified,
       sortByTrusted,
       sortByRating,
     } = req.query;
 
+    console.log('Query parameters:', { query, category, tag, name, address, city, pincode, sort, sortByVerified, sortByTrusted, sortByRating });
+
     // Build the query
-    const query = {};
+    const dbQuery = {};
 
-    // Unified search across multiple fields
-    if (q) {
-      query.$or = [
-        { name: { $regex: q, $options: 'i' } },
-        { category: { $regex: q, $options: 'i' } },
-        { tags: { $regex: q, $options: 'i' } },
-        { address: { $regex: q, $options: 'i' } },
-        { city: { $regex: q, $options: 'i' } },
-      ];
+    if (query) {
+      try {
+        dbQuery.$text = { $search: query };
+      } catch (error) {
+        console.error('Text search error:', error.message);
+        dbQuery.$or = [
+          { name: { $regex: query, $options: 'i' } },
+          { category: { $regex: query, $options: 'i' } },
+          { tags: { $regex: query, $options: 'i' } },
+          { city: { $regex: query, $options: 'i' } },
+          { address: { $regex: query, $options: 'i' } },
+        ];
+      }
     }
-
-    // Specific field filters
-    if (category) query.category = { $regex: `^${category}$`, $options: 'i' };
-    if (tag) query.tags = { $regex: tag, $options: 'i' };
-    if (name) query.name = { $regex: `^${name}$`, $options: 'i' };
-    if (address) query.address = { $regex: address, $options: 'i' };
-    if (city) query.city = { $regex: `^${city}$`, $options: 'i' };
-    if (sortByVerified === 'true') query.isVerified = true;
-    if (sortByTrusted === 'true') query.isTrusted = true;
+    if (category) dbQuery.category = { $regex: `^${category}$`, $options: 'i' };
+    if (tag) dbQuery.tags = { $regex: tag, $options: 'i' };
+    if (name) dbQuery.name = { $regex: `^${name}$`, $options: 'i' };
+    if (address) dbQuery.address = { $regex: address, $options: 'i' };
+    if (city) dbQuery.city = { $regex: `^${city}$`, $options: 'i' };
+    if (sortByVerified === 'true') dbQuery.isVerified = true;
+    if (sortByTrusted === 'true') dbQuery.isTrusted = true;
     if (sortByRating) {
       const ratingValue = parseFloat(sortByRating);
       if (!isNaN(ratingValue)) {
-        query.rating = { $gte: ratingValue.toString() }; 
+        dbQuery.rating = { $gte: ratingValue.toString() };
       }
     }
 
@@ -56,45 +63,33 @@ export default async function handler(req, res) {
     let sortOptions = {};
     if (sort) {
       if (sort === 'rating') {
-       
         sortOptions = { rating: -1 };
       } else if (sort === 'totalRatings-desc') {
-       
         sortOptions = { totalRatings: -1 };
       } else if (sort === 'totalRatings-asc') {
-        
         sortOptions = { totalRatings: 1 };
       } else {
-        sortOptions.createdAt = -1; 
+        sortOptions.createdAt = -1;
       }
     } else {
-      sortOptions.createdAt = -1; 
+      sortOptions.createdAt = -1;
     }
 
-   
-    const listings = await BusinessListing.find(query)
+    console.log('Executing MongoDB query:', JSON.stringify(dbQuery));
+    const listings = await BusinessListing.find(dbQuery)
       .sort(sortOptions)
-      .limit(50) 
+      .limit(50)
       .lean();
+
+    console.log(`Found ${listings.length} listings`);
 
     if (!listings.length) {
       return res.status(200).json({
         success: false,
-        message: `No listings found for query: q=${q || 'none'}, name=${name || 'none'}, category=${category || 'none'}, tag=${tag || 'none'}, address=${address || 'none'}, city=${city || 'none'}`,
+        message: 'No listings found',
         data: [],
-        categories: [],
-        subcategories: [], // Empty since schema lacks subcategory
-        tags: [],
-        addresses: [],
-        cities: [],
       });
     }
-
-    // Extract unique fields
-    const uniqueCategories = [...new Set(listings.map((listing) => listing.category).filter(Boolean))];
-    const uniqueTags = [...new Set(listings.flatMap((listing) => listing.tags || []).filter(Boolean))];
-    const uniqueAddresses = [...new Set(listings.map((listing) => listing.address).filter(Boolean))];
-    const uniqueCities = [...new Set(listings.map((listing) => listing.city).filter(Boolean))];
 
     // Format response
     const formattedListings = listings.map((listing) => ({
@@ -115,17 +110,13 @@ export default async function handler(req, res) {
       isPopular: listing.isPopular,
       category: listing.category,
       city: listing.city,
+      pincode,
       timestamp: listing.timestamp,
     }));
 
     return res.status(200).json({
       success: true,
       data: formattedListings,
-      categories: uniqueCategories,
-      subcategories: [], // Empty since schema lacks subcategory
-      tags: uniqueTags,
-      addresses: uniqueAddresses,
-      cities: uniqueCities,
     });
   } catch (error) {
     console.error('Error fetching listings:', error.message);
