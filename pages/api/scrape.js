@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Bangalore/Physiotherapy-Doctors-in-Konanakunte/nct-10365744?trkid=282421-bangalore-fcat&term=Physiotherapy'
+    const url = req.query.url || 'https://www.justdial.com/Bangalore/Web-Designing-Services-in-Krishna-Rajendra-Road-Jayanagar-6Th-Block/nct-11028380?trkid=301322-bangalore&term=web%20des'
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
