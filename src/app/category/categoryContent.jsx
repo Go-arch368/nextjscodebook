@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown, X } from 'lucide-react';
 
-
 function debounce(func, delay) {
   let timeout;
   return (...args) => {
@@ -344,8 +343,6 @@ export default function CategoryContent() {
   return (
     <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-6xl px-4 py-6">
-      
-
         {(query || selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
           <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
             Showing results for:{' '}

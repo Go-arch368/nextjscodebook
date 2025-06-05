@@ -26,9 +26,11 @@ export default async function handler(req, res) {
 
     // Try text search if index exists
     try {
-      dbQuery.$text = { $search: query };
-      const results = await BusinessListing.find(dbQuery)
+      // Boost name field in text search for better relevance
+      dbQuery.$text = { $search: `\"${query}\" name:${query}` };
+      const results = await BusinessListing.find(dbQuery, { score: { $meta: "textScore" } })
         .select('name category tags city address pincode')
+        .sort({ score: { $meta: "textScore" } })
         .limit(10)
         .lean();
 
@@ -42,7 +44,6 @@ export default async function handler(req, res) {
         pincode: doc.pincode || pincode,
       }));
 
-      // Extract unique values for other fields
       categories = [...new Set(results.map((doc) => doc.category).filter(Boolean))].map((name) => ({
         id: name,
         name,
@@ -69,7 +70,7 @@ export default async function handler(req, res) {
       }));
     } catch (textError) {
       console.error('Text search error, falling back to regex:', textError.message);
-      // Fallback to regex search
+      // Fallback to regex search with partial matching for name
       dbQuery.$or = [
         { name: { $regex: query, $options: 'i' } },
         { category: { $regex: query, $options: 'i' } },

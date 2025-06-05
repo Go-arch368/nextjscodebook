@@ -33,7 +33,7 @@ export default async function handler(req, res) {
 
     if (query) {
       try {
-        dbQuery.$text = { $search: query };
+        dbQuery.$text = { $search: `\"${query}\" name:${query}` };
       } catch (error) {
         console.error('Text search error:', error.message);
         dbQuery.$or = [
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
     }
     if (category) dbQuery.category = { $regex: `^${category}$`, $options: 'i' };
     if (tag) dbQuery.tags = { $regex: tag, $options: 'i' };
-    if (name) dbQuery.name = { $regex: `^${name}$`, $options: 'i' };
+    if (name) dbQuery.name = { $regex: name, $options: 'i' }; // Changed to partial matching
     if (address) dbQuery.address = { $regex: address, $options: 'i' };
     if (city) dbQuery.city = { $regex: `^${city}$`, $options: 'i' };
     if (sortByVerified === 'true') dbQuery.isVerified = true;
@@ -71,6 +71,9 @@ export default async function handler(req, res) {
       } else {
         sortOptions.createdAt = -1;
       }
+    } else if (query) {
+      // Prioritize text score for query searches
+      sortOptions = { score: { $meta: "textScore" } };
     } else {
       sortOptions.createdAt = -1;
     }

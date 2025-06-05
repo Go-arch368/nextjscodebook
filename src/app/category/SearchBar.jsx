@@ -16,12 +16,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-// Debugging: Log to check if component renders multiple times
 console.log('SearchBar component rendered:', new Date().toISOString());
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [pincode, setPincode] = useState('560062'); // Default pincode
+  const [pincode, setPincode] = useState('560062');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [results, setResults] = useState({
     businesses: [],
@@ -180,13 +179,13 @@ const SearchBar = () => {
       <div className="relative flex-1" ref={searchRef}>
         <form onSubmit={handleSearch}>
           <Command className="rounded-md border border-gray-300 dark:border-gray-600 w-full">
-            <div className="relative flex items-center">
+            <div className="relative flex items-center w-full">
               <CommandInput
                 placeholder="Search businesses, categories, tags, cities, addresses..."
                 value={searchQuery}
                 onValueChange={setSearchQuery}
                 onFocus={() => setIsSearchOpen(true)}
-                className="border-none focus:ring-0 pr-10 w-full text-base dark:bg-gray-800 dark:text-gray-200 placeholder:text-gray-400 placeholder:text-base text-ellipsis-none"
+                className="w-full border-none focus:ring-0 pr-10 text-base dark:bg-gray-800 dark:text-gray-200 placeholder:text-gray-400 placeholder:text-base"
                 aria-label="Search for businesses, categories, or addresses"
               />
               <div className="absolute right-2 flex items-center gap-1">
