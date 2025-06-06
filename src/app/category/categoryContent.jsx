@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown, X } from 'lucide-react';
+import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 
 function debounce(func, delay) {
   let timeout;
@@ -87,7 +87,6 @@ export default function CategoryContent() {
         console.log('API response:', result);
 
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
-          // Fetch images for listings
           const imagePromises = result.data.map((listing) =>
             fetch(`/api/getImagesByCategory?category=${encodeURIComponent(listing.category)}`, {
               cache: 'no-store',
@@ -344,7 +343,7 @@ export default function CategoryContent() {
     <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-6xl px-4 py-6">
         {(query || selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
-          <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
+          <div className="mb-6 text-sm text-gray-600 dark:text-gray-300 pt-20">
             Showing results for:{' '}
             {query && <span>Search: "{query}"</span>}
             {(query && (selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress)) && ', '}
@@ -362,8 +361,19 @@ export default function CategoryContent() {
           </div>
         )}
 
-        <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-          <div className="flex flex-wrap items-center gap-3">
+        <div
+          className=" dark:bg-gray-800 p-4 rounded-lg  w-full z-40 flex justify-between items-center mx-auto -mt-5 bg-white shadow-md"
+          style={{
+            position: 'fixed',
+            top: '80px', // Adjust based on your header height or desired position
+            left: '50%',
+            transform: 'translateX(-50%)',
+            maxWidth: '1280px', // Matches max-w-6xl
+            width: '100%',
+            zIndex: 40,
+          }}
+        >
+          <div className="flex flex-wrap items-center gap-3 mx-auto ">
             <div className="relative">
               <Button
                 onClick={() => {
@@ -379,7 +389,7 @@ export default function CategoryContent() {
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isDropdownOpen && (
-                <div className="absolute z-10 mt-2 rounded-md bg-white shadow-lg w-40 dark:bg-gray-700">
+                <div className="absolute z-50 mt-2 bg-white rounded-md shadow-lg w-40 dark:bg-gray-700">
                   <button
                     onClick={() => {
                       setSortOption('default');
@@ -420,7 +430,7 @@ export default function CategoryContent() {
                   : 'bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200'
               } px-4 py-2 flex items-center gap-1 rounded-md`}
             >
-              Top Rated {topRatedSort === 'desc' ? '↓' : topRatedSort === 'asc' ? '↑' : ''}
+              <Star className="h-4 w-4" /> Top Rated {topRatedSort === 'desc' ? '↓' : topRatedSort === 'asc' ? '↑' : ''}
             </Button>
 
             <Button
@@ -464,7 +474,7 @@ export default function CategoryContent() {
                 <ChevronDown className="h-4 w-4" />
               </Button>
               {isRatingDropdownOpen && (
-                <div className="absolute z-10 mt-1 w-32 bg-white rounded-md shadow-lg dark:bg-gray-700">
+                <div className="absolute z-50 mt-1 w-32 bg-white rounded-md shadow-lg dark:bg-gray-700">
                   <button
                     onClick={() => {
                       setRatingSort(null);
@@ -496,7 +506,7 @@ export default function CategoryContent() {
               onClick={() => setShowAllFilters(true)}
               className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md"
             >
-              All Filters
+              <SlidersHorizontal className="h-4 w-4" /> All Filters
             </Button>
 
             {(sortOption !== 'default' ||
@@ -519,7 +529,7 @@ export default function CategoryContent() {
         {showAllFilters && (
           <>
             <div
-              className="fixed inset-0 bg-gray-900 bg-opacity-30 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur-sm z-40"
               onClick={() => setShowAllFilters(false)}
             />
             <div
@@ -677,7 +687,7 @@ export default function CategoryContent() {
           </>
         )}
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 pt-0">
           <div className="w-full">
             {listings.length === 0 ? (
               <div className="text-center text-gray-600 dark:text-gray-300 py-10">
