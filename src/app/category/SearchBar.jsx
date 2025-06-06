@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { debounce } from 'lodash';
-import { MapPin, Clock, X, Search } from 'lucide-react';
+import { MapPin, Clock, X } from 'lucide-react';
 import {
   Command,
   CommandEmpty,
@@ -25,7 +25,7 @@ const SearchBar = () => {
     categories: [],
     tags: [],
     cities: [],
-    addresses: [],
+    names: [],
   });
   const [recentSearches, setRecentSearches] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -61,7 +61,7 @@ const SearchBar = () => {
           categories: [],
           tags: [],
           cities: [],
-          addresses: [],
+          names: [],
         });
         setIsLoading(false);
         return;
@@ -78,7 +78,7 @@ const SearchBar = () => {
           throw new Error(`HTTP error: ${response.status}`);
         }
         const result = await response.json();
-        if (result.success) {
+        if (result?.success && result?.data) {
           setResults(result.data);
         } else {
           setResults({
@@ -86,7 +86,7 @@ const SearchBar = () => {
             categories: [],
             tags: [],
             cities: [],
-            addresses: [],
+            names: [],
           });
           setError('No results found for your search.');
         }
@@ -98,7 +98,7 @@ const SearchBar = () => {
           categories: [],
           tags: [],
           cities: [],
-          addresses: [],
+          names: [],
         });
       } finally {
         setIsLoading(false);
@@ -135,11 +135,11 @@ const SearchBar = () => {
       case 'tag':
         queryParams.append('tag', item.name);
         break;
-      case 'address':
-        queryParams.append('address', item.name);
-        break;
       case 'city':
         queryParams.append('city', item.name);
+        break;
+      case 'name':
+        queryParams.append('name', item.name);
         break;
     }
     router.push(`/category?${queryParams.toString()}`);
@@ -175,11 +175,11 @@ const SearchBar = () => {
           <Command className="rounded-lg border border-gray-300 dark:border-gray-600 w-full relative overflow-visible">
             <div className="relative w-full [&_[cmdk-input-wrapper]]:block [&_[cmdk-input-wrapper]]:w-full">
               <CommandInput
-                placeholder="Search businesses, categories, tags, cities, addresses..."
+                placeholder="Search by businesses, categories, tags, cities, names..."
                 value={searchQuery}
                 onValueChange={setSearchQuery}
                 onFocus={() => setIsSearchOpen(true)}
-                className="w-full border-none focus:ring-0 pr-10 text-base dark:bg-gray-800 dark:text-gray-200 placeholder:text-gray-400 placeholder:text-base pl-3 py-2"
+                className="w-full border-none pr-10 pl-3 text-sm py-2 dark:bg-gray-700 dark:text-gray-200 placeholder:text-gray-400 focus:ring-0"
               />
               <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
                 {searchQuery && (
@@ -187,26 +187,18 @@ const SearchBar = () => {
                     variant="ghost"
                     size="icon"
                     onClick={() => setSearchQuery('')}
-                    className="h-6 w-6 dark:hover:bg-gray-700"
+                    className="h-6 w-6 dark:hover:bg-gray-800"
                   >
-                    <X className="h-4 w-4 dark:text-gray-400" />
+                    <X className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                   </Button>
                 )}
-                <Button
-                  type="submit"
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 dark:hover:bg-gray-700"
-                >
-                  <Search className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                </Button>
               </div>
             </div>
             
             {/* Dropdown Results */}
             {isSearchOpen && (
               <div className="absolute top-full left-0 w-full z-50 mt-0">
-                <CommandList className="w-full bg-white shadow-lg rounded-b-md max-h-96 overflow-y-auto dark:bg-gray-700 border border-t-0 border-gray-300 dark:border-gray-600">
+                <CommandList className="w-full bg-white shadow-lg rounded-b-lg max-h-[500px] overflow-y-auto dark:bg-gray-700 border border-t-0 dark:border-gray-600">
                   {isLoading ? (
                     <CommandEmpty>Loading...</CommandEmpty>
                   ) : error ? (
@@ -300,9 +292,9 @@ const SearchBar = () => {
                           ))}
                         </CommandGroup>
                       )}
-                      {results.addresses.length > 0 && (
-                        <CommandGroup heading="Addresses">
-                          {results.addresses.map((item) => (
+                      {results.names.length > 0 && (
+                        <CommandGroup heading="Names">
+                          {results.names.map((item) => (
                             <CommandItem
                               key={item.id}
                               onSelect={() => handleSelect(item)}
@@ -318,7 +310,7 @@ const SearchBar = () => {
                         !results.categories.length &&
                         !results.tags.length &&
                         !results.cities.length &&
-                        !results.addresses.length && (
+                        !results.names.length && (
                           <CommandEmpty>No results found.</CommandEmpty>
                         )}
                     </>
