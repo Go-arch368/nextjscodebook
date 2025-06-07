@@ -1,4 +1,3 @@
-// pages/api/getListings.js
 import dbConnect from '@/lib/dbConnect';
 import BusinessListing from '../../models/BusinessListing';
 
@@ -19,17 +18,28 @@ export default async function handler(req, res) {
       name,
       address,
       city,
-      pincode = '560062',
+      pincode,
       sort,
       sortByVerified,
       sortByTrusted,
       sortByRating,
     } = req.query;
 
+    // Require pincode for listing retrieval
+    if (!pincode) {
+      return res.status(400).json({ success: false, error: 'Pincode parameter is required' });
+    }
+
+    // Check if pincode exists in the database
+    const pincodeExists = await BusinessListing.findOne({ pincode }).lean();
+    if (!pincodeExists) {
+      return res.status(404).json({ success: false, error: `Pincode ${pincode} not found in the database` });
+    }
+
     console.log('Query parameters:', { query, category, tag, name, address, city, pincode, sort, sortByVerified, sortByTrusted, sortByRating });
 
-    // Build the query
-    const dbQuery = {};
+    // Build the query with pincode as a base condition
+    const dbQuery = { pincode };
 
     if (query) {
       try {
@@ -47,7 +57,7 @@ export default async function handler(req, res) {
     }
     if (category) dbQuery.category = { $regex: `^${category}$`, $options: 'i' };
     if (tag) dbQuery.tags = { $regex: tag, $options: 'i' };
-    if (name) dbQuery.name = { $regex: name, $options: 'i' }; // Changed to partial matching
+    if (name) dbQuery.name = { $regex: name, $options: 'i' };
     if (address) dbQuery.address = { $regex: address, $options: 'i' };
     if (city) dbQuery.city = { $regex: `^${city}$`, $options: 'i' };
     if (sortByVerified === 'true') dbQuery.isVerified = true;
@@ -55,7 +65,7 @@ export default async function handler(req, res) {
     if (sortByRating) {
       const ratingValue = parseFloat(sortByRating);
       if (!isNaN(ratingValue)) {
-        dbQuery.rating = { $gte: ratingValue.toString() };
+        dbQuery.rating = { $gte: ratingValue }; // Fixed: Use number instead of string
       }
     }
 
@@ -72,7 +82,6 @@ export default async function handler(req, res) {
         sortOptions.createdAt = -1;
       }
     } else if (query) {
-      // Prioritize text score for query searches
       sortOptions = { score: { $meta: "textScore" } };
     } else {
       sortOptions.createdAt = -1;
@@ -84,12 +93,12 @@ export default async function handler(req, res) {
       .limit(50)
       .lean();
 
-    console.log(`Found ${listings.length} listings`);
+    console.log(`Found ${listings.length} listings for pincode ${pincode}`);
 
     if (!listings.length) {
       return res.status(200).json({
         success: false,
-        message: 'No listings found',
+        message: `No listings found for pincode ${pincode}`,
         data: [],
       });
     }
@@ -113,7 +122,7 @@ export default async function handler(req, res) {
       isPopular: listing.isPopular,
       category: listing.category,
       city: listing.city,
-      pincode,
+      pincode: listing.pincode,
       timestamp: listing.timestamp,
     }));
 

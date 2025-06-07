@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { debounce } from 'lodash';
 import { MapPin, Clock, X, Search } from 'lucide-react';
 import {
@@ -18,7 +18,7 @@ import { Button } from '@/components/ui/button';
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [pincode, setPincode] = useState('560062');
+  const [pincode, setPincode] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [results, setResults] = useState({
     businesses: [],
@@ -30,13 +30,36 @@ const SearchBar = () => {
   const [recentSearches, setRecentSearches] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [pincodeError, setPincodeError] = useState(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
   const searchRef = useRef(null);
 
+  // Load recent searches and pincode on mount
   useEffect(() => {
     const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+    const storedPincode = localStorage.getItem('pincode') || '';
     setRecentSearches(storedSearches);
+    setPincode(storedPincode);
   }, []);
+
+  // Save pincode to localStorage whenever it changes
+  useEffect(() => {
+    if (pincode) {
+      localStorage.setItem('pincode', pincode);
+    } else {
+      localStorage.removeItem('pincode');
+    }
+  }, [pincode]);
+
+  // Update URL when pincode changes, preserving other query parameters
+  useEffect(() => {
+    if (pincode && !pincodeError) {
+      const currentParams = new URLSearchParams(searchParams.toString());
+      currentParams.set('pincode', pincode);
+      router.replace(`/category?${currentParams.toString()}`, { scroll: false });
+    }
+  }, [pincode, pincodeError, router, searchParams]);
 
   const saveRecentSearch = (query) => {
     if (!query) return;
@@ -53,9 +76,40 @@ const SearchBar = () => {
     localStorage.removeItem('recentSearches');
   };
 
+  const validatePincode = useCallback(
+    debounce(async (pin) => {
+      if (!pin) {
+        setPincodeError('Pincode is required');
+        return;
+      }
+      try {
+        setIsLoading(true);
+        setPincodeError(null);
+        const response = await fetch(`/api/search?pincode=${encodeURIComponent(pin)}`, {
+          cache: 'no-store',
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        const result = await response.json();
+        if (!result.success && result.error.includes('Pincode')) {
+          setPincodeError(`Pincode ${pin} not found in the database`);
+        } else {
+          setPincodeError(null);
+        }
+      } catch (error) {
+        console.error('Error validating pincode:', error.message);
+        setPincodeError(`Failed to validate pincode: ${error.message}`);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 300),
+    []
+  );
+
   const fetchResults = useCallback(
     debounce(async (query, pin) => {
-      if (!query) {
+      if (!query || !pin) {
         setResults({
           businesses: [],
           categories: [],
@@ -88,7 +142,7 @@ const SearchBar = () => {
             cities: [],
             names: [],
           });
-          setError('No results found for your search.');
+          setError(result.error || 'No results found for your search.');
         }
       } catch (error) {
         console.error('Error fetching search results:', error.message);
@@ -108,41 +162,79 @@ const SearchBar = () => {
   );
 
   useEffect(() => {
+    validatePincode(pincode);
     fetchResults(searchQuery, pincode);
-  }, [searchQuery, pincode, fetchResults]);
+  }, [searchQuery, pincode, fetchResults, validatePincode]);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    if (!pincode) {
+      setPincodeError('Pincode is required');
+      return;
+    }
+    if (pincodeError) {
+      return;
+    }
     if (searchQuery) {
       saveRecentSearch(searchQuery);
-      const queryParams = new URLSearchParams({ query: searchQuery, pincode });
-      router.push(`/category?${queryParams.toString()}`);
+      const currentParams = new URLSearchParams(searchParams.toString());
+      currentParams.set('query', searchQuery);
+      currentParams.set('pincode', pincode);
+      router.push(`/category?${currentParams.toString()}`);
       setIsSearchOpen(false);
       setSearchQuery('');
     }
   };
 
   const handleSelect = (item) => {
+    if (!pincode) {
+      setPincodeError('Pincode is required');
+      return;
+    }
+    if (pincodeError) {
+      return;
+    }
     saveRecentSearch(item.name);
-    const queryParams = new URLSearchParams({ pincode: item.pincode });
+    const currentParams = new URLSearchParams(searchParams.toString());
+    currentParams.set('pincode', item.pincode);
     switch (item.type) {
       case 'business':
-        queryParams.append('name', item.name);
+        currentParams.set('name', item.name);
+        currentParams.delete('category');
+        currentParams.delete('tag');
+        currentParams.delete('city');
+        currentParams.delete('query');
         break;
       case 'category':
-        queryParams.append('category', item.name);
+        currentParams.set('category', item.name);
+        currentParams.delete('name');
+        currentParams.delete('tag');
+        currentParams.delete('city');
+        currentParams.delete('query');
         break;
       case 'tag':
-        queryParams.append('tag', item.name);
+        currentParams.set('tag', item.name);
+        currentParams.delete('name');
+        currentParams.delete('category');
+        currentParams.delete('city');
+        currentParams.delete('query');
         break;
       case 'city':
-        queryParams.append('city', item.name);
+        currentParams.set('city', item.name);
+        currentParams.delete('name');
+        currentParams.delete('category');
+        currentParams.delete('tag');
+        currentParams.delete('query');
         break;
       case 'name':
-        queryParams.append('name', item.name);
+        currentParams.set('name', item.name);
+        currentParams.delete('category');
+        currentParams.delete('tag');
+        currentParams.delete('city');
+        currentParams.delete('query');
         break;
     }
-    router.push(`/category?${queryParams.toString()}`);
+    router.push(`/category?${currentParams.toString()}`);
     setSearchQuery('');
     setIsSearchOpen(false);
   };
@@ -159,16 +251,26 @@ const SearchBar = () => {
 
   return (
     <div className="flex items-center gap-2 w-full max-w-4xl">
-      <div className="flex items-center border border-gray-300 rounded-md overflow-hidden dark:border-gray-600">
-        <MapPin className="h-5 w-5 text-gray-500 mx-2 dark:text-gray-400" />
-        <Input
-          type="text"
-          placeholder="Enter pincode"
-          value={pincode}
-          onChange={(e) => setPincode(e.target.value || '560062')}
-          className="w-32 border-none focus:ring-0 dark:bg-gray-800 dark:text-gray-200"
-          aria-label="Enter pincode"
-        />
+      <div className="flex flex-col gap-1 w-32">
+        <div className="flex items-center border border-gray-300 rounded-md overflow-hidden dark:border-gray-600">
+          <MapPin className="h-5 w-5 text-gray-500 mx-2 dark:text-gray-400" />
+          <Input
+            type="text"
+            placeholder="Enter pincode"
+            value={pincode}
+            onChange={(e) => {
+              setPincode(e.target.value);
+              setPincodeError(null);
+            }}
+            className={`w-full border-none focus:ring-0 dark:bg-gray-800 dark:text-gray-200 ${
+              pincodeError ? 'border-red-500 dark:border-red-400' : ''
+            }`}
+            aria-label="Enter pincode"
+          />
+        </div>
+        {pincodeError && (
+          <p className="text-xs text-red-500 dark:text-red-400">{pincodeError}</p>
+        )}
       </div>
       <div className="relative flex-1" ref={searchRef}>
         <form onSubmit={handleSearch} className="w-full">
@@ -192,17 +294,8 @@ const SearchBar = () => {
                     <X className="h-4 w-4 dark:text-gray-400" />
                   </Button>
                 )}
-                {/* <Button
-                  type="submit"
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6 dark:hover:bg-gray-700"
-                >
-                  <Search className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                </Button> */}
               </div>
             </div>
-            
             {/* Dropdown Results */}
             {isSearchOpen && (
               <div className="absolute top-full left-0 w-full z-50 mt-0">
@@ -230,11 +323,17 @@ const SearchBar = () => {
                             <CommandItem
                               key={index}
                               onSelect={() => {
+                                if (!pincode) {
+                                  setPincodeError('Pincode is required');
+                                  return;
+                                }
+                                if (pincodeError) return;
                                 setSearchQuery(search);
                                 saveRecentSearch(search);
-                                router.push(
-                                  `/category?query=${encodeURIComponent(search)}&pincode=${pincode}`
-                                );
+                                const currentParams = new URLSearchParams(searchParams.toString());
+                                currentParams.set('query', search);
+                                currentParams.set('pincode', pincode);
+                                router.push(`/category?${currentParams.toString()}`);
                                 setIsSearchOpen(false);
                               }}
                               className="cursor-pointer dark:hover:bg-gray-600"

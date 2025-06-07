@@ -1,4 +1,3 @@
-// pages/api/search.js
 import dbConnect from '@/lib/dbConnect';
 import BusinessListing from '../../models/BusinessListing';
 
@@ -7,44 +6,53 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { q: query, pincode = '560062' } = req.query;
+  const { q: query, pincode } = req.query;
 
-  if (!query) {
-    return res.status(400).json({ success: false, error: 'Query parameter is required' });
+  // Require pincode for search
+  if (!pincode) {
+    return res.status(400).json({ success: false, error: 'Pincode parameter is required' });
   }
 
   try {
     await dbConnect();
     console.log('MongoDB connected for search');
 
-    const dbQuery = {};
+    // Check if pincode exists in the database
+    const pincodeExists = await BusinessListing.findOne({ pincode }).lean();
+    if (!pincodeExists) {
+      return res.status(404).json({ success: false, error: `Pincode ${pincode} not found in the database` });
+    }
+
+    const dbQuery = { pincode }; // Base query on pincode
     let businesses = [];
     let categories = [];
     let tags = [];
     let cities = [];
     let names = [];
 
-    // Use regex search for start-of-string matching
-    dbQuery.$or = [
-      { name: { $regex: `^${query}` } }, // Case-sensitive, starts with query
-      { category: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive, starts with query
-      { tags: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive, starts with query
-      { city: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive, starts with query
-    ];
+    // Add query conditions if search term is provided
+    if (query) {
+      dbQuery.$or = [
+        { name: { $regex: `^${query}` } }, // Case-sensitive, starts with query
+        { category: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
+        { tags: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
+        { city: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
+      ];
+    }
 
     const results = await BusinessListing.find(dbQuery)
       .select('name category tags city pincode')
-      .limit(20) // Increased limit for broader results
+      .limit(20)
       .lean();
 
-    console.log(`Regex search found ${results.length} results`);
+    console.log(`Search found ${results.length} results for pincode ${pincode}`);
 
     businesses = results.map((doc) => ({
       id: doc._id.toString(),
       name: doc.name,
       category: doc.category,
       type: 'business',
-      pincode: doc.pincode || pincode,
+      pincode: doc.pincode,
     }));
 
     categories = [...new Set(results.map((doc) => doc.category).filter(Boolean))].map((name) => ({
