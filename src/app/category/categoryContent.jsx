@@ -362,18 +362,18 @@ export default function CategoryContent() {
         )}
 
         <div
-          className=" dark:bg-gray-800 p-4 rounded-lg  w-full z-40 flex justify-between items-center mx-auto -mt-5 bg-white shadow-md"
+          className="dark:bg-gray-800 p-4 rounded-lg w-full z-40 flex justify-between items-center mx-auto -mt-5 bg-white shadow-md"
           style={{
             position: 'fixed',
-            top: '80px', // Adjust based on your header height or desired position
+            top: '80px',
             left: '50%',
             transform: 'translateX(-50%)',
-            maxWidth: '1280px', // Matches max-w-6xl
+            maxWidth: '1280px',
             width: '100%',
             zIndex: 40,
           }}
         >
-          <div className="flex flex-wrap items-center gap-3 mx-auto ">
+          <div className="flex flex-wrap items-center gap-3 mx-auto">
             <div className="relative">
               <Button
                 onClick={() => {
@@ -699,7 +699,7 @@ export default function CategoryContent() {
                   services: Array.isArray(listing.tags) ? listing.tags : [],
                   images: Array.isArray(listing.images) ? listing.images : [],
                   imageError: listing.imageError || null,
-                  name: listing.name || 'Unknown Business',
+                  name: listing.name || 'Napc Airlines',
                   rating: listing.rating ? parseFloat(listing.rating).toFixed(1) : '4.8',
                   totalRatings: listing.totalRatings
                     ? `${parseInt(listing.totalRatings).toLocaleString()} Ratings`
@@ -709,11 +709,11 @@ export default function CategoryContent() {
                     listing.isVerified && 'Verified',
                     listing.isPopular && 'Claimed',
                   ].filter(Boolean),
-                  address: listing.address || '123 Main Street',
-                  city: listing.city || 'Bangalore',
+                  address: listing.address || 'Dickenson Road',
+                  city: listing.city || 'Bangalore, Konanakunte, Bangalore',
                   pincode: listing.pincode || '560062',
-                  contact: { phone: listing.phone || generateRandomPhone() },
-                  category: listing.category || 'Unknown Category',
+                  contact: { phone: listing.phone || '+916753454599' },
+                  category: listing.category || 'Airlines',
                 };
 
                 const visibleImageCount = visibleImages[index] || 1;
@@ -727,9 +727,10 @@ export default function CategoryContent() {
                   >
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col md:flex-row items-start gap-6">
+                        {/* Image Section (Left) - Updated to larger dimensions */}
                         <div className="flex flex-wrap gap-3">
                           {business.imageError ? (
-                            <div className="w-32 h-32 rounded-md border flex items-center justify-center text-red-500 dark:text-red-400 text-sm text-center p-2">
+                            <div className="w-64 h-64 rounded-md border flex items-center justify-center text-red-500 dark:text-red-400 text-sm text-center p-2">
                               {business.imageError}
                             </div>
                           ) : displayedImages.length > 0 ? (
@@ -738,11 +739,11 @@ export default function CategoryContent() {
                                 key={imgIndex}
                                 src={
                                   image.url.includes('/upload/')
-                                    ? image.url.replace(/\/upload\//, '/upload/w_150,h_150,c_fill/')
+                                    ? image.url.replace(/\/upload\//, '/upload/w_300,h_300,c_fill/')
                                     : image.url
                                 }
                                 alt={`${business.name} image ${imgIndex + 1}`}
-                                className="w-32 h-32 rounded-md object-cover border"
+                                className="w-64 h-64 rounded-md object-cover border"
                                 loading="lazy"
                                 onError={(e) => {
                                   e.target.src = '/placeholder-image.jpg';
@@ -751,11 +752,13 @@ export default function CategoryContent() {
                               />
                             ))
                           ) : (
-                            <div className="w-32 h-32 rounded-md border flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm">
+                            <div className="w-64 h-64 rounded-md border flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm">
                               No images available
                             </div>
                           )}
                         </div>
+
+                        {/* Content Section (Right) */}
                         <div className="flex-1">
                           <h3 className="text-xl font-semibold flex items-center gap-2 text-gray-900 dark:text-gray-100">
                             <ThumbsUp className="w-5 h-5 bg-blue-600 text-white p-1 rounded-full dark:bg-blue-500" />
@@ -808,15 +811,6 @@ export default function CategoryContent() {
                             ))}
                           </div>
 
-                          {hasMoreImages && (
-                            <Button
-                              onClick={() => handleShowMoreImages(index)}
-                              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
-                            >
-                              Show More Images ({business.images.length - visibleImageCount} remaining)
-                            </Button>
-                          )}
-
                           <div className="mt-6">
                             <div className="flex flex-wrap gap-4">
                               <Button
@@ -854,6 +848,17 @@ export default function CategoryContent() {
                           </div>
                         </div>
                       </div>
+
+                      {hasMoreImages && (
+                        <div className="mt-4">
+                          <Button
+                            onClick={() => handleShowMoreImages(index)}
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
+                          >
+                            Show More Images ({business.images.length - visibleImageCount} remaining)
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );

@@ -1,7 +1,7 @@
-// lib/dbConnect.js
+// src/lib/dbConnect.js (temporary)
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://gowthamtj0808:fnCiyg7sRteeRWJp@nextjscluster.hjsrgai.mongodb.net/mydatabase?retryWrites=true&w=majority';
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');

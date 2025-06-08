@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 import dbConnect from '@/lib/dbConnect';
+
 import BusinessListing from '../../models/BusinessListing';
 
 export default async function handler(req, res) {

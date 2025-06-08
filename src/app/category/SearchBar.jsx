@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { debounce } from 'lodash';
-import { MapPin, Clock, X, Search } from 'lucide-react';
+import { MapPin, Clock, X } from 'lucide-react';
 import {
   Command,
   CommandEmpty,
@@ -41,7 +41,13 @@ const SearchBar = () => {
     const storedPincode = localStorage.getItem('pincode') || '';
     setRecentSearches(storedSearches);
     setPincode(storedPincode);
-  }, []);
+
+    // Initialize searchQuery from URL if present
+    const query = searchParams.get('query');
+    if (query) {
+      setSearchQuery(query);
+    }
+  }, [searchParams]);
 
   // Save pincode to localStorage whenever it changes
   useEffect(() => {
@@ -52,12 +58,25 @@ const SearchBar = () => {
     }
   }, [pincode]);
 
-  // Update URL when pincode changes, preserving other query parameters
+  // Update URL when pincode changes, preserving one existing parameter if present
   useEffect(() => {
     if (pincode && !pincodeError) {
-      const currentParams = new URLSearchParams(searchParams.toString());
+      const currentParams = new URLSearchParams();
       currentParams.set('pincode', pincode);
-      router.replace(`/category?${currentParams.toString()}`, { scroll: false });
+
+      // Check for exactly one existing parameter to preserve
+      const allowedParams = ['name', 'category', 'tag', 'city', 'query'];
+      const existingParam = allowedParams.find((param) => searchParams.has(param));
+      if (existingParam) {
+        currentParams.set(existingParam, searchParams.get(existingParam));
+      }
+
+      // Only update URL if the pincode or parameters have changed
+      const currentUrl = `/category?${currentParams.toString()}`;
+      const existingUrl = `/category?${searchParams.toString()}`;
+      if (currentUrl !== existingUrl) {
+        router.push(currentUrl, { scroll: false });
+      }
     }
   }, [pincode, pincodeError, router, searchParams]);
 
@@ -177,9 +196,9 @@ const SearchBar = () => {
     }
     if (searchQuery) {
       saveRecentSearch(searchQuery);
-      const currentParams = new URLSearchParams(searchParams.toString());
-      currentParams.set('query', searchQuery);
+      const currentParams = new URLSearchParams();
       currentParams.set('pincode', pincode);
+      currentParams.set('query', searchQuery);
       router.push(`/category?${currentParams.toString()}`);
       setIsSearchOpen(false);
       setSearchQuery('');
@@ -195,43 +214,23 @@ const SearchBar = () => {
       return;
     }
     saveRecentSearch(item.name);
-    const currentParams = new URLSearchParams(searchParams.toString());
+    const currentParams = new URLSearchParams();
     currentParams.set('pincode', item.pincode);
     switch (item.type) {
       case 'business':
         currentParams.set('name', item.name);
-        currentParams.delete('category');
-        currentParams.delete('tag');
-        currentParams.delete('city');
-        currentParams.delete('query');
         break;
       case 'category':
         currentParams.set('category', item.name);
-        currentParams.delete('name');
-        currentParams.delete('tag');
-        currentParams.delete('city');
-        currentParams.delete('query');
         break;
       case 'tag':
         currentParams.set('tag', item.name);
-        currentParams.delete('name');
-        currentParams.delete('category');
-        currentParams.delete('city');
-        currentParams.delete('query');
         break;
       case 'city':
         currentParams.set('city', item.name);
-        currentParams.delete('name');
-        currentParams.delete('category');
-        currentParams.delete('tag');
-        currentParams.delete('query');
         break;
       case 'name':
         currentParams.set('name', item.name);
-        currentParams.delete('category');
-        currentParams.delete('tag');
-        currentParams.delete('city');
-        currentParams.delete('query');
         break;
     }
     router.push(`/category?${currentParams.toString()}`);
@@ -330,9 +329,9 @@ const SearchBar = () => {
                                 if (pincodeError) return;
                                 setSearchQuery(search);
                                 saveRecentSearch(search);
-                                const currentParams = new URLSearchParams(searchParams.toString());
-                                currentParams.set('query', search);
+                                const currentParams = new URLSearchParams();
                                 currentParams.set('pincode', pincode);
+                                currentParams.set('query', search);
                                 router.push(`/category?${currentParams.toString()}`);
                                 setIsSearchOpen(false);
                               }}
