@@ -1,3 +1,4 @@
+// importCsv.js
 import fs from 'fs';
 import { parse } from 'csv-parse';
 import dotenv from 'dotenv';
@@ -76,6 +77,15 @@ const parseTags = (tags) => {
   return tags.split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0);
 };
 
+// Function to extract city from address (after last comma)
+const extractCityFromAddress = (address) => {
+  if (!address || typeof address !== 'string' || address.trim() === '') {
+    return '';
+  }
+  const parts = address.split(',').map(part => part.trim());
+  return parts.length > 0 ? parts[parts.length - 1] : '';
+};
+
 // Function to import CSV
 const importCsv = async (filePath) => {
   try {
@@ -126,7 +136,7 @@ const importCsv = async (filePath) => {
           category: record.category || '',
           subcategory: 'event management, photography',
           pincode: '573201',
-          city: record.city || '',
+          city: extractCityFromAddress(record.address),
         };
 
         records.push(business);
