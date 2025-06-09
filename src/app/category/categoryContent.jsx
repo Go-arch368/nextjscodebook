@@ -835,10 +835,10 @@ export default function CategoryContent() {
                                 <span>WhatsApp</span>
                               </Button>
                             </div>
-                            <div className="flex justify-end mt-4">
+                            <div className="flex justify-end ">
                               <Button
                                 variant="outline"
-                                className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 flex items-center gap-2 text-sm dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-900 rounded-md"
+                                className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-2 -mt-5 py-2 flex items-center gap-2 text-sm dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-900 rounded-md"
                                 onClick={() => handleVisit(business.name, business.category)}
                               >
                                 <ExternalLink className="w-5 h-5" />

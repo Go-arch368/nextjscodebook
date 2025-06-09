@@ -42,7 +42,7 @@ const SearchBar = () => {
     setRecentSearches(storedSearches);
     setPincode(storedPincode);
 
-    // Initialize searchQuery from URL if present
+    // Initialize searchQuery from URL if present         
     const query = searchParams.get('query');
     if (query) {
       setSearchQuery(query);
@@ -276,7 +276,7 @@ const SearchBar = () => {
           <Command className="rounded-lg border border-gray-300 dark:border-gray-600 w-full relative overflow-visible">
             <div className="relative w-full [&_[cmdk-input-wrapper]]:block [&_[cmdk-input-wrapper]]:w-full">
               <CommandInput
-                placeholder="Search businesses, categories, tags, cities, names..."
+                placeholder="Search businesses, services ..."
                 value={searchQuery}
                 onValueChange={setSearchQuery}
                 onFocus={() => setIsSearchOpen(true)}
