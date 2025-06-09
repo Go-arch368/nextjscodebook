@@ -118,7 +118,7 @@ const SearchBar = () => {
         }
       } catch (error) {
         console.error('Error validating pincode:', error.message);
-        setPincodeError(`Failed to validate pincode: ${error.message}`);
+        setPincodeError(`Failed to validate pincode: ${error?.message}`);
       } finally {
         setIsLoading(false);
       }

@@ -1,5 +1,5 @@
 import dbConnect from '@/lib/dbConnect';
-import BusinessListing from '../../models/BusinessListing';
+import DistrictBusiness from '../../models/DistrictBusiness';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     console.log('MongoDB connected for search');
 
     // Check if pincode exists in the database
-    const pincodeExists = await BusinessListing.findOne({ pincode }).lean();
+    const pincodeExists = await DistrictBusiness.findOne({ pincode }).lean();
     if (!pincodeExists) {
       return res.status(404).json({ success: false, error: `Pincode ${pincode} not found in the database` });
     }
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       ];
     }
 
-    const results = await BusinessListing.find(dbQuery)
+    const results = await DistrictBusiness.find(dbQuery)
       .select('name category tags city pincode')
       .limit(20)
       .lean();
