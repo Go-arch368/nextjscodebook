@@ -21,39 +21,31 @@ console.log('CSV exists:', fs.existsSync(csvFilePath));
 console.log('.env.local exists:', fs.existsSync(envPath));
 
 // Load environment variables
-try {
-  const envContent = fs.readFileSync(envPath, 'utf8').trim();
-  console.log('Raw .env.local content:', envContent);
+if (fs.existsSync(envPath)) {
+  try {
+    const envContent = fs.readFileSync(envPath, 'utf8').trim();
+    console.log('Raw .env.local content:', envContent);
 
-  const dotenvResult = dotenv.config({ path: envPath });
-  if (dotenvResult.error) {
-    console.error('Error parsing .env.local with dotenv:', dotenvResult.error.message);
-    throw dotenvResult.error;
-  }
-  console.log('Parsed .env.local:', dotenvResult.parsed);
-
-  if (!process.env.MONGODB_URI) {
-    console.error('MONGODB_URI not found in process.env');
-    const lines = envContent.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#'));
-    for (const line of lines) {
-      const [key, value] = line.split('=').map(part => part.trim());
-      if (key === 'MONGODB_URI' && value) {
-        process.env.MONGODB_URI = value;
-        console.log('Manually set MONGODB_URI from .env.local');
-        break;
-      }
+    const dotenvResult = dotenv.config({ path: envPath });
+    if (dotenvResult.error) {
+      console.error('Error parsing .env.local with dotenv:', dotenvResult.error.message);
+      throw dotenvResult.error;
     }
+    console.log('Parsed .env.local:', dotenvResult.parsed);
+  } catch (error) {
+    console.error('Error reading .env.local:', error.message);
+    // Continue if .env.local fails, as Vercel may provide env vars
   }
-
-  if (!process.env.MONGODB_URI) {
-    console.error('MONGODB_URI still not set after manual parse');
-    throw new Error('MONGODB_URI not set');
-  }
-  console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
-} catch (error) {
-  console.error('Error reading .env.local:', error.message);
-  throw error;
+} else {
+  console.log('No .env.local file found, relying on process.env (e.g., Vercel environment variables)');
 }
+
+// Verify MONGODB_URI
+if (!process.env.MONGODB_URI) {
+  console.error('MONGODB_URI not set in process.env');
+  throw new Error('MONGODB_URI is required to connect to MongoDB');
+}
+console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
 
 // Import modules
 import dbConnect from '../src/lib/dbConnect.js';
