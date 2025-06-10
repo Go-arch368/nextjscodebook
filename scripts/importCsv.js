@@ -75,6 +75,19 @@ const extractCityFromAddress = (address) => {
   return parts.length > 0 ? parts[parts.length - 1] : '';
 };
 
+// Function to ensure directory exists
+const ensureDirectoryExists = (dirPath) => {
+  try {
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+      console.log(`Created directory: ${dirPath}`);
+    }
+  } catch (error) {
+    console.error(`Error creating directory ${dirPath}:`, error.message);
+    throw error;
+  }
+};
+
 // Function to import CSV
 export const importCsv = async (input) => {
   try {
@@ -134,9 +147,19 @@ export const importCsv = async (input) => {
 
             if (failedRecords.length > 0) {
               console.log(`Failed to import ${failedRecords.length} records`);
-              const failedPath = path.resolve(__dirname, '../src/data/failed_records.json');
-              fs.writeFileSync(failedPath, JSON.stringify(failedRecords, null, 2));
-              console.log(`Failed records saved to ${failedPath}`);
+              // Use /tmp for Vercel compatibility, or create src/data if possible
+              const outputDir = process.env.VERCEL ? '/tmp' : path.resolve(__dirname, '../src/data');
+              if (!process.env.VERCEL) {
+                ensureDirectoryExists(outputDir);
+              }
+              const failedPath = path.join(outputDir, 'failed_records.json');
+              try {
+                fs.writeFileSync(failedPath, JSON.stringify(failedRecords, null, 2));
+                console.log(`Failed records saved to ${failedPath}`);
+              } catch (writeError) {
+                console.error(`Error writing failed records to ${failedPath}:`, writeError.message);
+                // Continue despite write failure, as it’s not critical
+              }
             }
 
             resolve({
