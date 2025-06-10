@@ -20,39 +20,20 @@ console.log('DistrictBusiness.js exists:', fs.existsSync(districtBusinessPath));
 console.log('CSV exists:', fs.existsSync(csvFilePath));
 console.log('.env.local exists:', fs.existsSync(envPath));
 
-// Load environment variables
-try {
-  const envContent = fs.readFileSync(envPath, 'utf8').trim();
-  console.log('Raw .env.local content:', envContent);
-
+// Load environment variables (optional .env.local)
+if (fs.existsSync(envPath)) {
   const dotenvResult = dotenv.config({ path: envPath });
   if (dotenvResult.error) {
-    console.error('Error parsing .env.local with dotenv:', dotenvResult.error.message);
-    throw dotenvResult.error;
+    console.error('Error parsing .env.local:', dotenvResult.error.message);
+  } else {
+    console.log('Parsed .env.local:', dotenvResult.parsed);
   }
-  console.log('Parsed .env.local:', dotenvResult.parsed);
+}
 
-  if (!process.env.MONGODB_URI) {
-    console.error('MONGODB_URI not found in process.env');
-    const lines = envContent.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#'));
-    for (const line of lines) {
-      const [key, value] = line.split('=').map(part => part.trim());
-      if (key === 'MONGODB_URI' && value) {
-        process.env.MONGODB_URI = value;
-        console.log('Manually set MONGODB_URI from .env.local');
-        break;
-      }
-    }
-  }
-
-  if (!process.env.MONGODB_URI) {
-    console.error('MONGODB_URI still not set after manual parse');
-    throw new Error('MONGODB_URI not set');
-  }
-  console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
-} catch (error) {
-  console.error('Error reading .env.local:', error.message);
-  throw error;
+// Validate MONGODB_URI
+if (!process.env.MONGODB_URI) {
+  console.error('MONGODB_URI not set in environment variables');
+  throw new Error('MONGODB_URI not set');
 }
 
 // Import modules
@@ -91,6 +72,7 @@ export const importCsv = async (input) => {
 
     const records = [];
     const failedRecords = [];
+    const duplicateRecords = [];
 
     // Determine if input is a file path or buffer
     const stream = typeof input === 'string'
@@ -106,12 +88,18 @@ export const importCsv = async (input) => {
             trim: true,
           })
         )
-        .on('data', (record) => {
-          if (!record.phone || record.phone.trim() === '') {
-            failedRecords.push({
-              record,
-              reason: 'Empty or missing phone number',
-            });
+        .on('data', async (record) => {
+          // Validate required fields
+          if (!record.name || record.name.trim() === '') {
+            failedRecords.push({ record, reason: 'Missing name' });
+            return;
+          }
+          if (!record.address || record.address.trim() === '') {
+            failedRecords.push({ record, reason: 'Missing address' });
+            return;
+          }
+          if (!record.category || record.category.trim() === '') {
+            failedRecords.push({ record, reason: 'Missing category' });
             return;
           }
 
@@ -128,29 +116,45 @@ export const importCsv = async (input) => {
             isVerified: parseBoolean(record.isVerified),
             isPopular: parseBoolean(record.isPopular),
             category: record.category || '',
-            subcategory: record.category || '', // Set subcategory to category
+            subcategory: record.category || '',
             pincode: '573201',
             city: extractCityFromAddress(record.address),
           };
+
+          // Check for duplicate if phone is provided
+          if (business.phone) {
+            const existing = await DistrictBusiness.findOne({ phone: business.phone });
+            if (existing) {
+              duplicateRecords.push({ record, reason: 'Duplicate phone number' });
+              return;
+            }
+          }
 
           records.push(business);
         })
         .on('end', async () => {
           try {
-            const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
-            console.log(`Successfully imported ${inserted.length} records`);
+            let insertedCount = 0;
+            if (records.length > 0) {
+              const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
+              insertedCount = inserted.length;
+            }
+            console.log(`Successfully imported ${insertedCount} records`);
 
-            if (failedRecords.length > 0) {
+            if (failedRecords.length > 0 || duplicateRecords.length > 0) {
               console.log(`Failed to import ${failedRecords.length} records`);
+              console.log(`Skipped ${duplicateRecords.length} duplicate records`);
               const failedPath = path.resolve(__dirname, '../src/data/failed_records.json');
-              fs.writeFileSync(failedPath, JSON.stringify(failedRecords, null, 2));
-              console.log(`Failed records saved to ${failedPath}`);
+              fs.writeFileSync(failedPath, JSON.stringify([...failedRecords, ...duplicateRecords], null, 2));
+              console.log(`Failed and duplicate records saved to ${failedPath}`);
             }
 
             resolve({
-              insertedCount: inserted.length,
+              insertedCount,
               failedCount: failedRecords.length,
+              duplicateCount: duplicateRecords.length,
               failedRecords,
+              duplicateRecords,
             });
           } catch (error) {
             console.error('Error importing records:', error.message);
@@ -168,7 +172,7 @@ export const importCsv = async (input) => {
   }
 };
 
-// Run import only if called directly (for backward compatibility)
+// Run import only if called directly
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   importCsv(csvFilePath)
     .then(() => process.exit(0))
