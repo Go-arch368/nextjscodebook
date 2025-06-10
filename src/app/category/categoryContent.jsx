@@ -723,7 +723,7 @@ export default function CategoryContent() {
                 return (
                   <div
                     key={index}
-                    className="border rounded-xl p-6 bg-white dark:bg-gray-800 shadow-md mb-6"
+                    className="border rounded-xl p-1 bg-white dark:bg-gray-800 shadow-md mb-6"
                   >
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col md:flex-row items-start gap-6">
@@ -743,7 +743,7 @@ export default function CategoryContent() {
                                     : image.url
                                 }
                                 alt={`${business.name} image ${imgIndex + 1}`}
-                                className="w-64 h-64 rounded-md object-cover border"
+                                className="w-100 h-64 rounded-md object-cover border"
                                 loading="lazy"
                                 onError={(e) => {
                                   e.target.src = '/placeholder-image.jpg';

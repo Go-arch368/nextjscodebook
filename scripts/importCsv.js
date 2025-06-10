@@ -1,9 +1,10 @@
-// importCsv.js
+// scripts/importCsv.js
 import fs from 'fs';
 import { parse } from 'csv-parse';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { Readable } from 'stream';
 
 // Debugging: Log paths
 const __filename = fileURLToPath(import.meta.url);
@@ -21,22 +22,18 @@ console.log('.env.local exists:', fs.existsSync(envPath));
 
 // Load environment variables
 try {
-  // Read raw .env.local content
   const envContent = fs.readFileSync(envPath, 'utf8').trim();
   console.log('Raw .env.local content:', envContent);
 
-  // Load .env.local with dotenv
   const dotenvResult = dotenv.config({ path: envPath });
   if (dotenvResult.error) {
     console.error('Error parsing .env.local with dotenv:', dotenvResult.error.message);
-    process.exit(1);
+    throw dotenvResult.error;
   }
   console.log('Parsed .env.local:', dotenvResult.parsed);
 
-  // Verify MONGODB_URI
   if (!process.env.MONGODB_URI) {
     console.error('MONGODB_URI not found in process.env');
-    // Fallback: Manually parse .env.local
     const lines = envContent.split('\n').map(line => line.trim()).filter(line => line && !line.startsWith('#'));
     for (const line of lines) {
       const [key, value] = line.split('=').map(part => part.trim());
@@ -50,12 +47,12 @@ try {
 
   if (!process.env.MONGODB_URI) {
     console.error('MONGODB_URI still not set after manual parse');
-    process.exit(1);
+    throw new Error('MONGODB_URI not set');
   }
   console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
 } catch (error) {
   console.error('Error reading .env.local:', error.message);
-  process.exit(1);
+  throw error;
 }
 
 // Import modules
@@ -77,7 +74,7 @@ const parseTags = (tags) => {
   return tags.split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0);
 };
 
-// Function to extract city from address (after last comma)
+// Function to extract city from address
 const extractCityFromAddress = (address) => {
   if (!address || typeof address !== 'string' || address.trim() === '') {
     return '';
@@ -87,89 +84,93 @@ const extractCityFromAddress = (address) => {
 };
 
 // Function to import CSV
-const importCsv = async (filePath) => {
+export const importCsv = async (input) => {
   try {
-    // Connect to MongoDB
     await dbConnect();
     console.log('Connected to MongoDB Atlas');
 
     const records = [];
     const failedRecords = [];
 
-    // Verify CSV file exists
-    if (!fs.existsSync(filePath)) {
-      throw new Error(`CSV file not found at: ${filePath}`);
-    }
+    // Determine if input is a file path or buffer
+    const stream = typeof input === 'string'
+      ? fs.createReadStream(input)
+      : Readable.from(input);
 
-    // Parse CSV
-    fs.createReadStream(filePath)
-      .pipe(
-        parse({
-          columns: true,
-          skip_empty_lines: true,
-          trim: true,
-        })
-      )
-      .on('data', (record) => {
-        // Skip records with empty phone numbers
-        if (!record.phone || record.phone.trim() === '') {
-          failedRecords.push({
-            record,
-            reason: 'Empty or missing phone number',
-          });
-          return;
-        }
-
-        // Transform record
-        const business = {
-          name: record.name || '',
-          rating: parseFloat(record.rating) || 0,
-          totalRatings: parseInt(record.totalRatings) || 0,
-          address: record.address || '',
-          phone: record.phone || '',
-          tags: parseTags(record.tags),
-          hasWhatsApp: parseBoolean(record.hasWhatsApp),
-          hasEnquiry: parseBoolean(record.hasEnquiry),
-          isTrusted: parseBoolean(record.isTrusted),
-          isVerified: parseBoolean(record.isVerified),
-          isPopular: parseBoolean(record.isPopular),
-          category: record.category || '',
-          subcategory: 'event management, photography',
-          pincode: '573201',
-          city: extractCityFromAddress(record.address),
-        };
-
-        records.push(business);
-      })
-      .on('end', async () => {
-        try {
-          // Insert records
-          const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
-          console.log(`Successfully imported ${inserted.length} records`);
-
-          // Log failed records
-          if (failedRecords.length > 0) {
-            console.log(`Failed to import ${failedRecords.length} records`);
-            const failedPath = path.resolve(__dirname, '../src/data/failed_records.json');
-            fs.writeFileSync(failedPath, JSON.stringify(failedRecords, null, 2));
-            console.log(`Failed records saved to ${failedPath}`);
+    return new Promise((resolve, reject) => {
+      stream
+        .pipe(
+          parse({
+            columns: true,
+            skip_empty_lines: true,
+            trim: true,
+          })
+        )
+        .on('data', (record) => {
+          if (!record.phone || record.phone.trim() === '') {
+            failedRecords.push({
+              record,
+              reason: 'Empty or missing phone number',
+            });
+            return;
           }
 
-          process.exit(0);
-        } catch (error) {
-          console.error('Error importing records:', error.message);
-          process.exit(1);
-        }
-      })
-      .on('error', (error) => {
-        console.error('Error parsing CSV:', error.message);
-        process.exit(1);
-      });
+          const business = {
+            name: record.name || '',
+            rating: parseFloat(record.rating) || 0,
+            totalRatings: parseInt(record.totalRatings) || 0,
+            address: record.address || '',
+            phone: record.phone || '',
+            tags: parseTags(record.tags),
+            hasWhatsApp: parseBoolean(record.hasWhatsApp),
+            hasEnquiry: parseBoolean(record.hasEnquiry),
+            isTrusted: parseBoolean(record.isTrusted),
+            isVerified: parseBoolean(record.isVerified),
+            isPopular: parseBoolean(record.isPopular),
+            category: record.category || '',
+            subcategory: record.category || '', // Set subcategory to category
+            pincode: '573201',
+            city: extractCityFromAddress(record.address),
+          };
+
+          records.push(business);
+        })
+        .on('end', async () => {
+          try {
+            const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
+            console.log(`Successfully imported ${inserted.length} records`);
+
+            if (failedRecords.length > 0) {
+              console.log(`Failed to import ${failedRecords.length} records`);
+              const failedPath = path.resolve(__dirname, '../src/data/failed_records.json');
+              fs.writeFileSync(failedPath, JSON.stringify(failedRecords, null, 2));
+              console.log(`Failed records saved to ${failedPath}`);
+            }
+
+            resolve({
+              insertedCount: inserted.length,
+              failedCount: failedRecords.length,
+              failedRecords,
+            });
+          } catch (error) {
+            console.error('Error importing records:', error.message);
+            reject(error);
+          }
+        })
+        .on('error', (error) => {
+          console.error('Error parsing CSV:', error.message);
+          reject(error);
+        });
+    });
   } catch (error) {
     console.error('Error in importCsv:', error.message);
-    process.exit(1);
+    throw error;
   }
 };
 
-// Run import
-importCsv(csvFilePath);
+// Run import only if called directly (for backward compatibility)
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  importCsv(csvFilePath)
+    .then(() => process.exit(0))
+    .catch(() => process.exit(1));
+}
