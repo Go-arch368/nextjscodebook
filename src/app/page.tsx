@@ -6,7 +6,7 @@ export default function HomePage() {
 
   return (
     <div >
-      <Onboarding/>
+      {/* <Onboarding/> */}
       {/* <BusinessCard business={data.business} />
       <PhotosComponent/> */}
     </div>

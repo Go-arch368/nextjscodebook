@@ -31,8 +31,8 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
             <body
                >
              {children}
-                   {/* <Onboarding/> */}
-                    <Toaster />
+                   {/* <Onboarding/>
+                    <Toaster /> */}
              
             </body>
         </html>
