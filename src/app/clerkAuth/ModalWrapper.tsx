@@ -16,32 +16,40 @@ const ModalWrapper: React.FC<ModalWrapperProps> = ({
   setOtp,
 }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
-        <div className="flex items-center justify-between mb-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-60 z-50">
+      {/* Modal container */}
+      <div className="bg-white rounded-lg p-8 w-full max-w-lg shadow-2xl">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">District</span>
-            <span className="text-2xl font-bold text-orange-500">Business</span>
+            <span className="text-3xl font-bold text-blue-600">District</span>
+            <span className="text-3xl font-bold text-orange-500">Business</span>
           </div>
-          <div className="flex items-center justify-between w-full">
-            <div className="text-right">
-              <h2 className="text-lg font-semibold">Welcome</h2>
-              <p className="text-sm text-gray-600">Login for a seamless experience</p>
-            </div>
-            <button
-              className="text-gray-600 hover:text-gray-800"
-              onClick={() => {
-                setIsOpen(false);
-                setModalType('login');
-                setMobileNumber('');
-                setOtp(['', '', '', '', '', '']);
-              }}
-            >
-              ✕
-            </button>
+          {/* Title and subtitle */}
+          <div className="flex flex-col space-y-0.5">
+            <h2 className="text-xl font-semibold text-gray-800 text-right">Welcome</h2>
+            <p className="text-sm text-gray-500 text-right">Login for a seamless experience</p>
           </div>
         </div>
-        {children}
+        {/* Content */}
+        <div className="mt-4">{children}</div>
+        {/* Skip button */}
+        <div className="mt-8 text-center flex justify-end">
+          <button
+            className="border border-blue-600 text-blue-600 py-2 px-6 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors"
+            onClick={() => {
+              setIsOpen(false);
+              setModalType('login');
+              setMobileNumber('');
+              setOtp(['', '', '', '', '', '']);
+              console.log('Skip clicked');
+            }}
+            aria-label="Skip login"
+          >
+            Skip
+          </button>
+        </div>
       </div>
     </div>
   );

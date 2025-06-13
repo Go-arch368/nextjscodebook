@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
@@ -268,21 +267,24 @@ export default function CategoryContent() {
   return (
     <div className="relative flex justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-6xl px-4 py-6">
-        <FilterBar
-          sortOption={sortOption}
-          setSortOption={setSortOption}
-          topRatedSort={topRatedSort}
-          setTopRatedSort={setTopRatedSort}
-          sortByVerified={sortByVerified}
-          setSortByVerified={setSortByVerified}
-          sortByTrusted={sortByTrusted}
-          setSortByTrusted={setSortByTrusted}
-          ratingSort={ratingSort}
-          setRatingSort={setRatingSort}
-          selectedPincode={selectedPincode}
-          selectedCity={selectedCity}
-          clearAllFilters={clearAllFilters}
-        />
+        {/* Conditionally render FilterBar only when listings exist */}
+        {listings.length > 0 && (
+          <FilterBar
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+            topRatedSort={topRatedSort}
+            setTopRatedSort={setTopRatedSort}
+            sortByVerified={sortByVerified}
+            setSortByVerified={setSortByVerified}
+            sortByTrusted={sortByTrusted}
+            setSortByTrusted={setSortByTrusted}
+            ratingSort={ratingSort}
+            setRatingSort={setRatingSort}
+            selectedPincode={selectedPincode}
+            selectedCity={selectedCity}
+            clearAllFilters={clearAllFilters}
+          />
+        )}
 
         {(query || selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
           <div className="mb-6 text-sm text-gray-600 dark:text-gray-300 pt-20 flex justify-center">
@@ -307,7 +309,7 @@ export default function CategoryContent() {
           <div className="w-full flex justify-center">
             <div className="w-full max-w-4xl">
               {listings.length === 0 ? (
-                <div className="text-center text-gray-600 dark:text-gray-300 py-10">
+                <div className="text-center text-gray-600 dark:text-gray-300 py-10 mt-20">
                   No listings found for your query. Try adjusting your search or filters.
                 </div>
               ) : (

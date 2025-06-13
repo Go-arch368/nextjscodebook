@@ -32,13 +32,14 @@ const OtpForm: React.FC<OtpFormProps> = ({
   };
 
   return (
-    <>
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+    <div className="space-y-6">
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">
           Enter the code sent to +91 - {mobileNumber}{' '}
           <button
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline text-sm"
             onClick={() => setModalType('login')}
+            aria-label="Edit mobile number"
           >
             ✎
           </button>
@@ -52,27 +53,29 @@ const OtpForm: React.FC<OtpFormProps> = ({
               value={digit}
               onChange={(e) => handleOtpChange(index, e.target.value)}
               maxLength={1}
-              className="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-12 h-12 text-center text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-label={`OTP digit ${index + 1}`}
             />
           ))}
         </div>
       </div>
 
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between">
         <span className="text-sm text-gray-600">
           Didn’t receive the OTP? Retry in 00:{timer < 10 ? `0${timer}` : timer}
         </span>
         <button
-          className="text-sm text-blue-600 hover:underline"
+          className="text-sm text-blue-600 hover:underline font-medium"
           onClick={handleResendOtp}
           disabled={timer > 0}
+          aria-label="Resend OTP"
         >
           Resend OTP
         </button>
       </div>
 
       <button
-        className={`w-full py-2 rounded-md text-white ${
+        className={`w-full py-3 rounded-md text-white text-sm font-medium ${
           otp.join('').length === 6
             ? 'bg-blue-600 hover:bg-blue-700'
             : 'bg-gray-400 cursor-not-allowed'
@@ -82,7 +85,7 @@ const OtpForm: React.FC<OtpFormProps> = ({
       >
         Continue
       </button>
-    </>
+    </div>
   );
 };
 

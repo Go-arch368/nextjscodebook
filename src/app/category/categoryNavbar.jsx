@@ -1,11 +1,11 @@
-// components/CategoryNavbar.jsx
 'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Mail, PlusCircle, Bell, User, Menu } from 'lucide-react';
+import { Mail, PlusCircle, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SearchBar from './SearchBar';
+import LoginModal from '../clerkAuth/LoginModal'; // Adjust path as needed
 
 const CategoryNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,15 +33,8 @@ const CategoryNavbar = () => {
             <PlusCircle className="h-5 w-5 text-blue-600 mr-2 dark:text-blue-500" />
             Free Listing
           </Link>
-          <Link href="/notifications" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500">
-            <Bell className="h-5 w-5 text-blue-600 dark:text-blue-500" />
-          </Link>
-          <Link
-            href="/profile"
-            className="text-gray-600 hover:text-blue-600 border-2 border-blue-600 rounded-full p-1 dark:border-blue-500 dark:text-gray-300 dark:hover:text-blue-500"
-          >
-            <User className="h-5 w-5 text-blue-600 dark:text-blue-500" />
-          </Link>
+          {/* Replaced Notifications and User with LoginModal */}
+          <LoginModal />
         </div>
 
         <Button
@@ -72,17 +65,10 @@ const CategoryNavbar = () => {
               <PlusCircle className="h-5 w-5 text-blue-600 mr-2 dark:text-blue-500" />
               Free Listing
             </Link>
-            <Link href="/notifications" className="flex items-center text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500">
-              <Bell className="h-5 w-5 text-blue-600 mr-2 dark:text-blue-500" />
-              Notifications
-            </Link>
-            <Link
-              href="/profile"
-              className="flex items-center text-gray-600 hover:text-blue-600 border-2 border-blue-600 rounded-full px-2 py-1 dark:border-blue-500 dark:text-gray-300 dark:hover:text-blue-500"
-            >
-              <User className="h-5 w-5 text-blue-600 mr-2 dark:text-blue-500" />
-              Profile
-            </Link>
+            {/* Replaced Notifications and User with LoginModal */}
+            <div className="flex items-center">
+              <LoginModal />
+            </div>
           </div>
         </div>
       )}

@@ -209,7 +209,7 @@ const FilterBar = ({
             <SlidersHorizontal className="h-4 w-4" /> All Filters
           </Button>
 
-          {(sortOption !== 'default' ||
+          {/* {(sortOption !== 'default' ||
             topRatedSort ||
             sortByVerified ||
             sortByTrusted ||
@@ -222,7 +222,7 @@ const FilterBar = ({
             >
               Clear All
             </Button>
-          )}
+          )} */}
         </div>
       </div>
 

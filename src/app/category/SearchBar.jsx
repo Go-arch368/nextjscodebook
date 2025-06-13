@@ -1,4 +1,3 @@
-// components/SearchBar.jsx
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -35,18 +34,17 @@ const SearchBar = () => {
   const searchParams = useSearchParams();
   const searchRef = useRef(null);
 
-  // Load recent searches and pincode on mount
+  // Load recent searches, pincode, and URL parameters on mount
   useEffect(() => {
     const storedSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
     const storedPincode = localStorage.getItem('pincode') || '';
-    setRecentSearches(storedSearches);
-    setPincode(storedPincode);
+    const urlPincode = searchParams.get('pincode') || '';
+    const query = searchParams.get('query') || '';
 
-    // Initialize searchQuery from URL if present         
-    const query = searchParams.get('query');
-    if (query) {
-      setSearchQuery(query);
-    }
+    setRecentSearches(storedSearches);
+    setSearchQuery(query);
+    // Prefer stored pincode, fall back to URL pincode
+    setPincode(storedPincode || urlPincode);
   }, [searchParams]);
 
   // Save pincode to localStorage whenever it changes
@@ -97,14 +95,16 @@ const SearchBar = () => {
 
   const validatePincode = useCallback(
     debounce(async (pin) => {
-      if (!pin) {
+      // Use URL pincode as fallback if input pin is empty
+      const effectivePincode = pin || searchParams.get('pincode') || '';
+      if (!effectivePincode) {
         setPincodeError('Pincode is required');
         return;
       }
       try {
         setIsLoading(true);
         setPincodeError(null);
-        const response = await fetch(`/api/search?pincode=${encodeURIComponent(pin)}`, {
+        const response = await fetch(`/api/search?pincode=${encodeURIComponent(effectivePincode)}`, {
           cache: 'no-store',
         });
         if (!response.ok) {
@@ -112,9 +112,13 @@ const SearchBar = () => {
         }
         const result = await response.json();
         if (!result.success && result.error.includes('Pincode')) {
-          setPincodeError(`Pincode ${pin} not found in the database`);
+          setPincodeError(`Pincode ${effectivePincode} not found in the database`);
         } else {
           setPincodeError(null);
+          // Update pincode state if using URL pincode
+          if (!pin && effectivePincode) {
+            setPincode(effectivePincode);
+          }
         }
       } catch (error) {
         console.error('Error validating pincode:', error.message);
@@ -123,12 +127,14 @@ const SearchBar = () => {
         setIsLoading(false);
       }
     }, 300),
-    []
+    [searchParams]
   );
 
   const fetchResults = useCallback(
     debounce(async (query, pin) => {
-      if (!query || !pin) {
+      // Use URL pincode as fallback if input pin is empty
+      const effectivePincode = pin || searchParams.get('pincode') || '';
+      if (!query || !effectivePincode) {
         setResults({
           businesses: [],
           categories: [],
@@ -143,7 +149,7 @@ const SearchBar = () => {
       try {
         setIsLoading(true);
         setError(null);
-        const queryParams = new URLSearchParams({ q: query, pincode: pin });
+        const queryParams = new URLSearchParams({ q: query, pincode: effectivePincode });
         const response = await fetch(`/api/search?${queryParams.toString()}`, {
           cache: 'no-store',
         });
@@ -153,6 +159,10 @@ const SearchBar = () => {
         const result = await response.json();
         if (result.success) {
           setResults(result.data);
+          // Update pincode state if using URL pincode
+          if (!pin && effectivePincode) {
+            setPincode(effectivePincode);
+          }
         } else {
           setResults({
             businesses: [],
@@ -177,7 +187,7 @@ const SearchBar = () => {
         setIsLoading(false);
       }
     }, 300),
-    []
+    [searchParams]
   );
 
   useEffect(() => {
@@ -187,7 +197,9 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (!pincode) {
+    // Use URL pincode if input is empty
+    const effectivePincode = pincode || searchParams.get('pincode') || '';
+    if (!effectivePincode) {
       setPincodeError('Pincode is required');
       return;
     }
@@ -197,16 +209,22 @@ const SearchBar = () => {
     if (searchQuery) {
       saveRecentSearch(searchQuery);
       const currentParams = new URLSearchParams();
-      currentParams.set('pincode', pincode);
+      currentParams.set('pincode', effectivePincode);
       currentParams.set('query', searchQuery);
       router.push(`/category?${currentParams.toString()}`);
       setIsSearchOpen(false);
       setSearchQuery('');
+      // Update pincode state if using URL pincode
+      if (!pincode && effectivePincode) {
+        setPincode(effectivePincode);
+      }
     }
   };
 
   const handleSelect = (item) => {
-    if (!pincode) {
+    // Use URL pincode if input is empty
+    const effectivePincode = pincode || searchParams.get('pincode') || '';
+    if (!effectivePincode) {
       setPincodeError('Pincode is required');
       return;
     }
@@ -215,7 +233,7 @@ const SearchBar = () => {
     }
     saveRecentSearch(item.name);
     const currentParams = new URLSearchParams();
-    currentParams.set('pincode', item.pincode);
+    currentParams.set('pincode', effectivePincode);
     switch (item.type) {
       case 'business':
         currentParams.set('name', item.name);
@@ -236,6 +254,10 @@ const SearchBar = () => {
     router.push(`/category?${currentParams.toString()}`);
     setSearchQuery('');
     setIsSearchOpen(false);
+    // Update pincode state if using URL pincode
+    if (!pincode && effectivePincode) {
+      setPincode(effectivePincode);
+    }
   };
 
   useEffect(() => {
@@ -322,7 +344,8 @@ const SearchBar = () => {
                             <CommandItem
                               key={index}
                               onSelect={() => {
-                                if (!pincode) {
+                                const effectivePincode = pincode || searchParams.get('pincode') || '';
+                                if (!effectivePincode) {
                                   setPincodeError('Pincode is required');
                                   return;
                                 }
@@ -330,10 +353,13 @@ const SearchBar = () => {
                                 setSearchQuery(search);
                                 saveRecentSearch(search);
                                 const currentParams = new URLSearchParams();
-                                currentParams.set('pincode', pincode);
+                                currentParams.set('pincode', effectivePincode);
                                 currentParams.set('query', search);
                                 router.push(`/category?${currentParams.toString()}`);
                                 setIsSearchOpen(false);
+                                if (!pincode && effectivePincode) {
+                                  setPincode(effectivePincode);
+                                }
                               }}
                               className="cursor-pointer dark:hover:bg-gray-600"
                             >
