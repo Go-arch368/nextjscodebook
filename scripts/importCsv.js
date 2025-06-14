@@ -48,8 +48,8 @@ if (!process.env.MONGODB_URI) {
 console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
 
 // Import modules
-import dbConnect from '../src/lib/dbConnect.js';
-import DistrictBusiness from '../models/DistrictBusiness.js';
+import dbConnect from '../src/lib/dbConnect.ts';
+import DistrictBusiness from '../models/DistrictBusiness.ts';
 
 // Function to parse boolean values
 const parseBoolean = (value) => {

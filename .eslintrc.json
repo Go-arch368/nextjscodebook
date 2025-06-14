@@ -18,10 +18,10 @@
     "plugins": [
         "react",
         "@typescript-eslint"
-    ],
-    "rules": {
-        "newline-before-return": "off",
-        "no-unused-vars": "off",
-    "@next/next/no-html-link-for-pages": "off"
-    }
+    ]
+    // "rules": {
+    //     "newline-before-return": "off",
+    //     "no-unused-vars": "off",
+    // "@next/next/no-html-link-for-pages": "off"
+    // }
 }

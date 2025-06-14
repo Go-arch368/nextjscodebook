@@ -1,11 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useUser, useClerk, useSignIn } from '@clerk/nextjs';
+import { useUser, useClerk } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import LoginForm from './LoginForm';
 import OtpForm from './OtpForm';
 import ModalWrapper from './ModalWrapper';
+
+// Define an interface for Clerk errors
+interface ClerkError {
+  errors?: { message: string }[];
+  message?: string;
+}
 
 const LoginModal: React.FC = () => {
   // State for modal visibility and type
@@ -18,21 +24,31 @@ const LoginModal: React.FC = () => {
   // State for resend timer
   const [timer, setTimer] = useState(49);
   // State to simulate logged-in state
-  const [isSimulatedLoggedIn, setIsSimulatedLoggedIn] = useState(false);
+  const [isSimulatedLoggedIn, setIsSimulatedLoggedIn] = useState(() => {
+    // Initialize from localStorage
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('isSimulatedLoggedIn') === 'true';
+    }
+    return false;
+  });
 
   // Clerk hooks
   const { isSignedIn } = useUser();
   const { signOut } = useClerk();
-  const { signIn } = useSignIn();
   // Router for navigation
   const router = useRouter();
 
   // Hardcoded OTP for testing
   const HARDCODED_OTP = '123456';
 
+  // Persist isSimulatedLoggedIn to localStorage
+  useEffect(() => {
+    localStorage.setItem('isSimulatedLoggedIn', isSimulatedLoggedIn.toString());
+  }, [isSimulatedLoggedIn]);
+
   // Debug state changes
   useEffect(() => {
-    console.log('isSimulatedLoggedIn:', isSimulatedLoggedIn, 'isSignedIn:', isSignedIn);
+    console.log('LoginModal - isSimulatedLoggedIn:', isSimulatedLoggedIn, 'isSignedIn:', isSignedIn);
   }, [isSimulatedLoggedIn, isSignedIn]);
 
   // Timer effect for OTP resend
@@ -60,8 +76,11 @@ const LoginModal: React.FC = () => {
     } catch (error) {
       console.error('Error initiating OTP login:', error);
       let errorMessage = 'Unknown error';
-      if (typeof error === 'object' && error !== null && 'errors' in error && Array.isArray((error as any).errors)) {
-        errorMessage = (error as any).errors[0]?.message || 'Unknown error';
+      if (error && typeof error === 'object' && 'errors' in error) {
+        const clerkError = error as ClerkError;
+        if (Array.isArray(clerkError.errors) && clerkError.errors[0]?.message) {
+          errorMessage = clerkError.errors[0].message;
+        }
       }
       alert(`Failed to send OTP: ${errorMessage}. Using simulated OTP for testing.`);
       setModalType('otp');
@@ -95,8 +114,8 @@ const LoginModal: React.FC = () => {
     } catch (error) {
       console.error('Error verifying OTP:', error);
       let errorMessage = 'Please try again.';
-      if (typeof error === 'object' && error !== null && 'message' in error) {
-        errorMessage = (error as { message?: string }).message || 'Please try again.';
+      if (error && typeof error === 'object' && 'message' in error) {
+        errorMessage = (error as ClerkError).message || 'Please try again.';
       }
       alert(`Invalid OTP: ${errorMessage}`);
     }
@@ -117,8 +136,11 @@ const LoginModal: React.FC = () => {
     } catch (error) {
       console.error('Error resending OTP:', error);
       let errorMessage = 'Unknown error';
-      if (typeof error === 'object' && error !== null && 'errors' in error && Array.isArray((error as any).errors)) {
-        errorMessage = (error as any).errors[0]?.message || 'Unknown error';
+      if (error && typeof error === 'object' && 'errors' in error) {
+        const clerkError = error as ClerkError;
+        if (Array.isArray(clerkError.errors) && clerkError.errors[0]?.message) {
+          errorMessage = clerkError.errors[0].message;
+        }
       }
       alert(`Failed to resend OTP: ${errorMessage}. Using simulated OTP for testing.`);
       setTimer(49);
@@ -131,8 +153,10 @@ const LoginModal: React.FC = () => {
     try {
       await signOut();
       setIsSimulatedLoggedIn(false); // Reset state
+      localStorage.removeItem('isSimulatedLoggedIn'); // Clear localStorage
       console.log('Logged out, isSimulatedLoggedIn set to false');
       alert('Logged out successfully!');
+      router.push('/'); // Navigate to home
     } catch (error) {
       console.error('Error signing out:', error);
       alert('Failed to sign out.');

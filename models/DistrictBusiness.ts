@@ -1,6 +1,30 @@
-import mongoose from 'mongoose';
+// models/DistrictBusiness.ts
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
-const districtBusinessSchema = new mongoose.Schema(
+// Define the interface for the DistrictBusiness document
+export interface IDistrictBusiness extends Document {
+  _id: mongoose.Types.ObjectId;
+  name: string;
+  rating: number;
+  totalRatings: number;
+  address: string;
+  phone: string;
+  tags: string[];
+  hasWhatsApp: boolean;
+  hasEnquiry: boolean;
+  isTrusted: boolean;
+  isVerified: boolean;
+  isPopular: boolean;
+  category: string;
+  subcategory: string;
+  pincode: string;
+  city: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Define the schema
+const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
   {
     name: {
       type: String,
@@ -91,7 +115,7 @@ districtBusinessSchema.index({
 });
 
 // Ensure indexes are created
-districtBusinessSchema.on('index', (error) => {
+districtBusinessSchema.on('index', (error: Error | null) => {
   if (error) {
     console.error('Error creating indexes:', error.message);
   } else {
@@ -99,4 +123,9 @@ districtBusinessSchema.on('index', (error) => {
   }
 });
 
-export default mongoose.models.DistrictBusiness || mongoose.model('DistrictBusiness', districtBusinessSchema);
+// Define the model
+const DistrictBusiness: Model<IDistrictBusiness> =
+  mongoose.models.DistrictBusiness ||
+  mongoose.model<IDistrictBusiness>('DistrictBusiness', districtBusinessSchema);
+
+export default DistrictBusiness;

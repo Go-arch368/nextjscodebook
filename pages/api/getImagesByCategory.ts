@@ -1,18 +1,51 @@
+// pages/api/images.ts (or wherever your API route is located)
+import { NextApiRequest, NextApiResponse } from 'next';
+import { v2 as cloudinary, ResourceApiResponse } from 'cloudinary';
 
-import { v2 as cloudinary } from 'cloudinary';
+// Define interface for Cloudinary resource
+interface CloudinaryResource {
+  secure_url: string;
+  public_id: string;
+  width: number;
+  height: number;
+}
+
+// Define custom interface for Cloudinary search response (replacing SearchApiResponse)
+interface CustomSearchApiResponse {
+  resources: CloudinaryResource[];
+  total_count?: number;
+  time?: number;
+  next_cursor?: string;
+}
+
+// Define response data interface
+interface ResponseData {
+  success: boolean;
+  images?: {
+    url: string;
+    publicId: string;
+    width: number;
+    height: number;
+  }[];
+  total?: number;
+  searchedPaths?: string[];
+  cacheHit?: boolean;
+  error?: string;
+  details?: string;
+}
 
 // Cache to store image results for categories
-const imageCache = new Map();
+const imageCache = new Map<string, CloudinaryResource[]>();
 
 // Configure Cloudinary with environment variables
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME as string,
+  api_key: process.env.CLOUDINARY_API_KEY as string,
+  api_secret: process.env.CLOUDINARY_API_SECRET as string,
 });
 
 // Normalize the category name for consistent searching
-function normalizeCategory(category) {
+function normalizeCategory(category: string): string {
   const decoded = decodeURIComponent(category);
   const cleaned = decoded
     .replace(/near me/gi, '') // Remove "near me" (case-insensitive)
@@ -22,27 +55,28 @@ function normalizeCategory(category) {
 }
 
 // Retry logic for Cloudinary API calls
-async function withRetry(fn, retries = 3, delay = 1000) {
+async function withRetry<T>(fn: () => Promise<T>, retries: number = 3, delay: number = 1000): Promise<T> {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       return await fn();
-    } catch (error) {
+    } catch (error: any) {
       if (attempt === retries) throw error;
       console.warn(`Attempt ${attempt} failed: ${error.message}. Retrying in ${delay}ms...`);
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
+  throw new Error('Unexpected error: Retry loop exited without returning or throwing');
 }
 
 // Search for images in Cloudinary based on the category
-async function searchImages(category) {
+async function searchImages(category: string): Promise<CloudinaryResource[]> {
   const normalized = normalizeCategory(category);
   console.log(`Searching for: "${normalized}"`);
 
   // Check cache first
   if (imageCache.has(normalized)) {
     console.log(`Cache hit for "${normalized}"`);
-    return imageCache.get(normalized);
+    return imageCache.get(normalized)!;
   }
 
   // Define possible folder path variations
@@ -57,7 +91,7 @@ async function searchImages(category) {
 
   // Deduplicate folder paths to avoid redundant searches
   const uniqueFolderPaths = [...new Set(folderPaths)];
-  const attemptedPaths = [];
+  const attemptedPaths: string[] = [];
 
   for (const path of uniqueFolderPaths) {
     attemptedPaths.push(path);
@@ -65,7 +99,7 @@ async function searchImages(category) {
       console.log(`Trying path: "${path}"`);
 
       // 1. First try exact folder match with retry
-      const folderResult = await withRetry(() =>
+      const folderResult = await withRetry<CustomSearchApiResponse>(() =>
         cloudinary.search
           .expression(`folder="${path}"`)
           .max_results(50)
@@ -82,7 +116,7 @@ async function searchImages(category) {
       }
 
       // 2. Try prefix search if exact folder fails with retry
-      const prefixResult = await withRetry(() =>
+      const prefixResult = await withRetry<ResourceApiResponse>(() =>
         cloudinary.api.resources({
           type: 'upload',
           prefix: path,
@@ -95,10 +129,10 @@ async function searchImages(category) {
       if (prefixResult.resources?.length > 0) {
         console.log(`Found ${prefixResult.resources.length} images with prefix "${path}"`);
         // Cache the result
-        imageCache.set(normalized, prefixResult.resources);
-        return prefixResult.resources;
+        imageCache.set(normalized, prefixResult.resources as CloudinaryResource[]);
+        return prefixResult.resources as CloudinaryResource[];
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(`Search failed for "${path}":`, error.message);
       if (error.http_code) {
         console.error(`Cloudinary HTTP error: ${error.http_code} - ${error.message}`);
@@ -113,8 +147,8 @@ async function searchImages(category) {
 }
 
 // API handler for fetching images by category
-export default async function handler(req, res) {
-  const { category } = req.query;
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
+  const { category } = req.query as { category?: string };
 
   if (!category) {
     return res.status(400).json({
@@ -151,8 +185,8 @@ export default async function handler(req, res) {
       ],
       cacheHit: imageCache.has(normalizeCategory(category)),
     });
-  } catch (error) {
-    console.error('Failed to fetch images:', error);
+  } catch (error: any) {
+    console.error('Failed to fetch images:', error.message);
     if (error.http_code) {
       console.error(`Cloudinary HTTP error: ${error.http_code} - ${error.message}`);
     }
