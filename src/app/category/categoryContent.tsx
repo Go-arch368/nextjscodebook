@@ -1,423 +1,455 @@
-// src/components/CategoryContent.tsx
-'use client';
+"use client";
 
-import React, { useEffect, useState, useCallback } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Heart, Share2, MapPin, Phone, Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import FilterBar from './FilterBar';
+import { useEffect, useState, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronLeft, ChevronRight, Heart, Share2 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import FilterBar from "./FilterBar";
 
-// Define interfaces
-interface BusinessContact {
-  phone: string;
-}
-
-interface BusinessListing {
-  name: string;
-  rating: string;
-  totalRatings: string;
-  badges: string[];
-  address: string;
-  city: string;
-  pincode: string;
-  contact: BusinessContact;
-  category: string;
-  services: string[];
-  tags?: string[];
-  images: { url: string }[];
-  imageError: string | null;
-  isTrusted?: boolean;
-  isVerified?: boolean;
-  isPopular?: boolean;
-}
-
-interface ListingsApiResponse {
-  success: boolean;
-  data?: BusinessListing[];
-  error?: string;
-}
-
-interface ImagesApiResponse {
-  success: boolean;
-  images?: { url: string }[];
-  total?: number;
-  searchedPaths?: string[];
-  cacheHit?: boolean;
-  error?: string;
-  details?: string;
-}
-
-const debounce = <T extends (...args: unknown[]) => void>(func: T, delay: number) => {
-  let timeout: NodeJS.Timeout;
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
+  let timeout: ReturnType<typeof setTimeout>;
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), delay);
   };
-};
+}
 
-const generateRandomPhone = (): string => {
+function generateRandomPhone() {
   const firstDigit = Math.floor(Math.random() * 4) + 6;
   const randomNum = Math.floor(Math.random() * 900000000) + 100000000;
   return `+91${firstDigit}${randomNum}`;
+}
+
+type Listing = {
+  tags?: string[];
+  images?: { url: string }[];
+  imageError?: string | null;
+  name?: string;
+  rating?: string | number;
+  totalRatings?: string | number;
+  isTrusted?: boolean;
+  isVerified?: boolean;
+  isPopular?: boolean;
+  address?: string;
+  city?: string;
+  pincode?: string;
+  phone?: string;
+  category?: string;
+  [key: string]: any;
 };
 
-const CategoryContent: React.FC = () => {
+export default function CategoryContent() {
   const searchParams = useSearchParams();
-  const [listings, setListings] = useState<BusinessListing[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [currentImageIndices, setCurrentImageIndices] = useState<Record<number, number>>({});
+  const [listings, setListings] = useState<Listing[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedImageIndices, setSelectedImageIndices] = useState<{ [key: number]: number }>({});
 
   // Sorting and filtering states
-  const [sortOption, setSortOption] = useState<string>('default');
-  const [topRatedSort, setTopRatedSort] = useState<string | null>(null);
-  const [sortByVerified, setSortByVerified] = useState<boolean>(false);
-  const [sortByTrusted, setSortByTrusted] = useState<boolean>(false);
+  const [sortOption, setSortOption] = useState("default");
+  const [topRatedSort, setTopRatedSort] = useState<"asc" | "desc" | null>(null);
+  const [sortByVerified, setSortByVerified] = useState(false);
+  const [sortByTrusted, setSortByTrusted] = useState(false);
   const [ratingSort, setRatingSort] = useState<number | null>(null);
 
-  // Get query parameters with null checks
-  const query = searchParams ? searchParams.get('query') : null;
-  const selectedCategory = searchParams ? searchParams.get('category') : null;
-  const selectedTag = searchParams ? searchParams.get('tag') : null;
-  const selectedName = searchParams ? searchParams.get('name') : null;
-  const selectedAddress = searchParams ? searchParams.get('address') : null;
-  const selectedCity = searchParams ? searchParams.get('city') : null;
-  const selectedPincode = searchParams ? searchParams.get('pincode') || '560062' : '560062';
+  // Get query parameters
+  const query = searchParams?.get("query");
+  const selectedCategory = searchParams?.get("category");
+  const selectedTag = searchParams?.get("tag");
+  const selectedName = searchParams?.get("name");
+  const selectedAddress = searchParams?.get("address");
+  const selectedCity = searchParams?.get("city");
+  const selectedPincode = searchParams?.get("pincode") || "560062";
 
   const fetchListings = useCallback(
-    (
-      params: {
-        query: string | null;
-        category: string | null;
-        tag: string | null;
-        name: string | null;
-        address: string | null;
-        city: string | null;
-        pincode: string;
-      },
-      sort: string | null,
-      sortFields: { sortByVerified: boolean; sortByTrusted: boolean; ratingSort: number | null }
-    ) => {
-      const debouncedFetch = debounce(async () => {
-        try {
-          setLoading(true);
-          const queryParams = new URLSearchParams();
-          if (params.query) queryParams.append('query', params.query);
-          if (params.category) queryParams.append('category', params.category);
-          if (params.tag) queryParams.append('tag', params.tag);
-          if (params.name) queryParams.append('name', params.name);
-          if (params.address) queryParams.append('address', params.address);
-          if (params.city) queryParams.append('city', params.city);
-          queryParams.append('pincode', params.pincode);
-          if (sort) queryParams.append('sort', sort);
-          if (sortFields.sortByVerified) queryParams.append('sortByVerified', 'true');
-          if (sortFields.sortByTrusted) queryParams.append('sortByTrusted', 'true');
-          if (sortFields.ratingSort !== null) queryParams.append('sortByRating', sortFields.ratingSort.toString());
+    debounce(async (params, sort, sortFields) => {
+      try {
+        setLoading(true);
 
-          const response = await fetch(`/api/getListings?${queryParams.toString()}`, { cache: 'no-store' });
-          if (!response.ok) {
-            console.error(`HTTP error: ${response.status}`);
-            setListings([]);
-            return;
-          }
+        const queryParams = new URLSearchParams();
+        if (params.query) queryParams.append("query", params.query);
+        if (params.category) queryParams.append("category", params.category);
+        if (params.tag) queryParams.append("tag", params.tag);
+        if (params.name) queryParams.append("name", params.name);
+        if (params.address) queryParams.append("address", params.address);
+        if (params.city) queryParams.append("city", params.city);
+        queryParams.append("pincode", params.pincode);
 
-          const result: ListingsApiResponse = await response.json();
-          if (result.success && Array.isArray(result.data) && result.data.length > 0) {
-            const imagePromises = result.data.map((listing) =>
-              fetch(`/api/getImagesByCategory?category=${encodeURIComponent(listing.category)}`, { cache: 'no-store' })
-                .then((res) => res.json().then((data: ImagesApiResponse) => ({ category: listing.category, data })))
-                .catch(() => ({
-                  category: listing.category,
-                  data: { success: false, images: [], searchedPaths: [] } as ImagesApiResponse,
-                }))
-            );
+        if (sort) queryParams.append("sort", sort);
+        if (sortFields.sortByVerified) queryParams.append("sortByVerified", "true");
+        if (sortFields.sortByTrusted) queryParams.append("sortByTrusted", "true");
+        if (sortFields.ratingSort) queryParams.append("sortByRating", sortFields.ratingSort);
 
-            const imageResults = await Promise.all(imagePromises);
-            const imageMap = Object.fromEntries(imageResults.map(({ category, data }) => [category, data]));
-            const listingsWithImages = result.data.map((listing) => ({
-              ...listing,
-              images: imageMap[listing.category]?.images || [],
-              imageError: imageMap[listing.category]?.images?.length
-                ? null
-                : `No images found for ${listing.category}. Searched paths: ${imageMap[listing.category]?.searchedPaths?.join(', ') || 'Unknown'}`,
-            }));
+        const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
+          cache: "no-store",
+        });
 
-            setListings(listingsWithImages);
-            setCurrentImageIndices({}); // Reset image indices on new fetch
-          } else {
-            setListings([]);
-          }
-        } catch (err: unknown) {
-          if (err instanceof Error) {
-            console.error('Fetch error:', err.message);
-          } else {
-            console.error('Fetch error:', err);
-          }
+        if (!response.ok) {
           setListings([]);
-        } finally {
-          setLoading(false);
+          return;
         }
-      }, 1000);
-      debouncedFetch();
-    },
+
+        const result = await response.json();
+
+        if (result.success && Array.isArray(result.data) && result.data.length > 0) {
+          const imagePromises = result.data.map((listing: any) =>
+            fetch(`/api/getImagesByCategory?category=${encodeURIComponent(listing.category)}`, {
+              cache: "no-store",
+            })
+              .then((res) => res.json().then((data) => ({ category: listing.category, data })))
+              .catch(() => ({ category: listing.category, data: { images: [], searchedPaths: [] } }))
+          );
+
+          const imageResults = await Promise.all(imagePromises);
+          const imageMap = Object.fromEntries(
+            imageResults.map(({ category, data }) => [category, data])
+          );
+
+          const listingsWithImages = result.data.map((listing: any) => ({
+            ...listing,
+            images: imageMap[listing.category]?.images || [],
+            imageError: imageMap[listing.category]?.images?.length
+              ? null
+              : `No images found for ${listing.category}`,
+          }));
+
+          setListings(listingsWithImages);
+          const initialSelectedIndices: { [key: number]: number } = {};
+          listingsWithImages.forEach((_: any, index: number) => {
+            initialSelectedIndices[index] = 0;
+          });
+          setSelectedImageIndices(initialSelectedIndices);
+        } else {
+          setListings([]);
+        }
+      } finally {
+        setLoading(false);
+      }
+    }, 1000),
     []
   );
 
   useEffect(() => {
-    let sort: string | null = null;
-    if (topRatedSort === 'desc') sort = 'totalRatings-desc';
-    else if (topRatedSort === 'asc') sort = 'totalRatings-asc';
-    else if (sortOption === 'rating') sort = 'rating';
+    let sort = null;
+    if (topRatedSort === "desc") {
+      sort = "totalRatings-desc";
+    } else if (topRatedSort === "asc") {
+      sort = "totalRatings-asc";
+    } else if (sortOption === "rating") {
+      sort = "rating";
+    }
     const sortFields = { sortByVerified, sortByTrusted, ratingSort };
-    const params = { query, category: selectedCategory, tag: selectedTag, name: selectedName, address: selectedAddress, city: selectedCity, pincode: selectedPincode };
-    fetchListings(params, sort, sortFields);
-  }, [fetchListings, query, selectedCategory, selectedTag, selectedName, selectedAddress, selectedCity, selectedPincode, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
-
-  useEffect(() => {
-    const handlePageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) {
-        let sort: string | null = null;
-        if (topRatedSort === 'desc') sort = 'totalRatings-desc';
-        else if (topRatedSort === 'asc') sort = 'totalRatings-asc';
-        else if (sortOption === 'rating') sort = 'rating';
-        const sortFields = { sortByVerified, sortByTrusted, ratingSort };
-        const params = { query, category: selectedCategory, tag: selectedTag, name: selectedName, address: selectedAddress, city: selectedCity, pincode: selectedPincode };
-        fetchListings(params, sort, sortFields);
-      }
+    const params = {
+      query,
+      category: selectedCategory,
+      tag: selectedTag,
+      name: selectedName,
+      address: selectedAddress,
+      city: selectedCity,
+      pincode: selectedPincode,
     };
-    window.addEventListener('pageshow', handlePageShow);
-    return () => window.removeEventListener('pageshow', handlePageShow);
-  }, [fetchListings, query, selectedCategory, selectedTag, selectedName, selectedAddress, selectedCity, selectedPincode, sortOption, topRatedSort, sortByVerified, sortByTrusted, ratingSort]);
+    fetchListings(params, sort, sortFields);
+  }, [
+    fetchListings,
+    query,
+    selectedCategory,
+    selectedTag,
+    selectedName,
+    selectedAddress,
+    selectedCity,
+    selectedPincode,
+    sortOption,
+    topRatedSort,
+    sortByVerified,
+    sortByTrusted,
+    ratingSort,
+  ]);
+
+  const handleSelectImage = (listingIndex: number, imageIndex: number) => {
+    setSelectedImageIndices((prev) => ({
+      ...prev,
+      [listingIndex]: imageIndex,
+    }));
+  };
+
+  const handleEnquireNow = (businessName: string) => {
+    alert(`Enquiry sent for ${businessName}! Our team will contact you soon.`);
+  };
+
+  const handleVisit = (businessName: string, category: string) => {
+    try {
+      localStorage.setItem("lastVisitedCategory", category);
+      localStorage.setItem("lastVisitedBusiness", businessName);
+    } catch (error) {
+      console.error("Error writing to localStorage:", error);
+    }
+
+    const categoryRoutes = {
+      "Best Hospitals": "/template?websiteIdentifier=Health%26Medical-Hospital-560038",
+      "Best Clinics": "/template?websiteIdentifier=Health%26Medical-Clinics-560038",
+      "Best Dentists": "/template?websiteIdentifier=Health%26Medical-Dentists-560062",
+      "Chemists": "/template?websiteIdentifier=Health%26Medical-Pharmacies-560098",
+      "Best Veterinarians": "/template?websiteIdentifier=Health%26Medical-Veterinary-560076",
+      "Car Repair": "/template?websiteIdentifier=Automobile-CarRepair-560062",
+      "Car Showrooms": "/template?websiteIdentifier=Automobile-CarSales-560062",
+      "Tyre Dealers": "/template?websiteIdentifier=Automobile-Tires-560064",
+      "Autospares": "/template?websiteIdentifier=Automobile-AutoParts-560062",
+      "Best Physiotherapists": "/template?websiteIdentifier=Health&Medical-Physiotherapy-560025",
+    } as const;
+
+    const url = categoryRoutes[category as keyof typeof categoryRoutes] || "/category";
+    window.location.href = url;
+  };
 
   const clearAllFilters = () => {
-    setSortOption('default');
+    setSortOption("default");
     setTopRatedSort(null);
     setSortByVerified(false);
     setSortByTrusted(false);
     setRatingSort(null);
-    const params = { query, category: selectedCategory, tag: selectedTag, name: selectedName, address: selectedAddress, city: selectedCity, pincode: selectedPincode };
-    fetchListings(params, null, { sortByVerified: false, sortByTrusted: false, ratingSort: null });
-  };
-
-  const handlePrevImage = (listingIndex: number, imageCount: number) => {
-    setCurrentImageIndices((prev) => ({
-      ...prev,
-      [listingIndex]: ((prev[listingIndex] || 0) - 1 + imageCount) % imageCount,
-    }));
-  };
-
-  const handleNextImage = (listingIndex: number, imageCount: number) => {
-    setCurrentImageIndices((prev) => ({
-      ...prev,
-      [listingIndex]: ((prev[listingIndex] || 0) + 1) % imageCount,
-    }));
+    const params = {
+      query,
+      category: selectedCategory,
+      tag: selectedTag,
+      name: selectedName,
+      address: selectedAddress,
+      city: selectedCity,
+      pincode: selectedPincode,
+    };
+    fetchListings(params, null, {});
   };
 
   if (loading) {
-    return <div className="p-6 text-gray-600 dark:text-gray-300">Loading...</div>;
+    return <div className="p-6">Loading...</div>;
   }
 
   return (
     <div className="h-full p-5 bg-gray-100 dark:bg-black">
-      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-        {selectedCategory || 'Businesses'} in {selectedCity || 'Your Area'}
-      </h1>
+      {/* Filter Bar */}
       {listings.length > 0 && (
-        <FilterBar
-          sortOption={sortOption}
-          setSortOption={setSortOption}
-          topRatedSort={topRatedSort}
-          setTopRatedSort={setTopRatedSort}
-          sortByVerified={sortByVerified}
-          setSortByVerified={setSortByVerified}
-          sortByTrusted={sortByTrusted}
-          setSortByTrusted={setSortByTrusted}
-          ratingSort={ratingSort}
-          setRatingSort={setRatingSort}
-          selectedPincode={selectedPincode}
-          selectedCity={selectedCity}
-          clearAllFilters={clearAllFilters}
-        />
+        <div className="mb-6">
+          <FilterBar
+            sortOption={sortOption}
+            setSortOption={setSortOption}
+            topRatedSort={topRatedSort}
+            setTopRatedSort={setTopRatedSort}
+            sortByVerified={sortByVerified}
+            setSortByVerified={setSortByVerified}
+            sortByTrusted={sortByTrusted}
+            setSortByTrusted={setSortByTrusted}
+            ratingSort={ratingSort}
+            setRatingSort={setRatingSort}
+            selectedPincode={selectedPincode}
+            selectedCity={selectedCity ?? ""}
+            clearAllFilters={clearAllFilters}
+          />
+        </div>
       )}
-      {(query || selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
-        <p className="mb-6 text-sm text-gray-600 dark:text-gray-300">
-          Showing results for:{' '}
+
+      {/* Search Summary */}
+      {/* {(query || selectedPincode !== "560062" || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
+        <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
+          Showing results for:{" "}
           {query && <span>Search: "{query}"</span>}
-          {query && (selectedPincode !== '560062' || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && ', '}
+          {(query && (selectedPincode !== "560062" || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress)) && ", "}
           {selectedCategory && <span>Category: {selectedCategory}</span>}
-          {(query || selectedCategory) && (selectedPincode !== '560062' || selectedCity || selectedTag || selectedName || selectedAddress) && ', '}
+          {(query || selectedCategory) && (selectedPincode !== "560062" || selectedCity || selectedTag || selectedName || selectedAddress) && ", "}
           {selectedTag && <span>Tag: {selectedTag}</span>}
-          {(query || selectedCategory || selectedTag) && (selectedPincode !== '560062' || selectedCity || selectedName || selectedAddress) && ', '}
+          {(query || selectedCategory || selectedTag) && (selectedPincode !== "560062" || selectedCity || selectedName || selectedAddress) && ", "}
           {selectedName && <span>Name: {selectedName}</span>}
-          {(query || selectedCategory || selectedTag || selectedName) && (selectedPincode !== '560062' || selectedCity || selectedAddress) && ', '}
+          {(query || selectedCategory || selectedTag || selectedName) && (selectedPincode !== "560062" || selectedCity || selectedAddress) && ", "}
           {selectedAddress && <span>Address: {selectedAddress}</span>}
-          {(query || selectedCategory || selectedTag || selectedName || selectedAddress) && (selectedPincode !== '560062' || selectedCity) && ', '}
+          {(query || selectedCategory || selectedTag || selectedName || selectedAddress) && (selectedPincode !== "560062" || selectedCity) && ", "}
           {selectedCity && <span>City: {selectedCity}</span>}
-          {(query || selectedCategory || selectedTag || selectedName || selectedAddress || selectedCity) && selectedPincode !== '560062' && ', '}
-          {selectedPincode !== '560062' && <span>Pincode: {selectedPincode}</span>}
-        </p>
-      )}
+          {(query || selectedCategory || selectedTag || selectedName || selectedAddress || selectedCity) && selectedPincode !== "560062" && ", "}
+          {selectedPincode !== "560062" && <span>Pincode: {selectedPincode}</span>}
+        </div>
+      )} */}
+
+      {/* Listings */}
       {listings.length === 0 ? (
-        <p className="text-gray-600 dark:text-gray-300">No businesses found for your query.</p>
+        <p className="text-gray-600 dark:text-gray-300">
+          No businesses found for your search criteria.
+        </p>
       ) : (
         <div className="space-y-6">
           {listings.map((listing, index) => {
-            const business: BusinessListing = {
+            const business = {
               services: Array.isArray(listing?.tags) ? listing.tags : [],
               images: Array.isArray(listing?.images) ? listing.images : [],
               imageError: listing?.imageError || null,
-              name: listing?.name || 'Unknown Business',
-              rating: listing?.rating ? parseFloat(listing.rating).toFixed(1) : '4.0',
-              totalRatings: listing?.totalRatings ? `${parseInt(listing.totalRatings).toLocaleString()}` : '0',
-              badges: [listing?.isTrusted && 'Trust', listing?.isVerified && 'Verified', listing?.isPopular && 'Claimed'].filter(Boolean) as string[],
-              address: listing?.address || 'Unknown Address',
-              city: listing?.city || 'Unknown City',
-              pincode: listing?.pincode || '560062',
-              contact: { phone: listing?.contact?.phone || generateRandomPhone() },
-              category: listing?.category || 'Unknown Category',
+              name: listing?.name || "Unknown Business",
+              rating: listing?.rating ? parseFloat(String(listing.rating)).toFixed(1) : "4.5",
+              totalRatings: listing?.totalRatings || "100",
+              badges: [
+                listing?.isTrusted && "Trust",
+                listing?.isVerified && "Verified",
+                listing?.isPopular && "Claimed",
+              ].filter(Boolean),
+              address: listing?.address || "Unknown Address",
+              city: listing?.city || "Unknown City",
+              pincode: listing?.pincode || "000000",
+              contact: { phone: listing?.phone || generateRandomPhone() },
+              category: listing?.category || "General",
             };
 
-            const currentImageIndex = currentImageIndices[index] || 0;
-            const imageCount = business.images.length;
+            const selectedImageIndex = selectedImageIndices[index] || 0;
+            const totalImages = business.images.length;
 
             return (
               <div
                 key={index}
                 className="relative flex flex-col sm:flex-row bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
-                {/* Floating Action Buttons */}
+                {/* Top-right floating buttons */}
                 <div className="absolute top-4 right-4 flex gap-2 z-10">
                   <button
                     aria-label="Share"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                    onClick={() => alert('Share functionality not implemented')}
                   >
                     <Share2 className="w-5 h-5" />
                   </button>
                   <button
                     aria-label="Like"
                     className="text-gray-600 dark:text-gray-300 hover:text-red-500 transition-colors"
-                    onClick={() => alert('Like functionality not implemented')}
                   >
                     <Heart className="w-5 h-5" />
                   </button>
                 </div>
 
-                {/* Image Section */}
+                {/* Left: Image */}
                 <div className="sm:w-1/3 w-full h-56 sm:h-auto relative">
                   {business.imageError ? (
-                    <div className="w-full h-full rounded-t-xl sm:rounded-l-xl bg-gray-100 dark:bg-gray-700 text-red-500 dark:text-red-400 flex items-center justify-center text-sm text-center p-2">
+                    <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
                       {business.imageError}
                     </div>
                   ) : business.images.length > 0 ? (
                     <>
                       <Image
-                        src={business.images[currentImageIndex]?.url || '/placeholder-image.jpg'}
-                        alt={`${business.name} image ${currentImageIndex + 1}`}
-                        className="object-cover w-full h-full rounded-t-xl sm:rounded-l-xl"
+                        src={business.images[selectedImageIndex]?.url || "/placeholder.jpg"}
+                        alt={`${business.name} image`}
+                        className="object-cover w-full h-full"
                         fill
                         sizes="(max-width: 640px) 100vw, 33vw"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = '/placeholder-image.jpg';
-                          console.error(`Failed to load image ${business.images[currentImageIndex]?.url}`);
-                        }}
                       />
-                      {imageCount > 1 && (
+                      {totalImages > 1 && (
                         <>
-                          {/* Navigation Buttons */}
-                          <button
-                            aria-label="Previous image"
-                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
-                            onClick={() => handlePrevImage(index, imageCount)}
-                          >
-                            <ChevronLeft className="w-5 h-5" />
-                          </button>
-                          <button
-                            aria-label="Next image"
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
-                            onClick={() => handleNextImage(index, imageCount)}
-                          >
-                            <ChevronRight className="w-5 h-5" />
-                          </button>
-                          {/* Image Counter */}
-                          <div className="absolute bottom-2 right-2 bg-gray-800 bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-                            {currentImageIndex + 1}/{imageCount}
-                          </div>
+                          {selectedImageIndex > 0 && (
+                            <button
+                              onClick={() => handleSelectImage(index, selectedImageIndex - 1)}
+                              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-4 h-4 text-white" />
+                            </button>
+                          )}
+                          {selectedImageIndex < totalImages - 1 && (
+                            <button
+                              onClick={() => handleSelectImage(index, selectedImageIndex + 1)}
+                              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-4 h-4 text-white" />
+                            </button>
+                          )}
                         </>
                       )}
                     </>
                   ) : (
-                    <div className="w-full h-full rounded-t-xl sm:rounded-l-xl bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center text-sm">
+                    <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
                       No images available
                     </div>
                   )}
                 </div>
 
-                {/* Details Section */}
+                {/* Right: Details */}
                 <div className="flex-1 p-6 flex flex-col justify-between">
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{business.name}</h2>
-                    <div className="flex items-center gap-2 mt-2">
-                      {/* Inline StarRating */}
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${i < Math.floor(parseFloat(business.rating)) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-gray-800 dark:text-gray-300 text-sm">({business.totalRatings})</span>
+                    <div className="flex items-center gap-2">
+                      <ThumbsUp className="w-5 h-5 bg-blue-600 text-white p-1 rounded-full" />
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        {business.name}
+                      </h2>
                     </div>
-                    <p className="mt-3 text-gray-700 dark:text-gray-300">Top-rated {business.category.toLowerCase()} services in {business.city}.</p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {business.services.map((service, idx) => (
-                        <span
-                          key={idx}
-                          className="bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 text-sm px-2 py-1 rounded-full"
-                        >
-                          {service}
-                        </span>
-                      ))}
+
+                    <div className="flex items-center gap-2 mt-2">
+                      <Badge className="bg-green-600 text-white px-2 py-1 text-sm flex items-center gap-1">
+                        {business.rating}
+                        <Star className="ml-1 h-3 w-3 text-white fill-current" />
+                      </Badge>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        ({business.totalRatings} ratings)
+                      </span>
                       {business.badges.map((badge, idx) => (
-                        <span
+                        <Badge
                           key={idx}
                           className={
-                            badge === 'Trust'
-                              ? 'bg-yellow-100 dark:bg-yellow-800 text-yellow-700 dark:text-yellow-300 text-sm px-2 py-1 rounded-full'
-                              : badge === 'Verified'
-                              ? 'bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 text-sm px-2 py-1 rounded-full'
-                              : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm px-2 py-1 rounded-full'
+                            badge === "Trust"
+                              ? "bg-yellow-400 text-black text-xs"
+                              : badge === "Verified"
+                              ? "bg-blue-500 text-white text-xs"
+                              : "bg-gray-100 text-gray-800 text-xs"
                           }
                         >
                           {badge}
-                        </span>
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="mt-3 flex items-center gap-1 text-gray-700 dark:text-gray-300">
+                      <MapPin className="w-4 h-4" />
+                      {business.address}, {business.city}, {business.pincode}
+                    </div>
+
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                      Category: {business.category}
+                    </div>
+
+                    {/* Services/Tags */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {business.services.map((service, idx) => (
+                        <Badge
+                          key={idx}
+                          variant="secondary"
+                          className="text-xs bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                        >
+                          {service}
+                        </Badge>
                       ))}
                     </div>
                   </div>
-                  <div className="flex justify-between items-end mt-6 flex-wrap gap-4">
-                    <div className="flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
-                      <a href={`tel:${business.contact.phone}`} aria-label="Call" className="flex items-center gap-1 hover:text-blue-600 transition-colors">
-                        <Phone className="w-4 h-4" />
-                        {business.contact.phone}
-                      </a>
-                      <a
-                        href={`https://maps.google.com/?q=${encodeURIComponent(`${business.address}, ${business.city}, ${business.pincode}`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Directions"
-                        className="flex items-center gap-1 hover:text-blue-600 transition-colors"
-                      >
-                        <MapPin className="w-4 h-4" />
-                        Directions
-                      </a>
-                      <Link
-                        href={`/category?category=${encodeURIComponent(business.category)}`}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
-                      >
-                        Visit
-                      </Link>
-                    </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap gap-4 mt-6">
+                    <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 flex items-center gap-2 text-sm rounded-md">
+                      <Phone className="w-5 h-5" />
+                      <span>{business.contact.phone}</span>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
+                      onClick={() => handleEnquireNow(business.name)}
+                    >
+                      <MessageSquare className="w-5 h-5" />
+                      <span>Enquire Now</span>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border border-green-600 text-green-600 hover:bg-green-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      <span>WhatsApp</span>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
+                      onClick={() => handleVisit(business.name, business.category)}
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      <span>Visit</span>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -427,6 +459,4 @@ const CategoryContent: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default CategoryContent;
+}

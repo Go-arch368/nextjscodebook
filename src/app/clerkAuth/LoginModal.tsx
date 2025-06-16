@@ -23,14 +23,8 @@ const LoginModal: React.FC = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   // State for resend timer
   const [timer, setTimer] = useState(49);
-  // State to simulate logged-in state
-  const [isSimulatedLoggedIn, setIsSimulatedLoggedIn] = useState(() => {
-    // Initialize from localStorage
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('isSimulatedLoggedIn') === 'true';
-    }
-    return false;
-  });
+  // State to simulate logged-in state, initialized to false
+  const [isSimulatedLoggedIn, setIsSimulatedLoggedIn] = useState(false);
 
   // Clerk hooks
   const { isSignedIn } = useUser();
@@ -40,6 +34,14 @@ const LoginModal: React.FC = () => {
 
   // Hardcoded OTP for testing
   const HARDCODED_OTP = '123456';
+
+  // Initialize isSimulatedLoggedIn from localStorage on client only
+  useEffect(() => {
+    const storedValue = localStorage.getItem('isSimulatedLoggedIn');
+    if (storedValue === 'true') {
+      setIsSimulatedLoggedIn(true);
+    }
+  }, []);
 
   // Persist isSimulatedLoggedIn to localStorage
   useEffect(() => {
