@@ -207,3 +207,14 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.toggle-checkbox:checked {
+  transform: translateX(16px);
+  border-color: #2563eb;
+}
+.toggle-checkbox {
+  transition: transform 0.2s ease-in-out;
+}
+.toggle-label {
+  transition: background-color 0.2s ease-in-out;
+}
