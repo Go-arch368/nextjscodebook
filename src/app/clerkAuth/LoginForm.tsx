@@ -31,7 +31,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
       console.log('Initiating Google login');
       await signIn?.authenticateWithRedirect({
         strategy: 'oauth_google',
-        redirectUrl: '/sso-callback',
+        redirectUrl: '/category?pincode=573201',
         redirectUrlComplete: '/category?pincode=573201',
       });
       setIsOpen(false);
