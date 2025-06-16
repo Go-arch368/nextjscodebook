@@ -151,7 +151,7 @@ export default function UploadFormPage() {
           transition: background-color 0.2s ease-in-out;
         }
       `}</style>
-      <div className="w-full bg-white rounded-xl shadow-2xl p-8 sm:p-12">
+      <div className="w-1/2 max-w-2xl bg-white rounded-xl shadow-2xl p-8 sm:p-12">
         <h1 className="text-3xl font-extrabold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
           Add New Business
         </h1>
