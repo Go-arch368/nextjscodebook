@@ -220,7 +220,7 @@ const FilterBar = ({
               showAllFilters ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="p-6 h-full mt-30 flex flex-col">
+            <div className="p-6 h-full mt-0 flex flex-col">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">All Filters</h3>
                 <button
