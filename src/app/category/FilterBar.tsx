@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -72,12 +71,9 @@ const FilterBar = ({
     setShowAllFilters(false);
   };
 
-
-return (
+  return (
     <>
-      <div  
-        className="dark:bg-gray-800 p-4 -mt-2 rounded-lg w-full flex justify-between items-center mx-auto bg-white shadow-md"
-      >
+      <div className="dark:bg-gray-800 p-4 -mt-2 rounded-lg w-full flex justify-between items-center mx-auto bg-white shadow-md">
         <div className="flex flex-wrap items-center gap-3 mx-auto">
           <div className="relative">
             <Button
@@ -94,14 +90,14 @@ return (
               <ChevronDown className="h-4 w-4" />
             </Button>
             {isDropdownOpen && (
-              <div className="absolute z-50 mt-2 bg-white rounded-md shadow-lg w-40 dark:bg-gray-700">
+              <div className="absolute z-50 mt-2 bg-white rounded-md shadow-lg w-40 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 <Button
                   onClick={() => {
                     setSortOption('default');
                     setStagedSortOption('default');
                     setIsDropdownOpen(false);
                   }}
-                  className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
+                  className="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 bg-transparent text-inherit"
                 >
                   Default
                 </Button>
@@ -111,7 +107,7 @@ return (
                     setStagedSortOption('rating');
                     setIsDropdownOpen(false);
                   }}
-                  className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
+                  className="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 bg-transparent text-inherit"
                 >
                   Rating
                 </Button>
@@ -168,7 +164,7 @@ return (
             DB Trust
           </Button>
 
-<div className="relative">
+          <div className="relative">
             <Button
               onClick={() => setIsRatingDropdownOpen(!isRatingDropdownOpen)}
               className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 flex items-center gap-2 px-4 py-2 rounded-md"
@@ -179,14 +175,14 @@ return (
               <ChevronDown className="h-4 w-4" />
             </Button>
             {isRatingDropdownOpen && (
-              <div className="absolute z-50 mt-1 w-32 bg-white rounded-md shadow-lg dark:bg-gray-700">
+              <div className="absolute z-50 mt-2 w-32 bg-white rounded-md shadow-lg dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 <Button
                   onClick={() => {
                     setRatingSort(null);
                     setStagedRatingSort(null);
                     setIsRatingDropdownOpen(false);
                   }}
-                  className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
+                  className="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 bg-transparent text-inherit"
                 >
                   All
                 </Button>
@@ -198,7 +194,7 @@ return (
                       setStagedRatingSort(value);
                       setIsRatingDropdownOpen(false);
                     }}
-                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600"
+                    className="block w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-600 bg-transparent text-inherit"
                   >
                     {value}+
                   </Button>
@@ -213,30 +209,12 @@ return (
           >
             <SlidersHorizontal className="h-4 w-4" /> All Filters
           </Button>
-
-          {/* {(sortOption !== 'default' 
-            topRatedSort 
-            sortByVerified 
-            sortByTrusted 
-            ratingSort 
-            selectedPincode !== '560062' 
-            selectedCity) && (
-            <Button
-              onClick={clearAllFilters}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md"
-            >
-              Clear All
-            </Button>
-          )} */}
         </div>
       </div>
 
       {showAllFilters && (
         <>
-          <div
-            className="fixed inset-0"
-            onClick={() => setShowAllFilters(false)}
-          />
+          <div className="fixed inset-0" onClick={() => setShowAllFilters(false)} />
           <div
             className={`fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-800 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
               showAllFilters ? 'translate-x-0' : 'translate-x-full'
@@ -254,8 +232,7 @@ return (
                 </button>
               </div>
 
-
-<div className="flex-1 space-y-6 overflow-y-auto">
+              <div className="flex-1 space-y-6 overflow-y-auto">
                 <div>
                   <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-100">Sort By</h4>
                   <div className="flex flex-wrap gap-2">
@@ -318,7 +295,7 @@ return (
                   </div>
                 </div>
 
-<div>
+                <div>
                   <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-100">Verified & Trust</h4>
                   <div className="flex flex-wrap gap-2">
                     <Button

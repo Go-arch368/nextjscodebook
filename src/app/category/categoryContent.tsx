@@ -185,7 +185,7 @@ export default function CategoryContent() {
     } catch (error) {
       console.error("Error writing to localStorage:", error);
     }
-
+  
     const categoryRoutes = {
       "Best Hospitals": "/template?websiteIdentifier=Health%26Medical-Hospital-560038",
       "Best Clinics": "/template?websiteIdentifier=Health%26Medical-Clinics-560038",
