@@ -2,8 +2,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'; // Add this import
 
 export default function UploadPage() {
+  const router = useRouter(); // Initialize router
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -42,7 +44,7 @@ export default function UploadPage() {
         setError(data.error || 'Failed to upload file');
         setMessage('');
       }
-    } catch (err) {
+    } catch (error) {
       setError('An error occurred while uploading the file');
       setMessage('');
     }
@@ -51,6 +53,28 @@ export default function UploadPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <div className="flex justify-start mb-6">
+          <button
+            onClick={() => router.push('/businessupload')}
+            className="py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors flex items-center"
+          >
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back
+          </button>
+        </div>
         <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">Upload CSV File</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>

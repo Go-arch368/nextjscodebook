@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent, ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 interface FormData {
   name: string;
@@ -27,6 +28,7 @@ interface ApiResponse {
 }
 
 export default function UploadFormPage() {
+  const router = useRouter(); // Initialize router
   const [formData, setFormData] = useState<FormData>({
     name: '',
     rating: '',
@@ -50,22 +52,19 @@ export default function UploadFormPage() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    // Allow typing in pincode without immediate validation
     if (name === 'pincode' && value.length > 6) {
-      return; // Prevent typing more than 6 characters
+      return;
     }
     setFormData((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
-    // Clear pincode-specific error if user starts typing
     if (name === 'pincode' && error === 'Pincode must be a 6-digit number') {
       setError('');
     }
   };
 
   const handlePincodeBlur = () => {
-    // Validate pincode on blur
     if (formData.pincode && !/^\d{6}$/.test(formData.pincode)) {
       setError('Pincode must be a 6-digit number');
     }
@@ -152,6 +151,28 @@ export default function UploadFormPage() {
         }
       `}</style>
       <div className="w-1/2 max-w-2xl bg-white rounded-xl shadow-2xl p-8 sm:p-12">
+        <div className="flex justify-start mb-6">
+          <button
+            onClick={() => router.push('/businessupload')}
+            className="py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors flex items-center"
+          >
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back
+          </button>
+        </div>
         <h1 className="text-3xl font-extrabold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
           Add New Business
         </h1>
