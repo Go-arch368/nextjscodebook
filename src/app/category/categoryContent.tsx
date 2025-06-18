@@ -8,6 +8,7 @@ import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLi
 import Image from "next/image";
 import Link from "next/link";
 import FilterBar from "./FilterBar";
+import { fetchImagesByCategory} from "@/utils/imageUtils"; // Adjust the import path as necessary
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
@@ -95,11 +96,8 @@ export default function CategoryContent() {
 
         if (result.success && Array.isArray(result.data) && result.data.length > 0) {
           const imagePromises = result.data.map((listing: any) =>
-            fetch(`/api/getImagesByCategory?category=${encodeURIComponent(listing.category)}`, {
-              cache: "no-store",
-            })
-              .then((res) => res.json().then((data) => ({ category: listing.category, data })))
-              .catch(() => ({ category: listing.category, data: { images: [], searchedPaths: [] } }))
+            fetchImagesByCategory(listing.category) // Use the new function
+              .then((data: any) => ({ category: listing.category, data }))
           );
 
           const imageResults = await Promise.all(imagePromises);
@@ -247,26 +245,6 @@ export default function CategoryContent() {
           />
         </div>
       )}
-
-      {/* Search Summary */}
-      {/* {(query || selectedPincode !== "560062" || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress) && (
-        <div className="mb-6 text-sm text-gray-600 dark:text-gray-300">
-          Showing results for:{" "}
-          {query && <span>Search: "{query}"</span>}
-          {(query && (selectedPincode !== "560062" || selectedCity || selectedCategory || selectedTag || selectedName || selectedAddress)) && ", "}
-          {selectedCategory && <span>Category: {selectedCategory}</span>}
-          {(query || selectedCategory) && (selectedPincode !== "560062" || selectedCity || selectedTag || selectedName || selectedAddress) && ", "}
-          {selectedTag && <span>Tag: {selectedTag}</span>}
-          {(query || selectedCategory || selectedTag) && (selectedPincode !== "560062" || selectedCity || selectedName || selectedAddress) && ", "}
-          {selectedName && <span>Name: {selectedName}</span>}
-          {(query || selectedCategory || selectedTag || selectedName) && (selectedPincode !== "560062" || selectedCity || selectedAddress) && ", "}
-          {selectedAddress && <span>Address: {selectedAddress}</span>}
-          {(query || selectedCategory || selectedTag || selectedName || selectedAddress) && (selectedPincode !== "560062" || selectedCity) && ", "}
-          {selectedCity && <span>City: {selectedCity}</span>}
-          {(query || selectedCategory || selectedTag || selectedName || selectedAddress || selectedCity) && selectedPincode !== "560062" && ", "}
-          {selectedPincode !== "560062" && <span>Pincode: {selectedPincode}</span>}
-        </div>
-      )} */}
 
       {/* Listings */}
       {listings.length === 0 ? (
