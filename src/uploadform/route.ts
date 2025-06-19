@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-import DistrictBusiness from '../../../../models/DistrictBusiness';
+import DistrictBusiness from '../../models/DistrictBusiness';
 
 interface BusinessData {
   name: string;

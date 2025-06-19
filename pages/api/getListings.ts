@@ -160,7 +160,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     console.log('Executing MongoDB query:', JSON.stringify(dbQuery));
     const listings: IExtendedDistrictBusiness[] = await DistrictBusiness.find(dbQuery)
       .sort(sortOptions)
-      .limit(50)
       .lean();
 
     console.log(`Found ${listings.length} listings for pincode ${pincode}`);

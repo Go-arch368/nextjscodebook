@@ -88,7 +88,7 @@ export default function UploadFormPage() {
     setMessage('');
 
     try {
-      const response = await fetch('/api/uploadform', {
+      const response = await fetch('/uploadform', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

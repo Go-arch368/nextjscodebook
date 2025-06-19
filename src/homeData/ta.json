@@ -1,0 +1,1896 @@
+{
+  "navbar": {
+    "logo": "லோகோஸ்",
+    "leads": "தொடர்புகள்",
+    "freeListing": "இலவச பட்டியல்",
+    "toggleMenu": "மெனுவை மாற்று"
+  },
+  "businesses": 
+    [
+  {
+    "id": "68515cfd091886d42ac2e236",
+    "name": "வருண் மேன்ஷன் ஹோட்டல்",
+    "rating": 4.1,
+    "totalRatings": 218,
+    "address": "நெடுஞ்சாலை ஹாசன் பூவனஹள்ளி, ஹாசன்",
+    "phone": "9364011737",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": true,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு, உணவு விநியோக சேவைகள்",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e237",
+    "name": "பவன்புத்ரா ரிசார்ட் மற்றும் விளையாட்டு கிளப்",
+    "rating": 3.8,
+    "totalRatings": 2,
+    "address": "பிளாட் எண்.114 116 117 ஹாசன் HO, ஹாசன்",
+    "phone": "8150888616",
+    "tags": [
+      "வைஃபை; நீச்சல் குளம்; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு, உணவு விநியோக சேவைகள்",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e238",
+    "name": "எஸ் எஸ் ரெசிடென்சி",
+    "rating": 4.2,
+    "totalRatings": 1,
+    "address": "பி.எம். ரோடு, ஹாசன்",
+    "phone": "08172233466 , 08172233467",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு, உணவு விநியோக சேவைகள்",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e239",
+    "name": "ஹோட்டல் சமன்வி இன்டர்நேஷனல்",
+    "rating": 3.9,
+    "totalRatings": 1,
+    "address": "என்எச் 234 கோவில் ரோடு, பேலூர்",
+    "phone": "7019427784",
+    "tags": [
+      "24 மணி நேர உதவி மையம்; அறை சேவை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": true,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e23a",
+    "name": "க்ஷீரா ரெசிடென்சி மற்றும் க்ஷீரா மாநாட்டு மண்டபம்",
+    "rating": 4.1,
+    "totalRatings": 228,
+    "address": "விடான சவுதா ரோடு விவேகநகர், ஹாசன்",
+    "phone": "6366382244 , 9742776223",
+    "tags": [
+      "தங்கும் சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e23b",
+    "name": "ஹோட்டல் சரோஜா பேலஸ்",
+    "rating": 4.2,
+    "totalRatings": 39,
+    "address": "பேலூர் ரோடு அம்பேத்கர் நகர், ஹலேபீடு",
+    "phone": "7041663423",
+    "tags": [
+      "தங்கும் சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": true,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹலேபீடு"
+  },
+  {
+    "id": "68515cfd091886d42ac2e23c",
+    "name": "சம்ராட் கிராண்ட் ரூம்ஸ்",
+    "rating": 4.9,
+    "totalRatings": 20,
+    "address": "பி.எம். ரோடு அனேமஹால், சக்லேஷ்பூர்",
+    "phone": "9481119333 , 9449969700",
+    "tags": [
+      "ஹோட்டல்கள்; ஹோட்டல்கள் ரூ.1001 முதல் ரூ.2000 வரை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e23d",
+    "name": "அந்தரா சேவை அபார்ட்மெண்ட்",
+    "rating": 4.7,
+    "totalRatings": 19,
+    "address": "கெம்பேகவுடா வட்டம் பேலூர், பேலூர்",
+    "phone": "9036962286",
+    "tags": [
+      "ஹோட்டல்கள்; ஹோட்டல்கள் ரூ.501 முதல் ரூ.1000 வரை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  }
+,
+   
+  {
+    "id": "68515cfd091886d42ac2e23e",
+    "name": "ஸ்ரீ சாமுண்டேஸ்வரி ஹோட்டல் மற்றும் தங்குமிடம்",
+    "rating": 4.3,
+    "totalRatings": 3,
+    "address": "ராமநாதபுரம், ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "ஹோட்டல்கள்; தங்கும் சேவைகள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e23f",
+    "name": "ஹோட்டல் ராமா",
+    "rating": 4,
+    "totalRatings": 7,
+    "address": "பி.எம். ரோடு தண்ணீருஹல்லா, ஹாசன்",
+    "phone": "08172257001 , 08172257002",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e240",
+    "name": "பார்மர்ஸ் சன் ரிசார்ட் மற்றும் சாகச விளையாட்டு",
+    "rating": 4,
+    "totalRatings": 2,
+    "address": "என்.எச். 75 சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "08971998888 , 09731651888 , 08170218913",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e241",
+    "name": "பிரபாத் மிலிட்டரி ஹோட்டல்",
+    "rating": 3.7,
+    "totalRatings": 521,
+    "address": "பெங்களூரு மங்களூரு ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "8172268832",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e242",
+    "name": "தி ஆஷ்ஹோக் ஹாசன்",
+    "rating": 4.2,
+    "totalRatings": 4,
+    "address": "பி.எம். ரோடு, ஹாசன்",
+    "phone": "09886323996 , 08884454904 , 08172268732 , 8884454900",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e243",
+    "name": "ஹோட்டல் சந்தனம் இன்டர்நேஷனல்",
+    "rating": 3.7,
+    "totalRatings": 139,
+    "address": "அரகலகுடு அர்கல்குடு, ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e244",
+    "name": "ராமா ஹோட்டல்",
+    "rating": 4.1,
+    "totalRatings": 4,
+    "address": "மங்களூரு ரோடு தண்ணீருஹல்லா, ஹாசன்",
+    "phone": "08172257003 , 08172257005",
+    "tags": [
+      "ஹோட்டல்கள்; 3 நட்சத்திர ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e245",
+    "name": "கேபிடல் ஓ ஹோட்டல் சமன்வி இன்டர்நேஷனல்",
+    "rating": 3.8,
+    "totalRatings": 273,
+    "address": "பிரதான ரோடு கோவில் ரோடு, பேலூர்",
+    "phone": "07019427784 , 09148453532 , 09482065844 , 09900374613",
+    "tags": [
+      "ஹோட்டல்கள்; ஒய்ஓ"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e246",
+    "name": "ராயல்",
+    "rating": 4,
+    "totalRatings": 4,
+    "address": "சம்பிகே ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "9742243001 , 9742243005",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e247",
+    "name": "ஜிஆர்கே இயற்கை ரிசார்ட்",
+    "rating": 4.5,
+    "totalRatings": 2,
+    "address": "அச்சனஹள்ளி சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "08431809915 , 09886758246 , 09143246246",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e248",
+    "name": "பேர்ல் வேலி ரிட்ரீட்",
+    "rating": 4.8,
+    "totalRatings": 782,
+    "address": "சக்லேஷ்பூர் மார்க்கெட் ரோடு, சக்லேஷ்பூர்",
+    "phone": "09448007111 , 09945056308 , 09008012795",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e249",
+    "name": "பாலேகூல் இயற்கை ரிசார்ட்",
+    "rating": 3.8,
+    "totalRatings": 455,
+    "address": "அச்சனஹள்ளி சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "09483779802 , 09880090232 , 09482910603 , 08217066169",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24a",
+    "name": "பால்குணி ரெசிடென்சி",
+    "rating": 4.1,
+    "totalRatings": 3,
+    "address": "ரங்கோலி ஹல்லா ரங்கோலி ஹல்லா, ஹாசன்",
+    "phone": "09482648816 , 08172262299",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24b",
+    "name": "வெல்கம்ஹெரிடேஜ் ஆயதனா",
+    "rating": 4.6,
+    "totalRatings": 3,
+    "address": "அரட்டு எஸ்டேட் வணகூர், ஹாசன்",
+    "phone": "8045771900",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24c",
+    "name": "அக்கி ரோட்டி ஹோட்டல்",
+    "rating": 4.3,
+    "totalRatings": 605,
+    "address": "மங்களூரு அனேமஹல், சக்லேஷ்பூர்",
+    "phone": "7337643313",
+    "tags": [
+      "வீல் சேர் உட்கார்ந்து உணவு"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": false,
+    "category": "ஹோ",
+    "subcategory": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24d",
+    "name": "இல்யூஷன் இன்ன",
+    "rating": 3.74,
+    "totalRatings": 341,
+    "address": "#NAME?",
+    "phone": "9886449346",
+    "tags": [
+      "பார்க்கிங் உள்ளது", "வைஃபை", "குளிரூத்தப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": true,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு,",
+    "pincode": "57330",
+    "city": "#NAME?"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24e",
+    "name": "ஏகா ரிசோர்ட்",
+    "rating": 3.9,
+    "totalRatings": 966,
+    "address": "ஹள்ளிபைல் கிராமம் ஹேதூர், ஹாசன்",
+    "phone": "09480891918 , 0802345678 , 08173295805",
+    "tags": [
+      "பார்க்கிங் உள்ளது", "வைஃபை", "நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": true,
+    "isVerified": true,
+    "isPopular": false,
+    "category": "ஹோ",
+    "subcategory": "#",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e24f",
+    "name": "மமதா ஹோட்டல்",
+    "rating": 3.8,
+    "totalRatings": 2,
+    "address": "பெங்களூரு மங்களூரு ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "09448825015 , 07259923131",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e250",
+    "name": "ஹோட்டல் ஸ்ரீ கிருஷ்ணா",
+    "rating": 3.8,
+    "totalRatings": 2,
+    "address": "பிரதான ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "9590300900",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e251",
+    "name": "அயோதயா தர்ஷன் ஹோட்டல்",
+    "rating": 4.2,
+    "totalRatings": 1,
+    "address": "சுபாஷ் நகர் அரசிகேரே, ஹாசன்",
+    "phone": "9448544393",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e252",
+    "name": "ஹர்ஷா மஹால்",
+    "rating": 3.5,
+    "totalRatings": 454,
+    "address": "ஹர்ஷமஹால் ரோடு, ஹாசன்",
+    "phone": "8172268533",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e254",
+    "name": "ஹோட்டல் சுமுகா யாத்ரிநிவாஸ்",
+    "rating": 3.2,
+    "totalRatings": 177,
+    "address": "ரேஸ் கோர்ஸ் ரோடு ஹாசன், ஹாசன்",
+    "phone": "8172262366",
+    "tags": [
+      "வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e255",
+    "name": "ஹோட்டல் ஜூவல் ராக்",
+    "rating": 3.8,
+    "totalRatings": 1,
+    "address": "கே.ஆர். புரம் ஹாசன், ஹாசன்",
+    "phone": "08172261048 , 08172261049 , 08172261050 , 08172261051",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e256",
+    "name": "விஷ்ணு ரீஜென்சி",
+    "rating": 3.5,
+    "totalRatings": 379,
+    "address": "சக்லேஷ்பூர் பிரதான ரோடு பேலூர், பேலூர்",
+    "phone": "9448655546 , 9845485546 , 9448940947",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e257",
+    "name": "சகாயி இன்டர்நேஷனல் ரிசார்ட்",
+    "rating": 3.9,
+    "totalRatings": 45,
+    "address": "சங்கலாபுரா சங்கலாபுரா, ஹாசன்",
+    "phone": "08172243019 , 08172243020 , 08172243021",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e258",
+    "name": "விசிலிங் கேம்ப்ஸ்",
+    "rating": 4.8,
+    "totalRatings": 50,
+    "address": "வணகூர், ஹாசன்",
+    "phone": "9591111133",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e259",
+    "name": "கே.எஸ்.டி.சி. ஹோட்டல் மயூரா யாகாச்சி",
+    "rating": 3.3,
+    "totalRatings": 261,
+    "address": "சிக்கமங்களூரு ரோடு பேலூர், பேலூர்",
+    "phone": "8069266017",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25a",
+    "name": "வைட் ரிவர் ரிட்ரீட் வேலி",
+    "rating": 4,
+    "totalRatings": 1,
+    "address": "ஹன்பால் சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "7353628508 , 9035447731 , 08173295707",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25b",
+    "name": "த்வாரசமுத்திர ரிசார்ட்",
+    "rating": 4.1,
+    "totalRatings": 666,
+    "address": "பேலூர் ரோடு பிக்கோடு, ஹாசன்",
+    "phone": "8884066651 , 8884984848",
+    "tags": [
+      "ரிசார்ட்ஸ் ரூ.3001 முதல் ரூ.4000 வரை; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25c",
+    "name": "கடுமக்கி ரிசார்ட்ஸ்",
+    "rating": 4.3,
+    "totalRatings": 725,
+    "address": "ஹனபால் ஹோப்ளி சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "9483972244",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25d",
+    "name": "நவரத்னா பேலஸ் ஹோட்டல்",
+    "rating": 3.5,
+    "totalRatings": 386,
+    "address": "கே.எஸ். ராவ் ரோடு, ஹாசன்",
+    "phone": "9980021104",
+    "tags": [
+      "ஹோட்டல்கள்; காப்பீட்டு முகவர்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25e",
+    "name": "விநாயகா ஹோட்டல்",
+    "rating": 3.9,
+    "totalRatings": 146,
+    "address": "நேரு நகர் பேலூர், பேலூர்",
+    "phone": "9031006571 , 9031006572",
+    "tags": [
+      "வீல் சேர் உட்கார்ந்து உணவு"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e25f",
+    "name": "சரயு ஹோட்டல்",
+    "rating": 3.4,
+    "totalRatings": 432,
+    "address": "வெங்கடாத்ரி டவர்ஸ் பி.எம். ரோடு, ஹாசன்",
+    "phone": "8172231337",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e260",
+    "name": "ஹோட்டல் அம்பர் கேஸ்டில்",
+    "rating": 3.5,
+    "totalRatings": 617,
+    "address": "மஹால் ரோடு ஹர்ஷமஹால் ரோடு, ஹாசன்",
+    "phone": "9513588862 , 08172235888",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e261",
+    "name": "ரெஜென்டா ரிசார்ட்",
+    "rating": 4.1,
+    "totalRatings": 513,
+    "address": "ஹன்பால், ஹாசன்",
+    "phone": "9606032177 , 9606032172 , 9606032173",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e262",
+    "name": "ஹோட்டல் ஸ்ரீ ஸ்ரீநிவாசா",
+    "rating": 3.7,
+    "totalRatings": 779,
+    "address": "பி.எம். ரோடு சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "8951435145",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e263",
+    "name": "கேபிடல் ஓ 72446 எச்எம்டி கம்ஃபர்ட்ஸ்",
+    "rating": 4.3,
+    "totalRatings": 418,
+    "address": "ஹோசகோப்பலு ஹோசகோப்பலு, ஹாசன்",
+    "phone": "7975154366",
+    "tags": [
+      "ஹோட்டல்கள்; ஒய்ஓ"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  }
+,
+  
+  {
+    "id": "68515cfd091886d42ac2e264",
+    "name": "ஹோட்டல் சதர்ன் ஸ்டார்",
+    "rating": 3.9,
+    "totalRatings": 1,
+    "address": "சம்பிகே ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "8172251816 , 8172251817 , 9742243001",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e265",
+    "name": "ரகு ஹோட்டல்",
+    "rating": 3.6,
+    "totalRatings": 2,
+    "address": "கல்யாணி ரோடு ஸ்ரவணபெலகோலா, ஸ்ரவணபெலகோலா",
+    "phone": "8109178109",
+    "tags": [
+      "நீச்சல் குளம்; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஸ்ரவணபெலகோலா"
+  },
+  {
+    "id": "68515cfd091886d42ac2e266",
+    "name": "ஜெனுகல்லு வேலி ரிட்ரீட்",
+    "rating": 4.2,
+    "totalRatings": 558,
+    "address": "சக்லேஷ்பூர் மார்க்கெட் ரோடு, சக்லேஷ்பூர்",
+    "phone": "9241611610",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e267",
+    "name": "தனுஷ் நாட்டி ஸ்டைல் ஹோட்டல்",
+    "rating": 3.9,
+    "totalRatings": 380,
+    "address": "சிக்ககொண்டனஹள்ளி, ஹாசன்",
+    "phone": "7353454424",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e268",
+    "name": "ஹோட்டல் அஷ்ரிதா",
+    "rating": 3.6,
+    "totalRatings": 1,
+    "address": "மங்களூரு ரோடு சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "8173243412 , 8453994105 , 8173243050",
+    "tags": [
+      "வைஃபை; நீச்சல் குளம்; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e269",
+    "name": "ஹோட்டல் துர்கா இன்டர்நேஷனல்",
+    "rating": 3.3,
+    "totalRatings": 1,
+    "address": "அனேமஹால் மலாலி, ஹாசன்",
+    "phone": "9448426665 , 9740991124",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e26a",
+    "name": "ஹோட்டல் அபிருச்சி தங்குமிடம்",
+    "rating": 3.3,
+    "totalRatings": 1,
+    "address": "என்.ஆர். சர்க்கிள் ஹாசன் ஹாசன் சிட்டி, ஹாசன்",
+    "phone": "8431679708 , 08172268885",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e26b",
+    "name": "ஸ்டோன் வேலி ஃபால்ஸ்",
+    "rating": 4.2,
+    "totalRatings": 333,
+    "address": "ரிசார்ட் ரோடு அச்சனஹள்ளி, ஹாசன்",
+    "phone": "9606060505",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e26c",
+    "name": "ஸ்பாட் ஆன் 68166 ஸ்ரீ அன்னபூர்ணேஷ்வரி ரெசிடென்சி ஸ்பாட்",
+    "rating": 3.4,
+    "totalRatings": 419,
+    "address": "ரோடு சிக்ககொண்டகோலா, ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e26d",
+    "name": "ஹோர்ட்டி க்ரீன் வேலி",
+    "rating": 4,
+    "totalRatings": 175,
+    "address": "நுட்ரஹள்ளி கிராமம் க்யானஹள்ளி, சக்லேஷ்பூர்",
+    "phone": "7892440234",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e26e",
+    "name": "ஒய்ஓ 62873 டைவிக் கம்ஃபர்ட்ஸ்",
+    "rating": 3.2,
+    "totalRatings": 108,
+    "address": "ஸ்ரீகாந்த் நகரா, ஸ்ரவணபெலகோலா",
+      "phone": "1246201516",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஸ்ரவணபெலகோலா"
+  },
+  {
+    "id": "68515CFD091886D42AC2E26F",
+    "name": "லோட்டஸ் லேக் ரிட்ரீட்",
+    "rating": 4.5,
+    "totalRatings": 264,
+    "address": "சுக்ரவரசந்தே, சக்லேஷ்பூர்",
+    "phone": "8792799279",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E270",
+    "name": "வாட்டர் வியூ ஹாலிடே ரிட்ரீட்",
+    "rating": 4.5,
+    "totalRatings": 432,
+    "address": "சக்லேஷ்பூர் பிரதான ரோடு பிக்கோடு, ஹாசன்",
+    "phone": "9483908002 , 9483878131 , 8310019597",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E271",
+    "name": "பர்யாடன்",
+    "rating": 4.2,
+    "totalRatings": 113,
+    "address": "நந்திகேஸ்வர கோவில் ரோடு பல்லூர், பேலூர்",
+    "phone": "8177222396",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E272",
+    "name": "ஸ்டோன் வேலி ஜீப் சஃபாரி பாயின்ட்",
+    "rating": 4.6,
+    "totalRatings": 205,
+    "address": "அச்சனஹள்ளி அச்சனஹள்ளி, ஹாசன்",
+    "phone": "9606060505",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E273",
+    "name": "ஒய்ஓ ஃபிளாக்ஷிப் 809216 எஸ்பிஜி வில்லேஜ் ரிசார்ட்ஸ்",
+    "rating": 4.4,
+    "totalRatings": 13,
+    "address": "1 ஹாசன் மைசூர் ரோடு ஹல்லிமைசூர், ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E274",
+    "name": "அப்பாஜி மிலிட்டரி ஹோட்டல்",
+    "rating": 4.2,
+    "totalRatings": 41,
+    "address": "பென்ஷன் மொஹல்லா ஹோசலைன் ரோடு, ஹாசன்",
+    "phone": "9743090880 , 9880309063",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E275",
+    "name": "ஹுலிவனா ரிசார்ட்",
+    "rating": 4.2,
+    "totalRatings": 136,
+    "address": "ஹன்பால் ஹோப்ளி சக்லேஷ்பூர், சக்லேஷ்பூர்",
+    "phone": "7975342658 , 9141635634 , 9845439017",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E276",
+    "name": "அக்ஷதா டீலக்ஸ் லாட்ஜ்",
+    "rating": 3,
+    "totalRatings": 43,
+    "address": "பி.எம். ரோடு சன்னராயபட்டனா, ஹாசன்",
+    "phone": "8978281879",
+    "tags": [
+      "தங்கும் சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E277",
+    "name": "நிஹாரா ரிட்ரீட்",
+    "rating": 4.4,
+    "totalRatings": 100,
+    "address": "சக்லேஷ்பூர் மார்க்கெட் ரோடு, சக்லேஷ்பூர்",
+    "phone": "0848249735 , 8157249735 , 7338473471",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E278",
+    "name": "ஹோட்டல் ஆர்யா பவன்",
+    "rating": 3.7,
+    "totalRatings": 118,
+    "address": "சக்லேஷ்பூர், சக்லேஷ்பு",
+    "phone": "8867701675",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "சக்லேஷ்பூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E279",
+    "name": "ஹோட்டல் யுனைடெட் கைட்ஸ்",
+    "rating": 4.2,
+    "totalRatings": 1,
+    "address": "எச்.என். புரா ரோடு ஹோலேநரசிபூர், ஹாசன்",
+    "phone": "8172243163 , 9141008101 , 9141008105",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": true,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27A",
+    "name": "ஹோட்டல் குர்தேவ் இன்டர்நேஷனல்",
+    "rating": 3.8,
+    "totalRatings": 54,
+    "address": "பி.எம். ரோடு, ஹாசன்",
+    "phone": "8172233466 , 8172233467",
+    "tags": [
+      "ஹோட்டல்கள்; ஹோட்டல்கள் ரூ.501 முதல் ரூ.1000 வரை"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27B",
+    "name": "ஹோட்டல் பாலிகா",
+    "rating": 3.6,
+    "totalRatings": 574,
+    "address": "ஆர்.சி. ரோடு ரேஸ் கோர்ஸ் ரோடு ஹாசன், ஹாசன்",
+    "phone": "8044566531",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27C",
+    "name": "மாஷா அல்லா ஹோட்டல்",
+    "rating": 4.3,
+    "totalRatings": 39,
+    "address": "வல்லபாய் ரோடு ஹாசன் HO, ஹாசன்",
+    "phone": "3007744002",
+    "tags": [
+      "ஹோட்டல்கள்; ஹோட்டல்கள் ரூ.500 மற்றும் கீழே"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27D",
+    "name": "குவாலிட்டி ரெசிடென்சி",
+    "rating": 3.6,
+    "totalRatings": 132,
+    "address": "சங்கரிபுரம், ஹாசன்",
+    "phone": "9148228144",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27E",
+    "name": "ஸ்ரீ வரா ரெசிடென்சி",
+    "rating": 3.7,
+    "totalRatings": 807,
+    "address": "பி.எம். ரோடு பி.எம். ரோடு, ஹாசன்",
+    "phone": "9590486868 , 8762676030",
+    "tags": [
+      "பார்க்கிங் உள்ளது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E27F",
+    "name": "மயூரா யாகாச்சி",
+    "rating": 3.4,
+    "totalRatings": 421,
+    "address": "சிக்கபைடிகேரே பேலூர், பேலூர்",
+    "phone": "8970650041",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E280",
+    "name": "ஹோசஹள்ளி குட்டா ஹோட்டல்",
+    "rating": 4.4,
+    "totalRatings": 12,
+    "address": "சக்லேஷ்பூர் ஹொங்கடஹள்ளா, ஹாசன்",
+    "phone": "9945842531",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E281",
+    "name": "கலெக்ஷன் ஓ ஹாசன் இன்டஸ்ட்ரியல் ஏரியா முன்னர் சகாயி இன்டர்நேஷனல் ரிசார்ட்",
+    "rating": 4.4,
+    "totalRatings": 283,
+    "address": "எச்.என். புரா ரோடு ஹோசகோப்பலு, ஹாசன்",
+    "phone": "1244330599",
+    "tags": [
+      "பார்க்கிங் உள்ளது; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E282",
+    "name": "ஒய்ஓ ஃபிளாக்ஷிப் 809020 சத்யகாந்த் கம்ஃபர்ட்ஸ்",
+    "rating": 3.2,
+    "totalRatings": 258,
+    "address": "சலகமே ரோடு வித்யாநகர் ஹாசன், ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "வைஃபை; நீச்சல் குளம்; குளிரூட்டப்பட்டது"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E283",
+    "name": "ஹோட்டல் சிரந்த் தங்குமிடம்",
+    "rating": 5,
+    "totalRatings": 1,
+    "address": "கஸ்தூர்பா ரோடு ஹாசன், ஹாசன்",
+    "phone": "8172266966",
+    "tags": [
+      "தங்கும் சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E284",
+    "name": "ஆத்யாஸ் இம்பீரியோ",
+    "rating": 4.8,
+    "totalRatings": 80,
+    "address": "பராகூர், ஹாசன்",
+    "phone": "9741513773",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515CFD091886D42AC2E285",
+    "name": "ஹோட்டல் ஸ்கை பேர்ட்",
+    "rating": 4.5,
+    "totalRatings": 478,
+    "address": "பி.எம். ரோடு ஷாந்திகிராமா, ஹாசன்",
+    "phone": "7019476886",
+    "tags": [
+      "தங்கும் சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், உயர்நிலை உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  }
+,
+  {
+    "id": "68515cfd091886d42ac2e286",
+    "name": "எல் வி பார் மற்றும் உணவகம்",
+    "rating": 4.6,
+    "totalRatings": 11,
+    "address": "ஹாசன் சப் சீகே, ஹாசன்",
+    "phone": "8277777024",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e287",
+    "name": "பிரகிருதி சிரி ஹோம்ஸ்டே",
+    "rating": 4.5,
+    "totalRatings": 36,
+    "address": "ஹொங்கடஹல்லா, ஹாசன்",
+    "phone": "8046077679 , 804603550",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e288",
+    "name": "ஓயோ 70384 சுப்ரியா லாட்ஜ்",
+    "rating": 3.7,
+    "totalRatings": 504,
+    "address": "ரிங் ரோடு ஹாசன் ஹெச்ஓ, ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e289",
+    "name": "ஆர்யா மேன்ஷன் ஹோட்டல்",
+    "rating": 3.9,
+    "totalRatings": 109,
+    "address": "எச் என் புரா ரோடு ஹோசகோப்பலு, ஹாசன்",
+    "phone": "8867701675",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; குளிரூட்டப்பட்டவை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28a",
+    "name": "சன்ஷைன் இன்டர்நேஷனல் ஹோட்டல் மற்றும் தங்குமிடம்",
+    "rating": 4.4,
+    "totalRatings": 228,
+    "address": "ஜேபி நகர், பேலூர்",
+    "phone": "7019944268 , 08177222169",
+    "tags": [
+      "வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28b",
+    "name": "கணேஷ் ரெசிடென்சி",
+    "rating": 3.7,
+    "totalRatings": 129,
+    "address": "ஸ்ரீநிவாச நகர் ஆர்சிகரே, ஹாசன்",
+    "phone": "9535774087",
+    "tags": [
+      "குளிரூட்டப்படாத தங்குமிட சேவைகள்; தங்குமிட சேவைகள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28c",
+    "name": "ரோசெட்டா ரிசார்ட்ஸ் மற்றும் விடுமுறை இல்லங்கள்",
+    "rating": 4.6,
+    "totalRatings": 290,
+    "address": "பெல்லூரு கர்நாடக கனகட்டே, ஹாசன்",
+    "phone": "8172350035",
+    "tags": [
+      "ஹோட்டல்கள்; ரிசார்ட்ஸ்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28d",
+    "name": "ஷரன் ரெசிடென்சி மற்றும் நந்தகோகுல பார்ட்டி ஹால்",
+    "rating": 3.4,
+    "totalRatings": 119,
+    "address": "கேஎஸ்ஆர்டிசி பஸ் ஸ்டாண்ட் சன்னராயபட்டனா, ஹாசன்",
+    "phone": "1246201327",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28e",
+    "name": "ராகவேந்திர தர்ஷினி",
+    "rating": 4.1,
+    "totalRatings": 139,
+    "address": "சதிகல் காம்ப்ளெக்ஸ் நகர் ஆர்சிகரே, ஹாசன்",
+    "phone": "9964252939",
+    "tags": [
+      "ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e28f",
+    "name": "ஹோட்டல் மயூரா ஷாந்தலா",
+    "rating": 3.7,
+    "totalRatings": 794,
+    "address": "ஹாலேபீடு ஹாசன், ஹாலேபீடு",
+    "phone": "8177273224",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாலேபீடு"
+  },
+  {
+    "id": "68515cfd091886d42ac2e290",
+    "name": "ஸ்ரவணபெலகோலா திகம்பர ஜைன் மேலாண்மைக் குழு",
+    "rating": 4.3,
+    "totalRatings": 14,
+    "address": "சுற்றுலா அலுவலகம் உத்தேனஹள்ளி, ஸ்ரவணபெலகோலா",
+    "phone": "8431560480",
+    "tags": [
+      "தங்குமிட சேவைகள்; ஹோட்டல்கள்"
+    ],
+    "hasWhatsApp": false,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஸ்ரவணபெலகோலா"
+  },
+  {
+    "id": "68515cfd091886d42ac2e291",
+    "name": "பனலு வேலி",
+    "rating": 4.6,
+    "totalRatings": 177,
+    "address": "ஹோடச்சள்ளி கிராமம் தேவலடகரே, ஹாசன்",
+    "phone": "9591111133 , 9900116065",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e292",
+    "name": "பர்யடன்",
+    "rating": 4.2,
+    "totalRatings": 113,
+    "address": "பேலூர், பேலூர்",
+    "phone": "9663159945 ,08177222396",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; குளிரூட்டப்பட்டவை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "பேலூர்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e293",
+    "name": "ஆகாஷ் கம்ஃபோர்ட்ஸ்",
+    "rating": 4.6,
+    "totalRatings": 68,
+    "address": "பி.எச். ரோடு ஆர்சிகரே, ஹாசன்",
+    "phone": "9513141122",
+    "tags": [
+      "குளிரூட்டப்பட்டவை"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": true,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  },
+  {
+    "id": "68515cfd091886d42ac2e294",
+    "name": "சன்மன் ரெசிடென்சி",
+    "rating": 3.9,
+    "totalRatings": 220,
+    "address": "ரங்கோலி ஹள்ளா ஹர்ஷமஹால் ரோடு, ஹாசன்",
+    "phone": "8296069841 , 08172269841",
+    "tags": [
+      "பார்க்கிங் கிடைக்கும்; வைஃபை; நீச்சல் குளம்"
+    ],
+    "hasWhatsApp": true,
+    "hasEnquiry": false,
+    "isTrusted": false,
+    "isVerified": false,
+    "isPopular": false,
+    "category": "ஹோட்டல்கள் மற்றும் உணவகங்கள்",
+    "subcategory": "ஹோட்டல்கள், நல்ல உணவு, கஃபேக்கள், பேக்கரிகள், விரைவு உணவு",
+    "pincode": "573201",
+    "city": "ஹாசன்"
+  }
+
+    ]
+}
