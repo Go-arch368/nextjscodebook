@@ -1,4 +1,11 @@
 {
+  "LocaleSwitcher": {
+  "english": "English - EN",
+  "tamil": "தமிழ் - TA",
+  "hindi": "हिन्दी - HI",
+  "kannada": "ಕನ್ನಡ - KA"
+}
+,
   "navbar": {
     "logo": "लोगो",
     "leads": "लीड्स",

@@ -15,6 +15,7 @@ type Business = {
   tags: string[];
   phone: string;
   city?: string;
+  category?: string;
 };
 
 export default function BusinessPage() {
@@ -25,11 +26,11 @@ export default function BusinessPage() {
 
   return (
     <div className="h-full p-5 bg-gray-100 dark:bg-black">
-      <div className="mt-18 mb-3">
+      {/* <div className="mt-18 mb-3">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           {t('businessPage.title', { category: categoryName })}
         </h1>
-      </div>
+      </div> */}
       {error ? (
         <p className="text-red-500">{t('businessPage.error')}</p>
       ) : businesses.length === 0 ? (
@@ -52,7 +53,11 @@ export default function BusinessPage() {
                 </button>
               </div>
 
-              <CategoryImageSlider categoryName={categoryName ?? ''} altText={business.name} />
+           <CategoryImageSlider
+  categoryName={business.category || categoryName}
+  altText={business.name}
+/>
+
 
               <div className="flex-1 p-6 flex flex-col justify-between">
                 <div>

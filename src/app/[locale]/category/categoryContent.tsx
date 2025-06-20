@@ -2,13 +2,37 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ThumbsUp, Star, Phone, MessageSquare, MessageCircle, MapPin, ExternalLink, ChevronLeft, ChevronRight, Heart, Share2 } from "lucide-react";
+import { Star, Phone, MessageSquare } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import FilterBar from "./FilterBar";
-import { fetchImagesByCategory} from "@/utils/imageUtils"; // Adjust the import path as necessary
+import { fetchImagesByCategory } from "@/utils/imageUtils";
+
+type Listing = {
+  _id: string;
+  name: string;
+  address: string;
+  city: string;
+  category: string;
+  subcategory?: string;
+  tags: string[] | { en?: string; tags: string[] };
+  rating: number;
+  totalRatings: number;
+  phone: string | { en?: string; tags?: string[] };
+  images?: { url: string }[];
+  imageError?: string | null;
+  pincode?: string;
+  isPopular?: boolean;
+  isTrusted?: boolean;
+  isVerified?: boolean;
+  hasEnquiry?: boolean;
+  hasWhatsApp?: boolean;
+};
+
+type SelectedImageIndices = {
+  [index: number]: number;
+};
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
@@ -18,57 +42,17 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (
   };
 }
 
-function generateRandomPhone() {
-  const firstDigit = Math.floor(Math.random() * 4) + 6;
-  const randomNum = Math.floor(Math.random() * 900000000) + 100000000;
-  return `+91${firstDigit}${randomNum}`;
-}
-
-type Listing = {
-  tags?: string[];
-  images?: { url: string }[];
-  imageError?: string | null;
-  name?: string;
-  rating?: string | number;
-  totalRatings?: string | number;
-  isTrusted?: boolean;
-  isVerified?: boolean;
-  isPopular?: boolean;
-  address?: string;
-  city?: string;
-  pincode?: string;
-  phone?: string;
-  category?: string;
-  [key: string]: any;
-};
-
 export default function CategoryContent() {
   const searchParams = useSearchParams();
+  const locale = useLocale();
   const [listings, setListings] = useState<Listing[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedImageIndices, setSelectedImageIndices] = useState<{ [key: number]: number }>({});
-
-  // Sorting and filtering states
-  const [sortOption, setSortOption] = useState("default");
-  const [topRatedSort, setTopRatedSort] = useState<"asc" | "desc" | null>(null);
-  const [sortByVerified, setSortByVerified] = useState(false);
-  const [sortByTrusted, setSortByTrusted] = useState(false);
-  const [ratingSort, setRatingSort] = useState<number | null>(null);
-
-  // Get query parameters
-  const query = searchParams?.get("query");
-  const selectedCategory = searchParams?.get("category");
-  const selectedTag = searchParams?.get("tag");
-  const selectedName = searchParams?.get("name");
-  const selectedAddress = searchParams?.get("address");
-  const selectedCity = searchParams?.get("city");
-  const selectedPincode = searchParams?.get("pincode") || "560062";
+  const [loading, setLoading] = useState<boolean>(true);
+  const [selectedImageIndices, setSelectedImageIndices] = useState<SelectedImageIndices>({});
 
   const fetchListings = useCallback(
-    debounce(async (params, sort, sortFields) => {
+    debounce(async (params: Record<string, string | undefined>) => {
       try {
         setLoading(true);
-
         const queryParams = new URLSearchParams();
         if (params.query) queryParams.append("query", params.query);
         if (params.category) queryParams.append("category", params.category);
@@ -76,48 +60,36 @@ export default function CategoryContent() {
         if (params.name) queryParams.append("name", params.name);
         if (params.address) queryParams.append("address", params.address);
         if (params.city) queryParams.append("city", params.city);
-        queryParams.append("pincode", params.pincode);
+        queryParams.append("pincode", params.pincode ?? "");
 
-        if (sort) queryParams.append("sort", sort);
-        if (sortFields.sortByVerified) queryParams.append("sortByVerified", "true");
-        if (sortFields.sortByTrusted) queryParams.append("sortByTrusted", "true");
-        if (sortFields.ratingSort) queryParams.append("sortByRating", sortFields.ratingSort);
-
-        const response = await fetch(`/api/getListings?${queryParams.toString()}`, {
+        const response = await fetch(`/api/getListings?lang=${locale}&${queryParams.toString()}`, {
           cache: "no-store",
         });
-
-        if (!response.ok) {
-          setListings([]);
-          return;
-        }
-
         const result = await response.json();
-
-        if (result.success && Array.isArray(result.data) && result.data.length > 0) {
-          const imagePromises = result.data.map((listing: any) =>
-            fetchImagesByCategory(listing.category) // Use the new function
-              .then((data: any) => ({ category: listing.category, data }))
+        console.log("API Response Listings:", result.data); // Debug log
+        if (result.success && Array.isArray(result.data)) {
+          const imagePromises = result.data.map((listing: Listing) =>
+            fetchImagesByCategory(listing.category || "").then((data) => ({ category: listing.category, data }))
           );
 
           const imageResults = await Promise.all(imagePromises);
           const imageMap = Object.fromEntries(
-            imageResults.map(({ category, data }) => [category, data])
+            imageResults.map(({ category, data }: { category: string; data: any }) => [category, data])
           );
 
-          const listingsWithImages = result.data.map((listing: any) => ({
+          const listingsWithImages = result.data.map((listing: Listing) => ({
             ...listing,
+            tags: Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || [],
+            phone: typeof listing.phone === "string" ? listing.phone : listing.phone?.en || "", // Normalize phone
             images: imageMap[listing.category]?.images || [],
-            imageError: imageMap[listing.category]?.images?.length
-              ? null
-              : `No images found for ${listing.category}`,
+            imageError: imageMap[listing.category]?.images?.length ? null : `No images for ${listing.category}`,
           }));
 
-          setListings(listingsWithImages);
-          const initialSelectedIndices: { [key: number]: number } = {};
-          listingsWithImages.forEach((_: any, index: number) => {
+          const initialSelectedIndices: SelectedImageIndices = {};
+          listingsWithImages.forEach((_: Listing, index: number) => {
             initialSelectedIndices[index] = 0;
           });
+          setListings(listingsWithImages);
           setSelectedImageIndices(initialSelectedIndices);
         } else {
           setListings([]);
@@ -126,308 +98,86 @@ export default function CategoryContent() {
         setLoading(false);
       }
     }, 1000),
-    []
+    [locale]
   );
 
   useEffect(() => {
-    let sort = null;
-    if (topRatedSort === "desc") {
-      sort = "totalRatings-desc";
-    } else if (topRatedSort === "asc") {
-      sort = "totalRatings-asc";
-    } else if (sortOption === "rating") {
-      sort = "rating";
-    }
-    const sortFields = { sortByVerified, sortByTrusted, ratingSort };
+    if (!searchParams) return;
     const params = {
-      query,
-      category: selectedCategory,
-      tag: selectedTag,
-      name: selectedName,
-      address: selectedAddress,
-      city: selectedCity,
-      pincode: selectedPincode,
+      query: searchParams.get("query") ?? undefined,
+      category: searchParams.get("category") ?? undefined,
+      tag: searchParams.get("tag") ?? undefined,
+      name: searchParams.get("name") ?? undefined,
+      address: searchParams.get("address") ?? undefined,
+      city: searchParams.get("city") ?? undefined,
+      pincode: searchParams.get("pincode") ?? "560062",
     };
-    fetchListings(params, sort, sortFields);
-  }, [
-    fetchListings,
-    query,
-    selectedCategory,
-    selectedTag,
-    selectedName,
-    selectedAddress,
-    selectedCity,
-    selectedPincode,
-    sortOption,
-    topRatedSort,
-    sortByVerified,
-    sortByTrusted,
-    ratingSort,
-  ]);
+    fetchListings(params);
+  }, [searchParams, fetchListings]);
 
-  const handleSelectImage = (listingIndex: number, imageIndex: number) => {
-    setSelectedImageIndices((prev) => ({
-      ...prev,
-      [listingIndex]: imageIndex,
-    }));
-  };
-
-  const handleEnquireNow = (businessName: string) => {
-    alert(`Enquiry sent for ${businessName}! Our team will contact you soon.`);
-  };
-
-  const handleVisit = (businessName: string, category: string) => {
-    try {
-      localStorage.setItem("lastVisitedCategory", category);
-      localStorage.setItem("lastVisitedBusiness", businessName);
-    } catch (error) {
-      console.error("Error writing to localStorage:", error);
-    }
-  
-    const categoryRoutes = {
-      "Best Hospitals": "/template?websiteIdentifier=Health%26Medical-Hospital-560038",
-      "Best Clinics": "/template?websiteIdentifier=Health%26Medical-Clinics-560038",
-      "Best Dentists": "/template?websiteIdentifier=Health%26Medical-Dentists-560062",
-      "Chemists": "/template?websiteIdentifier=Health%26Medical-Pharmacies-560098",
-      "Best Veterinarians": "/template?websiteIdentifier=Health%26Medical-Veterinary-560076",
-      "Car Repair": "/template?websiteIdentifier=Automobile-CarRepair-560062",
-      "Car Showrooms": "/template?websiteIdentifier=Automobile-CarSales-560062",
-      "Tyre Dealers": "/template?websiteIdentifier=Automobile-Tires-560064",
-      "Autospares": "/template?websiteIdentifier=Automobile-AutoParts-560062",
-      "Best Physiotherapists": "/template?websiteIdentifier=Health&Medical-Physiotherapy-560025",
-    } as const;
-
-    const url = categoryRoutes[category as keyof typeof categoryRoutes] || "/category";
-    window.location.href = url;
-  };
-
-  const clearAllFilters = () => {
-    setSortOption("default");
-    setTopRatedSort(null);
-    setSortByVerified(false);
-    setSortByTrusted(false);
-    setRatingSort(null);
-    const params = {
-      query,
-      category: selectedCategory,
-      tag: selectedTag,
-      name: selectedName,
-      address: selectedAddress,
-      city: selectedCity,
-      pincode: selectedPincode,
-    };
-    fetchListings(params, null, {});
-  };
-
-  if (loading) {
-    return <div className="p-6">Loading...</div>;
-  }
+  if (loading) return <div className="p-6">Loading...</div>;
 
   return (
-    <div className="h-full p-5 bg-gray-100 dark:bg-black">
-      {/* Filter Bar */}
-      {listings.length > 0 && (
-        <div className="mb-6">
-          <FilterBar
-            sortOption={sortOption}
-            setSortOption={setSortOption}
-            topRatedSort={topRatedSort}
-            setTopRatedSort={setTopRatedSort}
-            sortByVerified={sortByVerified}
-            setSortByVerified={setSortByVerified}
-            sortByTrusted={sortByTrusted}
-            setSortByTrusted={setSortByTrusted}
-            ratingSort={ratingSort}
-            setRatingSort={setRatingSort}
-            selectedPincode={selectedPincode}
-            selectedCity={selectedCity ?? ""}
-            clearAllFilters={clearAllFilters}
-          />
-        </div>
-      )}
-
-      {/* Listings */}
+    <div className="p-4">
       {listings.length === 0 ? (
-        <p className="text-gray-600 dark:text-gray-300">
-          No businesses found for your search criteria.
-        </p>
+        <p>No businesses found for your search criteria.</p>
       ) : (
         <div className="space-y-6">
           {listings.map((listing, index) => {
-            const business = {
-              services: Array.isArray(listing?.tags) ? listing.tags : [],
-              images: Array.isArray(listing?.images) ? listing.images : [],
-              imageError: listing?.imageError || null,
-              name: listing?.name || "Unknown Business",
-              rating: listing?.rating ? parseFloat(String(listing.rating)).toFixed(1) : "4.5",
-              totalRatings: listing?.totalRatings || "100",
-              badges: [
-                listing?.isTrusted && "Trust",
-                listing?.isVerified && "Verified",
-                listing?.isPopular && "Claimed",
-              ].filter(Boolean),
-              address: listing?.address || "Unknown Address",
-              city: listing?.city || "Unknown City",
-              pincode: listing?.pincode || "000000",
-              contact: { phone: listing?.phone || generateRandomPhone() },
-              category: listing?.category || "General",
-            };
-
             const selectedImageIndex = selectedImageIndices[index] || 0;
-            const totalImages = business.images.length;
 
             return (
-              <div
-                key={index}
-                className="relative flex flex-col sm:flex-row bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                {/* Top-right floating buttons */}
-                <div className="absolute top-4 right-4 flex gap-2 z-10">
-                  <button
-                    aria-label="Share"
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                  >
-                    <Share2 className="w-5 h-5" />
-                  </button>
-                  <button
-                    aria-label="Like"
-                    className="text-gray-600 dark:text-gray-300 hover:text-red-500 transition-colors"
-                  >
-                    <Heart className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Left: Image */}
-                <div className="sm:w-1/3 w-full h-56 sm:h-auto relative">
-                  {business.imageError ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                      {business.imageError}
-                    </div>
-                  ) : business.images.length > 0 ? (
-                    <>
+              <div key={listing._id} className="border p-4 rounded-md bg-white shadow">
+                <div className="flex flex-col sm:flex-row">
+                  <div className="sm:w-1/3 w-full h-48 relative">
+                    {listing.imageError ? (
+                      <div className="flex items-center justify-center h-full bg-gray-200">
+                        {listing.imageError}
+                      </div>
+                    ) : (
                       <Image
-                        src={business.images[selectedImageIndex]?.url || "/placeholder.jpg"}
-                        alt={`${business.name} image`}
-                        className="object-cover w-full h-full"
+                        src={listing.images?.[selectedImageIndex]?.url || "/placeholder.jpg"}
+                        alt={listing.name}
                         fill
-                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover"
                       />
-                      {totalImages > 1 && (
-                        <>
-                          {selectedImageIndex > 0 && (
-                            <button
-                              onClick={() => handleSelectImage(index, selectedImageIndex - 1)}
-                              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
-                              aria-label="Previous image"
-                            >
-                              <ChevronLeft className="w-4 h-4 text-white" />
-                            </button>
-                          )}
-                          {selectedImageIndex < totalImages - 1 && (
-                            <button
-                              onClick={() => handleSelectImage(index, selectedImageIndex + 1)}
-                              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
-                              aria-label="Next image"
-                            >
-                              <ChevronRight className="w-4 h-4 text-white" />
-                            </button>
-                          )}
-                        </>
-                      )}
-                    </>
-                  ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                      No images available
-                    </div>
-                  )}
-                </div>
-
-                {/* Right: Details */}
-                <div className="flex-1 p-6 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <ThumbsUp className="w-5 h-5 bg-blue-600 text-white p-1 rounded-full" />
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {business.name}
-                      </h2>
-                    </div>
-
-                    <div className="flex items-center gap-2 mt-2">
-                      <Badge className="bg-green-600 text-white px-2 py-1 text-sm flex items-center gap-1">
-                        {business.rating}
-                        <Star className="ml-1 h-3 w-3 text-white fill-current" />
-                      </Badge>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
-                        ({business.totalRatings} ratings)
-                      </span>
-                      {business.badges.map((badge, idx) => (
-                        <Badge
-                          key={idx}
-                          className={
-                            badge === "Trust"
-                              ? "bg-yellow-400 text-black text-xs"
-                              : badge === "Verified"
-                              ? "bg-blue-500 text-white text-xs"
-                              : "bg-gray-100 text-gray-800 text-xs"
-                          }
-                        >
-                          {badge}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div className="mt-3 flex items-center gap-1 text-gray-700 dark:text-gray-300">
-                      <MapPin className="w-4 h-4" />
-                      {business.address}, {business.city}, {business.pincode}
-                    </div>
-
-                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Category: {business.category}
-                    </div>
-
-                    {/* Services/Tags */}
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {business.services.map((service, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="text-xs bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                        >
-                          {service}
-                        </Badge>
-                      ))}
-                    </div>
+                    )}
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4 mt-6">
-                    <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 flex items-center gap-2 text-sm rounded-md">
-                      <Phone className="w-5 h-5" />
-                      <span>{business.contact.phone}</span>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
-                      onClick={() => handleEnquireNow(business.name)}
-                    >
-                      <MessageSquare className="w-5 h-5" />
-                      <span>Enquire Now</span>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border border-green-600 text-green-600 hover:bg-green-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
-                    >
-                      <MessageCircle className="w-5 h-5" />
-                      <span>WhatsApp</span>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 flex items-center gap-2 text-sm rounded-md"
-                      onClick={() => handleVisit(business.name, business.category)}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      <span>Visit</span>
-                    </Button>
+                  <div className="sm:w-2/3 w-full sm:pl-4 mt-4 sm:mt-0">
+                    <h2 className="text-xl font-bold">{listing.name}</h2>
+                    <div className="flex flex-row sm:flex-row sm:items-center gap-2">
+                        <p className="text-sm text-gray-600">{listing.address}</p>
+                    <p className="text-sm text-gray-600">{listing.city}</p>
+                      </div>
+                  
+                    <div className="flex items-center gap-2 mt-2 flex-wrap">
+                      <Badge>{listing.rating} <Star className="w-3 h-3 ml-1" /></Badge>
+                      <span className="text-sm">({listing.totalRatings} ratings)</span>
+                      {listing.isTrusted && (
+                        <Badge className="bg-yellow-500 text-white">Trusted</Badge>
+                      )}
+                      {listing.isPopular && (
+                        <Badge className="bg-gray-500 text-white">Popular</Badge>
+                      )}
+                      {listing.isVerified && (
+                        <Badge className="bg-blue-500 text-white">Verified</Badge>
+                      )}
+                    </div>
+                    <p className="text-sm mt-2">{listing.category}</p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {(Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || []).map((tag: string, i: number) => (
+                        <Badge key={i} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                    <div className="mt-4 flex items-center gap-4">
+                      <p className="text-sm flex items-center gap-1 bg-green-500 text-white px-2 py-1 rounded">
+                        <Phone className="w-4 h-4" /> {typeof listing.phone === "string" ? listing.phone : (listing.phone?.en || "No phone available")}
+                      </p>
+                      <Button className="bg-blue-500 hover:bg-blue-600 text-white">
+                        <MessageSquare className="w-4 h-4 mr-1" /> Enquire
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

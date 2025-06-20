@@ -1,0 +1,1772 @@
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "68515cfd091886d42ac2e293",
+      "name": "Akash Comforts",
+      "rating": 4.6,
+      "totalRatings": 68,
+      "address": "BH Road Arsikere, Hassan",
+      "phone": "9513141122",
+      "tags": [
+        "Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e292",
+      "name": "Paryatan",
+      "rating": 4.2,
+      "totalRatings": 113,
+      "address": "Belur, Belur",
+      "phone": "9663159945 ,08177222396",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e291",
+      "name": "Banalu Valley",
+      "rating": 4.6,
+      "totalRatings": 177,
+      "address": "Hodachalli Village Devaladakere, Hassan",
+      "phone": "9591111133 , 9900116065",
+      "tags": [
+        "Parking Available"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e290",
+      "name": "Shravanabelagola Digambara Jain Managing Committee",
+      "rating": 4.3,
+      "totalRatings": 14,
+      "address": "Tourist Office Uthenahalli, Shravanabelagola",
+      "phone": "8431560480",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Shravanabelagola",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28f",
+      "name": "Hotel Mayura Shantala",
+      "rating": 3.7,
+      "totalRatings": 794,
+      "address": "Halebeedu Hassan, Halebeedu",
+      "phone": "8177273224",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Halebeedu",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28e",
+      "name": "Raghavendra Dharshini",
+      "rating": 4.1,
+      "totalRatings": 139,
+      "address": "Sathigal ComplexNagar Arsikere, Hassan",
+      "phone": "9964252939",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e280",
+      "name": "Hosahalli Gudda Hotel",
+      "rating": 4.4,
+      "totalRatings": 12,
+      "address": "Sakleshpura Hongadahalla, Hassan",
+      "phone": "9945842531",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27d",
+      "name": "Kwality Residency",
+      "rating": 3.6,
+      "totalRatings": 132,
+      "address": "Shankaripuram, Hassan",
+      "phone": "9148228144",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27f",
+      "name": "Mayura Yagachi",
+      "rating": 3.4,
+      "totalRatings": 421,
+      "address": "Chikkabydigere Belur, Belur",
+      "phone": "8970650041",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27e",
+      "name": "Shree Vara Residency",
+      "rating": 3.7,
+      "totalRatings": 807,
+      "address": "Bm Road Bm Road, Hassan",
+      "phone": "9590486868 , 8762676030",
+      "tags": [
+        "Parking Available"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27c",
+      "name": "Masha Allah Hotel",
+      "rating": 4.3,
+      "totalRatings": 39,
+      "address": "Vallabhai Road Hassan Ho, Hassan",
+      "phone": "3007744002",
+      "tags": [
+        "Hotels; Hotels Rs 500 & Below"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27b",
+      "name": "Hotel Palika",
+      "rating": 3.6,
+      "totalRatings": 574,
+      "address": "RC Road Race Course Road Hassan, Hassan",
+      "phone": "8044566531",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e27a",
+      "name": "Hotel Gurdev International",
+      "rating": 3.8,
+      "totalRatings": 54,
+      "address": "Bm Road, Hassan",
+      "phone": "8172233466 ,8172233467",
+      "tags": [
+        "Hotels; Hotels Rs 501 To Rs 1000"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e279",
+      "name": "Hotel United Kites",
+      "rating": 4.2,
+      "totalRatings": 1,
+      "address": "H N Pura Road Holenarsipur, Hassan",
+      "phone": "8172243163 , 9141008101 , 9141008105",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e278",
+      "name": "Hotel Arya Bhavan",
+      "rating": 3.7,
+      "totalRatings": 118,
+      "address": "Sakleshpur, Sakleshpur",
+      "phone": "8867701675",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e277",
+      "name": "Nihaara Retreat",
+      "rating": 4.4,
+      "totalRatings": 231,
+      "address": "Sakleshpur Market Road, Sakleshpur",
+      "phone": "0848249735 ,8157249735 ,7338473471",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e276",
+      "name": "Akshatha Deluxe Lodge",
+      "rating": 3,
+      "totalRatings": 43,
+      "address": "Bm Road Channarayapatna, Hassan",
+      "phone": "8978281879",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e275",
+      "name": "Hulivana Resort",
+      "rating": 4.2,
+      "totalRatings": 136,
+      "address": "Hanbal Hobli Sakleshpur, Sakleshpur",
+      "phone": "7975342658 ,9141635634 ,9845439017",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e274",
+      "name": "Appaji Military Hotel",
+      "rating": 4.2,
+      "totalRatings": 41,
+      "address": "Penshan Mohalla Hosaline Road, Hassan",
+      "phone": "9743090880 , 9880309063",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e282",
+      "name": "OYO Flagship 809020 Sathyakanth Comforts",
+      "rating": 3.2,
+      "totalRatings": 258,
+      "address": "Salagame Road Vidyanagar Hassan, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "WiFi; Swimming Pool; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28d",
+      "name": "Sharan Residency And Nandagokula Party Hall",
+      "rating": 3.4,
+      "totalRatings": 119,
+      "address": "KSRTC Bus Stand Channarayapatna, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28c",
+      "name": "Rosetta Resorts And Holiday Homes",
+      "rating": 4.6,
+      "totalRatings": 290,
+      "address": "Belluru Karnataka Kanakatte, Hassan",
+      "phone": "8172350035",
+      "tags": [
+        "Hotels; Resorts"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28b",
+      "name": "Ganesh Residency",
+      "rating": 3.7,
+      "totalRatings": 129,
+      "address": "Srinivasa Nagar Arsikere, Hassan",
+      "phone": "9535774087",
+      "tags": [
+        "Non AC Lodging Services; Lodging Services"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e28a",
+      "name": "Sunshine International Hotel And Lodging",
+      "rating": 4.4,
+      "totalRatings": 228,
+      "address": "Jp Nagar, Belur",
+      "phone": "7019944268 , 08177222169",
+      "tags": [
+        "WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e289",
+      "name": "Aarya Mansion Hotel",
+      "rating": 3.9,
+      "totalRatings": 109,
+      "address": "H N Pura Road Hosakoppalu, Hassan",
+      "phone": "8867701675",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e288",
+      "name": "OYO 70384 Supriya Lodge",
+      "rating": 3.7,
+      "totalRatings": 504,
+      "address": "Ring Road Hassan HO, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e287",
+      "name": "Prakriti Siri Homestay",
+      "rating": 4.5,
+      "totalRatings": 36,
+      "address": "Hongadahalla, Hassan",
+      "phone": "8046077679 , 804603550",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e286",
+      "name": "L V Bar And Restaurant",
+      "rating": 4.6,
+      "totalRatings": 11,
+      "address": "Hassan Sub Seege, Hassan",
+      "phone": "8277777024",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e285",
+      "name": "Hotel Sky Bird",
+      "rating": 4.5,
+      "totalRatings": 478,
+      "address": "BM Road Shanthigrama, Hassan",
+      "phone": "7019476886",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e281",
+      "name": "Collection O Hassan Industrial Area Formerly Sagayi International Resort",
+      "rating": 4.4,
+      "totalRatings": 283,
+      "address": "Hn Pura Road Hosakoppalu, Hassan",
+      "phone": "1244330599",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e284",
+      "name": "Aadyas Imperio",
+      "rating": 4.8,
+      "totalRatings": 80,
+      "address": "Baragur, Hassan",
+      "phone": "9741513773",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e283",
+      "name": "hotel chiranth lodging",
+      "rating": 5,
+      "totalRatings": 1,
+      "address": "Kasturba Road Hassan, Hassan",
+      "phone": "8172266966",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e266",
+      "name": "Jenukallu Valley Retreat",
+      "rating": 4.2,
+      "totalRatings": 558,
+      "address": "Post Sakleshpur Market Road, Sakleshpur",
+      "phone": "9241611610",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e267",
+      "name": "Dhanush Naty Style Hotel",
+      "rating": 3.9,
+      "totalRatings": 380,
+      "address": "Chikkagondanahalli, Hassan",
+      "phone": "7353454424",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e268",
+      "name": "Hotel Ashrita",
+      "rating": 3.6,
+      "totalRatings": 1,
+      "address": "Mangalore Road Sakleshpur, Sakleshpur",
+      "phone": "8173243412 ,8453994105 ,8173243050",
+      "tags": [
+        "WiFi; Swimming Pool; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e269",
+      "name": "Hotel Durga International",
+      "rating": 3.3,
+      "totalRatings": 1,
+      "address": "Anemahal Malali, Hassan",
+      "phone": "9448426665 ,9740991124",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26a",
+      "name": "Hotel Abhiruchi Lodging",
+      "rating": 3.3,
+      "totalRatings": 1,
+      "address": "N R Circle Hassan Hassan City, Hassan",
+      "phone": "8431679708 , 08172268885",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26b",
+      "name": "Stone Valley Falls",
+      "rating": 4.2,
+      "totalRatings": 333,
+      "address": "Resort Road Achanahalli, Hassan",
+      "phone": "9606060505",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26c",
+      "name": "SPOT ON 68166 Sri Annapurneshhwari Residency SPOT",
+      "rating": 3.4,
+      "totalRatings": 419,
+      "address": "road Chikkakondagola, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26d",
+      "name": "Horrti Green Valley",
+      "rating": 4,
+      "totalRatings": 175,
+      "address": "Nudrahalli Village Kyanahalli, Sakleshpur",
+      "phone": "7892440234",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26e",
+      "name": "OYO 62873 Daivik Comforts",
+      "rating": 3.2,
+      "totalRatings": 108,
+      "address": "Shreekant Nagara, Shravanabelagola",
+      "phone": "1246201516",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Shravanabelagola",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e26f",
+      "name": "lotus lake retreat",
+      "rating": 4.5,
+      "totalRatings": 264,
+      "address": "Shukravarasanthe, Sakleshpur",
+      "phone": "8792799279",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e270",
+      "name": "WaterView Holiday Retreat",
+      "rating": 4.5,
+      "totalRatings": 432,
+      "address": "Sakleshpura Main Road Biccodu, Hassan",
+      "phone": "9483908002 , 9483878131 , 8310019597",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e271",
+      "name": "Paryatan",
+      "rating": 4.2,
+      "totalRatings": 113,
+      "address": "Nandikeshwara Temple Road Ballur, Belur",
+      "phone": "8177222396",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e272",
+      "name": "Stone Valley Jeep Safari Point",
+      "rating": 4.6,
+      "totalRatings": 205,
+      "address": "Achanahalli Achanahalli, Hassan",
+      "phone": "9606060505",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e273",
+      "name": "OYO Flagship 809216 Spg Village Resorts",
+      "rating": 4.4,
+      "totalRatings": 13,
+      "address": "1 Hassan Mysore Road hallymysore, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e265",
+      "name": "Raghu Hotel",
+      "rating": 3.6,
+      "totalRatings": 2,
+      "address": "Kalyani Road Shravanabelagola, Shravanabelagola",
+      "phone": "8109178109",
+      "tags": [
+        "Swimming Pool; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Shravanabelagola",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e264",
+      "name": "Hotel Southern Star",
+      "rating": 3.9,
+      "totalRatings": 1,
+      "address": "Sampagi Road Bm Road, Hassan",
+      "phone": "8172251816 ,8172251817 , 9742243001",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e263",
+      "name": "Capital O 72446 Hmt Comforts",
+      "rating": 4.3,
+      "totalRatings": 418,
+      "address": "Hosakoppalu Hosakoppalu, Hassan",
+      "phone": "7975154366",
+      "tags": [
+        "Hotels; OYO"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e255",
+      "name": "Hotel Jewel Rock",
+      "rating": 3.8,
+      "totalRatings": 1,
+      "address": "Kr Puram Hassan, Hassan",
+      "phone": "08172261048 , 08172261049 , 08172261050 , 08172261051",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24f",
+      "name": "Mamatha Hotel",
+      "rating": 3.8,
+      "totalRatings": 2,
+      "address": "Bangalore Mangalore Road Bm Road, Hassan",
+      "phone": "09448825015 , 07259923131",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e250",
+      "name": "Hotel Sri Krishna",
+      "rating": 3.8,
+      "totalRatings": 2,
+      "address": "Main Road Bm Road, Hassan",
+      "phone": "9590300900",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e251",
+      "name": "Ayodhaya Darshan Hotel",
+      "rating": 4.2,
+      "totalRatings": 1,
+      "address": "Subhash Nagar Arsikere, Hassan",
+      "phone": "9448544393",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e252",
+      "name": "Harsha Mahal",
+      "rating": 3.5,
+      "totalRatings": 454,
+      "address": "Harshamahal Road, Hassan",
+      "phone": "8172268533",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e254",
+      "name": "Hotel Sumukha Yathrinivas",
+      "rating": 3.2,
+      "totalRatings": 177,
+      "address": "Race Course Road Hassan, Hassan",
+      "phone": "8172262366",
+      "tags": [
+        "WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e256",
+      "name": "Vishnu Regency",
+      "rating": 3.5,
+      "totalRatings": 379,
+      "address": "Sakleshpura Main Road Belur, Belur",
+      "phone": "9448655546 , 9845485546 , 9448940947",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e257",
+      "name": "Sagayi International Resort",
+      "rating": 3.9,
+      "totalRatings": 45,
+      "address": "Sankalapura Sankalapura, Hassan",
+      "phone": "08172243019 , 08172243020 , 08172243021",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e258",
+      "name": "Whistling Camps",
+      "rating": 4.8,
+      "totalRatings": 50,
+      "address": "Vanagur, Hassan",
+      "phone": "9591111133",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e259",
+      "name": "Kstdc Hotel Mayura Yagachi",
+      "rating": 3.3,
+      "totalRatings": 261,
+      "address": "Chickamangaluru Road belur, Belur",
+      "phone": "8069266017",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25b",
+      "name": "Dwarasamudra Resort",
+      "rating": 4.1,
+      "totalRatings": 666,
+      "address": "Belur Road Biccodu, Hassan",
+      "phone": "8884066651 , 8884984848",
+      "tags": [
+        "Resorts Rs 3001 To Rs 4000; Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25c",
+      "name": "Kadumakki Resorts",
+      "rating": 4.3,
+      "totalRatings": 725,
+      "address": "Hanabal Hobli Sakleshpur, Sakleshpur",
+      "phone": "9483972244",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25d",
+      "name": "Navaratna Palace Hotel",
+      "rating": 3.5,
+      "totalRatings": 386,
+      "address": "Ks Rao Road, Hassan",
+      "phone": "9980021104",
+      "tags": [
+        "Hotels; Insurance Agents"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25a",
+      "name": "White River Retreat Valley",
+      "rating": 4,
+      "totalRatings": 1,
+      "address": "Hanbal Sakleshpur, Sakleshpur",
+      "phone": "7353628508 , 9035447731 , 08173295707",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25e",
+      "name": "Vinayaka Hotel",
+      "rating": 3.9,
+      "totalRatings": 146,
+      "address": "Nehru Nagar Belur Belur, Belur",
+      "phone": "9031006571 , 9031006572",
+      "tags": [
+        "Wheel Chair Seating"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e25f",
+      "name": "Sarayu Hotel",
+      "rating": 3.4,
+      "totalRatings": 432,
+      "address": "Venkatadri Towers Bm Road, Hassan",
+      "phone": "8172231337",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e260",
+      "name": "Hotel Amber Castle",
+      "rating": 3.5,
+      "totalRatings": 617,
+      "address": "Mahal Road Harshamahal Road, Hassan",
+      "phone": "9513588862 , 08172235888",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e261",
+      "name": "Regenta Resort",
+      "rating": 4.1,
+      "totalRatings": 513,
+      "address": "Hanbal, Hassan",
+      "phone": "9606032177 ,9606032172, 9606032173",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e262",
+      "name": "Hotel Sri Srinivasa",
+      "rating": 3.7,
+      "totalRatings": 779,
+      "address": "B M Road Sakleshpur, Sakleshpur",
+      "phone": "8951435145",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e242",
+      "name": "The Ashhok Hassan",
+      "rating": 4.2,
+      "totalRatings": 4,
+      "address": "Bm Road, Hassan",
+      "phone": "09886323996 , 08884454904 , 08172268732 , 8884454900",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e241",
+      "name": "Prabhath Military Hotel",
+      "rating": 3.7,
+      "totalRatings": 521,
+      "address": "Bangalore Mangalore Road Bm Road, Hassan",
+      "phone": "8172268832",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e240",
+      "name": "Farmers Son Resort and Adventurous Sports",
+      "rating": 4,
+      "totalRatings": 2,
+      "address": "N H 75 Sakleshpur, Sakleshpur",
+      "phone": "08971998888 , 09731651888 , 08170218913",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23f",
+      "name": "Hotel Raama",
+      "rating": 4,
+      "totalRatings": 7,
+      "address": "B M Road Thanniruhalla, Hassan",
+      "phone": "08172257001 , 08172257002",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23e",
+      "name": "Sri Chamundeshwari Hotel and Lodging",
+      "rating": 4.3,
+      "totalRatings": 3,
+      "address": "Ramanathapura, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "Hotels; Lodging Services"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23d",
+      "name": "ANTHARA SERVICE Apartment",
+      "rating": 4.7,
+      "totalRatings": 19,
+      "address": "KempeGowda Circle Belur, Belur",
+      "phone": "9036962286",
+      "tags": [
+        "Hotels; Hotels Rs 501 To Rs 1000"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23c",
+      "name": "Samrat Grand Rooms",
+      "rating": 4.9,
+      "totalRatings": 20,
+      "address": "BM Road Anemahal, Sakleshpur",
+      "phone": "9481119333 , 9449969700",
+      "tags": [
+        "Hotels; Hotels Rs 1001 To Rs 2000"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23b",
+      "name": "Hotel Saroja Palace",
+      "rating": 4.2,
+      "totalRatings": 39,
+      "address": "Belur Road Ambedkar Nagar, Halebeedu",
+      "phone": "7041663423",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": true,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Halebeedu",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e23a",
+      "name": "Ksheera Residency and Ksheera Convention Hall",
+      "rating": 4.1,
+      "totalRatings": 228,
+      "address": "Vidana Souda Road Vivekanagara, Hassan",
+      "phone": "6366382244 , 9742776223",
+      "tags": [
+        "Lodging Services; Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e239",
+      "name": "Hotel Samanvi International",
+      "rating": 3.9,
+      "totalRatings": 1,
+      "address": "NH 234 Temple Road, Belur",
+      "phone": "7019427784",
+      "tags": [
+        "24 Hour Concierge/Help Desk; Room Service"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": true,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e238",
+      "name": "S S Residency",
+      "rating": 4.2,
+      "totalRatings": 1,
+      "address": "Bm Road, Hassan",
+      "phone": "08172233466 , 08172233467",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e237",
+      "name": "Pavanputra Resort And Sports Club",
+      "rating": 3.8,
+      "totalRatings": 2,
+      "address": "Plot No.114 116 117 Hassan HO, Hassan",
+      "phone": "8150888616",
+      "tags": [
+        "WiFi; Swimming Pool; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e243",
+      "name": "Hotel Santalum International",
+      "rating": 3.7,
+      "totalRatings": 139,
+      "address": "Arakalagud Arkalgud, Hassan",
+      "phone": "1246201327",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e244",
+      "name": "Rama Hotel",
+      "rating": 4.1,
+      "totalRatings": 4,
+      "address": "Mangalore Road Thanniruhalla, Hassan",
+      "phone": "08172257003 , 08172257005",
+      "tags": [
+        "Hotels; 3 Star Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e245",
+      "name": "Capital O Hotel Samanvi International",
+      "rating": 3.8,
+      "totalRatings": 273,
+      "address": "Main Road Temple Road, Belur",
+      "phone": "07019427784 , 09148453532 , 09482065844 , 09900374613",
+      "tags": [
+        "Hotels; OYO"
+      ],
+      "hasWhatsApp": false,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Belur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e246",
+      "name": "Royal",
+      "rating": 4,
+      "totalRatings": 4,
+      "address": "Sampige Road Bm Road, Hassan",
+      "phone": "9742243001 , 9742243005",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e247",
+      "name": "GRK Nature's Resort",
+      "rating": 4.5,
+      "totalRatings": 2,
+      "address": "Achanahalli Sakleshpur, Sakleshpur",
+      "phone": "08431809915 , 09886758246 , 09143246246",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e248",
+      "name": "Pearl Valley Retreat",
+      "rating": 4.8,
+      "totalRatings": 782,
+      "address": "Sakleshpur Market Road, Sakleshpur",
+      "phone": "09448007111 , 09945056308 , 09008012795",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e249",
+      "name": "Baalecool Nature Resort",
+      "rating": 3.8,
+      "totalRatings": 455,
+      "address": "Achanahalli Sakleshpur, Sakleshpur",
+      "phone": "09483779802 , 09880090232 , 09482910603 , 08217066169",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24a",
+      "name": "Palguni Residency",
+      "rating": 4.1,
+      "totalRatings": 3,
+      "address": "Rangoli Halla Rangoli Halla, Hassan",
+      "phone": "09482648816 , 08172262299",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24b",
+      "name": "WelcomHeritage Ayatana",
+      "rating": 4.6,
+      "totalRatings": 3,
+      "address": "Aratt Estate Vanagur, Hassan",
+      "phone": "8045771900",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24c",
+      "name": "Akki Roti Hotel",
+      "rating": 4.3,
+      "totalRatings": 605,
+      "address": "Mangaluru Anemahal, Sakleshpur",
+      "phone": "7337643313",
+      "tags": [
+        "Wheel Chair Seating"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Sakleshpur",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24d",
+      "name": "Illusion Inn",
+      "rating": 3.7,
+      "totalRatings": 341,
+      "address": "#NAME?",
+      "phone": "9886441999",
+      "tags": [
+        "Parking Available; WiFi; Air Conditioned"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": false,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "#NAME?",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e24e",
+      "name": "Eka Resort",
+      "rating": 3.9,
+      "totalRatings": 966,
+      "address": "Hallibyle Village Hethur, Hassan",
+      "phone": "09480891918 , 08023430207 , 08173295805",
+      "tags": [
+        "Parking Available; WiFi; Swimming Pool"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": false,
+      "isVerified": true,
+      "isPopular": false,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    },
+    {
+      "_id": "68515cfd091886d42ac2e236",
+      "name": "Varun Mansion Hotel",
+      "rating": 4.1,
+      "totalRatings": 218,
+      "address": "HIGHWAY HASSAN Bhoovanahalli, Hassan",
+      "phone": "9364011737",
+      "tags": [
+        "Hotels"
+      ],
+      "hasWhatsApp": true,
+      "hasEnquiry": false,
+      "isTrusted": true,
+      "isVerified": true,
+      "isPopular": true,
+      "category": "Hotels and Restaurants",
+      "city": "Hassan",
+      "pincode": "573201"
+    }
+  ]
+}

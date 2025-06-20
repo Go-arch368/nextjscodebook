@@ -21,7 +21,7 @@ export default function CategoryImageSlider({ categoryName, altText }: CategoryI
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await fetch(`/api/search-list/getImagesByCategory?category=${encodeURIComponent(categoryName)}`);
+        const res = await fetch(`/api/getImagesByCategory?category=${encodeURIComponent(categoryName)}`);
         const data = await res.json();
 
         if (data.success && Array.isArray(data.images)) {

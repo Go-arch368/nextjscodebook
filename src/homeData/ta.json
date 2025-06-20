@@ -1,4 +1,10 @@
 {
+  "LocaleSwitcher": {
+    "english": "English - EN",
+    "tamil": "தமிழ் - TA",
+    "hindi": "हिन्दी - HI",
+    "kannada": "ಕನ್ನಡ - KA"
+  },
   "navbar": {
     "logo": "லோகோஸ்",
     "leads": "தொடர்புகள்",

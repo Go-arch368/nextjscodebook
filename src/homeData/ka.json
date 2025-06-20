@@ -1,0 +1,15 @@
+{
+    "LocaleSwitcher": {
+  "english": "English - EN",
+  "tamil": "தமிழ் - TA",
+  "hindi": "हिन्दी - HI",
+  "kannada": "ಕನ್ನಡ - KA"
+}
+,
+  "navbar": {
+    "logo": "ಲಾಗೋ",
+    "leads": "ಲೀಡ್ಸ್",
+    "freeListing": "ಉಚಿತ ಲಿಸ್ಟಿಂಗ್",
+    "toggleMenu": "ಮೆನು ಟಾಗಲ್ ಮಾಡಿ"
+  }
+}

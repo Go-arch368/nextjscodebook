@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
 import LocationModal from "./LocationModal";
+import { useLocale } from "next-intl";
+
 
 // Define interface for search result items
 interface SearchResultItem {
@@ -44,6 +46,7 @@ const SearchBar: React.FC = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
+  const locale = useLocale();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [pincode, setPincode] = useState<string>("");
   const [city, setCity] = useState<string>("");
@@ -121,12 +124,10 @@ const SearchBar: React.FC = () => {
   }, [pincode, city, pincodeError, router, searchParams, pathname]);
 
   const handlePincodeChange = (newPincode: string, newCity?: string) => {
-    // Update state with new pincode and city
     setPincode(newPincode);
     setCity(newCity || "");
-    setPincodeError(null); // Clear any existing pincode error
+    setPincodeError(null);
 
-    // Update URL only if on /category
     if (pathname === "/category") {
       const currentParams = new URLSearchParams();
       currentParams.set("pincode", newPincode);
@@ -173,7 +174,7 @@ const SearchBar: React.FC = () => {
       }
       setIsLoading(true);
       setPincodeError(null);
-      fetch(`/api/search?pincode=${encodeURIComponent(effectivePincode)}`, {
+      fetch(`/api/search?pincode=${encodeURIComponent(effectivePincode)}&lang=${locale}`, {
         cache: "no-store",
       })
         .then((response) => {
@@ -183,6 +184,7 @@ const SearchBar: React.FC = () => {
           return response.json() as Promise<ApiResponse>;
         })
         .then((result) => {
+          console.log("Validate Pincode Response:", result); // Debug log
           if (!result.success && result.error?.includes("Pincode")) {
             setPincodeError(`Pincode ${effectivePincode} not found in the database`);
           } else {
@@ -201,7 +203,7 @@ const SearchBar: React.FC = () => {
           setIsLoading(false);
         });
     }, 300),
-    [searchParams]
+    [searchParams, locale]
   );
 
   const fetchResults = useCallback(
@@ -221,7 +223,7 @@ const SearchBar: React.FC = () => {
 
       setIsLoading(true);
       setError(null);
-      const queryParams = new URLSearchParams({ q: query, pincode: effectivePincode });
+      const queryParams = new URLSearchParams({ q: query, pincode: effectivePincode, lang: locale });
       if (city) {
         queryParams.set("city", city);
       }
@@ -235,6 +237,7 @@ const SearchBar: React.FC = () => {
           return response.json() as Promise<ApiResponse>;
         })
         .then((result) => {
+          console.log("Search Results Response:", result); // Debug log
           if (result.success && result.data) {
             setResults(result.data);
             if (!pin && effectivePincode) {
@@ -267,7 +270,7 @@ const SearchBar: React.FC = () => {
           setIsLoading(false);
         });
     }, 300),
-    [searchParams, city]
+    [searchParams, city, locale]
   );
 
   useEffect(() => {
@@ -357,9 +360,7 @@ const SearchBar: React.FC = () => {
   return (
     <div className="flex items-center gap-2 w-full max-w-4xl">
       <div className="flex flex-col gap-1 w-auto">
-        <LocationModal
-          onPincodeChange={handlePincodeChange}
-        />
+        <LocationModal onPincodeChange={handlePincodeChange} />
       </div>
       <div className="relative flex-1" ref={searchRef}>
         <form onSubmit={handleSearch} className="w-full">
@@ -448,9 +449,11 @@ const SearchBar: React.FC = () => {
                               className="cursor-pointer dark:hover:bg-gray-600"
                             >
                               <span className="font-medium">{item.name}</span>
-                              <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                                ({item.category})
-                              </span>
+                              {item.category && (
+                                <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                                  ({item.category})
+                                </span>
+                              )}
                             </CommandItem>
                           ))}
                         </CommandGroup>

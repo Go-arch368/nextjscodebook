@@ -1,4 +1,3 @@
-// pages/api/search.ts (or wherever your API route is located)
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
 import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
@@ -30,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { q: query, pincode } = req.query as { q?: string; pincode?: string };
+  const { q: query, pincode, lang = 'en' } = req.query as { q?: string; pincode?: string; lang?: string };
 
   // Require pincode for search
   if (!pincode) {
@@ -57,15 +56,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     // Add query conditions if search term is provided
     if (query) {
       dbQuery.$or = [
-        { name: { $regex: `^${query}` } }, // Case-sensitive, starts with query
-        { category: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
-        { tags: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
-        { city: { $regex: `^${query}`, $options: 'i' } }, // Case-insensitive
+        { [`name.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
+        { [`category.en`]: { $regex: query, $options: 'i' } }, // Case-insensitive
+        { [`tags.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
+        { [`city.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
       ];
     }
 
     const results: IDistrictBusiness[] = await DistrictBusiness.find(dbQuery)
-      .select('name category tags city pincode')
+      .select(`name.${lang} category.en tags.${lang} city.${lang} pincode`)
       .limit(20)
       .lean();
 
@@ -73,31 +72,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     businesses = results.map((doc) => ({
       id: doc._id.toString(),
-      name: doc.name,
-      category: doc.category,
+      name: doc.name?.[lang] || doc.name?.en || '',
+      category: doc.category?.en || '',
       type: 'business' as const,
       pincode: doc.pincode,
     }));
 
-    categories = [...new Set(results.map((doc) => doc.category).filter(Boolean))].map((name) => ({
+    categories = [...new Set(results.map((doc) => doc.category?.en).filter(Boolean))].map((name) => ({
       id: name,
       name,
       type: 'category' as const,
       pincode,
     }));
-    tags = [...new Set(results.flatMap((doc) => doc.tags || []).filter(Boolean))].map((name) => ({
+    tags = [...new Set(results.flatMap((doc) => doc.tags?.[lang] || []).filter(Boolean))].map((name) => ({
       id: name,
       name,
       type: 'tag' as const,
       pincode,
     }));
-    cities = [...new Set(results.map((doc) => doc.city).filter(Boolean))].map((name) => ({
+    cities = [...new Set(results.map((doc) => doc.city?.[lang]).filter(Boolean))].map((name) => ({
       id: name,
       name,
       type: 'city' as const,
       pincode,
     }));
-    names = [...new Set(results.map((doc) => doc.name).filter(Boolean))].map((name) => ({
+    names = [...new Set(results.map((doc) => doc.name?.[lang]).filter(Boolean))].map((name) => ({
       id: name,
       name,
       type: 'name' as const,

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import SearchBar from './SearchBar';
 import LoginModal from '../clerkAuth/LoginModal';
 import { useTranslations } from 'next-intl';
-
+import LanguageSwitcher from "../LangSwitch";
 const CategoryNavbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = useTranslations('navbar');
@@ -21,6 +21,10 @@ const CategoryNavbar = () => {
 
         <div className="hidden md:flex flex-1 mx-8">
           <SearchBar />
+        </div>
+
+        <div>
+          <LanguageSwitcher />
         </div>
 
         <div className="hidden md:flex items-center space-x-6">
