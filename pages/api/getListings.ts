@@ -53,6 +53,8 @@ export default async function handler(
       lang = 'en',
     } = req.query as Record<string, string | undefined>;
 
+    const language: string = lang;
+
     if (!pincode) {
       return res.status(400).json({ success: false, error: 'Pincode is required' });
     }
@@ -77,14 +79,14 @@ export default async function handler(
 
     const listings = await DistrictBusiness.find(dbQuery).lean();
 
-    const data: FormattedListing[] = listings.map((listing) => ({
+    const data: FormattedListing[] = listings.map((listing: any) => ({
       _id: String(listing._id),
-      name: listing.name?.[lang] || listing.name?.en || '',
-      address: listing.address?.[lang] || listing.address?.en || '',
-      city: listing.city?.[lang] || listing.city?.en || '',
+      name: listing.name?.[language] || listing.name?.en || '',
+      address: listing.address?.[language] || listing.address?.en || '',
+      city: listing.city?.[language] || listing.city?.en || '',
       category: listing.category?.["en"] || listing.category?.en || '',
-      subcategory: listing.subcategory?.[lang] || listing.subcategory?.en || '',
-      tags: listing.tags?.[lang] || listing.tags?.en || [],
+      subcategory: listing.subcategory?.[language] || listing.subcategory?.en || '',
+      tags: listing.tags?.[language] || listing.tags?.en || [],
       rating: listing.rating,
       totalRatings: listing.totalRatings,
       phone: listing.phone,

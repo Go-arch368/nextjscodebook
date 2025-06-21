@@ -2,6 +2,17 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
 import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
 
+// Extend the IDistrictBusiness type to reflect multilingual fields
+type MultilingualString = { [key: string]: string };
+type MultilingualArray = { [key: string]: string[] };
+
+interface IDistrictBusinessTyped extends Omit<IDistrictBusiness, 'name' | 'category' | 'tags' | 'city'> {
+  name?: MultilingualString;
+  category?: MultilingualString;
+  tags?: MultilingualArray;
+  city?: MultilingualString;
+}
+
 // Define the shape of the response data
 interface SearchResult {
   id: string;
@@ -29,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { q: query, pincode, lang = 'en' } = req.query as { q?: string; pincode?: string; lang?: string };
+  const { pincode, lang = 'en' } = req.query as { pincode?: string; lang?: string };
 
   // Require pincode for search
   if (!pincode) {
@@ -52,51 +63,72 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     let tags: SearchResult[] = [];
     let cities: SearchResult[] = [];
     let names: SearchResult[] = [];
-
-    // Add query conditions if search term is provided
-    if (query) {
-      dbQuery.$or = [
-        { [`name.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
-        { [`category.en`]: { $regex: query, $options: 'i' } }, // Case-insensitive
-        { [`tags.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
-        { [`city.${lang}`]: { $regex: query, $options: 'i' } }, // Case-insensitive
-      ];
-    }
-
-    const results: IDistrictBusiness[] = await DistrictBusiness.find(dbQuery)
-      .select(`name.${lang} category.en tags.${lang} city.${lang} pincode`)
+    // Use 'any' for results to avoid type incompatibility, or map to the expected type
+    const results = await DistrictBusiness.find(dbQuery)
+      .select(`name category tags city pincode`)
       .limit(20)
       .lean();
 
     console.log(`Search found ${results.length} results for pincode ${pincode}`);
 
-    businesses = results.map((doc) => ({
+    businesses = results.map((doc: any) => ({
       id: doc._id.toString(),
-      name: doc.name?.[lang] || doc.name?.en || '',
-      category: doc.category?.en || '',
+      name: (doc.name && typeof doc.name === 'object' ? doc.name[lang] || doc.name['en'] : '') || '',
+      category: (doc.category && typeof doc.category === 'object' ? doc.category['en'] : '') || '',
       type: 'business' as const,
       pincode: doc.pincode,
     }));
 
-    categories = [...new Set(results.map((doc) => doc.category?.en).filter(Boolean))].map((name) => ({
+    categories = [
+      ...new Set(
+        results
+          .map((doc: any) => (doc.category && typeof doc.category === 'object' ? doc.category['en'] : null))
+          .filter((name: any): name is string => Boolean(name))
+      ),
+    ].map((name: string) => ({
       id: name,
       name,
       type: 'category' as const,
       pincode,
     }));
-    tags = [...new Set(results.flatMap((doc) => doc.tags?.[lang] || []).filter(Boolean))].map((name) => ({
+
+    tags = [
+      ...new Set(
+        results
+          .flatMap((doc: any) =>
+            doc.tags && typeof doc.tags === 'object' && Array.isArray(doc.tags[lang])
+              ? doc.tags[lang]
+              : []
+          )
+          .filter((name: any): name is string => Boolean(name))
+      ),
+    ].map((name: string) => ({
       id: name,
       name,
       type: 'tag' as const,
       pincode,
     }));
-    cities = [...new Set(results.map((doc) => doc.city?.[lang]).filter(Boolean))].map((name) => ({
+
+    cities = [
+      ...new Set(
+        results
+          .map((doc: any) => (doc.city && typeof doc.city === 'object' ? doc.city[lang] : null))
+          .filter((name: any): name is string => Boolean(name))
+      ),
+    ].map((name: string) => ({
       id: name,
       name,
       type: 'city' as const,
       pincode,
     }));
-    names = [...new Set(results.map((doc) => doc.name?.[lang]).filter(Boolean))].map((name) => ({
+
+    names = [
+      ...new Set(
+        results
+          .map((doc: any) => (doc.name && typeof doc.name === 'object' ? doc.name[lang] : null))
+          .filter((name: any): name is string => Boolean(name))
+      ),
+    ].map((name: string) => ({
       id: name,
       name,
       type: 'name' as const,
