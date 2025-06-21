@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, Phone, MessageSquare } from "lucide-react";
+import { Star, Phone, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { fetchImagesByCategory } from "@/utils/imageUtils";
 
@@ -115,6 +115,28 @@ export default function CategoryContent() {
     fetchListings(params);
   }, [searchParams, fetchListings]);
 
+  const prevImage = (index: number) => {
+    setSelectedImageIndices((prev) => {
+      const currentIndex = prev[index] || 0;
+      const totalImages = listings[index]?.images?.length || 1;
+      return {
+        ...prev,
+        [index]: currentIndex === 0 ? totalImages - 1 : currentIndex - 1,
+      };
+    });
+  };
+
+  const nextImage = (index: number) => {
+    setSelectedImageIndices((prev) => {
+      const currentIndex = prev[index] || 0;
+      const totalImages = listings[index]?.images?.length || 1;
+      return {
+        ...prev,
+        [index]: currentIndex === totalImages - 1 ? 0 : currentIndex + 1,
+      };
+    });
+  };
+
   if (loading) return <div className="p-6">Loading...</div>;
 
   return (
@@ -125,6 +147,7 @@ export default function CategoryContent() {
         <div className="space-y-6">
           {listings.map((listing, index) => {
             const selectedImageIndex = selectedImageIndices[index] || 0;
+            const hasMultipleImages = (listing.images?.length || 0) > 1;
 
             return (
               <div key={listing._id} className="border p-4 rounded-md bg-white shadow">
@@ -135,24 +158,45 @@ export default function CategoryContent() {
                         {listing.imageError}
                       </div>
                     ) : (
-                      <Image
-                        src={listing.images?.[selectedImageIndex]?.url || "/placeholder.jpg"}
-                        alt={listing.name}
-                        fill
-                        className="object-cover"
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={listing.images?.[selectedImageIndex]?.url || "/placeholder.jpg"}
+                          alt={listing.name}
+                          fill
+                          className="object-cover rounded-md"
+                        />
+                        {hasMultipleImages && (
+                          <div className="absolute inset-0 flex items-center justify-between px-2">
+                            <button
+                              onClick={() => prevImage(index)}
+                              className="bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="w-4 h-4" />
+                            </button>
+                            <button
+                              onClick={() => nextImage(index)}
+                              className=" bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="w-4 h-4" />
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
 
                   <div className="sm:w-2/3 w-full sm:pl-4 mt-4 sm:mt-0">
                     <h2 className="text-xl font-bold">{listing.name}</h2>
                     <div className="flex flex-row sm:flex-row sm:items-center gap-2">
-                        <p className="text-sm text-gray-600">{listing.address}</p>
-                    <p className="text-sm text-gray-600">{listing.city}</p>
-                      </div>
-                  
+                      <p className="text-sm text-gray-600">{listing.address}</p>
+                      <p className="text-sm text-gray-600">{listing.city}</p>
+                    </div>
                     <div className="flex items-center gap-2 mt-2 flex-wrap">
-                      <Badge>{listing.rating} <Star className="w-3 h-3 ml-1" /></Badge>
+                      <Badge>
+                        {listing.rating} <Star className="w-3 h-3 ml-1" />
+                      </Badge>
                       <span className="text-sm">({listing.totalRatings} ratings)</span>
                       {listing.isTrusted && (
                         <Badge className="bg-yellow-500 text-white">Trusted</Badge>
@@ -166,13 +210,20 @@ export default function CategoryContent() {
                     </div>
                     <p className="text-sm mt-2">{listing.category}</p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {(Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || []).map((tag: string, i: number) => (
-                        <Badge key={i} variant="secondary">{tag}</Badge>
-                      ))}
+                      {(Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || []).map(
+                        (tag: string, i: number) => (
+                          <Badge key={i} variant="secondary">
+                            {tag}
+                          </Badge>
+                        )
+                      )}
                     </div>
                     <div className="mt-4 flex items-center gap-4">
                       <p className="text-sm flex items-center gap-1 bg-green-500 text-white px-2 py-1 rounded">
-                        <Phone className="w-4 h-4" /> {typeof listing.phone === "string" ? listing.phone : (listing.phone?.en || "No phone available")}
+                        <Phone className="w-4 h-4" />{" "}
+                        {typeof listing.phone === "string"
+                          ? listing.phone
+                          : listing.phone?.en || "No phone available"}
                       </p>
                       <Button className="bg-blue-500 hover:bg-blue-600 text-white">
                         <MessageSquare className="w-4 h-4 mr-1" /> Enquire
