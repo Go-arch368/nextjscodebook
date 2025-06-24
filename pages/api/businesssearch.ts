@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
 import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
 
-
 interface SearchResult {
   id: string;
   name: string;
@@ -27,7 +26,7 @@ interface ResponseData {
   success: boolean;
   data?: {
     businesses: SearchResult[];
-    totalCount?: number; 
+    totalCount?: number;
   };
   error?: string;
   message?: string;
@@ -38,14 +37,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { pincode, category, subcategory, limit, page } = req.query as {
+  const { pincode, category, subcategory, limit, page, lang = 'en' } = req.query as {
     pincode?: string;
     category?: string;
     subcategory?: string;
     limit?: string;
     page?: string;
+    lang?: string;
   };
-
 
   if (!pincode) {
     return res.status(400).json({ success: false, error: 'Pincode parameter is required' });
@@ -55,38 +54,49 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     await dbConnect();
     console.log('MongoDB connected for business search');
 
-   
+    // Validate pincode existence
     const pincodeExists: IDistrictBusiness | null = await DistrictBusiness.findOne({ pincode }).lean();
     if (!pincodeExists) {
       return res.status(404).json({ success: false, error: `Pincode ${pincode} not found in the database` });
     }
 
-   
-    const dbQuery: { pincode: string; category?: any; subcategory?: any } = { pincode };
+    // Build query
+    const dbQuery: Record<string, any> = { pincode };
 
     if (category) {
-      dbQuery.category = { $regex: `^${category}$`, $options: 'i' }; 
+      dbQuery[`category.en`] = { $regex: `^${category}$`, $options: 'i' }; // Category in English
     }
 
     if (subcategory) {
-      
-      dbQuery.subcategory = {
-        $regex: `(^|,\\s*)${subcategory}(\\s*,|$)`,
-        $options: 'i',
-      };
+      // Check if subcategory field exists for the language
+      const subcategoryExists = await DistrictBusiness.findOne({
+        pincode,
+        [`subcategory.${lang}`]: { $exists: true, $ne: null },
+      }).lean();
+
+      if (!subcategoryExists) {
+        console.log(`No documents found with subcategory.${lang} for pincode ${pincode}`);
+        return res.status(200).json({
+          success: true,
+          data: { businesses: [], totalCount: 0 },
+          message: `No businesses found with subcategory '${subcategory}' in language '${lang}'`,
+        });
+      }
+
+      // Search for subcategory within comma-separated string
+      dbQuery[`subcategory.${lang}`] = { $regex: `(^|,\\s*)${subcategory}(\\s*,|$)`, $options: 'i' };
     }
 
-   
+    // Pagination
     const pageNumber = parseInt(page || '1', 10);
-    const pageSize = parseInt(limit || '0', 10); // 0 means no limit (return all records)
+    const pageSize = parseInt(limit || '0', 10); // 0 means no limit
     const skip = pageSize > 0 ? (pageNumber - 1) * pageSize : 0;
 
-    // Get total count of matching documents
+    // Get total count
     const totalCount = await DistrictBusiness.countDocuments(dbQuery);
 
-    // Build the query for results
-    let query = DistrictBusiness.find(dbQuery)
-      .lean(); // Remove .select() to return all fields
+    // Build query for results
+    let query = DistrictBusiness.find(dbQuery).lean();
 
     // Apply pagination if limit is specified
     if (pageSize > 0) {
@@ -98,26 +108,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     console.log(
       `Search found ${results.length} results (out of ${totalCount}) for pincode ${pincode}, category ${
         category || 'any'
-      }, subcategory ${subcategory || 'any'}`,
+      }, subcategory ${subcategory || 'any'}, language ${lang}`,
     );
 
-    const businesses: SearchResult[] = results.map((doc) => ({
+    const businesses: SearchResult[] = results.map((doc: any) => ({
       id: doc._id.toString(),
-      name: doc.name || '',
+      name: doc.name?.[lang] || doc.name?.en || '',
       rating: doc.rating || 0,
       totalRatings: doc.totalRatings || 0,
-      address: doc.address || '',
+      address: doc.address?.[lang] || doc.address?.en || '',
       phone: doc.phone || '',
-      tags: doc.tags || [],
+      tags: doc.tags?.[lang] || doc.tags?.en || [],
       hasWhatsApp: doc.hasWhatsApp || false,
       hasEnquiry: doc.hasEnquiry || false,
       isTrusted: doc.isTrusted || false,
       isVerified: doc.isVerified || false,
       isPopular: doc.isPopular || false,
-      category: doc.category || '',
-      subcategory: doc.subcategory || undefined,
+      category: doc.category?.en || doc.category?.en || '', // Use 'en' for category
+      subcategory: doc.subcategory?.[lang] || doc.subcategory?.en || undefined,
       pincode: doc.pincode || '',
-      city: doc.city || undefined,
+      city: doc.city?.[lang] || doc.city?.en || undefined,
     }));
 
     return res.status(200).json({

@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server';
+
+import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
-import DistrictBusiness from '../../../../models/DistrictBusiness';
+import DistrictBusiness from '../../models/DistrictBusiness';
 
 interface BusinessData {
   name: string;
@@ -32,34 +33,37 @@ const validatePincode = (pincode: string): boolean => {
   return pincodeRegex.test(pincode.trim());
 };
 
-export async function POST(request: Request) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
+
   try {
     await dbConnect();
 
-    const data: BusinessData = await request.json();
+    const data: BusinessData = req.body;
 
     // Validate required fields
     if (!data.name || !data.address || !data.phone || !data.category || !data.subcategory || !data.pincode) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return res.status(400).json({ error: 'Missing required fields' });
     }
 
     // Validate phone number
     if (!validatePhoneNumber(data.phone)) {
-      return NextResponse.json(
-        { error: 'Invalid phone number. Must be a 10-digit Indian phone number starting with 6-9.' },
-        { status: 400 }
-      );
+      return res.status(400).json({
+        error: 'Invalid phone number. Must be a 10-digit Indian phone number starting with 6-9.',
+      });
     }
 
     // Validate pincode
     if (!validatePincode(data.pincode)) {
-      return NextResponse.json({ error: 'Invalid pincode. Must be a 6-digit number.' }, { status: 400 });
+      return res.status(400).json({ error: 'Invalid pincode. Must be a 6-digit number.' });
     }
 
     // Check if phone number already exists
     const existingBusiness = await DistrictBusiness.findOne({ phone: data.phone });
     if (existingBusiness) {
-      return NextResponse.json({ error: 'A business with this phone number already exists' }, { status: 400 });
+      return res.status(400).json({ error: 'A business with this phone number already exists' });
     }
 
     // Prepare business data
@@ -84,12 +88,12 @@ export async function POST(request: Request) {
     // Insert into database
     const inserted = await DistrictBusiness.create(business);
 
-    return NextResponse.json({
+    return res.status(200).json({
       message: 'Business data saved successfully',
       data: inserted,
     });
   } catch (error: any) {
     console.error('Error in uploadform API:', error.message);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return res.status(500).json({ error: error.message });
   }
 }

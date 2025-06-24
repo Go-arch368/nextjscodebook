@@ -31,8 +31,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
       console.log('Initiating Google login');
       await signIn?.authenticateWithRedirect({
         strategy: 'oauth_google',
-        redirectUrl: '/category?pincode=573201',
-        redirectUrlComplete: '/category?pincode=573201',
+        redirectUrl: 'en/category?pincode=573201',
+        redirectUrlComplete: 'en/category?pincode=573201',
       });
       setIsOpen(false);
     } catch (error) {

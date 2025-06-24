@@ -108,7 +108,7 @@ const LoginModal: React.FC = () => {
         setIsSimulatedLoggedIn(true); // Set logged-in state
         console.log('OTP verified, setting isSimulatedLoggedIn to true');
         alert('OTP verified successfully!');
-        router.push('/category?pincode=573201'); // Navigate
+        router.push('en/category?pincode=573201'); // Navigate
         return;
       } else {
         throw new Error('Invalid OTP entered.');

@@ -12,14 +12,14 @@ export default function FilesPage() {
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger 
             value="upload"
-            onClick={() => router.push('/upload')}
+            onClick={() => router.push('en/upload')}
             className="px-6 py-3 font-semibold border-r border-gray-300"
           >
             Upload CSV
           </TabsTrigger>
           <TabsTrigger 
             value="upload-form"
-            onClick={() => router.push('/upload-form')}
+            onClick={() => router.push('en/upload-form')}
             className="px-6 py-3 font-semibold"
           >
             Upload Form
