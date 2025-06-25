@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
-import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
+import DistrictBusiness,{IDistrictBusiness} from '../../models/DistrictBusiness';
 
 // Extend the IDistrictBusiness type to reflect multilingual fields
 type MultilingualString = { [key: string]: string };
@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { pincode, lang = 'en' } = req.query as { pincode?: string; lang?: string };
+  const { pincode, lang = 'en', q } = req.query as { pincode?: string; lang?: string; q?: string };
 
   // Require pincode for search
   if (!pincode) {
@@ -57,32 +57,50 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       return res.status(404).json({ success: false, error: `Pincode ${pincode} not found in the database` });
     }
 
-    const dbQuery: { pincode: string; $or?: Array<{ [key: string]: any }> } = { pincode }; // Base query on pincode
+    // Build the query
+    const dbQuery: { pincode: string; $or?: Array<{ [key: string]: any }> } = { pincode };
+    
+    // Add search term filtering if 'q' is provided
+    if (q) {
+      const regex = new RegExp(q, 'i'); // Case-insensitive regex
+      dbQuery.$or = [
+        { [`name.${lang}`]: regex },
+        { [`category.${lang}`]: regex },
+        { [`tags.${lang}`]: regex },
+        { [`subcategory.${lang}`]: regex }, // Add subcategory if relevant
+        { [`city.${lang}`]: regex },
+      ];
+    }
+
+    // Initialize result arrays
     let businesses: SearchResult[] = [];
     let categories: SearchResult[] = [];
     let tags: SearchResult[] = [];
     let cities: SearchResult[] = [];
     let names: SearchResult[] = [];
-    // Use 'any' for results to avoid type incompatibility, or map to the expected type
+
+    // Execute the query
     const results = await DistrictBusiness.find(dbQuery)
-      .select(`name category tags city pincode`)
+      .select(`name category tags city pincode subcategory`)
       .limit(20)
       .lean();
 
-    console.log(`Search found ${results.length} results for pincode ${pincode}`);
+    console.log(`Search found ${results.length} results for pincode ${pincode} and query "${q}"`);
 
+    // Map businesses
     businesses = results.map((doc: any) => ({
       id: doc._id.toString(),
       name: (doc.name && typeof doc.name === 'object' ? doc.name[lang] || doc.name['en'] : '') || '',
-      category: (doc.category && typeof doc.category === 'object' ? doc.category['en'] : '') || '',
+      category: (doc.category && typeof doc.category === 'object' ? doc.category[lang] || doc.category['en'] : '') || '',
       type: 'business' as const,
       pincode: doc.pincode,
     }));
 
+    // Map categories
     categories = [
       ...new Set(
         results
-          .map((doc: any) => (doc.category && typeof doc.category === 'object' ? doc.category['en'] : null))
+          .map((doc: any) => (doc.category && typeof doc.category === 'object' ? doc.category[lang] || doc.category['en'] : null))
           .filter((name: any): name is string => Boolean(name))
       ),
     ].map((name: string) => ({
@@ -92,6 +110,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       pincode,
     }));
 
+    // Map tags
     tags = [
       ...new Set(
         results
@@ -109,10 +128,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       pincode,
     }));
 
+    // Map cities
     cities = [
       ...new Set(
         results
-          .map((doc: any) => (doc.city && typeof doc.city === 'object' ? doc.city[lang] : null))
+          .map((doc: any) => (doc.city && typeof doc.city === 'object' ? doc.city[lang] || doc.city['en'] : null))
           .filter((name: any): name is string => Boolean(name))
       ),
     ].map((name: string) => ({
@@ -122,10 +142,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       pincode,
     }));
 
+    // Map names
     names = [
       ...new Set(
         results
-          .map((doc: any) => (doc.name && typeof doc.name === 'object' ? doc.name[lang] : null))
+          .map((doc: any) => (doc.name && typeof doc.name === 'object' ? doc.name[lang] || doc.name['en'] : null))
           .filter((name: any): name is string => Boolean(name))
       ),
     ].map((name: string) => ({
@@ -135,6 +156,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       pincode,
     }));
 
+    // Return the response
     return res.status(200).json({
       success: true,
       data: {

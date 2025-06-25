@@ -5,19 +5,19 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { Readable } from 'stream';
+import dbConnect from '../src/lib/dbConnect.ts';
+import DistrictBusiness from '../models/DistrictBusiness.ts';
 
 // Debugging: Log paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dbConnectPath = path.resolve(__dirname, '../src/lib/dbConnect.js');
 const districtBusinessPath = path.resolve(__dirname, '../models/DistrictBusiness.js');
-const csvFilePath = path.resolve(__dirname, '../src/data/hassan_photographers_listings new.csv');
 const envPath = path.resolve(__dirname, '../.env.local');
 
 console.log('Script directory:', __dirname);
 console.log('dbConnect.js exists:', fs.existsSync(dbConnectPath));
 console.log('DistrictBusiness.js exists:', fs.existsSync(districtBusinessPath));
-console.log('CSV exists:', fs.existsSync(csvFilePath));
 console.log('.env.local exists:', fs.existsSync(envPath));
 
 // Load environment variables
@@ -25,31 +25,28 @@ if (fs.existsSync(envPath)) {
   try {
     const envContent = fs.readFileSync(envPath, 'utf8').trim();
     console.log('Raw .env.local content:', envContent);
-
     const dotenvResult = dotenv.config({ path: envPath });
     if (dotenvResult.error) {
-      console.error('Error parsing .env.local with dotenv:', dotenvResult.error.message);
+      console.error('Error parsing .env.local:', dotenvResult.error.message);
       throw dotenvResult.error;
     }
     console.log('Parsed .env.local:', dotenvResult.parsed);
   } catch (error) {
     console.error('Error reading .env.local:', error.message);
-    // Continue if .env.local fails, as Vercel may provide env vars
   }
 } else {
-  console.log('No .env.local file found, relying on process.env (e.g., Vercel environment variables)');
+  console.log('No .env.local file found, relying on process.env');
 }
 
 // Verify MONGODB_URI
 if (!process.env.MONGODB_URI) {
-  console.error('MONGODB_URI not set in process.env');
-  throw new Error('MONGODB_URI is required to connect to MongoDB');
+  console.error('MONGODB_URI not set');
+  throw new Error('MONGODB_URI is required');
 }
 console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
 
 // Import modules
-import dbConnect from '../src/lib/dbConnect.ts';
-import DistrictBusiness from '../models/DistrictBusiness.ts';
+
 
 // Function to parse boolean values
 const parseBoolean = (value) => {
@@ -62,17 +59,65 @@ const parseBoolean = (value) => {
 
 // Function to parse tags
 const parseTags = (tags) => {
-  if (!tags || typeof tags !== 'string') return [];
-  return tags.split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0);
+  try {
+    if (!tags || typeof tags !== 'string') return [];
+    if (tags.startsWith('[')) {
+      return JSON.parse(tags).map((tag) => tag.trim()).filter((tag) => tag.length > 0);
+    }
+    return tags.split(/[;,]/).map((tag) => tag.trim()).filter((tag) => tag.length > 0);
+  } catch (error) {
+    console.error('Error parsing tags:', tags, error.message);
+    return [];
+  }
 };
 
-// Function to extract city from address
-const extractCityFromAddress = (address) => {
-  if (!address || typeof address !== 'string' || address.trim() === '') {
-    return '';
+// Function to parse field values
+const parseField = (field, fieldName) => {
+  try {
+    if (typeof field === 'string' && field.trim() !== '') {
+      if (field.startsWith('{')) {
+        const parsed = JSON.parse(field);
+        console.log(`Parsed JSON ${fieldName}:`, parsed);
+        return {
+          en: parsed.en || '',
+          ta: parsed.ta || '',
+          hi: parsed.hi || '',
+          ka: parsed.ka || '',
+        };
+      }
+      console.log(`Treating ${fieldName} as plain string:`, field);
+      return { en: field.trim(), ta: '', hi: '', ka: '' };
+    }
+    console.warn(`Empty or invalid ${fieldName}:`, field);
+    return { en: '', ta: '', hi: '', ka: '' };
+  } catch (error) {
+    console.error(`Error parsing ${fieldName}:`, field, error.message);
+    return { en: field || '', ta: '', hi: '', ka: '' };
   }
-  const parts = address.split(',').map(part => part.trim());
-  return parts.length > 0 ? parts[parts.length - 1] : '';
+};
+
+// Function to parse tags field
+const parseTagsField = (tags) => {
+  try {
+    if (typeof tags === 'string' && tags.trim() !== '') {
+      if (tags.startsWith('{')) {
+        const parsed = JSON.parse(tags);
+        console.log('Parsed JSON tags:', parsed);
+        return {
+          en: parsed.en || [],
+          ta: parsed.ta || [],
+          hi: parsed.hi || [],
+          ka: parsed.ka || [],
+        };
+      }
+      const enTags = parseTags(tags);
+      return { en: enTags, ta: [], hi: [], ka: [] };
+    }
+    return { en: [], ta: [], hi: [], ka: [] };
+  } catch (error) {
+    console.error('Error parsing tags:', tags, error.message);
+    return { en: parseTags(tags), ta: [], hi: [], ka: [] };
+  }
 };
 
 // Function to ensure directory exists
@@ -98,9 +143,7 @@ export const importCsv = async (input) => {
     const failedRecords = [];
 
     // Determine if input is a file path or buffer
-    const stream = typeof input === 'string'
-      ? fs.createReadStream(input)
-      : Readable.from(input);
+    const stream = typeof input === 'string' ? fs.createReadStream(input) : Readable.from(input);
 
     return new Promise((resolve, reject) => {
       stream
@@ -112,42 +155,85 @@ export const importCsv = async (input) => {
           })
         )
         .on('data', (record) => {
-          if (!record.phone || record.phone.trim() === '') {
+          console.log('Raw CSV record:', record);
+          try {
+            // Parse fields
+            const nameObj = parseField(record.name, 'name');
+            const addressObj = parseField(record.address, 'address');
+            const tagsObj = parseTagsField(record.tags);
+            const categoryObj = parseField(record.category, 'category');
+            const cityObj = parseField(record.city, 'city');
+
+            // Validate required fields
+            if (!record.phone || record.phone.trim() === '') {
+              failedRecords.push({
+                record,
+                reason: 'Empty or missing phone number',
+              });
+              console.log('Record rejected: Missing phone number');
+              return;
+            }
+
+            if (!nameObj.en || !addressObj.en || !categoryObj.en || !cityObj.en) {
+              failedRecords.push({
+                record,
+                reason: 'Missing required English fields',
+              });
+              console.log('Record rejected: Missing English fields', {
+                name: nameObj.en,
+                address: addressObj.en,
+                category: categoryObj.en,
+                city: cityObj.en,
+              });
+              return;
+            }
+
+            // Parse totalRatings
+            const totalRatings = parseInt(record.totalRatings.replace(/[^0-9]/g, '')) || 0;
+
+            const business = {
+              name: { en: nameObj.en, ta: '', hi: '', ka: '' },
+              rating: parseFloat(record.rating) || 0,
+              totalRatings,
+              address: { en: addressObj.en, ta: '', hi: '', ka: '' },
+              phone: record.phone.trim(),
+              tags: { en: tagsObj.en, ta: [], hi: [], ka: [] },
+              hasWhatsApp: parseBoolean(record.hasWhatsApp),
+              hasEnquiry: parseBoolean(record.hasEnquiry),
+              isTrusted: parseBoolean(record.isTrusted),
+              isVerified: parseBoolean(record.isVerified),
+              isPopular: parseBoolean(record.isPopular),
+              category: { en: categoryObj.en, ta: '', hi: '', ka: '' },
+              subcategory: { en: categoryObj.en, ta: '', hi: '', ka: '' }, // Use category as subcategory
+              pincode: record.pincode || '573201',
+              city: { en: cityObj.en, ta: '', hi: '', ka: '' },
+            };
+
+            console.log('Processed business record:', JSON.stringify(business, null, 2));
+            records.push(business);
+          } catch (error) {
+            console.error('Error processing record:', record, error.message);
             failedRecords.push({
               record,
-              reason: 'Empty or missing phone number',
+              reason: `Error processing record: ${error.message}`,
             });
-            return;
           }
-
-          const business = {
-            name: record.name || '',
-            rating: parseFloat(record.rating) || 0,
-            totalRatings: parseInt(record.totalRatings) || 0,
-            address: record.address || '',
-            phone: record.phone || '',
-            tags: parseTags(record.tags),
-            hasWhatsApp: parseBoolean(record.hasWhatsApp),
-            hasEnquiry: parseBoolean(record.hasEnquiry),
-            isTrusted: parseBoolean(record.isTrusted),
-            isVerified: parseBoolean(record.isVerified),
-            isPopular: parseBoolean(record.isPopular),
-            category: record.category || '',
-            subcategory: record.category || '', // Set subcategory to category
-            pincode: '573201',
-            city: extractCityFromAddress(record.address),
-          };
-
-          records.push(business);
         })
         .on('end', async () => {
+          console.log(`Total records processed: ${records.length}`);
+          console.log(`Total failed records: ${failedRecords.length}`);
           try {
-            const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
-            console.log(`Successfully imported ${inserted.length} records`);
+            let insertedCount = 0;
+            if (records.length > 0) {
+              const inserted = await DistrictBusiness.insertMany(records, { ordered: false });
+              insertedCount = inserted.length;
+              console.log(`Successfully inserted ${insertedCount} records`);
+            } else {
+              console.log('No valid records to insert');
+            }
 
             if (failedRecords.length > 0) {
-              console.log(`Failed to import ${failedRecords.length} records`);
-              // Use /tmp for Vercel compatibility, or create src/data if possible
+              console.log('Failed records:', JSON.stringify(failedRecords, null, 2));
               const outputDir = process.env.VERCEL ? '/tmp' : path.resolve(__dirname, '../src/data');
               if (!process.env.VERCEL) {
                 ensureDirectoryExists(outputDir);
@@ -158,17 +244,16 @@ export const importCsv = async (input) => {
                 console.log(`Failed records saved to ${failedPath}`);
               } catch (writeError) {
                 console.error(`Error writing failed records to ${failedPath}:`, writeError.message);
-                // Continue despite write failure, as it’s not critical
               }
             }
 
             resolve({
-              insertedCount: inserted.length,
+              insertedCount,
               failedCount: failedRecords.length,
               failedRecords,
             });
           } catch (error) {
-            console.error('Error importing records:', error.message);
+            console.error('Error inserting records:', error.message);
             reject(error);
           }
         })
@@ -183,8 +268,9 @@ export const importCsv = async (input) => {
   }
 };
 
-// Run import only if called directly (for backward compatibility)
+// Run import only if called directly
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const csvFilePath = path.resolve(__dirname, '../src/data/test.csv');
   importCsv(csvFilePath)
     .then(() => process.exit(0))
     .catch(() => process.exit(1));

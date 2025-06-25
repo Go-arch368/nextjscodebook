@@ -4,21 +4,21 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 // Define the interface for the DistrictBusiness document
 export interface IDistrictBusiness extends Document {
   _id: mongoose.Types.ObjectId;
-  name: string;
+  name: { en: string; ta: string; hi: string; ka: string };
   rating: number;
   totalRatings: number;
-  address: string;
+  address: { en: string; ta: string; hi: string; ka: string };
   phone: string;
-  tags: string[];
+  tags: { en: string[]; ta: string[]; hi: string[]; ka: string[] };
   hasWhatsApp: boolean;
   hasEnquiry: boolean;
   isTrusted: boolean;
   isVerified: boolean;
   isPopular: boolean;
-  category: string;
-  subcategory: string;
+  category: { en: string; ta: string; hi: string; ka: string };
+  subcategory: { en: string; ta: string; hi: string; ka: string };
   pincode: string;
-  city: string;
+  city: { en: string; ta: string; hi: string; ka: string };
   createdAt: Date;
   updatedAt: Date;
 }
@@ -27,9 +27,10 @@ export interface IDistrictBusiness extends Document {
 const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
   {
     name: {
-      type: String,
-      required: true,
-      trim: true,
+      en: { type: String, required: true, trim: true },
+      ta: { type: String, default: '', trim: true },
+      hi: { type: String, default: '', trim: true },
+      ka: { type: String, default: '', trim: true },
     },
     rating: {
       type: Number,
@@ -43,9 +44,10 @@ const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
       min: 0,
     },
     address: {
-      type: String,
-      required: true,
-      trim: true,
+      en: { type: String, required: true, trim: true },
+      ta: { type: String, default: '', trim: true },
+      hi: { type: String, default: '', trim: true },
+      ka: { type: String, default: '', trim: true },
     },
     phone: {
       type: String,
@@ -53,8 +55,10 @@ const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
       trim: true,
     },
     tags: {
-      type: [String],
-      default: [],
+      en: { type: [String], default: [] },
+      ta: { type: [String], default: [] },
+      hi: { type: [String], default: [] },
+      ka: { type: [String], default: [] },
     },
     hasWhatsApp: {
       type: Boolean,
@@ -77,14 +81,16 @@ const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
       default: false,
     },
     category: {
-      type: String,
-      required: true,
-      trim: true,
+      en: { type: String, required: true, trim: true },
+      ta: { type: String, default: '', trim: true },
+      hi: { type: String, default: '', trim: true },
+      ka: { type: String, default: '', trim: true },
     },
     subcategory: {
-      type: String,
-      required: true,
-      trim: true,
+      en: { type: String, required: true, trim: true },
+      ta: { type: String, default: '', trim: true },
+      hi: { type: String, default: '', trim: true },
+      ka: { type: String, default: '', trim: true },
     },
     pincode: {
       type: String,
@@ -92,9 +98,10 @@ const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
       trim: true,
     },
     city: {
-      type: String,
-      default: '',
-      trim: true,
+      en: { type: String, default: '', trim: true },
+      ta: { type: String, default: '', trim: true },
+      hi: { type: String, default: '', trim: true },
+      ka: { type: String, default: '', trim: true },
     },
   },
   {
@@ -105,13 +112,13 @@ const districtBusinessSchema: Schema<IDistrictBusiness> = new Schema(
 
 // Define text index for searchability
 districtBusinessSchema.index({
-  name: 'text',
-  category: 'text',
-  subcategory: 'text',
-  tags: 'text',
-  address: 'text',
-  pincode: 'text',
-  city: 'text',
+  'name.en': 'text',
+  'category.en': 'text',
+  'subcategory.en': 'text',
+  'tags.en': 'text',
+  'address.en': 'text',
+  'pincode': 'text',
+  'city.en': 'text',
 });
 
 // Ensure indexes are created
