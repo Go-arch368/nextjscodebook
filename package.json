@@ -67,6 +67,7 @@
         "geist": "^1.4.2",
         "i18next": "^25.2.1",
         "input-otp": "^1.4.2",
+        "json2csv": "^6.0.0-alpha.2",
         "lodash": "^4.17.21",
         "lucide-react": "^0.508.0",
         "mongodb": "^6.16.0",

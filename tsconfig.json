@@ -32,6 +32,6 @@
     "pages/api/scrape.js",
     "models/BusinessListing.js",
     "pages/api/businesses/[pincode]/route.js"
-, "src/app/upload-form/page.jsx", "src/app/[locale]/upload/page.js", "scripts/importCsv.js", "pages/api/uploadfile.js"  ],
+, "src/app/upload-form/page.jsx", "src/app/[locale]/upload/page.tsx", "scripts/importCsv.ts", "pages/api/uploadfile.ts"  ],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,3 @@
-// pages/api/businesssearch.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
 import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
@@ -64,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const dbQuery: Record<string, any> = { pincode };
 
     if (category) {
-      dbQuery[`category.en`] = { $regex: `^${category}$`, $options: 'i' }; // Category in English
+      dbQuery[`category.en`] = { $regex: `^${category}$`, $options: 'i' }; // Case-insensitive exact match for category
     }
 
     if (subcategory) {
@@ -83,8 +82,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         });
       }
 
-      // Search for subcategory within comma-separated string
-      dbQuery[`subcategory.${lang}`] = { $regex: `(^|,\\s*)${subcategory}(\\s*,|$)`, $options: 'i' };
+      // Split subcategory string into array and search using $in
+      dbQuery[`subcategory.${lang}`] = {
+        $regex: `(^|,\\s*)${subcategory}(\\s*,|$)`,
+        $options: 'i',
+      };
     }
 
     // Pagination
@@ -124,7 +126,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       isTrusted: doc.isTrusted || false,
       isVerified: doc.isVerified || false,
       isPopular: doc.isPopular || false,
-      category: doc.category?.en || doc.category?.en || '', // Use 'en' for category
+      category: doc.category?.en || doc.category?.en || '',
       subcategory: doc.subcategory?.[lang] || doc.subcategory?.en || undefined,
       pincode: doc.pincode || '',
       city: doc.city?.[lang] || doc.city?.en || undefined,

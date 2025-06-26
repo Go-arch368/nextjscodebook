@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
-import dbConnect from '@/lib/dbConnect';
-
-import BusinessListing from '../../models/BusinessListing';
+import fs from 'fs';
+import path from 'path';
+import { parse } from 'json2csv';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -10,9 +10,6 @@ export default async function handler(req, res) {
 
   let browser;
   try {
-    await dbConnect();
-    console.log('Connected to MongoDB');
-
     browser = await puppeteer.launch({
       headless: process.env.NODE_ENV === 'production' ? true : false,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -37,7 +34,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Bangalore/Web-Designing-Services-in-Krishna-Rajendra-Road-Jayanagar-6Th-Block/nct-11028380?trkid=301322-bangalore&term=web%20des'
+    const url = req.query.url || 'https://www.justdial.com/Hassan/Health-Care-Centres/nct-10244464?trkid=5048-remotecity&term=Health';
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
@@ -98,6 +95,11 @@ export default async function handler(req, res) {
         () => document.querySelectorAll('.resultbox').length
       );
       console.log(`Attempt ${attempts + 1}: Found ${currentCount} .resultbox elements`);
+
+      if (currentCount >= 30) {
+        console.log('Reached or exceeded 30 .resultbox elements, stopping.');
+        break;
+      }
 
       if (currentCount === previousCount && attempts > 0) {
         console.log('No new results loaded, checking for button...');
@@ -189,7 +191,7 @@ export default async function handler(req, res) {
       console.log('Extracted category (after removing Popular):', category, 'city:', city);
 
       const results = [];
-      const containers = document.querySelectorAll('.resultbox');
+      const containers = Array.from(document.querySelectorAll('.resultbox')).slice(0, 15);
 
       containers.forEach((container) => {
         const getText = (selector) =>
@@ -268,14 +270,16 @@ export default async function handler(req, res) {
             address,
             distance,
             phone,
-            tags,
+            tags: tags.join(';'),
             hasWhatsApp,
             hasEnquiry,
             isTrusted,
             isVerified,
             isPopular,
-            category,
+            category:'Health and Medical',
             city,
+            subcategory: 'Hospitals,Clinics,Pharmacies,Dentists',
+            pincode: '573201',
             timestamp: new Date().toISOString(),
           });
         }
@@ -283,41 +287,6 @@ export default async function handler(req, res) {
 
       return { results, category, city };
     }, url);
-
-    // Delete existing data for the same category and city
-    if (data.results.length > 0) {
-      try {
-        await BusinessListing.deleteMany({
-          category: data.category,
-          city: data.city,
-        });
-        console.log(`Deleted existing listings for category: ${data.category}, city: ${data.city}`);
-
-        // Save new data to MongoDB
-        const savePromises = data.results.map(async (item) => {
-          const business = new BusinessListing({
-            ...item,
-            timestamp: new Date(item.timestamp),
-          });
-          return business.save();
-        });
-
-        const savedResults = await Promise.all(savePromises);
-        console.log(`Saved ${savedResults.length} new business listings to MongoDB`);
-      } catch (dbError) {
-        console.error('Error saving to MongoDB:', dbError);
-        await browser.close();
-        return res.status(500).json({
-          success: false,
-          url,
-          count: data.results.length,
-          data: data.results,
-          message: 'Scraping succeeded but failed to save to database',
-          error: dbError.message,
-          scrapedAt: new Date().toISOString(),
-        });
-      }
-    }
 
     await browser.close();
 
@@ -332,6 +301,53 @@ export default async function handler(req, res) {
       });
     }
 
+    // Convert data to CSV
+    const fields = [
+      'name',
+      'initial',
+      'imageUrl',
+      'rating',
+      'totalRatings',
+      'address',
+      'distance',
+      'phone',
+      'tags',
+      'hasWhatsApp',
+      'hasEnquiry',
+      'isTrusted',
+      'isVerified',
+      'isPopular',
+      'category',
+      'city',
+      'subcategory',
+      'pincode',
+      'timestamp',
+    ];
+
+    const csv = parse(data.results, { fields });
+
+    // Sanitize category name for filename
+    const safeCategory = data.category
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '_') // Replace non-alphanumeric with underscore
+      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .trim();
+    
+    // Define the file path for the CSV using category name
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const fileName = `${safeCategory}_${timestamp}.csv`;
+    const filePath = path.join(process.cwd(), 'public', fileName);
+
+    // Ensure the public directory exists
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    // Write the CSV file
+    fs.writeFileSync(filePath, csv);
+    console.log(`CSV file saved at: ${filePath}`);
+
     return res.status(200).json({
       success: true,
       url,
@@ -339,7 +355,8 @@ export default async function handler(req, res) {
       data: data.results,
       category: data.category,
       city: data.city,
-      message: `Successfully scraped and saved ${data.results.length} business listings`,
+      csvFile: `/public/${fileName}`, // Relative path for client access
+      message: `Successfully scraped ${data.results.length} business listings and saved to CSV`,
       scrapedAt: new Date().toISOString(),
     });
   } catch (error) {

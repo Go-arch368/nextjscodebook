@@ -6,17 +6,21 @@ import { useRouter } from 'next/navigation'; // Add this import
 
 export default function UploadPage() {
   const router = useRouter(); // Initialize router
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    } else {
+      setFile(null);
+    }
     setMessage('');
     setError('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!file) {
@@ -39,12 +43,12 @@ export default function UploadPage() {
         setMessage(data.message);
         setError('');
         setFile(null);
-        e.target.reset();
+        (e.target as HTMLFormElement).reset();
       } else {
         setError(data.error || 'Failed to upload file');
         setMessage('');
       }
-    } catch (error) {
+    } catch{
       setError('An error occurred while uploading the file');
       setMessage('');
     }
