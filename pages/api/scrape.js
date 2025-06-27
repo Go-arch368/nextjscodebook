@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Hassan/Health-Care-Centres/nct-10244464?trkid=5048-remotecity&term=Health';
+    const url = req.query.url || 'https://www.justdial.com/Hassan/Educational-Consultants/nct-10180006?trkid=47374-remotecity-fcat&term=Educational%20Consultants';
 
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
@@ -96,8 +96,8 @@ export default async function handler(req, res) {
       );
       console.log(`Attempt ${attempts + 1}: Found ${currentCount} .resultbox elements`);
 
-      if (currentCount >= 30) {
-        console.log('Reached or exceeded 30 .resultbox elements, stopping.');
+      if (currentCount >= 25) {
+        console.log('Reached or exceeded 25 .resultbox elements, stopping.');
         break;
       }
 
@@ -183,7 +183,6 @@ export default async function handler(req, res) {
         }
       }
 
-      // Remove "Popular" from the start of the category name
       if (category.toLowerCase().startsWith('popular')) {
         category = category.replace(/^popular\s+/i, '').trim();
       }
@@ -191,7 +190,7 @@ export default async function handler(req, res) {
       console.log('Extracted category (after removing Popular):', category, 'city:', city);
 
       const results = [];
-      const containers = Array.from(document.querySelectorAll('.resultbox')).slice(0, 15);
+      const containers = Array.from(document.querySelectorAll('.resultbox')).slice(0, 25);
 
       containers.forEach((container) => {
         const getText = (selector) =>
@@ -276,9 +275,9 @@ export default async function handler(req, res) {
             isTrusted,
             isVerified,
             isPopular,
-            category:'Health and Medical',
+            category: 'Education',
             city,
-            subcategory: 'Hospitals,Clinics,Pharmacies,Dentists',
+            subcategory: 'Educational Consultants',
             pincode: '573201',
             timestamp: new Date().toISOString(),
           });
@@ -329,10 +328,10 @@ export default async function handler(req, res) {
     // Sanitize category name for filename
     const safeCategory = data.category
       .toLowerCase()
-      .replace(/[^a-z0-9]/g, '_') // Replace non-alphanumeric with underscore
-      .replace(/_+/g, '_') // Replace multiple underscores with single
+      .replace(/[^a-z0-9]/g, '_')
+      .replace(/_+/g, '_')
       .trim();
-    
+
     // Define the file path for the CSV using category name
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const fileName = `${safeCategory}_${timestamp}.csv`;
@@ -355,7 +354,7 @@ export default async function handler(req, res) {
       data: data.results,
       category: data.category,
       city: data.city,
-      csvFile: `/public/${fileName}`, // Relative path for client access
+      csvFile: `/public/${fileName}`,
       message: `Successfully scraped ${data.results.length} business listings and saved to CSV`,
       scrapedAt: new Date().toISOString(),
     });
