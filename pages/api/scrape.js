@@ -34,8 +34,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Hassan/Educational-Consultants/nct-10180006?trkid=47374-remotecity-fcat&term=Educational%20Consultants';
-
+    const url = req.query.url || 'https://www.justdial.com/Hassan/Travel-Agents/nct-10496380?trkid=311-remotecity&term=Travel'
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
     try {
@@ -275,9 +274,9 @@ export default async function handler(req, res) {
             isTrusted,
             isVerified,
             isPopular,
-            category: 'Education',
+            category: 'Travel and Transportation',
             city,
-            subcategory: 'Educational Consultants',
+            subcategory: 'Travel Agencies',
             pincode: '573201',
             timestamp: new Date().toISOString(),
           });
