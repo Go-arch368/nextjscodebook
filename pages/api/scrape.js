@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 
     const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const url = req.query.url || 'https://www.justdial.com/Hassan/Travel-Agents/nct-10496380?trkid=311-remotecity&term=Travel'
+    const url = req.query.url || 'https://www.justdial.com/Hassan/search?q=software-solutions&stype=company_list&trkid=150432694601-fcomp&term=Software+Solutions'
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
     try {
@@ -274,9 +274,9 @@ export default async function handler(req, res) {
             isTrusted,
             isVerified,
             isPopular,
-            category: 'Travel and Transportation',
+            category: 'Computers and Mobile',
             city,
-            subcategory: 'Travel Agencies',
+            subcategory: 'Software Solutions',
             pincode: '573201',
             timestamp: new Date().toISOString(),
           });

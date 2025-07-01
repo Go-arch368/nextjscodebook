@@ -1,3 +1,4 @@
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
 import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
@@ -50,6 +51,7 @@ export default async function handler(
       address,
       city,
       pincode,
+      subcategory,
       lang = 'en',
     } = req.query as Record<string, string | undefined>;
 
@@ -64,18 +66,20 @@ export default async function handler(
     if (query) {
       dbQuery.$or = [
         { [`name.${lang}`]: { $regex: query, $options: 'i' } },
-        { [`category.${"en"}`]: { $regex: query, $options: 'i' } },
+        { [`category.${lang}`]: { $regex: query, $options: 'i' } },
         { [`tags.${lang}`]: { $regex: query, $options: 'i' } },
+        { [`subcategory.${lang}`]: { $regex: query, $options: 'i' } },
         { [`address.${lang}`]: { $regex: query, $options: 'i' } },
         { [`city.${lang}`]: { $regex: query, $options: 'i' } },
       ];
     }
 
-    if (category) dbQuery[`category.${"en"}`] = { $regex: category, $options: 'i' };
+    if (category) dbQuery[`category.${lang}`] = { $regex: category, $options: 'i' };
     if (tag) dbQuery[`tags.${lang}`] = { $regex: tag, $options: 'i' };
     if (name) dbQuery[`name.${lang}`] = { $regex: name, $options: 'i' };
     if (address) dbQuery[`address.${lang}`] = { $regex: address, $options: 'i' };
     if (city) dbQuery[`city.${lang}`] = { $regex: city, $options: 'i' };
+    if (subcategory) dbQuery[`subcategory.${lang}`] = { $regex: subcategory, $options: 'i' };
 
     const listings = await DistrictBusiness.find(dbQuery).lean();
 
@@ -84,7 +88,7 @@ export default async function handler(
       name: listing.name?.[language] || listing.name?.en || '',
       address: listing.address?.[language] || listing.address?.en || '',
       city: listing.city?.[language] || listing.city?.en || '',
-      category: listing.category?.["en"] || listing.category?.en || '',
+      category: listing.category?.[language] || listing.category?.en || '',
       subcategory: listing.subcategory?.[language] || listing.subcategory?.en || '',
       tags: listing.tags?.[language] || listing.tags?.en || [],
       rating: listing.rating,

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
@@ -47,12 +48,14 @@ export default function CategoryContent() {
   const locale = useLocale();
   const [listings, setListings] = useState<Listing[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedImageIndices, setSelectedImageIndices] = useState<SelectedImageIndices>({});
 
   const fetchListings = useCallback(
     debounce(async (params: Record<string, string | undefined>) => {
       try {
         setLoading(true);
+        setError(null);
         const queryParams = new URLSearchParams();
         if (params.query) queryParams.append("query", params.query);
         if (params.category) queryParams.append("category", params.category);
@@ -60,6 +63,7 @@ export default function CategoryContent() {
         if (params.name) queryParams.append("name", params.name);
         if (params.address) queryParams.append("address", params.address);
         if (params.city) queryParams.append("city", params.city);
+        if (params.subcategory) queryParams.append("subcategory", params.subcategory);
         queryParams.append("pincode", params.pincode ?? "");
 
         const response = await fetch(`/api/getListings?lang=${locale}&${queryParams.toString()}`, {
@@ -80,7 +84,7 @@ export default function CategoryContent() {
           const listingsWithImages = result.data.map((listing: Listing) => ({
             ...listing,
             tags: Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || [],
-            phone: typeof listing.phone === "string" ? listing.phone : listing.phone?.en || "", // Normalize phone
+            phone: typeof listing.phone === "string" ? listing.phone : listing.phone?.en || "No phone available",
             images: imageMap[listing.category]?.images || [],
             imageError: imageMap[listing.category]?.images?.length ? null : `No images for ${listing.category}`,
           }));
@@ -93,7 +97,12 @@ export default function CategoryContent() {
           setSelectedImageIndices(initialSelectedIndices);
         } else {
           setListings([]);
+          setError(result.error || "No results found.");
         }
+      } catch (error) {
+        console.error("Error fetching listings:", error);
+        setError(error instanceof Error ? error.message : "Failed to load listings");
+        setListings([]);
       } finally {
         setLoading(false);
       }
@@ -110,6 +119,7 @@ export default function CategoryContent() {
       name: searchParams.get("name") ?? undefined,
       address: searchParams.get("address") ?? undefined,
       city: searchParams.get("city") ?? undefined,
+      subcategory: searchParams.get("subcategory") ?? undefined,
       pincode: searchParams.get("pincode") ?? "560062",
     };
     fetchListings(params);
@@ -138,6 +148,7 @@ export default function CategoryContent() {
   };
 
   if (loading) return <div className="p-6">Loading...</div>;
+  if (error) return <div className="p-6 text-red-500">Error: {error}</div>;
 
   return (
     <div className="p-4">
@@ -176,7 +187,7 @@ export default function CategoryContent() {
                             </button>
                             <button
                               onClick={() => nextImage(index)}
-                              className=" bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
+                              className="bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 focus:outline-none"
                               aria-label="Next image"
                             >
                               <ChevronRight className="w-4 h-4" />
@@ -209,6 +220,9 @@ export default function CategoryContent() {
                       )}
                     </div>
                     <p className="text-sm mt-2">{listing.category}</p>
+                    {listing.subcategory && (
+                      <p className="text-sm mt-1">Subcategory: {listing.subcategory}</p>
+                    )}
                     <div className="mt-2 flex flex-wrap gap-2">
                       {(Array.isArray(listing.tags) ? listing.tags : listing.tags?.tags || []).map(
                         (tag: string, i: number) => (

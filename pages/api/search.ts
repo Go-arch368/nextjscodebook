@@ -1,23 +1,25 @@
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/dbConnect';
-import DistrictBusiness,{IDistrictBusiness} from '../../models/DistrictBusiness';
+import DistrictBusiness, { IDistrictBusiness } from '../../models/DistrictBusiness';
 
 // Extend the IDistrictBusiness type to reflect multilingual fields
 type MultilingualString = { [key: string]: string };
 type MultilingualArray = { [key: string]: string[] };
 
-interface IDistrictBusinessTyped extends Omit<IDistrictBusiness, 'name' | 'category' | 'tags' | 'city'> {
+interface IDistrictBusinessTyped extends Omit<IDistrictBusiness, 'name' | 'category' | 'tags' | 'city' | 'subcategory'> {
   name?: MultilingualString;
   category?: MultilingualString;
   tags?: MultilingualArray;
   city?: MultilingualString;
+  subcategory?: MultilingualString;
 }
 
 // Define the shape of the response data
 interface SearchResult {
   id: string;
   name: string;
-  type: 'business' | 'category' | 'tag' | 'city' | 'name';
+  type: 'business' | 'category' | 'tag' | 'city' | 'name' | 'subcategory';
   pincode: string;
   category?: string;
 }
@@ -30,6 +32,7 @@ interface ResponseData {
     tags: SearchResult[];
     cities: SearchResult[];
     names: SearchResult[];
+    subcategories: SearchResult[];
   };
   error?: string;
   message?: string;
@@ -40,7 +43,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
-  const { pincode, lang = 'en', q } = req.query as { pincode?: string; lang?: string; q?: string };
+  const { pincode, lang = 'en', q, subcategory } = req.query as {
+    pincode?: string;
+    lang?: string;
+    q?: string;
+    subcategory?: string;
+  };
 
   // Require pincode for search
   if (!pincode) {
@@ -58,8 +66,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     }
 
     // Build the query
-    const dbQuery: { pincode: string; $or?: Array<{ [key: string]: any }> } = { pincode };
-    
+    const dbQuery: { pincode: string; $or?: Array<{ [key: string]: any }>; $and?: Array<{ [key: string]: any }> } = { pincode };
+
+    // Add subcategory filtering if provided
+    if (subcategory) {
+      const subcategoryRegex = new RegExp(subcategory, 'i'); // Case-insensitive regex for subcategory
+      dbQuery.$and = dbQuery.$and || [];
+      dbQuery.$and.push({ [`subcategory.${lang}`]: subcategoryRegex });
+    }
+
     // Add search term filtering if 'q' is provided
     if (q) {
       const regex = new RegExp(q, 'i'); // Case-insensitive regex
@@ -67,7 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         { [`name.${lang}`]: regex },
         { [`category.${lang}`]: regex },
         { [`tags.${lang}`]: regex },
-        { [`subcategory.${lang}`]: regex }, // Add subcategory if relevant
+        { [`subcategory.${lang}`]: regex },
         { [`city.${lang}`]: regex },
       ];
     }
@@ -78,6 +93,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     let tags: SearchResult[] = [];
     let cities: SearchResult[] = [];
     let names: SearchResult[] = [];
+    let subcategories: SearchResult[] = [];
 
     // Execute the query
     const results = await DistrictBusiness.find(dbQuery)
@@ -85,7 +101,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       .limit(20)
       .lean();
 
-    console.log(`Search found ${results.length} results for pincode ${pincode} and query "${q}"`);
+    console.log(`Search found ${results.length} results for pincode ${pincode}, query "${q}", subcategory "${subcategory}"`);
 
     // Map businesses
     businesses = results.map((doc: any) => ({
@@ -156,6 +172,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       pincode,
     }));
 
+    // Map subcategories
+    subcategories = [
+      ...new Set(
+        results
+          .flatMap((doc: any) =>
+            doc.subcategory && typeof doc.subcategory === 'object' && doc.subcategory[lang]
+              ? doc.subcategory[lang].split(',').map((item: string) => item.trim())
+              : []
+          )
+          .filter((name: any): name is string => Boolean(name))
+      ),
+    ].map((name: string) => ({
+      id: name,
+      name,
+      type: 'subcategory' as const,
+      pincode,
+    }));
+
     // Return the response
     return res.status(200).json({
       success: true,
@@ -165,6 +199,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         tags,
         cities,
         names,
+        subcategories,
       },
     });
   } catch (error: unknown) {

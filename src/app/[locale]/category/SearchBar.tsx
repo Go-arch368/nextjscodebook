@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
@@ -20,7 +21,7 @@ import { useLocale } from "next-intl";
 interface SearchResultItem {
   id: string;
   name: string;
-  type: "business" | "category" | "tag" | "city" | "name";
+  type: "business" | "category" | "tag" | "city" | "name" | "subcategory";
   pincode: string;
   category?: string;
 }
@@ -32,6 +33,7 @@ interface SearchResults {
   tags: SearchResultItem[];
   cities: SearchResultItem[];
   names: SearchResultItem[];
+  subcategories: SearchResultItem[];
 }
 
 // Define interface for API response
@@ -45,7 +47,7 @@ const SearchBar: React.FC = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const locale = useLocale(); // Get the current locale (e.g., 'en', 'ta')
+  const locale = useLocale();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [pincode, setPincode] = useState<string>("");
   const [city, setCity] = useState<string>("");
@@ -56,6 +58,7 @@ const SearchBar: React.FC = () => {
     tags: [],
     cities: [],
     names: [],
+    subcategories: [],
   });
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -63,7 +66,6 @@ const SearchBar: React.FC = () => {
   const [pincodeError, setPincodeError] = useState<string | null>(null);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Load recent searches, pincode, city, and URL parameters on mount
   useEffect(() => {
     if (!pathname || !pathname.includes("/category")) return;
     const storedSearches = JSON.parse(localStorage.getItem("recentSearches") || "[]") as string[];
@@ -79,7 +81,6 @@ const SearchBar: React.FC = () => {
     setCity(urlCity || storedCity);
   }, [searchParams, pathname]);
 
-  // Save pincode and city to localStorage whenever they change
   useEffect(() => {
     if (pincode) {
       localStorage.setItem("pincode", pincode);
@@ -93,7 +94,6 @@ const SearchBar: React.FC = () => {
     }
   }, [pincode, city]);
 
-  // Update URL when pincode or city changes, preserving one existing parameter if present
   useEffect(() => {
     if (!pathname || !pathname.includes("/category")) return;
     if (pincode && !pincodeError && searchParams && /^\d{6}$/.test(pincode)) {
@@ -103,7 +103,7 @@ const SearchBar: React.FC = () => {
         currentParams.set("city", city);
       }
 
-      const allowedParams = ["name", "category", "tag", "query"];
+      const allowedParams = ["name", "category", "tag", "query", "subcategory"];
       const existingParam = allowedParams.find((param) => searchParams.has(param));
       if (existingParam) {
         const paramValue = searchParams.get(existingParam);
@@ -134,7 +134,7 @@ const SearchBar: React.FC = () => {
         currentParams.set("city", newCity);
       }
 
-      const allowedParams = ["name", "category", "tag", "query"];
+      const allowedParams = ["name", "category", "tag", "query", "subcategory"];
       const existingParam = allowedParams.find((param) => searchParams?.has(param));
       if (existingParam) {
         const paramValue = searchParams?.get(existingParam);
@@ -215,6 +215,7 @@ const SearchBar: React.FC = () => {
           tags: [],
           cities: [],
           names: [],
+          subcategories: [],
         });
         setIsLoading(false);
         return;
@@ -238,7 +239,10 @@ const SearchBar: React.FC = () => {
         .then((result) => {
           console.log("Search Results Response:", result);
           if (result.success && result.data) {
-            setResults(result.data);
+            setResults({
+              ...result.data,
+              subcategories: result.data.subcategories || [],
+            });
             if (!pin && effectivePincode) {
               setPincode(effectivePincode);
             }
@@ -249,6 +253,7 @@ const SearchBar: React.FC = () => {
               tags: [],
               cities: [],
               names: [],
+              subcategories: [],
             });
             setError(result.error || "No results found for your search.");
           }
@@ -263,6 +268,7 @@ const SearchBar: React.FC = () => {
             tags: [],
             cities: [],
             names: [],
+            subcategories: [],
           });
         })
         .finally(() => {
@@ -337,6 +343,9 @@ const SearchBar: React.FC = () => {
       case "name":
         currentParams.set("name", item.name);
         break;
+      case "subcategory":
+        currentParams.set("subcategory", item.name);
+        break;
     }
     router.push(`/${locale}/category?${currentParams.toString()}`);
     setSearchQuery("");
@@ -346,7 +355,6 @@ const SearchBar: React.FC = () => {
     }
   };
 
-  // Handle recent searches
   const handleRecentSearchSelect = (search: string) => {
     const effectivePincode = pincode || (searchParams?.get("pincode") || "");
     if (!effectivePincode || !/^\d{6}$/.test(effectivePincode)) {
@@ -415,9 +423,7 @@ const SearchBar: React.FC = () => {
                     <CommandEmpty>Loading...</CommandEmpty>
                   ) : error ? (
                     <CommandEmpty className="text-red-500 dark:text-red-400">{error}</CommandEmpty>
-                  )
-
-: (
+                  ) : (
                     <>
                       {recentSearches.length > 0 && !searchQuery && (
                         <CommandGroup heading="Recent Searches">
@@ -475,6 +481,19 @@ const SearchBar: React.FC = () => {
                           ))}
                         </CommandGroup>
                       )}
+                      {results.subcategories.length > 0 && (
+                        <CommandGroup heading="Subcategories">
+                          {results.subcategories.map((item) => (
+                            <CommandItem
+                              key={item.id}
+                              onSelect={() => handleSelect(item)}
+                              className="cursor-pointer dark:hover:bg-gray-600"
+                            >
+                              {item.name}
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      )}
                       {results.tags.length > 0 && (
                         <CommandGroup heading="Tags">
                           {results.tags.map((item) => (
@@ -517,6 +536,7 @@ const SearchBar: React.FC = () => {
                       {searchQuery &&
                         !results.businesses.length &&
                         !results.categories.length &&
+                        !results.subcategories.length &&
                         !results.tags.length &&
                         !results.cities.length &&
                         !results.names.length && (
