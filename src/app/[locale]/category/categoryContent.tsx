@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Phone, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { fetchImagesByCategory } from "@/utils/imageUtils";
-
+import LoadingPage from "../loading/page";
 type Listing = {
   _id: string;
   name: string;
@@ -147,7 +147,7 @@ export default function CategoryContent() {
     });
   };
 
-  if (loading) return <div className="p-6">Loading...</div>;
+  if (loading) return <div className="p-6"><LoadingPage /></div>;
   if (error) return <div className="p-6 text-red-500">Error: {error}</div>;
 
   return (

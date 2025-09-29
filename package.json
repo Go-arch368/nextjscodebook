@@ -94,7 +94,8 @@
         "ts-morph": "^25.0.1",
         "vaul": "^1.1.2",
         "xlsx": "^0.18.5",
-        "zod": "^3.24.4"
+        "zod": "^3.24.4",
+        "zustand": "^5.0.6"
     },
     "devDependencies": {
         "@eslint/js": "^9.26.0",

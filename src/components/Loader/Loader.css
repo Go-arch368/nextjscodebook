@@ -1,0 +1,53 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1rem;
+  background-color: #F9FAFB;
+}
+/* Base style */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulseZoom 1.2s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(0.5);
+}
+/* Each dot with unique color and staggered animation delay */
+.dot1 {
+  background-color: #EF4444; /* red-500 */
+  animation-delay: 0s;
+}
+.dot2 {
+  background-color: #F59E0B; /* amber-500 */
+  animation-delay: 0.1s;
+}
+.dot3 {
+  background-color: #10B981; /* green-500 */
+  animation-delay: 0.2s;
+}
+.dot4 {
+  background-color: #3B82F6; /* blue-500 */
+  animation-delay: 0.3s;
+}
+.dot5 {
+  background-color: #8B5CF6; /* violet-500 */
+  animation-delay: 0.4s;
+}
+/* Animation keyframes */
+@keyframes pulseZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
